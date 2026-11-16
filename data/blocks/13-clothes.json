@@ -1,7 +1,7 @@
 {
   "block": 13,
   "words": [
-    {"id": "w-t-shirt", "en": "T-shirt", "es": "camiseta", "pron": "tíshet", "pos": "nombre", "block": 13, "emoji": "👕", "syllables": 2, "stress": 1},
+    {"id": "w-t-shirt", "en": "T-shirt", "es": "camiseta", "pron": "tíshert", "pos": "nombre", "block": 13, "emoji": "👕", "syllables": 2, "stress": 1},
     {"id": "w-trousers", "en": "trousers", "es": "pantalones", "pron": "tráuses", "pos": "nombre", "block": 13, "emoji": "👖", "syllables": 2, "stress": 1},
     {"id": "w-shoe", "en": "shoe", "es": "zapato", "pron": "shu", "pos": "nombre", "block": 13, "emoji": "👟", "syllables": 1, "stress": 1, "theme": "escalada"},
     {"id": "w-sock", "en": "sock", "es": "calcetín", "pron": "soc", "pos": "nombre", "block": 13, "emoji": "🧦", "syllables": 1, "stress": 1},

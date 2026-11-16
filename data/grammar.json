@@ -127,7 +127,7 @@
     "scenes": [
       {"emoji": "🌺", "en": "a beautiful song", "es": "una canción preciosa", "pron": "a biútiful song"},
       {"emoji": "🧢", "en": "a red hat", "es": "un gorro rojo", "pron": "a red jat"},
-      {"emoji": "🤣", "en": "a funny girl", "es": "una chica divertida", "pron": "a fáni guel"}
+      {"emoji": "🤣", "en": "a funny girl", "es": "una chica divertida", "pron": "a fáni guerl"}
     ],
     "play": [
       {"en": "a ___", "answer": "big mountain", "options": ["big mountain", "mountain big"], "es": "una montaña grande"},

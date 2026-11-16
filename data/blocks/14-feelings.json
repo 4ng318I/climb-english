@@ -21,7 +21,7 @@
   "sentences": [
     {"id": "s-i-am-happy", "en": "I am happy.", "es": "Estoy contenta.", "pron": "ái am jápi", "block": 14, "emoji": "😊", "words": ["w-i", "w-am", "w-happy"]},
     {"id": "s-i-am-not-tired", "en": "I am not tired.", "es": "No estoy cansada.", "pron": "ái am not táied", "block": 14, "emoji": "🥱", "words": ["w-i", "w-am", "w-tired", "w-not"]},
-    {"id": "s-she-is-a-funny-girl", "en": "She is a funny girl.", "es": "Es una chica divertida.", "pron": "shi is a fáni guel", "block": 14, "emoji": "🤣", "grammar": "g-describe", "words": ["w-i", "w-is", "w-she", "w-girl", "w-a", "w-funny"]},
+    {"id": "s-she-is-a-funny-girl", "en": "She is a funny girl.", "es": "Es una chica divertida.", "pron": "shi is a fáni guerl", "block": 14, "emoji": "🤣", "grammar": "g-describe", "words": ["w-i", "w-is", "w-she", "w-girl", "w-a", "w-funny"]},
     {"id": "s-the-water-is-very-cold", "en": "The water is very cold.", "es": "El agua está muy fría.", "pron": "de uóte is véri cóuld", "block": 14, "emoji": "❄️", "words": ["w-i", "w-is", "w-the", "w-water", "w-cold", "w-very"]},
     {"id": "s-it-is-a-beautiful-song", "en": "It is a beautiful song.", "es": "Es una canción preciosa.", "pron": "it is a biútiful song", "block": 14, "emoji": "🌺", "grammar": "g-describe", "words": ["w-i", "w-it", "w-is", "w-song", "w-a", "w-beautiful"]},
     {"id": "s-the-horse-is-fast", "en": "The horse is fast.", "es": "El caballo es rápido.", "pron": "de jos is fast", "block": 14, "emoji": "⚡", "words": ["w-i", "w-is", "w-the", "w-horse", "w-fast"]},

@@ -162,6 +162,8 @@ La grafía es una muleta visual: quien manda es la voz. Se escribe para que una 
 - La tilde marca dónde va el golpe de voz: `uóte` (water), `guitá` (guitar).
 - La **r detrás de vocal no suena** y no se escribe: `ca` (car), `fo` (four), `gáden` (garden).
   Al final de palabra, `-er` suena como una «e» floja: `uóte`, `síste`, `tíche`.
+- Excepción: la vocal de *bird*, *girl*, *word* no existe en español y se escribe `er`
+  (`berd`, `guerl`, `uerd`). Esa r sobra: la voz británica no la dice y es ella quien lo enseña.
 - `z` es la zeta española (three = `zri`), `j` es una jota muy suave (hello = `jelóu`),
   `sh` como para pedir silencio, `y` como en «yo» dicho con fuerza (jump = `yamp`).
 - Las letras mudas no se escriben: `cláim` (climb), `lísen` (listen), `nóu` (know), `uók` (walk).
