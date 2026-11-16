@@ -4,8 +4,12 @@ import { state, today } from './store.js';
 import { dayKey } from './util.js';
 
 // Sesiones con novedad al día. Cada sesión trae 3 palabras nuevas o 1 frase nueva,
-// así que el máximo diario es de 6 palabras y 2 frases.
-export const DAILY = { wordSessions: 2, sentenceSessions: 2 };
+// así que el máximo diario es de 6 palabras y 2 frases (3 frases en las últimas etapas).
+export const DAILY = {
+  wordSessions: 2,
+  // Las frases por día las marca la etapa en data/blocks.json (2 al principio, 3 al final).
+  get sentenceSessions() { return currentStage()?.sentencesPerDay || 2; },
+};
 export const NEW_WORDS = 3;
 
 export const learnedWords = () => content.words.filter(w => state.words[w.id]);

@@ -45,6 +45,7 @@ export default function home(el) {
     </nav>
     <footer class="home-foot">
       <span class="where">${stage.emoji} ${tt(stage.name)}${n ? ` · ${n} ${t('words')}` : ''}<small>${shortGoal()}</small></span>
+      <button class="why" data-go="why">❓ ${t('why_button')}</button>
       <button class="grown" id="grown">👨‍👩‍👧 ${t('grownups')}</button>
     </footer>`;
 

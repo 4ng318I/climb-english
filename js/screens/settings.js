@@ -91,7 +91,7 @@ export default function settings(el) {
         <h2>📅 Ritmo de aprendizaje</h2>
         <p class="note"><b>Cada partida enseña como mucho ${NEW_WORDS} palabras nuevas o 1 frase nueva.</b> Al día hay
           hasta ${DAILY.wordSessions} partidas con palabras nuevas (${DAILY.wordSessions * NEW_WORDS} palabras) y
-          ${DAILY.sentenceSessions} con frase nueva. Hoy le quedan: <b>${esc(howMany(left.words, left.sentences) || 'nada nuevo; mañana hay más')}</b>.</p>
+          ${DAILY.sentenceSessions} con frase nueva (2 al principio; 3 en las dos últimas etapas). Hoy le quedan: <b>${esc(howMany(left.words, left.sentences) || 'nada nuevo; mañana hay más')}</b>.</p>
         <p class="note"><b>Por qué.</b> Lo que se aprende de golpe se olvida de golpe. Con pocas palabras al día, y
           haciéndolas volver en los juegos al cabo de 1, 2, 4, 8 y 16 días, se quedan. Si la app dejara aprender 40
           palabras una tarde, a la semana recordaría muy pocas y sentiría que no avanza.</p>

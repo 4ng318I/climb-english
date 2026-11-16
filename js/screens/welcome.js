@@ -3,23 +3,46 @@
 import { $, esc } from '../core/util.js';
 import { DAILY, NEW_WORDS } from '../core/path.js';
 import { state, save } from '../core/store.js';
-import { t } from '../core/i18n.js';
+import { T, t } from '../core/i18n.js';
+import { header } from '../ui/layout.js';
+import { todayLine } from '../ui/nextstep.js';
 import { bubble } from '../ui/feedback.js';
 
 export const cleanName = raw => String(raw ?? '').replace(/[{}<>]/g, '').replace(/\s+/g, ' ').trim().slice(0, 16);
 
-// Segundo paso: cómo funciona el ritmo, contado antes de que se tope con el límite.
-function explain(el) {
+// El truco del ritmo, con sus palabras. Se usa en la bienvenida y en la pantalla
+// "¿Por qué solo unas pocas al día?", a la que puede volver cuando quiera desde el panel.
+function rhythm(introKey, extra = '') {
   const n = { name: state.settings.name, words: DAILY.wordSessions * NEW_WORDS, sentences: DAILY.sentenceSessions };
+  return `
+      <div class="rhythm">
+        <p><b>${esc(t(introKey, n))}</b></p>
+        <p>🌱 ${esc(t('rhythm_little', n))}</p>
+        <p>🎮 ${esc(t('rhythm_play', n))}</p>
+        ${extra}
+        <p>🌅 ${esc(t('rhythm_tomorrow', n))}</p>
+      </div>`;
+}
+
+export function why(el) {
+  const today = todayLine();
+  el.innerHTML = `${header(esc(t('why_button')), '🦎')}
+    <section class="stage welcome">
+      ${rhythm('why_hi', `<p>💛 ${esc(t('why_ok'))}</p>`)}
+      ${today ? `<p class="next-line today">📅 ${today}</p>` : ''}
+      <div class="row">
+        <button class="btn ghost" data-go="words">📒 ${T('mywords_title')}</button>
+        <button class="btn" data-go="play">🎮 ${T('play')}</button>
+      </div>
+    </section>`;
+}
+
+// Segundo paso de la bienvenida: el ritmo, contado antes de que se tope con el límite.
+function explain(el) {
   el.innerHTML = `
     <section class="stage welcome">
       <div class="big-emoji">🦎</div>
-      <div class="rhythm">
-        <p><b>${esc(t('rhythm_hi', n))}</b></p>
-        <p>🌱 ${esc(t('rhythm_little', n))}</p>
-        <p>🎮 ${esc(t('rhythm_play', n))}</p>
-        <p>🌅 ${esc(t('rhythm_tomorrow', n))}</p>
-      </div>
+      ${rhythm('rhythm_hi')}
       <button class="btn" id="go">🧗 ${esc(t('rhythm_go'))}</button>
     </section>`;
   $('#go', el).onclick = () => {

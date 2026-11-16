@@ -24,9 +24,11 @@
   --done-ink: #136B3B;
   --st1: #F4573A;
   --st2: #FFB703;
-  --st3: #0E9F93;
-  --st4: #6C4CF1;
-  --st5: #F03E8E;
+  --st3: #1FA65C;
+  --st4: #0E9F93;
+  --st5: #2F8FED;
+  --st6: #6C4CF1;
+  --st7: #F03E8E;
   --shadow: 0 6px 0 rgba(43, 35, 80, .12);
   --edge: rgba(43, 35, 80, .2);
   --on-accent: #FFFFFF;
@@ -52,9 +54,11 @@
   --done-ink: #B9F5D2;
   --st1: #FF7A5F;
   --st2: #FFC93C;
-  --st3: #2CCDBF;
-  --st4: #9B83FF;
-  --st5: #FF6CAB;
+  --st3: #45D184;
+  --st4: #2CCDBF;
+  --st5: #63B0FF;
+  --st6: #9B83FF;
+  --st7: #FF6CAB;
   --shadow: 0 6px 0 rgba(0, 0, 0, .35);
   --edge: rgba(0, 0, 0, .5);
   --on-accent: #17132E;
@@ -199,6 +203,11 @@ h1, h2, p { margin: 0; }
 .home-foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
 .where { font-weight: 800; color: var(--ink2); }
 .where small { display: block; font-size: .85rem; font-weight: 700; }
+.why {
+  min-height: 60px; padding: 8px 18px; border-radius: 999px; font-size: .95rem; font-weight: 800;
+  background: var(--card); color: var(--ink); box-shadow: var(--shadow);
+}
+.why:active { transform: translateY(3px); box-shadow: none; }
 .grown {
   min-height: 60px; padding: 8px 18px; border-radius: 999px; font-size: .95rem; font-weight: 800;
   color: var(--ink2); border: 3px dashed var(--line); transition: background 1.5s linear;

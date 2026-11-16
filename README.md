@@ -87,25 +87,30 @@ progreso.
 - **Sesión de juego:** presenta 3 palabras nuevas, o 1 frase nueva, y luego encadena
   4 minijuegos que mezclan lo nuevo con repaso. Las sesiones van alternando palabras y frases.
 - **Límite diario:** hasta 2 sesiones de palabras (6 palabras) y 2 de frases (2 frases) al
-  día. Es deliberado: poco cada día y con repaso se retiene; mucho de golpe se olvida.
+  día; en las dos últimas etapas, 3 frases. Es deliberado: poco cada día y con repaso se retiene; mucho de golpe se olvida.
   La app lo explica antes de que se llegue al tope: en la bienvenida, en el botón grande del
-  panel («Nuevo para hoy: 3 palabras y 1 frase») y en el rincón de mayores. Cuando se
+  panel («Nuevo para hoy: 3 palabras y 1 frase»), en el botón «¿Por qué solo unas pocas al
+  día?» del panel, que se puede releer siempre, y en el rincón de mayores. Cuando se
   acaba lo nuevo, el día no se acaba: se puede seguir jugando con lo ya aprendido.
 - **Celebraciones:** al terminar cada partida, al completar cada agarre (bloque), al coronar
   cada etapa y con cada medalla.
 - **Qué hace falta para subir de etapa:** descubrir **todas las palabras y todas las frases**
   de sus cuatro bloques. Cada agarre del mapa es un bloque y se completa con sus palabras.
 
-  | Etapa | Bloques | Palabras | Frases |
-  |---|---|---|---|
-  | 1 Campo base | 1–4 | 64 | 23 |
-  | 2 Primeros agarres | 5–8 | 67 | 25 |
-  | 3 La gran pared | 9–12 | 66 | 24 |
-  | 4 La cornisa | 13–16 | 64 | 28 |
-  | 5 La cima A1 | 17–20 | 64 | 32 |
+  | Etapa | Bloques | Palabras | Frases | Frases al día | Días mínimos | Interfaz en inglés |
+  |---|---|---|---|---|---|---|
+  | 1 Campo base | 1 | 16 | 7 | 2 | 4 | 0 % |
+  | 2 Primeros agarres | 2–3 | 32 | 10 | 2 | 6 | 10 % |
+  | 3 La travesía | 4–5 | 32 | 13 | 2 | 7 | 20 % |
+  | 4 La gran pared | 6–8 | 51 | 18 | 2 | 9 | 30 % |
+  | 5 El desplome | 9–11 | 50 | 18 | 2 | 9 | 45 % |
+  | 6 La cornisa | 12–15 | 64 | 28 | 3 | 11 | 60 % |
+  | 7 La cima A1 | 16–20 | 80 | 38 | 3 | 14 | 70 % |
 
-  Al ritmo máximo, cada etapa lleva unas dos semanas. Los trucos, la voz y la escritura
-  se ven en «Mi progreso», pero no bloquean la subida.
+  La primera etapa es corta a propósito (se corona en 4 días) y las siguientes crecen poco a
+  poco. Los días son al ritmo máximo. Los trucos, la voz y la escritura se ven en
+  «Mi progreso», pero no bloquean la subida. Para cambiar el reparto basta con editar
+  `stage` en cada bloque de `data/blocks.json`.
 - **Mi progreso:** «Tu siguiente paso» dice exactamente qué falta para completar el agarre y para subir de etapa («te faltan 9 palabras y
   2 frases»). Las barras cuentan siempre sobre el total de la etapa («3 de 64»).
 - **Mis palabras:** lista de todo lo descubierto, por bloque, con significado, grafía y
@@ -114,10 +119,10 @@ progreso.
   bloque. Una frase solo aparece cuando ya se conocen todas las palabras de su lista `words`.
 - **Repaso espaciado:** cada palabra vive en una caja de 1 a 5 y vuelve a los 1, 2, 4, 8 o
   16 días, siempre dentro de un juego. Un fallo baja una caja y no se muestra en ningún sitio.
-- **Interfaz que se pasa al inglés:** va por etapas del camino. Etapa 1 = 0 %, etapa 2 = 15 %,
-  etapa 3 = 30 %, etapa 4 = 50 %, etapa 5 = 70 %. Al coronar una etapa hay una celebración
-  que enseña qué textos cambian. Los textos recién cambiados llevan el español en pequeño
-  debajo las primeras veces.
+- **Interfaz que se pasa al inglés:** va por etapas del camino: 0 %, 10 %, 20 %, 30 %, 45 %,
+  60 % y 70 % (columna de la tabla). Al coronar una etapa hay una celebración que enseña qué
+  textos cambian. Los textos recién cambiados llevan el español en pequeño debajo las
+  primeras veces.
 - **Pronunciación:** el botón de escuchar es lo primero y lo más grande. La grafía española
   («uóte») es solo una ayuda visual y se presenta siempre como «suena parecido a».
 - **Gramática:** una regla nueva al día como máximo; las ya vistas se pueden repetir siempre.
@@ -232,9 +237,10 @@ ilustra. Si escribes `{name}` en una frase, la app pone ahí el nombre guardado 
 - `data/medals.json` — medallas. `rule.type` puede ser `words`, `sentences`, `stages`,
   `grammar`, `said`, `written`, `silly`, `songs`, `sessions` o `blocks` (agarres completados).
 - `data/ui-strings.json` — todos los textos de la interfaz en español e inglés. `from` es el
-  porcentaje de inglés a partir del cual se muestra en inglés (15, 30, 50 o 70; con 100 se
+  porcentaje de inglés a partir del cual se muestra en inglés (10, 20, 30, 45, 60 o 70; con 100 se
   queda siempre en español).
-- `data/blocks.json` — etapas y bloques. `english` es el porcentaje de inglés de cada etapa.
+- `data/blocks.json` — etapas y bloques. `english` es el porcentaje de inglés de cada etapa
+  y `sentencesPerDay` las frases nuevas al día en esa etapa.
 
 ## Publicar los cambios
 

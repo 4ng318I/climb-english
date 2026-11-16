@@ -143,6 +143,7 @@
 }
 .stage-chip.crowned { background: var(--c); color: #1B1533; }
 .st1 { --c: var(--st1); } .st2 { --c: var(--st2); } .st3 { --c: var(--st3); } .st4 { --c: var(--st4); } .st5 { --c: var(--st5); }
+.st6 { --c: var(--st6); } .st7 { --c: var(--st7); }
 
 .route { width: 100%; max-width: 620px; max-height: 86vh; display: block; margin: 0 auto; }
 .peak { fill: var(--soft); }
