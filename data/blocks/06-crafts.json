@@ -11,7 +11,7 @@
     {"id": "w-pencil", "en": "pencil", "es": "lápiz", "pron": "pénsil", "pos": "nombre", "block": 6, "emoji": "✏️", "syllables": 2, "stress": 1, "theme": "manualidades"},
     {"id": "w-crayon", "en": "crayon", "es": "cera de colores", "pron": "créion", "pos": "nombre", "block": 6, "emoji": "🖍️", "syllables": 2, "stress": 1, "theme": "manualidades"},
     {"id": "w-box", "en": "box", "es": "caja", "pron": "bocs", "pos": "nombre", "block": 6, "emoji": "📦", "syllables": 1, "stress": 1, "theme": "manualidades"},
-    {"id": "w-card", "en": "card", "es": "tarjeta", "pron": "caad", "pos": "nombre", "block": 6, "emoji": "💌", "syllables": 1, "stress": 1, "theme": "manualidades"},
+    {"id": "w-card", "en": "card", "es": "tarjeta", "pron": "cad", "pos": "nombre", "block": 6, "emoji": "💌", "syllables": 1, "stress": 1, "theme": "manualidades"},
     {"id": "w-sticker", "en": "sticker", "es": "pegatina", "pron": "stíque", "pos": "nombre", "block": 6, "emoji": "🌟", "syllables": 2, "stress": 1, "theme": "manualidades"},
     {"id": "w-clay", "en": "clay", "es": "arcilla", "pron": "cléi", "pos": "nombre", "block": 6, "emoji": "🏺", "syllables": 1, "stress": 1, "theme": "manualidades"},
     {"id": "w-bead", "en": "bead", "es": "cuenta (de collar)", "pron": "bid", "pos": "nombre", "block": 6, "emoji": "📿", "syllables": 1, "stress": 1, "theme": "manualidades"},

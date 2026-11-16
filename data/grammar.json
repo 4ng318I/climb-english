@@ -5,7 +5,7 @@
     "idea": "Cuando hablas de ti, «I» va siempre con «am». Cuando hablas de la otra persona, «you» va siempre con «are». ¡Son parejas inseparables, como la cuerda y el arnés!",
     "scenes": [
       {"emoji": "🙋", "en": "I am {name}.", "es": "Soy {name}.", "pron": "ái am {name}"},
-      {"emoji": "🤝", "en": "You are my friend.", "es": "Eres mi amiga.", "pron": "iú aa mái frend"},
+      {"emoji": "🤝", "en": "You are my friend.", "es": "Eres mi amiga.", "pron": "iú a mái frend"},
       {"emoji": "🔟", "en": "I am ten.", "es": "Tengo diez años.", "pron": "ái am ten"}
     ],
     "play": [
@@ -34,7 +34,7 @@
     "title": {"es": "La palabrita «the»", "en": "The little word «the»"},
     "idea": "En español decimos el, la, los, las. ¡En inglés solo hay una palabrita para todo: «the»! Más fácil imposible.",
     "scenes": [
-      {"emoji": "🎸", "en": "the guitar", "es": "la guitarra", "pron": "de guitáa"},
+      {"emoji": "🎸", "en": "the guitar", "es": "la guitarra", "pron": "de guitá"},
       {"emoji": "🥁", "en": "the drum", "es": "el tambor", "pron": "de dram"},
       {"emoji": "🎶", "en": "the songs", "es": "las canciones", "pron": "de songs"}
     ],
@@ -66,7 +66,7 @@
     "scenes": [
       {"emoji": "🐱", "en": "one cat", "es": "un gato", "pron": "uán cat"},
       {"emoji": "🐱🐱", "en": "two cats", "es": "dos gatos", "pron": "tu cats"},
-      {"emoji": "🎸🎸🎸", "en": "three guitars", "es": "tres guitarras", "pron": "zri guitáas"}
+      {"emoji": "🎸🎸🎸", "en": "three guitars", "es": "tres guitarras", "pron": "zri guitás"}
     ],
     "play": [
       {"en": "two ___", "answer": "dogs", "options": ["dog", "dogs"], "es": "dos perros"},
@@ -95,8 +95,8 @@
     "title": {"es": "Hay una cosa, hay muchas", "en": "There is, there are"},
     "idea": "Para decir «hay»: si hay una sola cosa, «there is». Si hay varias, «there are».",
     "scenes": [
-      {"emoji": "🎸", "en": "There is a guitar.", "es": "Hay una guitarra.", "pron": "déa is a guitáa"},
-      {"emoji": "🪟🪟", "en": "There are two windows.", "es": "Hay dos ventanas.", "pron": "déa aa tu uíndous"},
+      {"emoji": "🎸", "en": "There is a guitar.", "es": "Hay una guitarra.", "pron": "déa is a guitá"},
+      {"emoji": "🪟🪟", "en": "There are two windows.", "es": "Hay dos ventanas.", "pron": "déa a tu uíndous"},
       {"emoji": "🛏️", "en": "There is a bed in my bedroom.", "es": "Hay una cama en mi dormitorio.", "pron": "déa is a bed in mái bédrum"}
     ],
     "play": [
@@ -127,7 +127,7 @@
     "scenes": [
       {"emoji": "🌺", "en": "a beautiful song", "es": "una canción preciosa", "pron": "a biútiful song"},
       {"emoji": "🧢", "en": "a red hat", "es": "un gorro rojo", "pron": "a red jat"},
-      {"emoji": "🤣", "en": "a funny girl", "es": "una chica divertida", "pron": "a fáni gueel"}
+      {"emoji": "🤣", "en": "a funny girl", "es": "una chica divertida", "pron": "a fáni guel"}
     ],
     "play": [
       {"en": "a ___", "answer": "big mountain", "options": ["big mountain", "mountain big"], "es": "una montaña grande"},
@@ -157,7 +157,7 @@
     "scenes": [
       {"emoji": "📦", "en": "The glue is in the box.", "es": "El pegamento está dentro de la caja.", "pron": "de glu is in de bocs"},
       {"emoji": "🛋️", "en": "The cat is on the sofa.", "es": "El gato está encima del sofá.", "pron": "de cat is on de sóufa"},
-      {"emoji": "🛏️", "en": "The shoes are under the bed.", "es": "Los zapatos están debajo de la cama.", "pron": "de shus aa ánde de bed"}
+      {"emoji": "🛏️", "en": "The shoes are under the bed.", "es": "Los zapatos están debajo de la cama.", "pron": "de shus a ánde de bed"}
     ],
     "play": [
       {"en": "The beads are ___ the box. 📥", "answer": "in", "options": ["in", "on", "under"], "es": "Las cuentas están dentro de la caja."},

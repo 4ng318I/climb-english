@@ -1,5 +1,6 @@
 // Carga todo el contenido de la carpeta data/. Nada de contenido en el código.
 import { state } from './store.js';
+import { setSpoken } from './speech.js';
 export const content = {
   stages: [], blocks: [], words: [], sentences: [],
   wordById: new Map(), sentenceById: new Map(), wordByEn: new Map(),
@@ -66,6 +67,8 @@ export async function loadContent() {
       content.sentenceById.set(s.id, s);
     }
   });
+
+  setSpoken(new Map(content.words.filter(w => w.say).map(w => [w.en.toLowerCase(), w.say])));
 
   content.grammar = grammar.slice().sort((a, b) => a.block - b.block);
   for (const g of content.grammar) [...(g.scenes || []), ...(g.play || [])].forEach(named);

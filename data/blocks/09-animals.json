@@ -3,9 +3,9 @@
   "words": [
     {"id": "w-cat", "en": "cat", "es": "gato", "pron": "cat", "pos": "nombre", "block": 9, "emoji": "🐱", "syllables": 1, "stress": 1},
     {"id": "w-dog", "en": "dog", "es": "perro", "pron": "dog", "pos": "nombre", "block": 9, "emoji": "🐶", "syllables": 1, "stress": 1},
-    {"id": "w-bird", "en": "bird", "es": "pájaro", "pron": "beed", "pos": "nombre", "block": 9, "emoji": "🐦", "syllables": 1, "stress": 1},
+    {"id": "w-bird", "en": "bird", "es": "pájaro", "pron": "bed", "pos": "nombre", "block": 9, "emoji": "🐦", "syllables": 1, "stress": 1},
     {"id": "w-fish", "en": "fish", "es": "pez", "pron": "fish", "pos": "nombre", "block": 9, "emoji": "🐟", "syllables": 1, "stress": 1},
-    {"id": "w-horse", "en": "horse", "es": "caballo", "pron": "joos", "pos": "nombre", "block": 9, "emoji": "🐴", "syllables": 1, "stress": 1},
+    {"id": "w-horse", "en": "horse", "es": "caballo", "pron": "jos", "pos": "nombre", "block": 9, "emoji": "🐴", "syllables": 1, "stress": 1},
     {"id": "w-cow", "en": "cow", "es": "vaca", "pron": "cáu", "pos": "nombre", "block": 9, "emoji": "🐮", "syllables": 1, "stress": 1},
     {"id": "w-rabbit", "en": "rabbit", "es": "conejo", "pron": "rábit", "pos": "nombre", "block": 9, "emoji": "🐰", "syllables": 2, "stress": 1},
     {"id": "w-mouse", "en": "mouse", "es": "ratón", "pron": "máus", "pos": "nombre", "block": 9, "emoji": "🐭", "syllables": 1, "stress": 1},
@@ -21,9 +21,9 @@
   "sentences": [
     {"id": "s-one-cat-two-cats", "en": "One cat, two cats.", "es": "Un gato, dos gatos.", "pron": "uán cat, tu cats", "block": 9, "emoji": "🐱", "grammar": "g-plurals", "words": ["w-one", "w-two", "w-cat"]},
     {"id": "s-the-monkey-is-my-favourite-animal", "en": "The monkey is my favourite animal.", "es": "El mono es mi animal favorito.", "pron": "de mánki is mái féivrit ánimel", "block": 9, "emoji": "🐵", "words": ["w-i", "w-my", "w-is", "w-favourite", "w-the", "w-monkey", "w-animal"]},
-    {"id": "s-they-are-my-pets", "en": "They are my pets.", "es": "Son mis mascotas.", "pron": "déi aa mái pets", "block": 9, "emoji": "🐹", "grammar": "g-plurals", "words": ["w-are", "w-my", "w-pet", "w-they"]},
+    {"id": "s-they-are-my-pets", "en": "They are my pets.", "es": "Son mis mascotas.", "pron": "déi a mái pets", "block": 9, "emoji": "🐹", "grammar": "g-plurals", "words": ["w-are", "w-my", "w-pet", "w-they"]},
     {"id": "s-the-frog-is-green", "en": "The frog is green.", "es": "La rana es verde.", "pron": "de frog is grin", "block": 9, "emoji": "🐸", "words": ["w-i", "w-green", "w-is", "w-the", "w-frog"]},
-    {"id": "s-three-birds-sing-my-song", "en": "Three birds sing my song.", "es": "Tres pájaros cantan mi canción.", "pron": "zri beeds sing mái song", "block": 9, "emoji": "🐦", "grammar": "g-plurals", "words": ["w-my", "w-three", "w-song", "w-sing", "w-bird"]},
+    {"id": "s-three-birds-sing-my-song", "en": "Three birds sing my song.", "es": "Tres pájaros cantan mi canción.", "pron": "zri beds sing mái song", "block": 9, "emoji": "🐦", "grammar": "g-plurals", "words": ["w-my", "w-three", "w-song", "w-sing", "w-bird"]},
     {"id": "s-the-elephant-is-big-and-the-mouse-is-small", "en": "The elephant is big and the mouse is small.", "es": "El elefante es grande y el ratón es pequeño.", "pron": "di élifent is big and de máus is smol", "block": 9, "emoji": "🐘", "words": ["w-i", "w-and", "w-big", "w-small", "w-is", "w-the", "w-mouse", "w-elephant"]}
   ]
 }

@@ -21,7 +21,7 @@
   "sentences": [
     {"id": "s-i-climb-the-wall", "en": "I climb the wall.", "es": "Escalo la pared.", "pron": "ái cláim de uól", "block": 5, "emoji": "🧗", "words": ["w-i", "w-the", "w-climb", "w-wall"]},
     {"id": "s-the-mountain-is-high", "en": "The mountain is high.", "es": "La montaña es alta.", "pron": "de máuntin is jái", "block": 5, "emoji": "⛰️", "words": ["w-i", "w-is", "w-the", "w-mountain", "w-high"]},
-    {"id": "s-you-are-strong", "en": "You are strong!", "es": "¡Eres fuerte!", "pron": "iú aa strong", "block": 5, "emoji": "💪", "words": ["w-you", "w-are", "w-strong"]},
+    {"id": "s-you-are-strong", "en": "You are strong!", "es": "¡Eres fuerte!", "pron": "iú a strong", "block": 5, "emoji": "💪", "words": ["w-you", "w-are", "w-strong"]},
     {"id": "s-go-up-go-to-the-top", "en": "Go up! Go to the top!", "es": "¡Sube! ¡Hasta la cima!", "pron": "góu ap, góu tu de top", "block": 5, "emoji": "🔝", "words": ["w-the", "w-up", "w-top", "w-go"]},
     {"id": "s-the-rope-is-safe", "en": "The rope is safe.", "es": "La cuerda es segura.", "pron": "de róup is séif", "block": 5, "emoji": "🪢", "words": ["w-i", "w-is", "w-the", "w-rope", "w-safe"]},
     {"id": "s-ready-climb", "en": "Ready? Climb!", "es": "¿Lista? ¡A escalar!", "pron": "rédi? cláim", "block": 5, "emoji": "✅", "words": ["w-climb", "w-ready"]},

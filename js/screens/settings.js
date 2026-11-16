@@ -38,6 +38,8 @@ function voiceReport(s) {
     ${same ? '' : `<p class="note"><b>⚠️ Has elegido acento ${wanted}, pero este dispositivo no tiene esa voz</b> y se está
       leyendo con acento ${accentName(info.inUse.lang)}. Las grafías («suena parecido a») están escritas para el
       acento elegido, así que algunas no coincidirán con lo que se oye. ${INSTALL}</p>`}
+    <p class="note">Las pistas de «suena parecido a» están escritas para acento <b>británico</b>. «Probar la voz» dice
+      «I», «car» y una frase: «I» tiene que sonar «ái», y en «car» no debe oírse la r final (si se oye, la voz es americana).</p>
     <p class="note">Voces inglesas en este dispositivo (${info.english.length}):<br>${list}</p>`;
 }
 
@@ -56,7 +58,7 @@ export default function settings(el) {
         <h2>🔊 Voz</h2>
         <label class="field">Acento
           <select id="voice">
-            <option value="en-GB"${s.voice === 'en-GB' ? ' selected' : ''}>Británico (en-GB)</option>
+            <option value="en-GB"${s.voice === 'en-GB' ? ' selected' : ''}>Británico (en-GB), recomendado</option>
             <option value="en-US"${s.voice === 'en-US' ? ' selected' : ''}>Americano (en-US)</option>
           </select></label>
         <label class="field">Velocidad
@@ -105,7 +107,10 @@ export default function settings(el) {
   $('#name', el).onchange = e => { s.name = cleanName(e.target.value) || s.name; save(); location.reload(); };
   $('#voice', el).onchange = e => { s.voice = e.target.value; save(); go('settings'); };
   $('#rate', el).onchange = e => { s.rate = Number(e.target.value); save(); };
-  $('#test', el).onclick = () => speak('I. Hello! I can climb the mountain.', { force: true });
+  $('#test', el).onclick = async () => {
+    await speak('I', { force: true });
+    await speak('Car. Hello! I can climb the mountain.', { force: true });
+  };
   // La lista de voces llega con retraso: el informe se rellena ahora y cuando el navegador avise.
   const showVoice = () => {
     if (!el.isConnected) return window.removeEventListener('voices-ready', showVoice);

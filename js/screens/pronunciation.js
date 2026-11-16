@@ -68,7 +68,7 @@ export default async function pronunciation(el) {
         }
         mark();
         tries++;
-        if (soundsLike(item.en, heard)) { cheer(); return finish(1300); }
+        if (soundsLike(item.en, heard) || (item.say && soundsLike(item.say, heard))) { cheer(); return finish(1300); }
         gentle(T('heard_you'), T('even_better'));
         await speak(item.en, { slow: true });
         if (tries >= 2) { bubble(`<b>${T('brave_voice')}</b>`); finish(1600); }

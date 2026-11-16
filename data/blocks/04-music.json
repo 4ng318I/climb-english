@@ -4,7 +4,7 @@
     {"id": "w-music", "en": "music", "es": "música", "pron": "miúsic", "pos": "nombre", "block": 4, "emoji": "🎵", "syllables": 2, "stress": 1, "theme": "musica"},
     {"id": "w-song", "en": "song", "es": "canción", "pron": "song", "pos": "nombre", "block": 4, "emoji": "🎶", "syllables": 1, "stress": 1, "theme": "musica"},
     {"id": "w-sing", "en": "sing", "es": "cantar", "pron": "sing", "pos": "acción", "block": 4, "emoji": "🎤", "syllables": 1, "stress": 1, "theme": "musica"},
-    {"id": "w-guitar", "en": "guitar", "es": "guitarra", "pron": "guitáa", "pos": "nombre", "block": 4, "emoji": "🎸", "syllables": 2, "stress": 2, "theme": "musica"},
+    {"id": "w-guitar", "en": "guitar", "es": "guitarra", "pron": "guitá", "pos": "nombre", "block": 4, "emoji": "🎸", "syllables": 2, "stress": 2, "theme": "musica"},
     {"id": "w-piano", "en": "piano", "es": "piano", "pron": "piánou", "pos": "nombre", "block": 4, "emoji": "🎹", "syllables": 3, "stress": 2, "theme": "musica"},
     {"id": "w-drum", "en": "drum", "es": "tambor", "pron": "dram", "pos": "nombre", "block": 4, "emoji": "🥁", "syllables": 1, "stress": 1, "theme": "musica"},
     {"id": "w-play", "en": "play", "es": "tocar / jugar", "pron": "pléi", "pos": "acción", "block": 4, "emoji": "🎮", "syllables": 1, "stress": 1, "theme": "musica"},
@@ -19,7 +19,7 @@
     {"id": "w-the", "en": "the", "es": "el / la / los / las", "pron": "de", "pos": "palabrita", "block": 4, "emoji": "🔹", "syllables": 1, "stress": 1}
   ],
   "sentences": [
-    {"id": "s-i-play-the-guitar", "en": "I play the guitar.", "es": "Toco la guitarra.", "pron": "ái pléi de guitáa", "block": 4, "emoji": "🎸", "grammar": "g-the", "words": ["w-i", "w-guitar", "w-play", "w-the"]},
+    {"id": "s-i-play-the-guitar", "en": "I play the guitar.", "es": "Toco la guitarra.", "pron": "ái pléi de guitá", "block": 4, "emoji": "🎸", "grammar": "g-the", "words": ["w-i", "w-guitar", "w-play", "w-the"]},
     {"id": "s-i-sing-my-favourite-song", "en": "I sing my favourite song.", "es": "Canto mi canción favorita.", "pron": "ái sing mái féivrit song", "block": 4, "emoji": "🎤", "words": ["w-i", "w-my", "w-favourite", "w-song", "w-sing"]},
     {"id": "s-listen-to-the-music", "en": "Listen to the music!", "es": "¡Escucha la música!", "pron": "lísen tu de miúsic", "block": 4, "emoji": "🎧", "grammar": "g-the", "words": ["w-music", "w-listen", "w-the"]},
     {"id": "s-the-drum-is-loud", "en": "The drum is loud.", "es": "El tambor suena fuerte.", "pron": "de dram is láud", "block": 4, "emoji": "🥁", "grammar": "g-the", "words": ["w-i", "w-is", "w-drum", "w-loud", "w-the"]},

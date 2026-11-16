@@ -36,9 +36,11 @@ La app lee en voz alta con la voz del propio Android, y esa voz es la referencia
 pronunciación. Compruébala antes de entregar la tablet:
 
 1. En el panel, mantén pulsado **Mayores** (abajo a la derecha) dos segundos.
-2. Toca **Probar la voz**. Dice «I. Hello! I can climb the mountain.» y tiene que sonar una
-   voz inglesa nativa: la primera palabra debe sonar «ái», no «i».
-3. Si suena con acento español o no suena: Ajustes de Android → Sistema → Idiomas →
+2. Mira qué pone en **Voz en uso** y **Acento**: tiene que ser **británico (en-GB)**, porque
+   las pistas de «suena parecido a» están escritas para ese acento.
+3. Toca **Probar la voz**. Dice «I», «car» y una frase. «I» tiene que sonar «ái», y en «car»
+   no debe oírse la r final (si se oye, la voz es americana).
+4. Si no es británica, suena con acento español o no suena: Ajustes de Android → Sistema → Idiomas →
    **Síntesis de voz** → motor de Google → **Instalar datos de voz** →
    *English (United Kingdom)*. Descárgala para que funcione también sin conexión.
 
@@ -48,7 +50,7 @@ caso la app **se queda callada** y muestra un aviso amarillo en el panel hasta q
 la voz. Lo mismo vale para probarla en un ordenador: en Windows, Configuración → Hora e
 idioma → Voz → Agregar voces → Inglés (Reino Unido).
 
-En ese mismo rincón puedes elegir acento británico o americano, la velocidad de la voz,
+En ese mismo rincón puedes cambiar la velocidad de la voz,
 el modo claro u oscuro (viene en oscuro) y cambiar el nombre.
 
 ### El micrófono (opcional, apagado por defecto)
@@ -153,16 +155,30 @@ permiten incrustarse: en ese caso, debajo está siempre el enlace
 
 ### Cómo se escribe la grafía (`pron`)
 
-Se escribe para que una niña española lo lea tal cual, y sigue el inglés británico:
+La grafía es una muleta visual: quien manda es la voz. Se escribe para que una niña de
+10 años la lea tal cual, sin tropezar, y sigue el **inglés británico**:
 
-- La tilde marca dónde va el golpe de voz: `uóte` (water), `guitáa` (guitar).
-- La **r detrás de vocal no suena**: en su lugar la vocal se alarga y se escribe doble:
-  `caa` (car), `foo` (four), `doo` (door), `aa` (are).
-- `ee` es la vocal de *bird*, *girl*, *word*: una «e» larga y cerrada, sin r (`beed`, `gueel`, `ueed`).
-- Al final de palabra, `-er` suena como una «e» floja: `uóte`, `síste`, `tíche`.
+- Solo letras y sonidos del español, sin vocales dobles ni signos raros.
+- La tilde marca dónde va el golpe de voz: `uóte` (water), `guitá` (guitar).
+- La **r detrás de vocal no suena** y no se escribe: `ca` (car), `fo` (four), `gáden` (garden).
+  Al final de palabra, `-er` suena como una «e» floja: `uóte`, `síste`, `tíche`.
 - `z` es la zeta española (three = `zri`), `j` es una jota muy suave (hello = `jelóu`),
   `sh` como para pedir silencio, `y` como en «yo» dicho con fuerza (jump = `yamp`).
 - Las letras mudas no se escriben: `cláim` (climb), `lísen` (listen), `nóu` (know), `uók` (walk).
+- Es normal que dos palabras distintas queden escritas igual (`am` vale para *am* y *arm*):
+  el español no tiene esos sonidos y la diferencia la enseña la voz.
+
+### Si la voz lee mal una palabra suelta (`say`)
+
+Algunas voces pronuncian mal ciertas palabras cuando van solas. La «I» suelta, por ejemplo,
+puede sonar «i». Para esos casos, añade a la palabra el campo opcional `say` con el texto que
+se le dará a la voz en su lugar; en pantalla se sigue viendo la palabra de verdad:
+
+```json
+{"id": "w-i", "en": "I", "say": "eye", "es": "yo", "pron": "ái"}
+```
+
+Solo afecta a la palabra suelta, no a las frases que la contienen.
 
 ### Una frase nueva — mismo archivo, lista `sentences`
 

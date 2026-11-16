@@ -29,11 +29,21 @@ function voice() {
 
 export const canSpeak = () => !!synth;
 
+// Algunas voces leen mal ciertas palabras cuando van solas (la «I» suelta suena «i»).
+// El contenido puede indicar, con el campo "say", qué texto darle a la voz en su lugar
+// (para «I», "eye", que suena exactamente igual). Solo afecta a la palabra suelta.
+let spoken = new Map();
+export const setSpoken = map => { spoken = map; };
+const forVoice = text => spoken.get(String(text).trim().toLowerCase()) ?? text;
+
 // El dispositivo ya ha dado su lista de voces y en ella no hay ninguna inglesa.
 // En ese caso el navegador leería el inglés con la voz española ("I" sonaría "i"):
 // es peor que el silencio, así que la app se calla y avisa a los mayores.
 export const noEnglishVoice = () => voices.length > 0 && !voice();
 export const voiceBlocked = () => noEnglishVoice() && !state.settings.forceVoice;
+
+// Las grafías están escritas para inglés británico. true si se sabe que la voz en uso no lo es.
+export const notBritish = () => { const v = voice(); return !!v && langOf(v) !== 'en-GB'; };
 export const englishVoiceName = () => voice()?.name || '';
 
 const ACCENTS = {
@@ -65,7 +75,7 @@ export function speak(text, { slow = false, force = false } = {}) {
     const fin = ok => { if (!done) { done = true; resolve(ok); } };
     try {
       synth.cancel();
-      const u = new SpeechSynthesisUtterance(text);
+      const u = new SpeechSynthesisUtterance(forVoice(text));
       const v = voice();
       if (v) u.voice = v;
       u.lang = v ? langOf(v) : state.settings.voice;

@@ -6,7 +6,7 @@ import { currentStage, learnedWords } from '../core/path.js';
 import { go } from '../core/nav.js';
 import { applyTheme } from '../core/theme.js';
 import { bubble } from '../ui/feedback.js';
-import { voiceBlocked } from '../core/speech.js';
+import { voiceBlocked, notBritish } from '../core/speech.js';
 
 const TILES = [
   ['pron', '🗣️', 'pron_title'],
@@ -33,7 +33,7 @@ export default function home(el) {
       <div class="hello"><span class="mascot big">🦎</span><div class="speech">${T(hello, { name })}</div></div>
       <button class="round" id="dark" aria-label="Modo oscuro">${state.settings.dark ? '☀️' : '🌙'}</button>
     </header>
-    <div class="alert" id="voice-alert" hidden>🔇 ${t('voice_missing')}</div>
+    <div class="alert" id="voice-alert" hidden></div>
     <button class="play-big" data-go="play">
       <span class="pb-emoji">🎮</span><span class="pb-text">${T('play_title')}</span>
     </button>
@@ -48,7 +48,9 @@ export default function home(el) {
   // Las voces llegan con retraso: se comprueba ahora y cuando el navegador avise.
   const checkVoice = () => {
     if (!el.isConnected) return window.removeEventListener('voices-ready', checkVoice);
-    $('#voice-alert', el).hidden = !voiceBlocked();
+    const box = $('#voice-alert', el);
+    box.textContent = voiceBlocked() ? '🔇 ' + t('voice_missing') : notBritish() ? '🔊 ' + t('voice_accent') : '';
+    box.hidden = !box.textContent;
   };
   checkVoice();
   window.addEventListener('voices-ready', checkVoice);

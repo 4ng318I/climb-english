@@ -14,7 +14,7 @@
     {"id": "w-aunt", "en": "aunt", "es": "tía", "pron": "ant", "pos": "nombre", "block": 7, "emoji": "💁‍♀️", "syllables": 1, "stress": 1},
     {"id": "w-uncle", "en": "uncle", "es": "tío", "pron": "ánkel", "pos": "nombre", "block": 7, "emoji": "🙋‍♂️", "syllables": 2, "stress": 1},
     {"id": "w-cousin", "en": "cousin", "es": "primo / prima", "pron": "cásin", "pos": "nombre", "block": 7, "emoji": "🧒", "syllables": 2, "stress": 1},
-    {"id": "w-girl", "en": "girl", "es": "chica", "pron": "gueel", "pos": "nombre", "block": 7, "emoji": "🧒‍♀️", "syllables": 1, "stress": 1},
+    {"id": "w-girl", "en": "girl", "es": "chica", "pron": "guel", "pos": "nombre", "block": 7, "emoji": "🧒‍♀️", "syllables": 1, "stress": 1},
     {"id": "w-boy", "en": "boy", "es": "chico", "pron": "bói", "pos": "nombre", "block": 7, "emoji": "🧒‍♂️", "syllables": 1, "stress": 1},
     {"id": "w-this", "en": "this", "es": "este / esta", "pron": "dis", "pos": "palabrita", "block": 7, "emoji": "👇", "syllables": 1, "stress": 1},
     {"id": "w-who", "en": "who", "es": "quién", "pron": "ju", "pos": "pregunta", "block": 7, "emoji": "🕵️", "syllables": 1, "stress": 1},

@@ -108,6 +108,7 @@
   "welcome_go": {"es": "¡A escalar!", "en": "", "from": 100},
   "welcome_empty": {"es": "Escribe tu nombre en la casilla 😊", "en": "", "from": 100},
   "voice_missing": {"es": "Falta la voz inglesa en este dispositivo, así que no leo en voz alta. Mayores: mantened pulsado el botón de abajo para arreglarlo.", "en": "", "from": 100},
+  "voice_accent": {"es": "Aviso para mayores: la voz de este dispositivo no es británica y las pistas de «suena parecido a» sí lo son. Mirad «Voz» en el rincón de mayores.", "en": "", "from": 100},
   "song_empty": {"es": "Todavía no hay canciones. Pídele a un mayor que añada una.", "en": "", "from": 100},
   "grownups": {"es": "Mayores", "en": "", "from": 100},
   "grownups_hold": {"es": "Rincón de mayores: mantén pulsado 2 segundos", "en": "", "from": 100}

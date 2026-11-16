@@ -21,7 +21,7 @@
   "sentences": [
     {"id": "s-i-can-climb", "en": "I can climb.", "es": "Sé escalar.", "pron": "ái can cláim", "block": 15, "emoji": "🧗", "grammar": "g-can", "words": ["w-i", "w-climb", "w-can"]},
     {"id": "s-can-you-swim-yes-i-can", "en": "Can you swim? Yes, I can.", "es": "¿Sabes nadar? Sí.", "pron": "can iú suím? ies, ái can", "block": 15, "emoji": "🏊", "grammar": "g-can", "words": ["w-i", "w-you", "w-yes", "w-can", "w-swim"]},
-    {"id": "s-i-can-play-the-guitar", "en": "I can play the guitar.", "es": "Sé tocar la guitarra.", "pron": "ái can pléi de guitáa", "block": 15, "emoji": "🎸", "grammar": "g-can", "words": ["w-i", "w-guitar", "w-play", "w-the", "w-can"]},
+    {"id": "s-i-can-play-the-guitar", "en": "I can play the guitar.", "es": "Sé tocar la guitarra.", "pron": "ái can pléi de guitá", "block": 15, "emoji": "🎸", "grammar": "g-can", "words": ["w-i", "w-guitar", "w-play", "w-the", "w-can"]},
     {"id": "s-a-fish-can-swim-but-it-cant-fly", "en": "A fish can swim but it can't fly.", "es": "Un pez sabe nadar pero no sabe volar.", "pron": "a fish can suím bat it cant flái", "block": 15, "emoji": "🐟", "grammar": "g-can", "words": ["w-it", "w-fish", "w-a", "w-can", "w-swim", "w-fly", "w-but"]},
     {"id": "s-i-can-ride-a-bike", "en": "I can ride a bike.", "es": "Sé montar en bici.", "pron": "ái can ráid a báik", "block": 15, "emoji": "🚲", "grammar": "g-can", "words": ["w-i", "w-a", "w-can", "w-ride", "w-bike"]},
     {"id": "s-can-you-help-me-please", "en": "Can you help me, please?", "es": "¿Me ayudas, por favor?", "pron": "can iú jelp mi, plis", "block": 15, "emoji": "🆘", "words": ["w-you", "w-please", "w-can", "w-help"]},
