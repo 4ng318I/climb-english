@@ -1,0 +1,19 @@
+# Copias de progreso exportadas desde la app: son datos personales, nunca al repositorio
+progreso-*.json
+
+# Archivos temporales de pruebas
+_smoke.html
+_swtest.html
+
+# Sistema y editores
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+.claude/
+*.log
+
+# Python (el validador de tools/)
+__pycache__/
+*.pyc

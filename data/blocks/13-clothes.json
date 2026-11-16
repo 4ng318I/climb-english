@@ -1,0 +1,30 @@
+{
+  "block": 13,
+  "words": [
+    {"id": "w-t-shirt", "en": "T-shirt", "es": "camiseta", "pron": "tíshert", "pos": "nombre", "block": 13, "emoji": "👕", "syllables": 2, "stress": 1},
+    {"id": "w-trousers", "en": "trousers", "es": "pantalones", "pron": "tráuses", "pos": "nombre", "block": 13, "emoji": "👖", "syllables": 2, "stress": 1},
+    {"id": "w-shoe", "en": "shoe", "es": "zapato", "pron": "shu", "pos": "nombre", "block": 13, "emoji": "👟", "syllables": 1, "stress": 1, "theme": "escalada"},
+    {"id": "w-sock", "en": "sock", "es": "calcetín", "pron": "soc", "pos": "nombre", "block": 13, "emoji": "🧦", "syllables": 1, "stress": 1},
+    {"id": "w-jacket", "en": "jacket", "es": "chaqueta", "pron": "yáquit", "pos": "nombre", "block": 13, "emoji": "🧥", "syllables": 2, "stress": 1},
+    {"id": "w-hat", "en": "hat", "es": "gorro", "pron": "jat", "pos": "nombre", "block": 13, "emoji": "🧢", "syllables": 1, "stress": 1},
+    {"id": "w-dress", "en": "dress", "es": "vestido", "pron": "dres", "pos": "nombre", "block": 13, "emoji": "👗", "syllables": 1, "stress": 1},
+    {"id": "w-jumper", "en": "jumper", "es": "jersey", "pron": "yámpe", "pos": "nombre", "block": 13, "emoji": "🧶", "syllables": 2, "stress": 1},
+    {"id": "w-shorts", "en": "shorts", "es": "pantalón corto", "pron": "shorts", "pos": "nombre", "block": 13, "emoji": "🩳", "syllables": 1, "stress": 1},
+    {"id": "w-glove", "en": "glove", "es": "guante", "pron": "glav", "pos": "nombre", "block": 13, "emoji": "🧤", "syllables": 1, "stress": 1},
+    {"id": "w-scarf", "en": "scarf", "es": "bufanda", "pron": "scarf", "pos": "nombre", "block": 13, "emoji": "🧣", "syllables": 1, "stress": 1},
+    {"id": "w-have", "en": "have", "es": "tener", "pron": "jav", "pos": "palabrita", "block": 13, "emoji": "👜", "syllables": 1, "stress": 1},
+    {"id": "w-got", "en": "got", "es": "(acompaña a have)", "pron": "got", "pos": "palabrita", "block": 13, "emoji": "🤲", "syllables": 1, "stress": 1},
+    {"id": "w-new", "en": "new", "es": "nuevo / nueva", "pron": "niú", "pos": "cualidad", "block": 13, "emoji": "🆕", "syllables": 1, "stress": 1},
+    {"id": "w-old", "en": "old", "es": "viejo / vieja", "pron": "óuld", "pos": "cualidad", "block": 13, "emoji": "🕰️", "syllables": 1, "stress": 1},
+    {"id": "w-wear", "en": "wear", "es": "llevar puesto", "pron": "uéa", "pos": "acción", "block": 13, "emoji": "👚", "syllables": 1, "stress": 1}
+  ],
+  "sentences": [
+    {"id": "s-i-have-got-new-climbing-shoes", "en": "I have got new climbing shoes.", "es": "Tengo pies de gato nuevos.", "pron": "ái jav got niú cláimin shus", "block": 13, "emoji": "👟", "grammar": "g-have-got", "words": ["w-i", "w-shoe", "w-have", "w-got", "w-new"]},
+    {"id": "s-she-has-got-a-red-hat", "en": "She has got a red hat.", "es": "Ella tiene un gorro rojo.", "pron": "shi jas got a red jat", "block": 13, "emoji": "🧢", "grammar": "g-have-got", "words": ["w-red", "w-she", "w-a", "w-hat", "w-got"]},
+    {"id": "s-i-have-got-a-guitar", "en": "I have got a guitar.", "es": "Tengo una guitarra.", "pron": "ái jav got a guitár", "block": 13, "emoji": "🎸", "grammar": "g-have-got", "words": ["w-i", "w-guitar", "w-a", "w-have", "w-got"]},
+    {"id": "s-my-jacket-is-old", "en": "My jacket is old.", "es": "Mi chaqueta es vieja.", "pron": "mái yáquit is óuld", "block": 13, "emoji": "🧥", "words": ["w-i", "w-my", "w-is", "w-jacket", "w-old"]},
+    {"id": "s-i-wear-a-helmet", "en": "I wear a helmet.", "es": "Llevo casco.", "pron": "ái uéa a jélmit", "block": 13, "emoji": "⛑️", "words": ["w-i", "w-helmet", "w-a", "w-wear"]},
+    {"id": "s-he-has-got-two-brothers", "en": "He has got two brothers.", "es": "Él tiene dos hermanos.", "pron": "ji jas got tu brádes", "block": 13, "emoji": "👬", "grammar": "g-have-got", "words": ["w-two", "w-he", "w-brother", "w-got"]},
+    {"id": "s-have-you-got-a-pet", "en": "Have you got a pet?", "es": "¿Tienes mascota?", "pron": "jav iú got a pet", "block": 13, "emoji": "🐹", "grammar": "g-have-got", "words": ["w-you", "w-pet", "w-a", "w-have", "w-got"]}
+  ]
+}

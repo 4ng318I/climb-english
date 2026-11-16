@@ -1,0 +1,30 @@
+{
+  "block": 19,
+  "words": [
+    {"id": "w-sun", "en": "sun", "es": "sol", "pron": "san", "pos": "nombre", "block": 19, "emoji": "🌞", "syllables": 1, "stress": 1},
+    {"id": "w-rain", "en": "rain", "es": "lluvia", "pron": "réin", "pos": "nombre", "block": 19, "emoji": "🌧️", "syllables": 1, "stress": 1},
+    {"id": "w-snow", "en": "snow", "es": "nieve", "pron": "snóu", "pos": "nombre", "block": 19, "emoji": "⛄", "syllables": 1, "stress": 1},
+    {"id": "w-wind", "en": "wind", "es": "viento", "pron": "uínd", "pos": "nombre", "block": 19, "emoji": "🌬️", "syllables": 1, "stress": 1},
+    {"id": "w-cloud", "en": "cloud", "es": "nube", "pron": "cláud", "pos": "nombre", "block": 19, "emoji": "☁️", "syllables": 1, "stress": 1},
+    {"id": "w-sky", "en": "sky", "es": "cielo", "pron": "scái", "pos": "nombre", "block": 19, "emoji": "🌌", "syllables": 1, "stress": 1},
+    {"id": "w-tree", "en": "tree", "es": "árbol", "pron": "tri", "pos": "nombre", "block": 19, "emoji": "🌳", "syllables": 1, "stress": 1},
+    {"id": "w-flower", "en": "flower", "es": "flor", "pron": "fláue", "pos": "nombre", "block": 19, "emoji": "🌼", "syllables": 2, "stress": 1},
+    {"id": "w-river", "en": "river", "es": "río", "pron": "ríve", "pos": "nombre", "block": 19, "emoji": "🏞️", "syllables": 2, "stress": 1},
+    {"id": "w-sea", "en": "sea", "es": "mar", "pron": "si", "pos": "nombre", "block": 19, "emoji": "🌊", "syllables": 1, "stress": 1},
+    {"id": "w-beach", "en": "beach", "es": "playa", "pron": "bich", "pos": "nombre", "block": 19, "emoji": "🏖️", "syllables": 1, "stress": 1},
+    {"id": "w-star", "en": "star", "es": "estrella", "pron": "star", "pos": "nombre", "block": 19, "emoji": "⭐", "syllables": 1, "stress": 1},
+    {"id": "w-moon", "en": "moon", "es": "luna", "pron": "mun", "pos": "nombre", "block": 19, "emoji": "🌙", "syllables": 1, "stress": 1},
+    {"id": "w-weather", "en": "weather", "es": "tiempo (que hace)", "pron": "uéde", "pos": "nombre", "block": 19, "emoji": "🌦️", "syllables": 2, "stress": 1},
+    {"id": "w-sunny", "en": "sunny", "es": "soleado", "pron": "sáni", "pos": "cualidad", "block": 19, "emoji": "😎", "syllables": 2, "stress": 1},
+    {"id": "w-dont", "en": "don't", "es": "no (delante de una acción)", "pron": "dóunt", "pos": "palabrita", "block": 19, "emoji": "🙅‍♀️", "syllables": 1, "stress": 1}
+  ],
+  "sentences": [
+    {"id": "s-it-is-sunny-today", "en": "It is sunny today.", "es": "Hoy hace sol.", "pron": "it is sáni tudéi", "block": 19, "emoji": "😎", "words": ["w-i", "w-it", "w-is", "w-today", "w-sunny"]},
+    {"id": "s-i-like-the-rain", "en": "I like the rain.", "es": "Me gusta la lluvia.", "pron": "ái láik de réin", "block": 19, "emoji": "🌧️", "words": ["w-i", "w-the", "w-like", "w-rain"]},
+    {"id": "s-i-dont-like-the-wind", "en": "I don't like the wind.", "es": "No me gusta el viento.", "pron": "ái dóunt láik de uínd", "block": 19, "emoji": "🌬️", "grammar": "g-dont", "words": ["w-i", "w-the", "w-like", "w-wind", "w-dont"]},
+    {"id": "s-i-dont-climb-in-the-rain", "en": "I don't climb in the rain.", "es": "No escalo con lluvia.", "pron": "ái dóunt cláim in de réin", "block": 19, "emoji": "🌧️", "grammar": "g-dont", "words": ["w-i", "w-the", "w-climb", "w-in", "w-rain", "w-dont"]},
+    {"id": "s-the-sky-is-blue-and-the-sun-is-yellow", "en": "The sky is blue and the sun is yellow.", "es": "El cielo es azul y el sol es amarillo.", "pron": "de scái is blu and de san is iélou", "block": 19, "emoji": "🌌", "words": ["w-i", "w-and", "w-blue", "w-yellow", "w-is", "w-the", "w-sun", "w-sky"]},
+    {"id": "s-there-are-stars-in-the-sky", "en": "There are stars in the sky.", "es": "Hay estrellas en el cielo.", "pron": "déa ar stars in de scái", "block": 19, "emoji": "⭐", "words": ["w-are", "w-the", "w-there", "w-in", "w-sky", "w-star"]},
+    {"id": "s-the-moon-is-beautiful", "en": "The moon is beautiful.", "es": "La luna es preciosa.", "pron": "de mun is biútiful", "block": 19, "emoji": "🌙", "words": ["w-i", "w-is", "w-the", "w-beautiful", "w-moon"]}
+  ]
+}

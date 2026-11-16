@@ -1,0 +1,13 @@
+[
+  {"id": "m-you-are", "block": 3, "emoji": "🤪", "parts": ["You", "are", "my", {"pos": "cualidad"}, {"pos": "nombre"}]},
+  {"id": "m-the-is", "block": 4, "emoji": "🎭", "parts": ["The", {"pos": "cualidad"}, {"pos": "nombre"}, "is", {"pos": "cualidad"}]},
+  {"id": "m-i-do", "block": 4, "emoji": "🎪", "parts": ["I", {"pos": "acción"}, "the", {"pos": "cualidad"}, {"pos": "nombre"}]},
+  {"id": "m-my-is-number", "block": 5, "emoji": "🎲", "parts": ["My", {"pos": "nombre"}, "is", {"pos": "número"}]},
+  {"id": "m-like-with", "block": 10, "emoji": "🍕", "parts": ["I", "like", {"pos": "cualidad"}, {"pos": "nombre"}, "with", {"pos": "nombre"}]},
+  {"id": "m-there-is", "block": 11, "emoji": "🏠", "parts": ["There", "is", "a", {"pos": "cualidad"}, {"pos": "nombre"}, "in", "my", {"pos": "nombre"}]},
+  {"id": "m-have-got", "block": 13, "emoji": "🎁", "parts": ["I", "have", "got", {"pos": "número"}, {"pos": "cualidad"}, {"pos": "nombre"}]},
+  {"id": "m-can-but", "block": 15, "emoji": "🦸", "parts": ["My", {"pos": "nombre"}, "can", {"pos": "acción"}, "but", "it", "can't", {"pos": "acción"}]},
+  {"id": "m-under", "block": 17, "emoji": "🔽", "parts": ["The", {"pos": "nombre"}, "is", "under", "the", {"pos": "cualidad"}, {"pos": "nombre"}]},
+  {"id": "m-dont", "block": 19, "emoji": "🙅‍♀️", "parts": ["I", "don't", {"pos": "acción"}, "with", "my", {"pos": "nombre"}]},
+  {"id": "m-do-you", "block": 20, "emoji": "❓", "parts": ["Do", "you", {"pos": "acción"}, "the", {"pos": "cualidad"}, {"pos": "nombre"}, "?"]}
+]

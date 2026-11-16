@@ -1,0 +1,252 @@
+{
+  "_ayuda": "Indice de etapas y bloques. 'english' es el porcentaje de interfaz en ingles al llegar a esa etapa. Cada bloque apunta a su archivo dentro de data/blocks/.",
+  "stages": [
+    {
+      "n": 1,
+      "name": {
+        "es": "Campo base",
+        "en": "Base camp"
+      },
+      "emoji": "⛺",
+      "english": 0
+    },
+    {
+      "n": 2,
+      "name": {
+        "es": "Primeros agarres",
+        "en": "First holds"
+      },
+      "emoji": "🪨",
+      "english": 15
+    },
+    {
+      "n": 3,
+      "name": {
+        "es": "La gran pared",
+        "en": "The big wall"
+      },
+      "emoji": "🧗",
+      "english": 30
+    },
+    {
+      "n": 4,
+      "name": {
+        "es": "La cornisa",
+        "en": "The ledge"
+      },
+      "emoji": "🌄",
+      "english": 50
+    },
+    {
+      "n": 5,
+      "name": {
+        "es": "La cima A1",
+        "en": "The A1 summit"
+      },
+      "emoji": "🏔️",
+      "english": 70
+    }
+  ],
+  "blocks": [
+    {
+      "n": 1,
+      "file": "01-hello.json",
+      "stage": 1,
+      "title": {
+        "es": "¡Hola!",
+        "en": "Hello!"
+      },
+      "emoji": "👋"
+    },
+    {
+      "n": 2,
+      "file": "02-numbers.json",
+      "stage": 1,
+      "title": {
+        "es": "Los números",
+        "en": "Numbers"
+      },
+      "emoji": "🔢"
+    },
+    {
+      "n": 3,
+      "file": "03-colours.json",
+      "stage": 1,
+      "title": {
+        "es": "Los colores",
+        "en": "Colours"
+      },
+      "emoji": "🌈"
+    },
+    {
+      "n": 4,
+      "file": "04-music.json",
+      "stage": 1,
+      "title": {
+        "es": "La música",
+        "en": "Music"
+      },
+      "emoji": "🎵"
+    },
+    {
+      "n": 5,
+      "file": "05-climbing.json",
+      "stage": 2,
+      "title": {
+        "es": "La escalada",
+        "en": "Climbing"
+      },
+      "emoji": "🧗"
+    },
+    {
+      "n": 6,
+      "file": "06-crafts.json",
+      "stage": 2,
+      "title": {
+        "es": "Las manualidades",
+        "en": "Crafts"
+      },
+      "emoji": "✂️"
+    },
+    {
+      "n": 7,
+      "file": "07-family.json",
+      "stage": 2,
+      "title": {
+        "es": "La familia",
+        "en": "Family"
+      },
+      "emoji": "👨‍👩‍👧"
+    },
+    {
+      "n": 8,
+      "file": "08-body.json",
+      "stage": 2,
+      "title": {
+        "es": "El cuerpo",
+        "en": "My body"
+      },
+      "emoji": "🧍"
+    },
+    {
+      "n": 9,
+      "file": "09-animals.json",
+      "stage": 3,
+      "title": {
+        "es": "Los animales",
+        "en": "Animals"
+      },
+      "emoji": "🐾"
+    },
+    {
+      "n": 10,
+      "file": "10-food.json",
+      "stage": 3,
+      "title": {
+        "es": "La comida",
+        "en": "Food"
+      },
+      "emoji": "🍎"
+    },
+    {
+      "n": 11,
+      "file": "11-home.json",
+      "stage": 3,
+      "title": {
+        "es": "Mi casa",
+        "en": "My home"
+      },
+      "emoji": "🏠"
+    },
+    {
+      "n": 12,
+      "file": "12-school.json",
+      "stage": 3,
+      "title": {
+        "es": "El cole",
+        "en": "School"
+      },
+      "emoji": "🏫"
+    },
+    {
+      "n": 13,
+      "file": "13-clothes.json",
+      "stage": 4,
+      "title": {
+        "es": "La ropa",
+        "en": "Clothes"
+      },
+      "emoji": "👕"
+    },
+    {
+      "n": 14,
+      "file": "14-feelings.json",
+      "stage": 4,
+      "title": {
+        "es": "¿Cómo estás?",
+        "en": "How are you?"
+      },
+      "emoji": "😊"
+    },
+    {
+      "n": 15,
+      "file": "15-actions.json",
+      "stage": 4,
+      "title": {
+        "es": "¡Yo sé hacerlo!",
+        "en": "I can do it!"
+      },
+      "emoji": "🤸"
+    },
+    {
+      "n": 16,
+      "file": "16-days.json",
+      "stage": 4,
+      "title": {
+        "es": "Los días",
+        "en": "Days"
+      },
+      "emoji": "📅"
+    },
+    {
+      "n": 17,
+      "file": "17-places.json",
+      "stage": 5,
+      "title": {
+        "es": "¿Dónde está?",
+        "en": "Where is it?"
+      },
+      "emoji": "🗺️"
+    },
+    {
+      "n": 18,
+      "file": "18-routine.json",
+      "stage": 5,
+      "title": {
+        "es": "Mi día",
+        "en": "My day"
+      },
+      "emoji": "⏰"
+    },
+    {
+      "n": 19,
+      "file": "19-nature.json",
+      "stage": 5,
+      "title": {
+        "es": "El tiempo y la naturaleza",
+        "en": "Weather and nature"
+      },
+      "emoji": "🌦️"
+    },
+    {
+      "n": 20,
+      "file": "20-my-world.json",
+      "stage": 5,
+      "title": {
+        "es": "Mi mundo",
+        "en": "My world"
+      },
+      "emoji": "🌍"
+    }
+  ]
+}

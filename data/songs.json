@@ -1,0 +1,50 @@
+{
+  "_ayuda": "Para añadir una canción, copia un bloque entero entre llaves, pégalo detrás del último (con una coma entre los dos) y cambia los datos. NO pongas la letra: solo de 5 a 8 palabras sueltas. 'youtube' es el enlace al vídeo oficial. 'pron' es cómo suena escrito en español.",
+  "songs": [
+    {
+      "id": "happy",
+      "title": "Happy",
+      "artist": "Pharrell Williams",
+      "youtube": "https://www.youtube.com/watch?v=ZbZSe6N_BXs",
+      "words": [
+        {"en": "happy", "es": "feliz", "pron": "jápi", "emoji": "😊"},
+        {"en": "clap", "es": "dar palmas", "pron": "clap", "emoji": "👏"},
+        {"en": "room", "es": "habitación", "pron": "rum", "emoji": "🚪"},
+        {"en": "roof", "es": "tejado", "pron": "ruf", "emoji": "🏠"},
+        {"en": "truth", "es": "verdad", "pron": "truz", "emoji": "💬"},
+        {"en": "sunshine", "es": "luz del sol", "pron": "sánshain", "emoji": "☀️"},
+        {"en": "feel", "es": "sentir", "pron": "fil", "emoji": "💓"}
+      ]
+    },
+    {
+      "id": "roar",
+      "title": "Roar",
+      "artist": "Katy Perry",
+      "youtube": "https://www.youtube.com/watch?v=CevxZvSJLk8",
+      "words": [
+        {"en": "roar", "es": "rugido", "pron": "ror", "emoji": "🦁"},
+        {"en": "tiger", "es": "tigre", "pron": "táigue", "emoji": "🐯"},
+        {"en": "fire", "es": "fuego", "pron": "fáie", "emoji": "🔥"},
+        {"en": "champion", "es": "campeona", "pron": "chámpion", "emoji": "🏆"},
+        {"en": "eye", "es": "ojo", "pron": "ái", "emoji": "👁️"},
+        {"en": "hear", "es": "oír", "pron": "jía", "emoji": "👂"},
+        {"en": "thunder", "es": "trueno", "pron": "zánde", "emoji": "⛈️"}
+      ]
+    },
+    {
+      "id": "shake-it-off",
+      "title": "Shake It Off",
+      "artist": "Taylor Swift",
+      "youtube": "https://www.youtube.com/watch?v=nfWlot6h_JM",
+      "words": [
+        {"en": "shake", "es": "sacudir", "pron": "shéik", "emoji": "🪇"},
+        {"en": "play", "es": "jugar", "pron": "pléi", "emoji": "🎮"},
+        {"en": "break", "es": "romper", "pron": "bréik", "emoji": "💔"},
+        {"en": "music", "es": "música", "pron": "miúsic", "emoji": "🎵"},
+        {"en": "late", "es": "tarde", "pron": "léit", "emoji": "🦉"},
+        {"en": "brain", "es": "cerebro", "pron": "bréin", "emoji": "🧠"},
+        {"en": "feet", "es": "pies", "pron": "fit", "emoji": "🦶"}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "block": 15,
+  "words": [
+    {"id": "w-can", "en": "can", "es": "saber / poder", "pron": "can", "pos": "palabrita", "block": 15, "emoji": "🦸", "syllables": 1, "stress": 1},
+    {"id": "w-run", "en": "run", "es": "correr", "pron": "ran", "pos": "acción", "block": 15, "emoji": "🏃", "syllables": 1, "stress": 1},
+    {"id": "w-jump", "en": "jump", "es": "saltar", "pron": "yamp", "pos": "acción", "block": 15, "emoji": "🤸", "syllables": 1, "stress": 1},
+    {"id": "w-swim", "en": "swim", "es": "nadar", "pron": "suím", "pos": "acción", "block": 15, "emoji": "🏊", "syllables": 1, "stress": 1},
+    {"id": "w-walk", "en": "walk", "es": "andar", "pron": "uók", "pos": "acción", "block": 15, "emoji": "🚶", "syllables": 1, "stress": 1},
+    {"id": "w-sit", "en": "sit", "es": "sentarse", "pron": "sit", "pos": "acción", "block": 15, "emoji": "🧘", "syllables": 1, "stress": 1},
+    {"id": "w-stand", "en": "stand", "es": "estar de pie", "pron": "stand", "pos": "acción", "block": 15, "emoji": "🗽", "syllables": 1, "stress": 1},
+    {"id": "w-fly", "en": "fly", "es": "volar", "pron": "flái", "pos": "acción", "block": 15, "emoji": "🕊️", "syllables": 1, "stress": 1},
+    {"id": "w-ride", "en": "ride", "es": "montar", "pron": "ráid", "pos": "acción", "block": 15, "emoji": "🏇", "syllables": 1, "stress": 1},
+    {"id": "w-bike", "en": "bike", "es": "bici", "pron": "báik", "pos": "nombre", "block": 15, "emoji": "🚲", "syllables": 1, "stress": 1},
+    {"id": "w-ball", "en": "ball", "es": "pelota", "pron": "bol", "pos": "nombre", "block": 15, "emoji": "⚽", "syllables": 1, "stress": 1},
+    {"id": "w-catch", "en": "catch", "es": "atrapar", "pron": "cach", "pos": "acción", "block": 15, "emoji": "🤾", "syllables": 1, "stress": 1},
+    {"id": "w-throw", "en": "throw", "es": "lanzar", "pron": "zróu", "pos": "acción", "block": 15, "emoji": "🎯", "syllables": 1, "stress": 1},
+    {"id": "w-help", "en": "help", "es": "ayudar", "pron": "jelp", "pos": "acción", "block": 15, "emoji": "🆘", "syllables": 1, "stress": 1},
+    {"id": "w-see", "en": "see", "es": "ver", "pron": "si", "pos": "acción", "block": 15, "emoji": "👀", "syllables": 1, "stress": 1},
+    {"id": "w-but", "en": "but", "es": "pero", "pron": "bat", "pos": "palabrita", "block": 15, "emoji": "↩️", "syllables": 1, "stress": 1}
+  ],
+  "sentences": [
+    {"id": "s-i-can-climb", "en": "I can climb.", "es": "Sé escalar.", "pron": "ái can cláim", "block": 15, "emoji": "🧗", "grammar": "g-can", "words": ["w-i", "w-climb", "w-can"]},
+    {"id": "s-can-you-swim-yes-i-can", "en": "Can you swim? Yes, I can.", "es": "¿Sabes nadar? Sí.", "pron": "can iú suím? ies, ái can", "block": 15, "emoji": "🏊", "grammar": "g-can", "words": ["w-i", "w-you", "w-yes", "w-can", "w-swim"]},
+    {"id": "s-i-can-play-the-guitar", "en": "I can play the guitar.", "es": "Sé tocar la guitarra.", "pron": "ái can pléi de guitár", "block": 15, "emoji": "🎸", "grammar": "g-can", "words": ["w-i", "w-guitar", "w-play", "w-the", "w-can"]},
+    {"id": "s-a-fish-can-swim-but-it-cant-fly", "en": "A fish can swim but it can't fly.", "es": "Un pez sabe nadar pero no sabe volar.", "pron": "a fish can suím bat it cant flái", "block": 15, "emoji": "🐟", "grammar": "g-can", "words": ["w-it", "w-fish", "w-a", "w-can", "w-swim", "w-fly", "w-but"]},
+    {"id": "s-i-can-ride-a-bike", "en": "I can ride a bike.", "es": "Sé montar en bici.", "pron": "ái can ráid a báik", "block": 15, "emoji": "🚲", "grammar": "g-can", "words": ["w-i", "w-a", "w-can", "w-ride", "w-bike"]},
+    {"id": "s-can-you-help-me-please", "en": "Can you help me, please?", "es": "¿Me ayudas, por favor?", "pron": "can iú jelp mi, plis", "block": 15, "emoji": "🆘", "words": ["w-you", "w-please", "w-can", "w-help"]},
+    {"id": "s-i-can-see-the-top", "en": "I can see the top!", "es": "¡Veo la cima!", "pron": "ái can si de top", "block": 15, "emoji": "🔝", "words": ["w-i", "w-the", "w-top", "w-can", "w-see"]},
+    {"id": "s-she-can-jump-very-high", "en": "She can jump very high.", "es": "Ella sabe saltar muy alto.", "pron": "shi can yamp véri jái", "block": 15, "emoji": "🤸", "grammar": "g-can", "words": ["w-high", "w-she", "w-very", "w-can", "w-jump"]}
+  ]
+}

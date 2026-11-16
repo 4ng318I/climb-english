@@ -1,0 +1,30 @@
+{
+  "block": 14,
+  "words": [
+    {"id": "w-happy", "en": "happy", "es": "contento / contenta", "pron": "jápi", "pos": "cualidad", "block": 14, "emoji": "😊", "syllables": 2, "stress": 1},
+    {"id": "w-sad", "en": "sad", "es": "triste", "pron": "sad", "pos": "cualidad", "block": 14, "emoji": "😢", "syllables": 1, "stress": 1},
+    {"id": "w-tired", "en": "tired", "es": "cansado / cansada", "pron": "táied", "pos": "cualidad", "block": 14, "emoji": "🥱", "syllables": 2, "stress": 1},
+    {"id": "w-angry", "en": "angry", "es": "enfadado / enfadada", "pron": "ángri", "pos": "cualidad", "block": 14, "emoji": "😠", "syllables": 2, "stress": 1},
+    {"id": "w-scared", "en": "scared", "es": "con miedo", "pron": "skéad", "pos": "cualidad", "block": 14, "emoji": "😨", "syllables": 1, "stress": 1},
+    {"id": "w-hot", "en": "hot", "es": "caliente", "pron": "jot", "pos": "cualidad", "block": 14, "emoji": "🔥", "syllables": 1, "stress": 1},
+    {"id": "w-cold", "en": "cold", "es": "frío / fría", "pron": "cóuld", "pos": "cualidad", "block": 14, "emoji": "❄️", "syllables": 1, "stress": 1},
+    {"id": "w-fast", "en": "fast", "es": "rápido / rápida", "pron": "fast", "pos": "cualidad", "block": 14, "emoji": "⚡", "syllables": 1, "stress": 1},
+    {"id": "w-slow", "en": "slow", "es": "lento / lenta", "pron": "slóu", "pos": "cualidad", "block": 14, "emoji": "🐢", "syllables": 1, "stress": 1},
+    {"id": "w-funny", "en": "funny", "es": "divertido / divertida", "pron": "fáni", "pos": "cualidad", "block": 14, "emoji": "🤣", "syllables": 2, "stress": 1},
+    {"id": "w-nice", "en": "nice", "es": "simpático / simpática", "pron": "náis", "pos": "cualidad", "block": 14, "emoji": "🥰", "syllables": 1, "stress": 1},
+    {"id": "w-tall", "en": "tall", "es": "alto / alta (persona)", "pron": "tol", "pos": "cualidad", "block": 14, "emoji": "🦒", "syllables": 1, "stress": 1},
+    {"id": "w-short", "en": "short", "es": "bajo / baja, corto", "pron": "short", "pos": "cualidad", "block": 14, "emoji": "🤏", "syllables": 1, "stress": 1},
+    {"id": "w-very", "en": "very", "es": "muy", "pron": "véri", "pos": "palabrita", "block": 14, "emoji": "‼️", "syllables": 2, "stress": 1},
+    {"id": "w-not", "en": "not", "es": "no (con am, is, are)", "pron": "not", "pos": "palabrita", "block": 14, "emoji": "🚫", "syllables": 1, "stress": 1},
+    {"id": "w-beautiful", "en": "beautiful", "es": "precioso / preciosa", "pron": "biútiful", "pos": "cualidad", "block": 14, "emoji": "🌺", "syllables": 3, "stress": 1}
+  ],
+  "sentences": [
+    {"id": "s-i-am-happy", "en": "I am happy.", "es": "Estoy contenta.", "pron": "ái am jápi", "block": 14, "emoji": "😊", "words": ["w-i", "w-am", "w-happy"]},
+    {"id": "s-i-am-not-tired", "en": "I am not tired.", "es": "No estoy cansada.", "pron": "ái am not táied", "block": 14, "emoji": "🥱", "words": ["w-i", "w-am", "w-tired", "w-not"]},
+    {"id": "s-she-is-a-funny-girl", "en": "She is a funny girl.", "es": "Es una chica divertida.", "pron": "shi is a fáni guerl", "block": 14, "emoji": "🤣", "grammar": "g-describe", "words": ["w-i", "w-is", "w-she", "w-girl", "w-a", "w-funny"]},
+    {"id": "s-the-water-is-very-cold", "en": "The water is very cold.", "es": "El agua está muy fría.", "pron": "de uóte is véri cóuld", "block": 14, "emoji": "❄️", "words": ["w-i", "w-is", "w-the", "w-water", "w-cold", "w-very"]},
+    {"id": "s-it-is-a-beautiful-song", "en": "It is a beautiful song.", "es": "Es una canción preciosa.", "pron": "it is a biútiful song", "block": 14, "emoji": "🌺", "grammar": "g-describe", "words": ["w-i", "w-it", "w-is", "w-song", "w-a", "w-beautiful"]},
+    {"id": "s-the-horse-is-fast", "en": "The horse is fast.", "es": "El caballo es rápido.", "pron": "de jors is fast", "block": 14, "emoji": "⚡", "words": ["w-i", "w-is", "w-the", "w-horse", "w-fast"]},
+    {"id": "s-are-you-scared-no-i-am-not", "en": "Are you scared? No, I am not.", "es": "¿Tienes miedo? No.", "pron": "ar iú skéad? nóu, ái am not", "block": 14, "emoji": "😨", "words": ["w-i", "w-am", "w-you", "w-are", "w-no", "w-scared", "w-not"]}
+  ]
+}

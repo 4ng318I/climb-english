@@ -1,0 +1,31 @@
+{
+  "block": 7,
+  "words": [
+    {"id": "w-he", "en": "he", "es": "él", "pron": "ji", "pos": "persona", "block": 7, "emoji": "👦", "syllables": 1, "stress": 1},
+    {"id": "w-she", "en": "she", "es": "ella", "pron": "shi", "pos": "persona", "block": 7, "emoji": "👧", "syllables": 1, "stress": 1},
+    {"id": "w-mum", "en": "mum", "es": "mamá", "pron": "mam", "pos": "nombre", "block": 7, "emoji": "👩", "syllables": 1, "stress": 1},
+    {"id": "w-dad", "en": "dad", "es": "papá", "pron": "dad", "pos": "nombre", "block": 7, "emoji": "👨", "syllables": 1, "stress": 1},
+    {"id": "w-sister", "en": "sister", "es": "hermana", "pron": "síste", "pos": "nombre", "block": 7, "emoji": "👭", "syllables": 2, "stress": 1},
+    {"id": "w-brother", "en": "brother", "es": "hermano", "pron": "bráde", "pos": "nombre", "block": 7, "emoji": "👬", "syllables": 2, "stress": 1},
+    {"id": "w-grandma", "en": "grandma", "es": "abuela", "pron": "gránma", "pos": "nombre", "block": 7, "emoji": "👵", "syllables": 2, "stress": 1},
+    {"id": "w-grandpa", "en": "grandpa", "es": "abuelo", "pron": "gránpa", "pos": "nombre", "block": 7, "emoji": "👴", "syllables": 2, "stress": 1},
+    {"id": "w-baby", "en": "baby", "es": "bebé", "pron": "béibi", "pos": "nombre", "block": 7, "emoji": "👶", "syllables": 2, "stress": 1},
+    {"id": "w-family", "en": "family", "es": "familia", "pron": "fámili", "pos": "nombre", "block": 7, "emoji": "👨‍👩‍👧", "syllables": 3, "stress": 1},
+    {"id": "w-aunt", "en": "aunt", "es": "tía", "pron": "ant", "pos": "nombre", "block": 7, "emoji": "💁‍♀️", "syllables": 1, "stress": 1},
+    {"id": "w-uncle", "en": "uncle", "es": "tío", "pron": "ánkel", "pos": "nombre", "block": 7, "emoji": "🙋‍♂️", "syllables": 2, "stress": 1},
+    {"id": "w-cousin", "en": "cousin", "es": "primo / prima", "pron": "cásin", "pos": "nombre", "block": 7, "emoji": "🧒", "syllables": 2, "stress": 1},
+    {"id": "w-girl", "en": "girl", "es": "chica", "pron": "guerl", "pos": "nombre", "block": 7, "emoji": "🧒‍♀️", "syllables": 1, "stress": 1},
+    {"id": "w-boy", "en": "boy", "es": "chico", "pron": "bói", "pos": "nombre", "block": 7, "emoji": "🧒‍♂️", "syllables": 1, "stress": 1},
+    {"id": "w-this", "en": "this", "es": "este / esta", "pron": "dis", "pos": "palabrita", "block": 7, "emoji": "👇", "syllables": 1, "stress": 1},
+    {"id": "w-who", "en": "who", "es": "quién", "pron": "ju", "pos": "pregunta", "block": 7, "emoji": "🕵️", "syllables": 1, "stress": 1},
+    {"id": "w-love", "en": "love", "es": "querer", "pron": "lav", "pos": "acción", "block": 7, "emoji": "❤️", "syllables": 1, "stress": 1}
+  ],
+  "sentences": [
+    {"id": "s-this-is-my-mum", "en": "This is my mum.", "es": "Esta es mi madre.", "pron": "dis is mái mam", "block": 7, "emoji": "👩", "grammar": "g-he-she", "words": ["w-i", "w-my", "w-is", "w-mum", "w-this"]},
+    {"id": "s-he-is-my-brother", "en": "He is my brother.", "es": "Él es mi hermano.", "pron": "ji is mái bráde", "block": 7, "emoji": "👬", "grammar": "g-he-she", "words": ["w-i", "w-my", "w-is", "w-he", "w-brother"]},
+    {"id": "s-she-is-my-aunt", "en": "She is my aunt.", "es": "Ella es mi tía.", "pron": "shi is mái ant", "block": 7, "emoji": "💁‍♀️", "grammar": "g-he-she", "words": ["w-i", "w-my", "w-is", "w-she", "w-aunt"]},
+    {"id": "s-who-is-she", "en": "Who is she?", "es": "¿Quién es ella?", "pron": "ju is shi", "block": 7, "emoji": "🕵️", "words": ["w-i", "w-is", "w-she", "w-who"]},
+    {"id": "s-i-love-my-family", "en": "I love my family.", "es": "Quiero a mi familia.", "pron": "ái lav mái fámili", "block": 7, "emoji": "❤️", "words": ["w-i", "w-my", "w-family", "w-love"]},
+    {"id": "s-my-uncle-is-strong", "en": "My uncle is strong.", "es": "Mi tío es fuerte.", "pron": "mái ánkel is strong", "block": 7, "emoji": "💪", "words": ["w-i", "w-my", "w-is", "w-strong", "w-uncle"]}
+  ]
+}

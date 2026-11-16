@@ -1,0 +1,29 @@
+{
+  "block": 6,
+  "words": [
+    {"id": "w-paper", "en": "paper", "es": "papel", "pron": "péipe", "pos": "nombre", "block": 6, "emoji": "📄", "syllables": 2, "stress": 1, "theme": "manualidades"},
+    {"id": "w-scissors", "en": "scissors", "es": "tijeras", "pron": "sísos", "pos": "nombre", "block": 6, "emoji": "✂️", "syllables": 2, "stress": 1, "theme": "manualidades"},
+    {"id": "w-glue", "en": "glue", "es": "pegamento", "pron": "glu", "pos": "nombre", "block": 6, "emoji": "🧴", "syllables": 1, "stress": 1, "theme": "manualidades"},
+    {"id": "w-paint", "en": "paint", "es": "pintar", "pron": "péint", "pos": "acción", "block": 6, "emoji": "🎨", "syllables": 1, "stress": 1, "theme": "manualidades"},
+    {"id": "w-draw", "en": "draw", "es": "dibujar", "pron": "dro", "pos": "acción", "block": 6, "emoji": "🖼️", "syllables": 1, "stress": 1, "theme": "manualidades"},
+    {"id": "w-fold", "en": "fold", "es": "doblar", "pron": "fóuld", "pos": "acción", "block": 6, "emoji": "📃", "syllables": 1, "stress": 1, "theme": "manualidades"},
+    {"id": "w-make", "en": "make", "es": "hacer / construir", "pron": "méik", "pos": "acción", "block": 6, "emoji": "🛠️", "syllables": 1, "stress": 1, "theme": "manualidades"},
+    {"id": "w-pencil", "en": "pencil", "es": "lápiz", "pron": "pénsil", "pos": "nombre", "block": 6, "emoji": "✏️", "syllables": 2, "stress": 1, "theme": "manualidades"},
+    {"id": "w-crayon", "en": "crayon", "es": "cera de colores", "pron": "créion", "pos": "nombre", "block": 6, "emoji": "🖍️", "syllables": 2, "stress": 1, "theme": "manualidades"},
+    {"id": "w-box", "en": "box", "es": "caja", "pron": "bocs", "pos": "nombre", "block": 6, "emoji": "📦", "syllables": 1, "stress": 1, "theme": "manualidades"},
+    {"id": "w-card", "en": "card", "es": "tarjeta", "pron": "card", "pos": "nombre", "block": 6, "emoji": "💌", "syllables": 1, "stress": 1, "theme": "manualidades"},
+    {"id": "w-sticker", "en": "sticker", "es": "pegatina", "pron": "stíque", "pos": "nombre", "block": 6, "emoji": "🌟", "syllables": 2, "stress": 1, "theme": "manualidades"},
+    {"id": "w-clay", "en": "clay", "es": "arcilla", "pron": "cléi", "pos": "nombre", "block": 6, "emoji": "🏺", "syllables": 1, "stress": 1, "theme": "manualidades"},
+    {"id": "w-bead", "en": "bead", "es": "cuenta (de collar)", "pron": "bid", "pos": "nombre", "block": 6, "emoji": "📿", "syllables": 1, "stress": 1, "theme": "manualidades"},
+    {"id": "w-with", "en": "with", "es": "con", "pron": "uíz", "pos": "palabrita", "block": 6, "emoji": "🔗", "syllables": 1, "stress": 1},
+    {"id": "w-pretty", "en": "pretty", "es": "bonito / bonita", "pron": "príti", "pos": "cualidad", "block": 6, "emoji": "🌷", "syllables": 2, "stress": 1, "theme": "manualidades"}
+  ],
+  "sentences": [
+    {"id": "s-i-draw-with-my-pencil", "en": "I draw with my pencil.", "es": "Dibujo con mi lápiz.", "pron": "ái dro uíz mái pénsil", "block": 6, "emoji": "✏️", "words": ["w-i", "w-my", "w-draw", "w-pencil", "w-with"]},
+    {"id": "s-i-paint-the-box-red", "en": "I paint the box red.", "es": "Pinto la caja de rojo.", "pron": "ái péint de bocs red", "block": 6, "emoji": "📦", "words": ["w-i", "w-red", "w-the", "w-paint", "w-box"]},
+    {"id": "s-the-paper-is-white", "en": "The paper is white.", "es": "El papel es blanco.", "pron": "de péipe is uáit", "block": 6, "emoji": "📄", "words": ["w-i", "w-white", "w-is", "w-the", "w-paper"]},
+    {"id": "s-i-fold-the-paper", "en": "I fold the paper.", "es": "Doblo el papel.", "pron": "ái fóuld de péipe", "block": 6, "emoji": "📃", "words": ["w-i", "w-the", "w-paper", "w-fold"]},
+    {"id": "s-the-sticker-is-pretty", "en": "The sticker is pretty.", "es": "La pegatina es bonita.", "pron": "de stíque is príti", "block": 6, "emoji": "🌟", "words": ["w-i", "w-is", "w-the", "w-sticker", "w-pretty"]},
+    {"id": "s-you-make-and-i-paint", "en": "You make and I paint.", "es": "Tú construyes y yo pinto.", "pron": "iú méik and ái péint", "block": 6, "emoji": "🎨", "words": ["w-i", "w-you", "w-and", "w-paint", "w-make"]}
+  ]
+}

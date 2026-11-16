@@ -1,0 +1,30 @@
+{
+  "block": 17,
+  "words": [
+    {"id": "w-in", "en": "in", "es": "dentro de / en", "pron": "in", "pos": "palabrita", "block": 17, "emoji": "📥", "syllables": 1, "stress": 1},
+    {"id": "w-on", "en": "on", "es": "encima de", "pron": "on", "pos": "palabrita", "block": 17, "emoji": "🔛", "syllables": 1, "stress": 1},
+    {"id": "w-under", "en": "under", "es": "debajo de", "pron": "ánde", "pos": "palabrita", "block": 17, "emoji": "🔽", "syllables": 2, "stress": 1},
+    {"id": "w-next-to", "en": "next to", "es": "al lado de", "pron": "necs tu", "pos": "palabrita", "block": 17, "emoji": "↔️", "syllables": 2, "stress": 1},
+    {"id": "w-behind", "en": "behind", "es": "detrás de", "pron": "bijáind", "pos": "palabrita", "block": 17, "emoji": "🔙", "syllables": 2, "stress": 2},
+    {"id": "w-where", "en": "where", "es": "dónde", "pron": "uéa", "pos": "pregunta", "block": 17, "emoji": "🗺️", "syllables": 1, "stress": 1},
+    {"id": "w-here", "en": "here", "es": "aquí", "pron": "jía", "pos": "palabrita", "block": 17, "emoji": "📍", "syllables": 1, "stress": 1},
+    {"id": "w-park", "en": "park", "es": "parque", "pron": "park", "pos": "nombre", "block": 17, "emoji": "🌲", "syllables": 1, "stress": 1},
+    {"id": "w-shop", "en": "shop", "es": "tienda", "pron": "shop", "pos": "nombre", "block": 17, "emoji": "🏪", "syllables": 1, "stress": 1},
+    {"id": "w-street", "en": "street", "es": "calle", "pron": "strit", "pos": "nombre", "block": 17, "emoji": "🛣️", "syllables": 1, "stress": 1},
+    {"id": "w-town", "en": "town", "es": "pueblo / ciudad", "pron": "táun", "pos": "nombre", "block": 17, "emoji": "🏙️", "syllables": 1, "stress": 1},
+    {"id": "w-gym", "en": "gym", "es": "gimnasio", "pron": "yim", "pos": "nombre", "block": 17, "emoji": "🏋️", "syllables": 1, "stress": 1, "theme": "escalada"},
+    {"id": "w-car", "en": "car", "es": "coche", "pron": "car", "pos": "nombre", "block": 17, "emoji": "🚗", "syllables": 1, "stress": 1},
+    {"id": "w-bus", "en": "bus", "es": "autobús", "pron": "bas", "pos": "nombre", "block": 17, "emoji": "🚌", "syllables": 1, "stress": 1},
+    {"id": "w-train", "en": "train", "es": "tren", "pron": "tréin", "pos": "nombre", "block": 17, "emoji": "🚆", "syllables": 1, "stress": 1},
+    {"id": "w-near", "en": "near", "es": "cerca de", "pron": "nía", "pos": "palabrita", "block": 17, "emoji": "🧲", "syllables": 1, "stress": 1}
+  ],
+  "sentences": [
+    {"id": "s-the-cat-is-on-the-sofa", "en": "The cat is on the sofa.", "es": "El gato está en el sofá.", "pron": "de cat is on de sóufa", "block": 17, "emoji": "🐱", "grammar": "g-in-on-under", "words": ["w-i", "w-is", "w-the", "w-cat", "w-sofa", "w-on"]},
+    {"id": "s-the-shoes-are-under-the-bed", "en": "The shoes are under the bed.", "es": "Los zapatos están debajo de la cama.", "pron": "de shus ar ánde de bed", "block": 17, "emoji": "👟", "grammar": "g-in-on-under", "words": ["w-are", "w-the", "w-bed", "w-shoe", "w-under"]},
+    {"id": "s-the-glue-is-in-the-box", "en": "The glue is in the box.", "es": "El pegamento está en la caja.", "pron": "de glu is in de bocs", "block": 17, "emoji": "📦", "grammar": "g-in-on-under", "words": ["w-i", "w-is", "w-the", "w-glue", "w-box", "w-in"]},
+    {"id": "s-where-is-the-rope-it-is-here", "en": "Where is the rope? It is here!", "es": "¿Dónde está la cuerda? ¡Aquí!", "pron": "uéa is de róup? it is jía", "block": 17, "emoji": "🪢", "words": ["w-i", "w-it", "w-is", "w-the", "w-rope", "w-where", "w-here"]},
+    {"id": "s-the-climbing-wall-is-next-to-the-park", "en": "The climbing wall is next to the park.", "es": "El rocódromo está al lado del parque.", "pron": "de cláimin uól is necs tu de park", "block": 17, "emoji": "🧗", "words": ["w-i", "w-is", "w-the", "w-wall", "w-next-to", "w-park"]},
+    {"id": "s-i-go-to-the-gym-on-monday", "en": "I go to the gym on Monday.", "es": "Voy al gimnasio los lunes.", "pron": "ái góu tu de yim on mándei", "block": 17, "emoji": "🏋️", "words": ["w-i", "w-the", "w-go", "w-monday", "w-on", "w-gym"]},
+    {"id": "s-the-shop-is-near-my-house", "en": "The shop is near my house.", "es": "La tienda está cerca de mi casa.", "pron": "de shop is nía mái jáus", "block": 17, "emoji": "🏪", "words": ["w-i", "w-my", "w-is", "w-the", "w-house", "w-shop", "w-near"]}
+  ]
+}
