@@ -5,7 +5,7 @@ import { content } from '../core/content.js';
 import { state } from '../core/store.js';
 import { T, t, tt } from '../core/i18n.js';
 import {
-  currentBlock, currentStage, blockProgress, stageProgress, stagesDone, atSummit, newToday, DAILY, NEW_WORDS,
+  currentBlock, currentStage, blockProgress, stageProgress, stagesDone, atSummit, newToday, leftToday, DAILY, NEW_WORDS,
 } from '../core/path.js';
 
 // "9 palabras y 2 frases", "1 palabra", "2 frases"...
@@ -22,12 +22,26 @@ const meter = (emoji, label, value, total) => `
     <div class="bar-track"><div class="bar-fill ${value >= total ? 'full' : 'c2'}" style="width:${total ? Math.round(100 * value / total) : 0}%"></div></div>
   </div>`;
 
-// Frase sobre lo que se puede descubrir hoy; si ya no queda nada, "vuelve mañana y seguimos".
+// Frase sobre lo que queda por descubrir hoy. Cuando se acaba lo nuevo, deja claro que
+// lo ha hecho bien y que el día sigue: solo descansa lo nuevo.
 export function todayLine() {
-  const left = newToday();
-  if (!left.anythingLeft) return '';
-  return left.words || left.sentences ? T('today_more') : T('today_done');
+  if (!newToday().anythingLeft) return '';
+  const left = leftToday();
+  const what = howMany(left.words, left.sentences);
+  return what ? T('today_left', { what }) : T('today_done');
 }
+
+// Lo mismo en corto, para el botón grande del panel (siempre visible).
+export function todayShort() {
+  if (!newToday().anythingLeft) return '';
+  const left = leftToday();
+  const what = howMany(left.words, left.sentences);
+  return what ? t('today_short', { what }) : t('today_short_done');
+}
+export const nothingNewToday = () => {
+  const left = leftToday();
+  return newToday().anythingLeft && !left.words && !left.sentences;
+};
 
 // compact: solo las frases (para el final de una partida). Completo: con barras y la regla diaria.
 export function nextStep({ compact = false } = {}) {

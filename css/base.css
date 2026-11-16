@@ -183,6 +183,8 @@ h1, h2, p { margin: 0; }
 }
 .play-big:active { transform: translateY(6px); box-shadow: none; }
 .pb-emoji { font-size: 4.6rem; line-height: 1; }
+.pb-sub { font-size: 1.1rem; font-weight: 800; text-shadow: none; background: rgba(23, 19, 46, .32); border-radius: 999px; padding: 6px 18px; margin-top: 8px; max-width: 92%; }
+.pb-sub:empty { display: none; }
 @keyframes breathe { 50% { transform: scale(1.015); } }
 .tiles { display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; }
 .home-tile {

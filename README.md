@@ -87,8 +87,12 @@ progreso.
 - **Sesión de juego:** presenta 3 palabras nuevas, o 1 frase nueva, y luego encadena
   4 minijuegos que mezclan lo nuevo con repaso. Las sesiones van alternando palabras y frases.
 - **Límite diario:** hasta 2 sesiones de palabras (6 palabras) y 2 de frases (2 frases) al
-  día. Después se puede seguir jugando con lo ya aprendido, y la app lo dice claro:
-  «vuelve mañana y seguimos».
+  día. Es deliberado: poco cada día y con repaso se retiene; mucho de golpe se olvida.
+  La app lo explica antes de que se llegue al tope: en la bienvenida, en el botón grande del
+  panel («Nuevo para hoy: 3 palabras y 1 frase») y en el rincón de mayores. Cuando se
+  acaba lo nuevo, el día no se acaba: se puede seguir jugando con lo ya aprendido.
+- **Celebraciones:** al terminar cada partida, al completar cada agarre (bloque), al coronar
+  cada etapa y con cada medalla.
 - **Qué hace falta para subir de etapa:** descubrir **todas las palabras y todas las frases**
   de sus cuatro bloques. Cada agarre del mapa es un bloque y se completa con sus palabras.
 
@@ -226,7 +230,7 @@ ilustra. Si escribes `{name}` en una frase, la app pone ahí el nombre guardado 
   juego de huecos (`play`; el hueco se escribe con tres guiones bajos `___`).
 - `data/silly.json` — moldes de las frases tontas: palabras fijas y huecos por categoría.
 - `data/medals.json` — medallas. `rule.type` puede ser `words`, `sentences`, `stages`,
-  `grammar`, `said`, `written`, `silly`, `songs` o `sessions`.
+  `grammar`, `said`, `written`, `silly`, `songs`, `sessions` o `blocks` (agarres completados).
 - `data/ui-strings.json` — todos los textos de la interfaz en español e inglés. `from` es el
   porcentaje de inglés a partir del cual se muestra en inglés (15, 30, 50 o 70; con 100 se
   queda siempre en español).

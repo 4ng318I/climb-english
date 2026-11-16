@@ -8,7 +8,9 @@ import { makePlan, pickGames, learnWords, learnSentence, record } from '../core/
 import { learnedWords, stagesDone, englishLevel, checkMedals } from '../core/path.js';
 import { wordCard } from '../ui/layout.js';
 import { chime, confetti } from '../ui/feedback.js';
-import { nextStep } from '../ui/nextstep.js';
+import { nextStep, nothingNewToday } from '../ui/nextstep.js';
+import { bubble } from '../ui/feedback.js';
+import { blockDone, currentBlock } from '../core/path.js';
 
 const tap = (root, sel) => new Promise(resolve => {
   root.onclick = e => { if (e.target.closest(sel)) { root.onclick = null; resolve(); } };
@@ -69,6 +71,9 @@ export default async function play(el) {
     learnSentence(plan.newSentence);
   }
 
+  // Partida sin novedades (lo de hoy ya está descubierto): se dice al empezar, en positivo.
+  if (!plan.newWords.length && !plan.newSentence && nothingNewToday()) bubble(T('review_only'), 4200);
+
   const ctx = { ...plan, learned: learnedWords() };
   const games = pickGames(ctx);
   const steps = $('#steps', el);
@@ -87,6 +92,28 @@ export default async function play(el) {
   today().minutes += Math.min(15, Math.max(1, Math.round((Date.now() - started) / 60000)));
   const medals = checkMedals();
   save();
+  // Agarre conquistado: una celebración por cada bloque completado.
+  const seen = state.ui.blocksSeen || (state.ui.blocksSeen = []);
+  const conquered = content.blocks.filter(b => blockDone(b) && !seen.includes(b.n));
+  if (conquered.length) {
+    seen.push(...conquered.map(b => b.n));
+    save();
+    const b = conquered[conquered.length - 1], next = currentBlock();
+    stage.className = 'stage';
+    stage.innerHTML = `
+      <div class="finish crown">
+        <div class="big-emoji">${esc(b.emoji)}</div>
+        <h2>${T('hold_done', { block: tt(b.title) })}</h2>
+        <p>${T('hold_done_text', { n: content.words.filter(w => w.block === b.n).length })}</p>
+        ${next.n !== b.n ? `<p class="next-line">🪨 ${T('hold_next', { block: tt(next.title) })} ${esc(next.emoji)}</p>` : ''}
+        <button class="btn next">${T('continue')} ➜</button>
+      </div>`;
+    chime();
+    confetti(36);
+    await tap(stage, '.next');
+    if (!stage.isConnected) return;
+  }
+
   if (stagesDone() > state.ui.stageSeen) {
     await crown(stage);
     if (!stage.isConnected) return;
@@ -107,7 +134,9 @@ export default async function play(el) {
       <div class="next-box">${nextStep({ compact: true })}</div>
       <div class="row">
         <button class="btn ghost" data-go="progress">📊 ${T('see_progress')}</button>
-        <button class="btn" data-go="play">🎮 ${T('play_again')}</button>
+        ${nothingNewToday() ? `<button class="btn ghost" data-go="words">📒 ${T('mywords_title')}</button>
+        <button class="btn ghost" data-go="song">🎵 ${T('song_title')}</button>` : ''}
+        <button class="btn" data-go="play">🎮 ${T(nothingNewToday() ? 'play_known' : 'play_again')}</button>
       </div>
     </div>`;
   chime();

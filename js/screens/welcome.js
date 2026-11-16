@@ -1,11 +1,33 @@
 // Primera vez: la mascota pregunta el nombre. Se guarda solo en este dispositivo
 // (el repositorio público no contiene el nombre de nadie).
-import { $ } from '../core/util.js';
+import { $, esc } from '../core/util.js';
+import { DAILY, NEW_WORDS } from '../core/path.js';
 import { state, save } from '../core/store.js';
 import { t } from '../core/i18n.js';
 import { bubble } from '../ui/feedback.js';
 
 export const cleanName = raw => String(raw ?? '').replace(/[{}<>]/g, '').replace(/\s+/g, ' ').trim().slice(0, 16);
+
+// Segundo paso: cómo funciona el ritmo, contado antes de que se tope con el límite.
+function explain(el) {
+  const n = { name: state.settings.name, words: DAILY.wordSessions * NEW_WORDS, sentences: DAILY.sentenceSessions };
+  el.innerHTML = `
+    <section class="stage welcome">
+      <div class="big-emoji">🦎</div>
+      <div class="rhythm">
+        <p><b>${esc(t('rhythm_hi', n))}</b></p>
+        <p>🌱 ${esc(t('rhythm_little', n))}</p>
+        <p>🎮 ${esc(t('rhythm_play', n))}</p>
+        <p>🌅 ${esc(t('rhythm_tomorrow', n))}</p>
+      </div>
+      <button class="btn" id="go">🧗 ${esc(t('rhythm_go'))}</button>
+    </section>`;
+  $('#go', el).onclick = () => {
+    // Se recarga para que las frases de ejemplo salgan ya con su nombre.
+    location.hash = '#home';
+    location.reload();
+  };
+}
 
 export default function welcome(el) {
   el.innerHTML = `
@@ -24,8 +46,6 @@ export default function welcome(el) {
     if (!name) { bubble(t('welcome_empty')); $('#who', el).focus(); return; }
     state.settings.name = name.charAt(0).toUpperCase() + name.slice(1);
     save();
-    // Se recarga para que las frases de ejemplo salgan ya con su nombre.
-    location.hash = '#home';
-    location.reload();
+    explain(el);
   };
 }

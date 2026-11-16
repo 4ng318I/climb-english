@@ -5,7 +5,8 @@ import { content } from '../core/content.js';
 import { state, save } from '../core/store.js';
 import { speak, canSpeak, micSupported, voiceInfo, accentName } from '../core/speech.js';
 import { exportProgress, readBackup, importProgress } from '../core/backup.js';
-import { learnedWords, englishLevel, currentStage } from '../core/path.js';
+import { learnedWords, englishLevel, currentStage, leftToday, DAILY, NEW_WORDS } from '../core/path.js';
+import { howMany } from '../ui/nextstep.js';
 import { applyTheme } from '../core/theme.js';
 import { go } from '../core/nav.js';
 import { header } from '../ui/layout.js';
@@ -45,6 +46,7 @@ function voiceReport(s) {
 
 export default function settings(el) {
   const s = state.settings;
+  const left = leftToday();
   el.innerHTML = `${header('Rincón de mayores', '👨‍👩‍👧')}
     <section class="stage settings">
       <div class="panel">
@@ -83,6 +85,21 @@ export default function settings(el) {
       <div class="panel">
         <h2>🌙 Aspecto</h2>
         <label class="switch"><input type="checkbox" id="dark"${s.dark ? ' checked' : ''}><span>Modo oscuro</span></label>
+      </div>
+
+      <div class="panel">
+        <h2>📅 Ritmo de aprendizaje</h2>
+        <p class="note"><b>Cada partida enseña como mucho ${NEW_WORDS} palabras nuevas o 1 frase nueva.</b> Al día hay
+          hasta ${DAILY.wordSessions} partidas con palabras nuevas (${DAILY.wordSessions * NEW_WORDS} palabras) y
+          ${DAILY.sentenceSessions} con frase nueva. Hoy le quedan: <b>${esc(howMany(left.words, left.sentences) || 'nada nuevo; mañana hay más')}</b>.</p>
+        <p class="note"><b>Por qué.</b> Lo que se aprende de golpe se olvida de golpe. Con pocas palabras al día, y
+          haciéndolas volver en los juegos al cabo de 1, 2, 4, 8 y 16 días, se quedan. Si la app dejara aprender 40
+          palabras una tarde, a la semana recordaría muy pocas y sentiría que no avanza.</p>
+        <p class="note"><b>Cuando se acaba lo nuevo del día, el día no se acaba:</b> puede seguir jugando con lo que ya
+          sabe (eso es justo el repaso que fija las palabras), practicar la voz y la escritura, mirar «Mis palabras» o
+          ir a la canción. La app se lo dice así, sin tono de castigo. Si pregunta por qué no hay más palabras, la
+          respuesta es: «porque así no se te olvidan, y mañana hay más».</p>
+        <p class="note">El límite es deliberado y no se cambia desde la app.</p>
       </div>
 
       <div class="panel">

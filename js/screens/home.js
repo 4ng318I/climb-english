@@ -1,5 +1,5 @@
 // Panel principal. El botón de jugar es el más grande, con diferencia.
-import { $, pick, dayKey, daysBetween } from '../core/util.js';
+import { $, esc, pick, dayKey, daysBetween } from '../core/util.js';
 import { state, save } from '../core/store.js';
 import { T, t, tt } from '../core/i18n.js';
 import { currentStage, learnedWords } from '../core/path.js';
@@ -7,7 +7,7 @@ import { go } from '../core/nav.js';
 import { applyTheme } from '../core/theme.js';
 import { bubble } from '../ui/feedback.js';
 import { voiceBlocked, notBritish } from '../core/speech.js';
-import { shortGoal } from '../ui/nextstep.js';
+import { shortGoal, todayShort } from '../ui/nextstep.js';
 
 const TILES = [
   ['pron', '🗣️', 'pron_title'],
@@ -38,6 +38,7 @@ export default function home(el) {
     <div class="alert" id="voice-alert" hidden></div>
     <button class="play-big" data-go="play">
       <span class="pb-emoji">🎮</span><span class="pb-text">${T('play_title')}</span>
+      <span class="pb-sub">${esc(todayShort())}</span>
     </button>
     <nav class="tiles">${TILES.map(([route, emoji, key], i) => `
       <button class="home-tile t${i + 1}" data-go="${route}"><span class="ht-emoji">${emoji}</span><span>${T(key)}</span></button>`).join('')}

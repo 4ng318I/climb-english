@@ -14,7 +14,7 @@ const fresh = () => ({
   days: [],       // [{ date, newWords, newSentences, wordSessions, sentenceSessions, minutes, grammar }]
   medals: {},     // id -> fecha
   stats: { sessions: 0, silly: 0, said: 0, written: 0 },
-  ui: { flipped: {}, stageSeen: 0, rot: 0, lastNew: '' },
+  ui: { flipped: {}, stageSeen: 0, rot: 0, lastNew: '', blocksSeen: [] },
   lastVisit: null,
   lastExport: null,
 });

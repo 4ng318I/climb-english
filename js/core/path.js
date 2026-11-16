@@ -83,6 +83,22 @@ export function nextSentence() {
     !state.sentences[s.id] && s.block <= limit && s.words.every(id => state.words[id])) || null;
 }
 
+// Cuánto nuevo queda HOY, en números: { words, sentences }.
+export function leftToday() {
+  const day = today();
+  const wordSessions = Math.max(0, DAILY.wordSessions - (day.wordSessions || 0));
+  const sentenceSessions = Math.max(0, DAILY.sentenceSessions - (day.sentenceSessions || 0));
+  const words = Math.min(wordSessions * NEW_WORDS, content.words.filter(w => !state.words[w.id]).length);
+  const pending = content.sentences.filter(s => !state.sentences[s.id]);
+  // Frases que hoy pueden salir de verdad: las que ya tienen todas sus palabras, contando
+  // también las palabras que aún se pueden descubrir hoy (para no prometer de más).
+  const coming = nextWords(words);
+  const known = new Set([...Object.keys(state.words), ...coming.map(w => w.id)]);
+  const limit = Math.max(currentBlock().n, ...coming.map(w => w.block));
+  const ready = pending.filter(s => s.block <= limit && s.words.every(id => known.has(id))).length;
+  return { words, sentences: Math.min(sentenceSessions, ready) };
+}
+
 // ¿Queda algo nuevo que descubrir HOY? (por el límite diario y por lo que quede en el banco)
 export function newToday() {
   const day = today();
@@ -108,6 +124,7 @@ export function counts() {
     written: state.stats.written,
     silly: state.stats.silly,
     sessions: state.stats.sessions,
+    blocks: content.blocks.filter(blockDone).length,
     songs: Object.keys(state.songs).length,
   };
 }
