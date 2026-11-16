@@ -84,9 +84,28 @@ progreso.
 
 ## Cómo funciona por dentro
 
-- **Sesión de juego:** presenta como mucho 3 palabras nuevas, o 1 frase nueva, y luego
-  encadena 4 minijuegos que mezclan lo nuevo con repaso. Hay un tope de dos sesiones con
-  novedades al día (6 palabras); después se puede seguir jugando con lo ya aprendido.
+- **Sesión de juego:** presenta 3 palabras nuevas, o 1 frase nueva, y luego encadena
+  4 minijuegos que mezclan lo nuevo con repaso. Las sesiones van alternando palabras y frases.
+- **Límite diario:** hasta 2 sesiones de palabras (6 palabras) y 2 de frases (2 frases) al
+  día. Después se puede seguir jugando con lo ya aprendido, y la app lo dice claro:
+  «vuelve mañana y seguimos».
+- **Qué hace falta para subir de etapa:** descubrir **todas las palabras y todas las frases**
+  de sus cuatro bloques. Cada agarre del mapa es un bloque y se completa con sus palabras.
+
+  | Etapa | Bloques | Palabras | Frases |
+  |---|---|---|---|
+  | 1 Campo base | 1–4 | 64 | 23 |
+  | 2 Primeros agarres | 5–8 | 67 | 25 |
+  | 3 La gran pared | 9–12 | 66 | 24 |
+  | 4 La cornisa | 13–16 | 64 | 28 |
+  | 5 La cima A1 | 17–20 | 64 | 32 |
+
+  Al ritmo máximo, cada etapa lleva unas dos semanas. Los trucos, la voz y la escritura
+  se ven en «Mi progreso», pero no bloquean la subida.
+- **Mi progreso:** «Tu siguiente paso» dice exactamente qué falta para completar el agarre y para subir de etapa («te faltan 9 palabras y
+  2 frases»). Las barras cuentan siempre sobre el total de la etapa («3 de 64»).
+- **Mis palabras:** lista de todo lo descubierto, por bloque, con significado, grafía y
+  botón de escuchar. ⭐ «me la sé» (ha acertado varios repasos) o 🌱 «creciendo».
 - **Orden:** las palabras salen en el orden en que están escritas en los archivos, bloque a
   bloque. Una frase solo aparece cuando ya se conocen todas las palabras de su lista `words`.
 - **Repaso espaciado:** cada palabra vive en una caja de 1 a 5 y vuelve a los 1, 2, 4, 8 o
@@ -99,6 +118,8 @@ progreso.
   («uóte») es solo una ayuda visual y se presenta siempre como «suena parecido a».
 - **Gramática:** una regla nueva al día como máximo; las ya vistas se pueden repetir siempre.
 - **Canciones:** sin letras. Cada día que se abre una canción se desbloquean hasta 3 palabras.
+  Son un extra: **no cuentan para el camino** (no son temario A1 y cambian con cada canción
+  que añadas), pero se guardan y se ven en «Mi progreso» y al final de «Mis palabras».
 
 ## Añadir o corregir contenido sin tocar el código
 
@@ -244,8 +265,8 @@ css/        base.css · components.css · games.css
 js/app.js                            arranque y navegación
 js/core/    store (progreso) · backup · content · srs (repaso) · session · path (etapas y medallas)
             i18n (paso al inglés) · speech (voz y micro) · nav · theme · util
-js/ui/      feedback (ánimos, confeti) · layout · charts (gráficas SVG) · keyboard
-js/screens/ welcome · home · play · pronunciation · writing · grammar · song · progress · settings
+js/ui/      feedback (ánimos, confeti) · layout · charts (gráficas SVG) · keyboard · nextstep
+js/screens/ welcome · home · play · pronunciation · writing · grammar · song · words · progress · settings
 js/games/   match · intruder · scramble · taps · memory · silly
 data/       todo el contenido
 assets/     iconos y la fuente Nunito (licencia SIL Open Font License)

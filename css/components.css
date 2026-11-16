@@ -128,11 +128,11 @@
 
 /* ---------- Mi progreso ---------- */
 .progress { align-items: stretch; text-align: left; }
-.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
 .stat { border-radius: 26px; padding: 14px 10px; text-align: center; box-shadow: var(--shadow); color: #2B2350; }
 .stat b { display: block; font-size: 2.8rem; font-weight: 1000; line-height: 1; }
 .stat span { font-size: 1rem; font-weight: 800; }
-.s1 { background: #FFD166; } .s2 { background: #8EE3D6; } .s3 { background: #FFA8CF; }
+.s1 { background: #FFD166; } .s2 { background: #8EE3D6; } .s3 { background: #FFA8CF; } .s4 { background: #C9B8FF; }
 .panel { background: var(--card); border-radius: 30px; box-shadow: var(--shadow); padding: 18px 20px 22px; }
 .panel h2 { font-size: 1.4rem; font-weight: 1000; margin-bottom: 12px; }
 .caption { text-align: center; font-weight: 900; min-height: 1.6em; margin: 6px 0 12px; }
@@ -172,12 +172,14 @@
 }
 
 .bars { display: flex; flex-direction: column; gap: 12px; }
-.bar-row { display: grid; grid-template-columns: minmax(120px, 10.5em) 1fr 3.4em; align-items: center; gap: 12px; }
+.bar-row { display: grid; grid-template-columns: 1fr auto; align-items: baseline; gap: 4px 12px; }
 .bar-label { font-weight: 900; }
-.bar-track { height: 26px; border-radius: 999px; background: var(--soft); overflow: hidden; }
+.bar-track { grid-column: 1 / -1; height: 24px; border-radius: 999px; background: var(--soft); overflow: hidden; }
 .bar-fill { height: 100%; border-radius: 999px; transition: width .8s ease; }
-.bar-val { font-weight: 1000; text-align: right; }
-.c1 { background: var(--coral); } .c2 { background: var(--violet); } .c3 { background: var(--teal); } .c4 { background: var(--sun); }
+.bar-val { font-weight: 1000; text-align: right; white-space: nowrap; }
+.c1 { background: var(--coral); } .c2 { background: var(--violet); } .c3 { background: var(--teal); }
+.c4 { background: var(--sun); } .c5 { background: var(--pink); }
+.bar-fill.full { background: var(--green); }
 
 /* ---------- Rincón de mayores ---------- */
 .settings { align-items: stretch; text-align: left; font-size: 1.05rem; }
@@ -198,7 +200,6 @@
   .wcard .en, .taps .en { font-size: 2.1rem; }
   .slot-letter { width: 44px; height: 56px; font-size: 1.8rem; }
   .key { min-height: 56px; font-size: 1.35rem; }
-  .bar-row { grid-template-columns: 7.5em 1fr 3em; }
 }
 
 /* ---------- Bienvenida (primera vez) ---------- */
@@ -209,4 +210,50 @@
 .who input {
   width: 100%; min-height: 76px; border-radius: 22px; border: 4px solid var(--sun); background: var(--card);
   padding: 8px 20px; font-size: 1.8rem; font-weight: 900; text-align: center;
+}
+
+/* ---------- Tu siguiente paso ---------- */
+.panel.next { border: 4px solid var(--sun); }
+.next-line { font-size: 1.15rem; font-weight: 800; margin-bottom: 10px; }
+.next-line.today { color: var(--ink2); }
+.next-box { background: var(--card); border-radius: 24px; padding: 14px 20px 6px; box-shadow: var(--shadow); text-align: left; max-width: 620px; }
+.meters { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 14px 0 10px; }
+.meter-top { display: flex; justify-content: space-between; gap: 10px; font-weight: 900; margin-bottom: 4px; }
+.note.center { text-align: center; }
+.panel h3 { font-size: 1.15rem; font-weight: 1000; margin: 18px 0 8px; }
+.progress > .btn { align-self: center; }
+
+/* ---------- Diario de escalada ---------- */
+.diary { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 12px; margin-bottom: 10px; }
+.day-card { background: var(--soft); border-radius: 20px; padding: 10px 12px; display: flex; flex-direction: column; gap: 6px; font-size: .9rem; font-weight: 800; }
+.day-card b { font-size: 1.15rem; font-weight: 1000; }
+.day-dots { display: flex; flex-wrap: wrap; gap: 5px; min-height: 18px; }
+i.dw, i.ds { display: inline-block; width: 16px; height: 16px; border-radius: 50%; background: var(--violet); vertical-align: -2px; }
+i.ds { border-radius: 5px; background: var(--teal); }
+
+/* ---------- Mis palabras ---------- */
+.mywords { align-items: stretch; text-align: left; }
+.mywords > .howto { align-self: center; text-align: center; }
+.legend-line { text-align: center; font-size: .95rem; font-weight: 700; color: var(--ink2); }
+.count { font-size: .9rem; font-weight: 800; color: var(--ink2); margin-left: 6px; }
+.section-title { font-size: 1.4rem; font-weight: 1000; margin-top: 10px; }
+.wlist { display: grid; grid-template-columns: repeat(auto-fill, minmax(420px, 1fr)); gap: 10px; }
+.wrow { display: flex; align-items: center; gap: 12px; background: var(--soft); border-radius: 20px; padding: 8px 12px; }
+.wrow.sentence { grid-column: 1 / -1; }
+.wrow .listen { width: 60px; height: 60px; font-size: 1.6rem; }
+.w-emoji { font-size: 2rem; flex: none; }
+.w-text { flex: 1; min-width: 0; display: flex; flex-direction: column; line-height: 1.2; }
+.w-text > b { font-size: 1.35rem; font-weight: 1000; }
+.w-text > span { color: var(--ink2); }
+.w-text small { font-size: .85rem; font-weight: 700; color: var(--ink2); }
+.w-text small b { color: var(--ink); }
+.w-mark { flex: none; border-radius: 999px; padding: 3px 10px; font-size: .8rem; font-weight: 900; white-space: nowrap; }
+.w-mark.know { background: var(--sun); color: #2B2350; }
+.w-mark.grow { background: var(--done-bg); color: var(--done-ink); }
+
+@media (max-width: 700px) {
+  .wlist { grid-template-columns: 1fr; }
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .meters { grid-template-columns: 1fr; }
+  .wrow { flex-wrap: wrap; }
 }

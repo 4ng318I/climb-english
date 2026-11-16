@@ -7,12 +7,14 @@ import { go } from '../core/nav.js';
 import { applyTheme } from '../core/theme.js';
 import { bubble } from '../ui/feedback.js';
 import { voiceBlocked, notBritish } from '../core/speech.js';
+import { shortGoal } from '../ui/nextstep.js';
 
 const TILES = [
   ['pron', '🗣️', 'pron_title'],
   ['write', '✍️', 'write_title'],
   ['grammar', '📚', 'grammar_title'],
   ['song', '🎵', 'song_title'],
+  ['words', '📒', 'mywords_title'],
   ['progress', '📊', 'progress_title'],
 ];
 
@@ -41,7 +43,7 @@ export default function home(el) {
       <button class="home-tile t${i + 1}" data-go="${route}"><span class="ht-emoji">${emoji}</span><span>${T(key)}</span></button>`).join('')}
     </nav>
     <footer class="home-foot">
-      <span class="where">${stage.emoji} ${tt(stage.name)}${n ? ` · ${n} ${t('words')}` : ''}</span>
+      <span class="where">${stage.emoji} ${tt(stage.name)}${n ? ` · ${n} ${t('words')}` : ''}<small>${shortGoal()}</small></span>
       <button class="grown" id="grown">👨‍👩‍👧 ${t('grownups')}</button>
     </footer>`;
 

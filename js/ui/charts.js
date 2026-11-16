@@ -58,14 +58,17 @@ export function wireChart(root) {
   chart.addEventListener('pointerdown', show);
 }
 
-// --- Dominio por área: cada barra lleva su nombre y su número al lado ---
-export function domainBars(rows) {
-  return `<div class="bars">${rows.map((r, i) => `
+// --- Barras de la etapa: nombre, cuenta ("3 de 64") y barra. Sin porcentajes sueltos. ---
+export function domainBars(rows, of) {
+  return `<div class="bars">${rows.map((r, i) => {
+    const pct = r.total ? Math.round(100 * r.value / r.total) : 0;
+    return `
     <div class="bar-row">
       <span class="bar-label">${r.emoji} ${r.label}</span>
-      <div class="bar-track"><div class="bar-fill c${i + 1}" style="width:${Math.max(3, r.value)}%"></div></div>
-      <span class="bar-val">${r.value}%</span>
-    </div>`).join('')}</div>`;
+      <span class="bar-val">${r.value} ${esc(of)} ${r.total}</span>
+      <div class="bar-track"><div class="bar-fill ${r.total && r.value >= r.total ? 'full' : 'c' + (i % 5 + 1)}" style="width:${r.value ? Math.max(3, pct) : 0}%"></div></div>
+    </div>`;
+  }).join('')}</div>`;
 }
 
 // --- Mapa del camino: una montaña con un agarre por bloque ---

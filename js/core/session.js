@@ -3,7 +3,7 @@
 import { content } from './content.js';
 import { state, today, save } from './store.js';
 import { introduce, result, dueIds } from './srs.js';
-import { learnedWords, learnedSentences, currentBlock } from './path.js';
+import { learnedWords, learnedSentences, nextWords, nextSentence, newToday, NEW_WORDS } from './path.js';
 import { shuffle } from './util.js';
 import match from '../games/match.js';
 import intruder from '../games/intruder.js';
@@ -14,28 +14,18 @@ import silly from '../games/silly.js';
 
 export const GAMES = [match, intruder, scramble, taps, memory, silly];
 
-const NEW_WORDS = 3;        // palabras nuevas por sesión
-const NOVELTY_PER_DAY = 2;  // sesiones con novedad al día (6 palabras como mucho)
 const REVIEW = 5;           // palabras de repaso por sesión
 const GAMES_PER_SESSION = 4;
 
-const nextWords = n => content.words.filter(w => !state.words[w.id]).slice(0, n);
-
-function nextSentence() {
-  const limit = currentBlock().n;
-  return content.sentences.find(s =>
-    !state.sentences[s.id] && s.block <= limit && s.words.every(id => state.words[id])) || null;
-}
-
 export function makePlan() {
-  const day = today();
+  // Cada sesión trae 3 palabras nuevas O 1 frase nueva, alternando. Las palabras y las
+  // frases tienen cada una su tope diario (ver DAILY en path.js).
+  const left = newToday();
+  const words = left.words ? nextWords(NEW_WORDS) : [];
+  const sentence = left.sentences ? nextSentence() : null;
   let newWords = [], newSentence = null;
-  if (day.novelty < NOVELTY_PER_DAY) {
-    const words = nextWords(NEW_WORDS);
-    const sentence = nextSentence();
-    if (sentence && (state.ui.lastNew === 'words' || !words.length)) newSentence = sentence;
-    else newWords = words;
-  }
+  if (sentence && (state.ui.lastNew === 'words' || !words.length)) newSentence = sentence;
+  else newWords = words;
 
   // Repaso: primero lo que toca hoy; si falta, lo que la alumna tiene menos visto.
   const fresh = new Set(newWords.map(w => w.id));
@@ -81,14 +71,16 @@ export function learnWords(words) {
     introduce(state.words, w.id);
     day.newWords++;
   }
-  day.novelty++;
+  day.wordSessions = (day.wordSessions || 0) + 1;
   state.ui.lastNew = 'words';
   save();
 }
 
 export function learnSentence(s) {
   introduce(state.sentences, s.id);
-  today().novelty++;
+  const day = today();
+  day.sentenceSessions = (day.sentenceSessions || 0) + 1;
+  day.newSentences = (day.newSentences || 0) + 1;
   state.ui.lastNew = 'sentence';
   save();
 }

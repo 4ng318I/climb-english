@@ -1,7 +1,7 @@
 // Service worker: deja la app entera guardada en la tablet para que funcione sin internet.
 // Estrategia: primero la red (así los cambios en los JSON llegan solos) y, si no hay
 // red o tarda, la copia guardada. Los vídeos y el reconocimiento de voz no pasan por aquí.
-const CACHE = 'ingles-a1-v2';
+const CACHE = 'ingles-a1-v3';
 
 const CORE = [
   './', 'index.html', 'manifest.json',
@@ -10,9 +10,9 @@ const CORE = [
   'js/core/util.js', 'js/core/store.js', 'js/core/content.js', 'js/core/srs.js', 'js/core/path.js',
   'js/core/i18n.js', 'js/core/speech.js', 'js/core/backup.js', 'js/core/nav.js', 'js/core/session.js',
   'js/core/theme.js',
-  'js/ui/feedback.js', 'js/ui/layout.js', 'js/ui/charts.js', 'js/ui/keyboard.js',
+  'js/ui/feedback.js', 'js/ui/layout.js', 'js/ui/charts.js', 'js/ui/keyboard.js', 'js/ui/nextstep.js',
   'js/screens/home.js', 'js/screens/play.js', 'js/screens/pronunciation.js', 'js/screens/writing.js',
-  'js/screens/grammar.js', 'js/screens/song.js', 'js/screens/progress.js', 'js/screens/settings.js', 'js/screens/welcome.js',
+  'js/screens/grammar.js', 'js/screens/song.js', 'js/screens/progress.js', 'js/screens/settings.js', 'js/screens/welcome.js', 'js/screens/words.js',
   'js/games/match.js', 'js/games/intruder.js', 'js/games/scramble.js', 'js/games/taps.js',
   'js/games/memory.js', 'js/games/silly.js',
   'data/blocks.json', 'data/grammar.json', 'data/silly.json', 'data/songs.json',

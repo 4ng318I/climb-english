@@ -11,7 +11,7 @@ const fresh = () => ({
   sentences: {},  // id -> { box, learned, due, last, ok, seen }
   grammar: {},    // id -> { seen, plays }
   songs: {},      // id -> { unlocked, day }
-  days: [],       // [{ date, newWords, novelty, minutes, grammar }]
+  days: [],       // [{ date, newWords, newSentences, wordSessions, sentenceSessions, minutes, grammar }]
   medals: {},     // id -> fecha
   stats: { sessions: 0, silly: 0, said: 0, written: 0 },
   ui: { flipped: {}, stageSeen: 0, rot: 0, lastNew: '' },
@@ -60,7 +60,7 @@ export function today() {
   const date = dayKey();
   let d = state.days.find(x => x.date === date);
   if (!d) {
-    d = { date, newWords: 0, novelty: 0, minutes: 0, grammar: 0 };
+    d = { date, newWords: 0, newSentences: 0, wordSessions: 0, sentenceSessions: 0, minutes: 0, grammar: 0 };
     state.days.push(d);
   }
   return d;

@@ -4,7 +4,7 @@ import { $, esc, dayKey } from '../core/util.js';
 import { content } from '../core/content.js';
 import { state, save } from '../core/store.js';
 import { T } from '../core/i18n.js';
-import { checkMedals } from '../core/path.js';
+import { checkMedals, songKey as songId } from '../core/path.js';
 import { go } from '../core/nav.js';
 import { header, wordCard, howto } from '../ui/layout.js';
 import { bubble } from '../ui/feedback.js';
@@ -12,7 +12,6 @@ import memory from '../games/memory.js';
 
 const PER_DAY = 3; // palabras nuevas de una canción por día (misma regla que al jugar)
 
-const songId = s => s.id || s.title.toLowerCase().replace(/[^a-z0-9]+/g, '-');
 const safeUrl = u => (/^https:\/\//i.test(u || '') ? u : '');
 
 function youtubeId(url) {

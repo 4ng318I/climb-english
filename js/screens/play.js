@@ -8,6 +8,7 @@ import { makePlan, pickGames, learnWords, learnSentence, record } from '../core/
 import { learnedWords, stagesDone, englishLevel, checkMedals } from '../core/path.js';
 import { wordCard } from '../ui/layout.js';
 import { chime, confetti } from '../ui/feedback.js';
+import { nextStep } from '../ui/nextstep.js';
 
 const tap = (root, sel) => new Promise(resolve => {
   root.onclick = e => { if (e.target.closest(sel)) { root.onclick = null; resolve(); } };
@@ -103,6 +104,7 @@ export default async function play(el) {
       ${medals.length ? `<p>${T('new_medal')}</p>
         <div class="chips">${medals.map(m =>
           `<span class="medal got"><span class="m-emoji">${esc(m.emoji)}</span>${esc(tt(m.title))}</span>`).join('')}</div>` : ''}
+      <div class="next-box">${nextStep({ compact: true })}</div>
       <div class="row">
         <button class="btn ghost" data-go="progress">📊 ${T('see_progress')}</button>
         <button class="btn" data-go="play">🎮 ${T('play_again')}</button>
