@@ -7,7 +7,7 @@
     {"id": "w-yellow", "en": "yellow", "es": "amarillo", "pron": "iélou", "pos": "cualidad", "block": 3, "emoji": "🟡", "syllables": 2, "stress": 1},
     {"id": "w-orange", "en": "orange", "es": "naranja", "pron": "órinch", "pos": "cualidad", "block": 3, "emoji": "🟠", "syllables": 2, "stress": 1},
     {"id": "w-pink", "en": "pink", "es": "rosa", "pron": "pink", "pos": "cualidad", "block": 3, "emoji": "🌸", "syllables": 1, "stress": 1},
-    {"id": "w-purple", "en": "purple", "es": "morado", "pron": "pérpel", "pos": "cualidad", "block": 3, "emoji": "🟣", "syllables": 2, "stress": 1},
+    {"id": "w-purple", "en": "purple", "es": "morado", "pron": "péepel", "pos": "cualidad", "block": 3, "emoji": "🟣", "syllables": 2, "stress": 1},
     {"id": "w-black", "en": "black", "es": "negro", "pron": "blac", "pos": "cualidad", "block": 3, "emoji": "⚫", "syllables": 1, "stress": 1},
     {"id": "w-white", "en": "white", "es": "blanco", "pron": "uáit", "pos": "cualidad", "block": 3, "emoji": "⚪", "syllables": 1, "stress": 1},
     {"id": "w-brown", "en": "brown", "es": "marrón", "pron": "bráun", "pos": "cualidad", "block": 3, "emoji": "🟤", "syllables": 1, "stress": 1},
@@ -22,7 +22,7 @@
     {"id": "s-it-is-red", "en": "It is red.", "es": "Es rojo.", "pron": "it is red", "block": 3, "emoji": "🔴", "grammar": "g-it-is", "words": ["w-i", "w-red", "w-it", "w-is"]},
     {"id": "s-what-colour-is-it", "en": "What colour is it?", "es": "¿De qué color es?", "pron": "uót cále is it", "block": 3, "emoji": "🌈", "grammar": "g-it-is", "words": ["w-i", "w-colour", "w-it", "w-is", "w-what"]},
     {"id": "s-it-is-blue-and-green", "en": "It is blue and green.", "es": "Es azul y verde.", "pron": "it is blu and grin", "block": 3, "emoji": "🔵", "grammar": "g-it-is", "words": ["w-i", "w-and", "w-blue", "w-green", "w-it", "w-is"]},
-    {"id": "s-my-favourite-colour-is-purple", "en": "My favourite colour is purple.", "es": "Mi color favorito es el morado.", "pron": "mái féivrit cále is pérpel", "block": 3, "emoji": "🟣", "words": ["w-i", "w-my", "w-purple", "w-colour", "w-is", "w-favourite"]},
-    {"id": "s-you-are-my-favourite-friend", "en": "You are my favourite friend.", "es": "Eres mi amiga favorita.", "pron": "iú ar mái féivrit frend", "block": 3, "emoji": "💖", "words": ["w-you", "w-are", "w-my", "w-friend", "w-favourite"]}
+    {"id": "s-my-favourite-colour-is-purple", "en": "My favourite colour is purple.", "es": "Mi color favorito es el morado.", "pron": "mái féivrit cále is péepel", "block": 3, "emoji": "🟣", "words": ["w-i", "w-my", "w-purple", "w-colour", "w-is", "w-favourite"]},
+    {"id": "s-you-are-my-favourite-friend", "en": "You are my favourite friend.", "es": "Eres mi amiga favorita.", "pron": "iú aa mái féivrit frend", "block": 3, "emoji": "💖", "words": ["w-you", "w-are", "w-my", "w-friend", "w-favourite"]}
   ]
 }

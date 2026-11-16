@@ -212,3 +212,9 @@ h1, h2, p { margin: 0; }
   .play-big { font-size: 1.8rem; }
   .bar h1 { font-size: 1.25rem; }
 }
+
+/* Aviso para los mayores (por ejemplo, si falta la voz inglesa) */
+.alert {
+  background: var(--sun); color: #2B2350; border-radius: 22px; padding: 12px 18px;
+  font-size: 1rem; font-weight: 800; box-shadow: var(--shadow);
+}

@@ -1,7 +1,7 @@
 // Service worker: deja la app entera guardada en la tablet para que funcione sin internet.
 // Estrategia: primero la red (así los cambios en los JSON llegan solos) y, si no hay
 // red o tarda, la copia guardada. Los vídeos y el reconocimiento de voz no pasan por aquí.
-const CACHE = 'ingles-a1-v1';
+const CACHE = 'ingles-a1-v2';
 
 const CORE = [
   './', 'index.html', 'manifest.json',
@@ -23,11 +23,11 @@ const CORE = [
 self.addEventListener('install', event => {
   event.waitUntil((async () => {
     const cache = await caches.open(CACHE);
-    await cache.addAll(CORE);
+    await cache.addAll(CORE.map(url => new Request(url, { cache: 'no-cache' })));
     // Los archivos de bloques se leen del índice: añadir un bloque no obliga a tocar esto.
     try {
       const index = await (await fetch('data/blocks.json', { cache: 'no-cache' })).json();
-      await cache.addAll(index.blocks.map(b => 'data/blocks/' + b.file));
+      await cache.addAll(index.blocks.map(b => new Request('data/blocks/' + b.file, { cache: 'no-cache' })));
     } catch (e) { /* se guardarán al usarlos */ }
     await self.skipWaiting();
   })());
@@ -43,7 +43,9 @@ self.addEventListener('activate', event => {
 async function answer(request) {
   const cache = await caches.open(CACHE);
   const cached = await cache.match(request, { ignoreSearch: true });
-  const network = fetch(request).then(res => {
+  // 'no-cache' obliga a preguntar al servidor si el archivo ha cambiado, en vez de fiarse
+  // de la copia que el navegador guarda unos minutos por su cuenta.
+  const network = fetch(request.url, { cache: 'no-cache' }).then(res => {
     if (res.ok) cache.put(request, res.clone());
     return res;
   });

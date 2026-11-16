@@ -2,30 +2,30 @@
   "block": 18,
   "words": [
     {"id": "w-get-up", "en": "get up", "es": "levantarse", "pron": "guet ap", "pos": "acción", "block": 18, "emoji": "🌄", "syllables": 2, "stress": 2},
-    {"id": "w-breakfast", "en": "breakfast", "es": "desayuno", "pron": "brécfast", "pos": "nombre", "block": 18, "emoji": "🥣", "syllables": 2, "stress": 1},
+    {"id": "w-breakfast", "en": "breakfast", "es": "desayuno", "pron": "brécfest", "pos": "nombre", "block": 18, "emoji": "🥣", "syllables": 2, "stress": 1},
     {"id": "w-lunch", "en": "lunch", "es": "comida (del mediodía)", "pron": "lanch", "pos": "nombre", "block": 18, "emoji": "🥪", "syllables": 1, "stress": 1},
     {"id": "w-dinner", "en": "dinner", "es": "cena", "pron": "díne", "pos": "nombre", "block": 18, "emoji": "🍝", "syllables": 2, "stress": 1},
     {"id": "w-wash", "en": "wash", "es": "lavar", "pron": "uósh", "pos": "acción", "block": 18, "emoji": "🧼", "syllables": 1, "stress": 1},
     {"id": "w-sleep", "en": "sleep", "es": "dormir", "pron": "slip", "pos": "acción", "block": 18, "emoji": "😴", "syllables": 1, "stress": 1},
     {"id": "w-study", "en": "study", "es": "estudiar", "pron": "stádi", "pos": "acción", "block": 18, "emoji": "📚", "syllables": 2, "stress": 1},
-    {"id": "w-work", "en": "work", "es": "trabajar", "pron": "uérk", "pos": "acción", "block": 18, "emoji": "💼", "syllables": 1, "stress": 1},
+    {"id": "w-work", "en": "work", "es": "trabajar", "pron": "ueek", "pos": "acción", "block": 18, "emoji": "💼", "syllables": 1, "stress": 1},
     {"id": "w-live", "en": "live", "es": "vivir", "pron": "liv", "pos": "acción", "block": 18, "emoji": "🏡", "syllables": 1, "stress": 1},
     {"id": "w-want", "en": "want", "es": "querer (algo)", "pron": "uónt", "pos": "acción", "block": 18, "emoji": "🤩", "syllables": 1, "stress": 1},
     {"id": "w-need", "en": "need", "es": "necesitar", "pron": "nid", "pos": "acción", "block": 18, "emoji": "❗", "syllables": 1, "stress": 1},
     {"id": "w-every", "en": "every", "es": "cada / todos los", "pron": "évri", "pos": "palabrita", "block": 18, "emoji": "🔁", "syllables": 2, "stress": 1},
     {"id": "w-always", "en": "always", "es": "siempre", "pron": "ólueis", "pos": "palabrita", "block": 18, "emoji": "♾️", "syllables": 2, "stress": 1},
     {"id": "w-sometimes", "en": "sometimes", "es": "a veces", "pron": "sámtaims", "pos": "palabrita", "block": 18, "emoji": "🌗", "syllables": 2, "stress": 1},
-    {"id": "w-early", "en": "early", "es": "temprano", "pron": "érli", "pos": "palabrita", "block": 18, "emoji": "🐓", "syllables": 2, "stress": 1},
+    {"id": "w-early", "en": "early", "es": "temprano", "pron": "éeli", "pos": "palabrita", "block": 18, "emoji": "🐓", "syllables": 2, "stress": 1},
     {"id": "w-late", "en": "late", "es": "tarde", "pron": "léit", "pos": "palabrita", "block": 18, "emoji": "🦉", "syllables": 1, "stress": 1}
   ],
   "sentences": [
-    {"id": "s-i-get-up-early", "en": "I get up early.", "es": "Me levanto temprano.", "pron": "ái guet ap érli", "block": 18, "emoji": "🌄", "words": ["w-i", "w-up", "w-get-up", "w-early"]},
+    {"id": "s-i-get-up-early", "en": "I get up early.", "es": "Me levanto temprano.", "pron": "ái guet ap éeli", "block": 18, "emoji": "🌄", "words": ["w-i", "w-up", "w-get-up", "w-early"]},
     {"id": "s-she-plays-the-piano-every-day", "en": "She plays the piano every day.", "es": "Ella toca el piano todos los días.", "pron": "shi pléis de piánou évri déi", "block": 18, "emoji": "🎹", "grammar": "g-s", "words": ["w-piano", "w-play", "w-the", "w-she", "w-day", "w-every"]},
     {"id": "s-he-climbs-on-sunday", "en": "He climbs on Sunday.", "es": "Él escala los domingos.", "pron": "ji cláims on sándei", "block": 18, "emoji": "🧗", "grammar": "g-s", "words": ["w-climb", "w-he", "w-sunday", "w-on"]},
     {"id": "s-i-always-sing-in-the-bathroom", "en": "I always sing in the bathroom.", "es": "Siempre canto en el baño.", "pron": "ái ólueis sing in de bázrum", "block": 18, "emoji": "🛁", "words": ["w-i", "w-sing", "w-the", "w-bathroom", "w-in", "w-always"]},
     {"id": "s-we-have-lunch-at-school", "en": "We have lunch at school.", "es": "Comemos en el cole.", "pron": "uí jav lanch at scul", "block": 18, "emoji": "🥪", "words": ["w-we", "w-school", "w-have", "w-lunch"]},
     {"id": "s-i-live-in-spain", "en": "I live in Spain.", "es": "Vivo en España.", "pron": "ái liv in spéin", "block": 18, "emoji": "🏡", "words": ["w-i", "w-in", "w-live"]},
-    {"id": "s-i-want-a-new-guitar", "en": "I want a new guitar.", "es": "Quiero una guitarra nueva.", "pron": "ái uónt a niú guitár", "block": 18, "emoji": "🎸", "words": ["w-i", "w-guitar", "w-a", "w-new", "w-want"]},
-    {"id": "s-my-dad-works-in-a-shop", "en": "My dad works in a shop.", "es": "Mi padre trabaja en una tienda.", "pron": "mái dad uérks in a shop", "block": 18, "emoji": "🏪", "grammar": "g-s", "words": ["w-my", "w-dad", "w-a", "w-in", "w-shop", "w-work"]}
+    {"id": "s-i-want-a-new-guitar", "en": "I want a new guitar.", "es": "Quiero una guitarra nueva.", "pron": "ái uónt a niú guitáa", "block": 18, "emoji": "🎸", "words": ["w-i", "w-guitar", "w-a", "w-new", "w-want"]},
+    {"id": "s-my-dad-works-in-a-shop", "en": "My dad works in a shop.", "es": "Mi padre trabaja en una tienda.", "pron": "mái dad ueeks in a shop", "block": 18, "emoji": "🏪", "grammar": "g-s", "words": ["w-my", "w-dad", "w-a", "w-in", "w-shop", "w-work"]}
   ]
 }

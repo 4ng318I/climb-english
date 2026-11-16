@@ -3,7 +3,7 @@
 import { $, esc } from '../core/util.js';
 import { content } from '../core/content.js';
 import { state, save } from '../core/store.js';
-import { speak, canSpeak, englishVoiceName, micSupported } from '../core/speech.js';
+import { speak, canSpeak, micSupported, voiceInfo, accentName } from '../core/speech.js';
 import { exportProgress, readBackup, importProgress } from '../core/backup.js';
 import { learnedWords, englishLevel, currentStage } from '../core/path.js';
 import { applyTheme } from '../core/theme.js';
@@ -12,9 +12,37 @@ import { header } from '../ui/layout.js';
 import { bubble } from '../ui/feedback.js';
 import { cleanName } from './welcome.js';
 
+const INSTALL = 'Android: Ajustes → Sistema → Idiomas → Síntesis de voz → Instalar datos de voz. Windows: Configuración → Hora e idioma → Voz → Agregar voces.';
+
+// Qué voz se está usando y con qué acento. Las grafías están escritas para un acento concreto,
+// así que aquí se avisa si la voz real no es la que se ha pedido.
+function voiceReport(s) {
+  if (!canSpeak()) return '<p class="note">Este navegador no puede leer en voz alta.</p>';
+  const info = voiceInfo();
+  const wanted = accentName(info.wanted);
+  if (!info.known) {
+    return `<p class="note"><b>Voz en uso: no se puede saber.</b> Este dispositivo no informa de qué voces tiene.
+      La app pide acento ${wanted} (${esc(info.wanted)}); si esa voz no está instalada, el sistema puede usar otra
+      sin avisar. Compruébalo de oído con «Probar la voz».</p>`;
+  }
+  if (!info.inUse) {
+    return `<p class="note"><b>⚠️ Este dispositivo no tiene ninguna voz inglesa.</b> Para no enseñar una pronunciación
+      equivocada, la app NO lee en voz alta hasta que instales una. ${INSTALL}</p>
+      <label class="switch"><input type="checkbox" id="force"${s.forceVoice ? ' checked' : ''}>
+      <span>He pulsado «Probar la voz» y suena inglés nativo: leer de todos modos</span></label>`;
+  }
+  const same = info.inUse.lang === info.wanted;
+  const list = info.english.map(v => `${esc(v.name)} — ${accentName(v.lang)}`).join('<br>');
+  return `<p class="note"><b>Voz en uso: ${esc(info.inUse.name)}</b><br>
+      <b>Acento: ${accentName(info.inUse.lang)} (${esc(info.inUse.lang)})</b></p>
+    ${same ? '' : `<p class="note"><b>⚠️ Has elegido acento ${wanted}, pero este dispositivo no tiene esa voz</b> y se está
+      leyendo con acento ${accentName(info.inUse.lang)}. Las grafías («suena parecido a») están escritas para el
+      acento elegido, así que algunas no coincidirán con lo que se oye. ${INSTALL}</p>`}
+    <p class="note">Voces inglesas en este dispositivo (${info.english.length}):<br>${list}</p>`;
+}
+
 export default function settings(el) {
   const s = state.settings;
-  const voice = englishVoiceName();
   el.innerHTML = `${header('Rincón de mayores', '👨‍👩‍👧')}
     <section class="stage settings">
       <div class="panel">
@@ -38,9 +66,7 @@ export default function settings(el) {
             <option value="1"${s.rate >= 1 ? ' selected' : ''}>Normal</option>
           </select></label>
         <button class="btn ghost" id="test">▶️ Probar la voz</button>
-        <p class="note">${!canSpeak() ? 'Este navegador no puede leer en voz alta.'
-          : voice ? `Voz en uso: ${esc(voice)}.`
-          : 'No veo ninguna voz inglesa en la lista. Pulsa «Probar la voz»: si suena con acento español, instala el inglés en Ajustes de Android → Sistema → Idiomas → Síntesis de voz.'}</p>
+        <div id="voice-info"></div>
       </div>
 
       <div class="panel">
@@ -67,15 +93,42 @@ export default function settings(el) {
         </div>
         <div id="confirm"></div>
       </div>
+
+      <div class="panel">
+        <h2>🔄 Actualizar contenido</h2>
+        <p class="note">La app busca cambios sola cada vez que se abre con conexión. Si has publicado correcciones y
+          no aparecen, pulsa aquí con wifi: descarga todo de nuevo. No toca el progreso.</p>
+        <button class="btn ghost" id="update">🔄 Descargar la última versión</button>
+      </div>
     </section>`;
 
   $('#name', el).onchange = e => { s.name = cleanName(e.target.value) || s.name; save(); location.reload(); };
   $('#voice', el).onchange = e => { s.voice = e.target.value; save(); go('settings'); };
   $('#rate', el).onchange = e => { s.rate = Number(e.target.value); save(); };
-  $('#test', el).onclick = () => speak('Hello! I can climb the mountain.');
+  $('#test', el).onclick = () => speak('I. Hello! I can climb the mountain.', { force: true });
+  // La lista de voces llega con retraso: el informe se rellena ahora y cuando el navegador avise.
+  const showVoice = () => {
+    if (!el.isConnected) return window.removeEventListener('voices-ready', showVoice);
+    $('#voice-info', el).innerHTML = voiceReport(s);
+    if ($('#force', el)) $('#force', el).onchange = e => { s.forceVoice = e.target.checked; save(); };
+  };
+  showVoice();
+  window.addEventListener('voices-ready', showVoice);
   $('#mic', el).onchange = e => { s.mic = e.target.checked; save(); };
   $('#dark', el).onchange = e => { s.dark = e.target.checked; save(); applyTheme(); };
   $('#export', el).onclick = () => { exportProgress(); bubble('Copia guardada en Descargas 💾'); };
+
+  $('#update', el).onclick = async () => {
+    if (!navigator.onLine) return bubble('Hace falta conexión a internet 📶');
+    try {
+      // Solo se borra la copia de archivos de la app; el progreso está en otro sitio (localStorage).
+      for (const key of await caches.keys()) await caches.delete(key);
+      const reg = await navigator.serviceWorker?.getRegistration();
+      await reg?.update();
+    } catch { /* aunque falle, la recarga pide los archivos a la red */ }
+    location.hash = '#home';
+    location.reload();
+  };
 
   $('#import', el).onchange = async e => {
     const file = e.target.files[0];

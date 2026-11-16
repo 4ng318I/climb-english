@@ -9,7 +9,7 @@
     {"id": "w-game", "en": "game", "es": "juego", "pron": "guéim", "pos": "nombre", "block": 20, "emoji": "🕹️", "syllables": 1, "stress": 1},
     {"id": "w-fun", "en": "fun", "es": "divertido", "pron": "fan", "pos": "cualidad", "block": 20, "emoji": "🥳", "syllables": 1, "stress": 1},
     {"id": "w-great", "en": "great", "es": "genial", "pron": "gréit", "pos": "cualidad", "block": 20, "emoji": "🏆", "syllables": 1, "stress": 1},
-    {"id": "w-sport", "en": "sport", "es": "deporte", "pron": "sport", "pos": "nombre", "block": 20, "emoji": "🏅", "syllables": 1, "stress": 1},
+    {"id": "w-sport", "en": "sport", "es": "deporte", "pron": "spoot", "pos": "nombre", "block": 20, "emoji": "🏅", "syllables": 1, "stress": 1},
     {"id": "w-time", "en": "time", "es": "hora / tiempo", "pron": "táim", "pos": "nombre", "block": 20, "emoji": "⌚", "syllables": 1, "stress": 1},
     {"id": "w-too", "en": "too", "es": "también", "pron": "tu", "pos": "palabrita", "block": 20, "emoji": "🫂", "syllables": 1, "stress": 1},
     {"id": "w-come", "en": "come", "es": "venir", "pron": "cam", "pos": "acción", "block": 20, "emoji": "🤗", "syllables": 1, "stress": 1},
@@ -21,13 +21,13 @@
   "sentences": [
     {"id": "s-do-you-like-music-yes-i-do", "en": "Do you like music? Yes, I do.", "es": "¿Te gusta la música? Sí.", "pron": "du iú láik miúsic? ies, ái du", "block": 20, "emoji": "🎵", "grammar": "g-questions", "words": ["w-i", "w-you", "w-yes", "w-music", "w-like", "w-do"]},
     {"id": "s-do-you-play-the-drums", "en": "Do you play the drums?", "es": "¿Tocas la batería?", "pron": "du iú pléi de drams", "block": 20, "emoji": "🥁", "grammar": "g-questions", "words": ["w-you", "w-drum", "w-play", "w-the", "w-do"]},
-    {"id": "s-how-old-are-you-i-am-ten", "en": "How old are you? I am ten.", "es": "¿Cuántos años tienes? Diez.", "pron": "jáu óuld ar iú? ái am ten", "block": 20, "emoji": "🎂", "words": ["w-i", "w-am", "w-you", "w-are", "w-ten", "w-old", "w-how"]},
-    {"id": "s-where-are-you-from-i-am-from-spain", "en": "Where are you from? I am from Spain.", "es": "¿De dónde eres? Soy de España.", "pron": "uéa ar iú from? ái am from spéin", "block": 20, "emoji": "🇪🇸", "words": ["w-i", "w-am", "w-you", "w-are", "w-where", "w-from", "w-spain"]},
-    {"id": "s-my-hobbies-are-climbing-music-and-crafts", "en": "My hobbies are climbing, music and crafts.", "es": "Mis aficiones son escalar, la música y las manualidades.", "pron": "mái jóbis ar cláimin, miúsic and crafts", "block": 20, "emoji": "🧩", "words": ["w-are", "w-my", "w-and", "w-music"]},
+    {"id": "s-how-old-are-you-i-am-ten", "en": "How old are you? I am ten.", "es": "¿Cuántos años tienes? Diez.", "pron": "jáu óuld aa iú? ái am ten", "block": 20, "emoji": "🎂", "words": ["w-i", "w-am", "w-you", "w-are", "w-ten", "w-old", "w-how"]},
+    {"id": "s-where-are-you-from-i-am-from-spain", "en": "Where are you from? I am from Spain.", "es": "¿De dónde eres? Soy de España.", "pron": "uéa aa iú from? ái am from spéin", "block": 20, "emoji": "🇪🇸", "words": ["w-i", "w-am", "w-you", "w-are", "w-where", "w-from", "w-spain"]},
+    {"id": "s-my-hobbies-are-climbing-music-and-crafts", "en": "My hobbies are climbing, music and crafts.", "es": "Mis aficiones son escalar, la música y las manualidades.", "pron": "mái jóbis aa cláimin, miúsic and crafts", "block": 20, "emoji": "🧩", "words": ["w-are", "w-my", "w-and", "w-music"]},
     {"id": "s-climbing-is-fun", "en": "Climbing is fun!", "es": "¡Escalar es divertido!", "pron": "cláimin is fan", "block": 20, "emoji": "🥳", "words": ["w-i", "w-is", "w-fun"]},
     {"id": "s-i-like-music-too", "en": "I like music too.", "es": "A mí también me gusta la música.", "pron": "ái láik miúsic tu", "block": 20, "emoji": "🎶", "words": ["w-i", "w-music", "w-like", "w-too"]},
     {"id": "s-look-at-me-i-am-at-the-top", "en": "Look at me! I am at the top!", "es": "¡Mírame! ¡Estoy en la cima!", "pron": "luk at mi, ái am at de top", "block": 20, "emoji": "🏆", "words": ["w-i", "w-am", "w-the", "w-top", "w-look", "w-me"]},
     {"id": "s-what-time-is-it", "en": "What time is it?", "es": "¿Qué hora es?", "pron": "uót táim is it", "block": 20, "emoji": "⌚", "words": ["w-i", "w-it", "w-is", "w-what", "w-time"]},
-    {"id": "s-come-and-play-with-me", "en": "Come and play with me.", "es": "Ven a jugar conmigo.", "pron": "cam and pléi uíz mi", "block": 20, "emoji": "🤗", "words": ["w-and", "w-play", "w-with", "w-come", "w-me"]}
+    {"id": "s-come-and-play-with-me", "en": "Come and play with me.", "es": "Ven a jugar conmigo.", "pron": "cam and pléi uíd mi", "block": 20, "emoji": "🤗", "words": ["w-and", "w-play", "w-with", "w-come", "w-me"]}
   ]
 }

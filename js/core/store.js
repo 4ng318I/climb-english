@@ -6,7 +6,7 @@ const KEY = 'ingles-a1:v1';
 const fresh = () => ({
   version: 1,
   created: dayKey(),
-  settings: { name: '', dark: true, mic: false, voice: 'en-GB', rate: 0.85 },
+  settings: { name: '', dark: true, mic: false, voice: 'en-GB', rate: 0.85, forceVoice: false },
   words: {},      // id -> { box, learned, due, last, ok, seen, said, written }
   sentences: {},  // id -> { box, learned, due, last, ok, seen }
   grammar: {},    // id -> { seen, plays }

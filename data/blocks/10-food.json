@@ -24,7 +24,7 @@
     {"id": "s-an-apple-and-a-banana", "en": "An apple and a banana.", "es": "Una manzana y un plátano.", "pron": "an ápel and a banána", "block": 10, "emoji": "🍎", "grammar": "g-a-an", "words": ["w-and", "w-apple", "w-banana", "w-a", "w-an"]},
     {"id": "s-i-like-pizza", "en": "I like pizza.", "es": "Me gusta la pizza.", "pron": "ái láik pítsa", "block": 10, "emoji": "🍕", "words": ["w-i", "w-pizza", "w-like"]},
     {"id": "s-i-am-hungry", "en": "I am hungry.", "es": "Tengo hambre.", "pron": "ái am jángri", "block": 10, "emoji": "😋", "words": ["w-i", "w-am", "w-hungry"]},
-    {"id": "s-i-eat-bread-with-cheese", "en": "I eat bread with cheese.", "es": "Como pan con queso.", "pron": "ái it bred uíz chis", "block": 10, "emoji": "🧀", "words": ["w-i", "w-with", "w-bread", "w-cheese", "w-eat"]},
+    {"id": "s-i-eat-bread-with-cheese", "en": "I eat bread with cheese.", "es": "Como pan con queso.", "pron": "ái it bred uíd chis", "block": 10, "emoji": "🧀", "words": ["w-i", "w-with", "w-bread", "w-cheese", "w-eat"]},
     {"id": "s-i-drink-water", "en": "I drink water.", "es": "Bebo agua.", "pron": "ái drink uóte", "block": 10, "emoji": "💧", "words": ["w-i", "w-water", "w-drink"]},
     {"id": "s-the-cake-is-big", "en": "The cake is big!", "es": "¡La tarta es grande!", "pron": "de kéik is big", "block": 10, "emoji": "🎂", "words": ["w-i", "w-big", "w-is", "w-the", "w-cake"]}
   ]

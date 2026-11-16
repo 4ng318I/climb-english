@@ -4,7 +4,7 @@
     {"id": "w-monday", "en": "Monday", "es": "lunes", "pron": "mándei", "pos": "día", "block": 16, "emoji": "📅", "syllables": 2, "stress": 1},
     {"id": "w-tuesday", "en": "Tuesday", "es": "martes", "pron": "tiúsdei", "pos": "día", "block": 16, "emoji": "📅", "syllables": 2, "stress": 1},
     {"id": "w-wednesday", "en": "Wednesday", "es": "miércoles", "pron": "uénsdei", "pos": "día", "block": 16, "emoji": "📅", "syllables": 2, "stress": 1},
-    {"id": "w-thursday", "en": "Thursday", "es": "jueves", "pron": "zérsdei", "pos": "día", "block": 16, "emoji": "📅", "syllables": 2, "stress": 1},
+    {"id": "w-thursday", "en": "Thursday", "es": "jueves", "pron": "zéesdei", "pos": "día", "block": 16, "emoji": "📅", "syllables": 2, "stress": 1},
     {"id": "w-friday", "en": "Friday", "es": "viernes", "pron": "fráidei", "pos": "día", "block": 16, "emoji": "📅", "syllables": 2, "stress": 1},
     {"id": "w-saturday", "en": "Saturday", "es": "sábado", "pron": "sátedei", "pos": "día", "block": 16, "emoji": "📅", "syllables": 3, "stress": 1},
     {"id": "w-sunday", "en": "Sunday", "es": "domingo", "pron": "sándei", "pos": "día", "block": 16, "emoji": "📅", "syllables": 2, "stress": 1},
@@ -15,15 +15,15 @@
     {"id": "w-twelve", "en": "twelve", "es": "doce", "pron": "tuélv", "pos": "número", "block": 16, "emoji": "🕛", "syllables": 1, "stress": 1},
     {"id": "w-twenty", "en": "twenty", "es": "veinte", "pron": "tuénti", "pos": "número", "block": 16, "emoji": "💯", "syllables": 2, "stress": 1},
     {"id": "w-tomorrow", "en": "tomorrow", "es": "mañana (el día siguiente)", "pron": "tumórou", "pos": "palabrita", "block": 16, "emoji": "⏭️", "syllables": 3, "stress": 2},
-    {"id": "w-birthday", "en": "birthday", "es": "cumpleaños", "pron": "bérzdei", "pos": "nombre", "block": 16, "emoji": "🎉", "syllables": 2, "stress": 1},
+    {"id": "w-birthday", "en": "birthday", "es": "cumpleaños", "pron": "béezdei", "pos": "nombre", "block": 16, "emoji": "🎉", "syllables": 2, "stress": 1},
     {"id": "w-when", "en": "when", "es": "cuándo", "pron": "uén", "pos": "pregunta", "block": 16, "emoji": "⏰", "syllables": 1, "stress": 1}
   ],
   "sentences": [
     {"id": "s-today-is-saturday", "en": "Today is Saturday.", "es": "Hoy es sábado.", "pron": "tudéi is sátedei", "block": 16, "emoji": "🗓️", "words": ["w-i", "w-is", "w-saturday", "w-today"]},
     {"id": "s-i-climb-on-saturday", "en": "I climb on Saturday.", "es": "Escalo los sábados.", "pron": "ái cláim on sátedei", "block": 16, "emoji": "🧗", "words": ["w-i", "w-climb", "w-saturday"]},
-    {"id": "s-my-birthday-is-on-friday", "en": "My birthday is on Friday.", "es": "Mi cumple es el viernes.", "pron": "mái bérzdei is on fráidei", "block": 16, "emoji": "🎉", "words": ["w-i", "w-my", "w-is", "w-friday", "w-birthday"]},
+    {"id": "s-my-birthday-is-on-friday", "en": "My birthday is on Friday.", "es": "Mi cumple es el viernes.", "pron": "mái béezdei is on fráidei", "block": 16, "emoji": "🎉", "words": ["w-i", "w-my", "w-is", "w-friday", "w-birthday"]},
     {"id": "s-i-am-ten-tomorrow-i-am-eleven", "en": "I am ten. Tomorrow I am eleven!", "es": "Tengo diez. ¡Mañana tengo once!", "pron": "ái am ten. tumórou ái am iléven", "block": 16, "emoji": "🎂", "words": ["w-i", "w-am", "w-ten", "w-eleven", "w-tomorrow"]},
-    {"id": "s-there-are-seven-days-in-a-week", "en": "There are seven days in a week.", "es": "Hay siete días en una semana.", "pron": "déa ar séven déis in a uík", "block": 16, "emoji": "7️⃣", "words": ["w-are", "w-seven", "w-a", "w-there", "w-day", "w-week"]},
-    {"id": "s-when-is-your-birthday", "en": "When is your birthday?", "es": "¿Cuándo es tu cumpleaños?", "pron": "uén is iór bérzdei", "block": 16, "emoji": "⏰", "words": ["w-i", "w-is", "w-your", "w-birthday", "w-when"]}
+    {"id": "s-there-are-seven-days-in-a-week", "en": "There are seven days in a week.", "es": "Hay siete días en una semana.", "pron": "déa aa séven déis in a uík", "block": 16, "emoji": "7️⃣", "words": ["w-are", "w-seven", "w-a", "w-there", "w-day", "w-week"]},
+    {"id": "s-when-is-your-birthday", "en": "When is your birthday?", "es": "¿Cuándo es tu cumpleaños?", "pron": "uén is ioo béezdei", "block": 16, "emoji": "⏰", "words": ["w-i", "w-is", "w-your", "w-birthday", "w-when"]}
   ]
 }

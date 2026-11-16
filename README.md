@@ -36,10 +36,17 @@ La app lee en voz alta con la voz del propio Android, y esa voz es la referencia
 pronunciación. Compruébala antes de entregar la tablet:
 
 1. En el panel, mantén pulsado **Mayores** (abajo a la derecha) dos segundos.
-2. Toca **Probar la voz**. Tiene que sonar una voz inglesa nativa.
+2. Toca **Probar la voz**. Dice «I. Hello! I can climb the mountain.» y tiene que sonar una
+   voz inglesa nativa: la primera palabra debe sonar «ái», no «i».
 3. Si suena con acento español o no suena: Ajustes de Android → Sistema → Idiomas →
    **Síntesis de voz** → motor de Google → **Instalar datos de voz** →
    *English (United Kingdom)*. Descárgala para que funcione también sin conexión.
+
+Si el dispositivo no tiene ninguna voz inglesa, el navegador leería las palabras inglesas con
+la voz española (y «I» sonaría «i»). Para no enseñar una pronunciación equivocada, en ese
+caso la app **se queda callada** y muestra un aviso amarillo en el panel hasta que se instale
+la voz. Lo mismo vale para probarla en un ordenador: en Windows, Configuración → Hora e
+idioma → Voz → Agregar voces → Inglés (Reino Unido).
 
 En ese mismo rincón puedes elegir acento británico o americano, la velocidad de la voz,
 el modo claro u oscuro (viene en oscuro) y cambiar el nombre.
@@ -65,8 +72,13 @@ nombre: no las subas a este repositorio (el `.gitignore` ya las excluye).
 
 ### Recibir novedades
 
-Cuando se publican cambios aquí, la tablet los recoge sola la siguiente vez que se abre la
-app con conexión. No hay que reinstalar nada.
+Cuando se publican cambios aquí, la tablet los recoge sola: cada vez que se abre la app con
+conexión, pregunta al servidor si algún archivo ha cambiado. Si la wifi va lenta, esa vez
+enseña la copia guardada y los cambios aparecen la siguiente vez que se abra.
+
+Para forzarlo: **Mayores → Actualizar contenido → Descargar la última versión**, con wifi.
+No toca el progreso. No uses «Borrar datos del sitio» de Chrome para esto: eso sí borra el
+progreso.
 
 ## Cómo funciona por dentro
 
@@ -132,12 +144,25 @@ permiten incrustarse: en ese caso, debajo está siempre el enlace
 |---|---|
 | `id` | Único en toda la app. Usa `w-` + la palabra en minúsculas con guiones. |
 | `en`, `es` | Inglés y español. |
-| `pron` | Cómo suena, escrito en español. |
+| `pron` | Cómo suena en inglés británico, escrito en español. Ver «Cómo se escribe la grafía» más abajo. |
 | `pos` | `nombre`, `acción`, `cualidad`, `número`, `palabrita`, `persona`, `saludo`, `pregunta` o `día`. Las cuatro primeras se usan como huecos en las frases tontas. |
 | `block` | Número del bloque (el mismo que el archivo). |
 | `emoji` | El dibujo. Procura que no se repita dentro del mismo bloque. |
 | `syllables`, `stress` | Número de golpecitos de la palabra y cuál suena más fuerte (para el juego del tambor). |
 | `theme` | Opcional: `escalada`, `manualidades` o `musica`. |
+
+### Cómo se escribe la grafía (`pron`)
+
+Se escribe para que una niña española lo lea tal cual, y sigue el inglés británico:
+
+- La tilde marca dónde va el golpe de voz: `uóte` (water), `guitáa` (guitar).
+- La **r detrás de vocal no suena**: en su lugar la vocal se alarga y se escribe doble:
+  `caa` (car), `foo` (four), `doo` (door), `aa` (are).
+- `ee` es la vocal de *bird*, *girl*, *word*: una «e» larga y cerrada, sin r (`beed`, `gueel`, `ueed`).
+- Al final de palabra, `-er` suena como una «e» floja: `uóte`, `síste`, `tíche`.
+- `z` es la zeta española (three = `zri`), `j` es una jota muy suave (hello = `jelóu`),
+  `sh` como para pedir silencio, `y` como en «yo» dicho con fuerza (jump = `yamp`).
+- Las letras mudas no se escriben: `cláim` (climb), `lísen` (listen), `nóu` (know), `uók` (walk).
 
 ### Una frase nueva — mismo archivo, lista `sentences`
 

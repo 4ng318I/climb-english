@@ -5,7 +5,7 @@
     {"id": "w-i", "en": "I", "es": "yo", "pron": "ái", "pos": "persona", "block": 1, "emoji": "🙋", "syllables": 1, "stress": 1},
     {"id": "w-am", "en": "am", "es": "soy / estoy", "pron": "am", "pos": "palabrita", "block": 1, "emoji": "✨", "syllables": 1, "stress": 1},
     {"id": "w-you", "en": "you", "es": "tú", "pron": "iú", "pos": "persona", "block": 1, "emoji": "🫵", "syllables": 1, "stress": 1},
-    {"id": "w-are", "en": "are", "es": "eres / estás / son", "pron": "ar", "pos": "palabrita", "block": 1, "emoji": "💫", "syllables": 1, "stress": 1},
+    {"id": "w-are", "en": "are", "es": "eres / estás / son", "pron": "aa", "pos": "palabrita", "block": 1, "emoji": "💫", "syllables": 1, "stress": 1},
     {"id": "w-goodbye", "en": "goodbye", "es": "adiós", "pron": "gudbái", "pos": "saludo", "block": 1, "emoji": "🖐️", "syllables": 2, "stress": 2},
     {"id": "w-yes", "en": "yes", "es": "sí", "pron": "ies", "pos": "saludo", "block": 1, "emoji": "👍", "syllables": 1, "stress": 1},
     {"id": "w-no", "en": "no", "es": "no", "pron": "nóu", "pos": "saludo", "block": 1, "emoji": "🙅", "syllables": 1, "stress": 1},
@@ -15,14 +15,14 @@
     {"id": "w-name", "en": "name", "es": "nombre", "pron": "néim", "pos": "nombre", "block": 1, "emoji": "📛", "syllables": 1, "stress": 1},
     {"id": "w-friend", "en": "friend", "es": "amigo / amiga", "pron": "frend", "pos": "nombre", "block": 1, "emoji": "🤝", "syllables": 1, "stress": 1},
     {"id": "w-good", "en": "good", "es": "bueno / buena", "pron": "gud", "pos": "cualidad", "block": 1, "emoji": "👌", "syllables": 1, "stress": 1},
-    {"id": "w-morning", "en": "morning", "es": "mañana (del día)", "pron": "mónin", "pos": "nombre", "block": 1, "emoji": "🌅", "syllables": 2, "stress": 1},
+    {"id": "w-morning", "en": "morning", "es": "mañana (del día)", "pron": "móonin", "pos": "nombre", "block": 1, "emoji": "🌅", "syllables": 2, "stress": 1},
     {"id": "w-night", "en": "night", "es": "noche", "pron": "náit", "pos": "nombre", "block": 1, "emoji": "🌃", "syllables": 1, "stress": 1}
   ],
   "sentences": [
     {"id": "s-hello-i-am", "en": "Hello! I am {name}.", "es": "¡Hola! Soy {name}.", "pron": "jelóu, ái am {name}", "block": 1, "emoji": "👋", "grammar": "g-i-am", "words": ["w-hello", "w-i", "w-am"]},
-    {"id": "s-you-are-my-friend", "en": "You are my friend.", "es": "Eres mi amiga.", "pron": "iú ar mái frend", "block": 1, "emoji": "🤝", "grammar": "g-i-am", "words": ["w-you", "w-are", "w-my", "w-friend"]},
+    {"id": "s-you-are-my-friend", "en": "You are my friend.", "es": "Eres mi amiga.", "pron": "iú aa mái frend", "block": 1, "emoji": "🤝", "grammar": "g-i-am", "words": ["w-you", "w-are", "w-my", "w-friend"]},
     {"id": "s-my-name-is", "en": "My name is {name}.", "es": "Mi nombre es {name}.", "pron": "mái néim is {name}", "block": 1, "emoji": "📛", "words": ["w-i", "w-my", "w-name"]},
-    {"id": "s-good-morning", "en": "Good morning!", "es": "¡Buenos días!", "pron": "gud mónin", "block": 1, "emoji": "🌅", "words": ["w-good", "w-morning"]},
+    {"id": "s-good-morning", "en": "Good morning!", "es": "¡Buenos días!", "pron": "gud móonin", "block": 1, "emoji": "🌅", "words": ["w-good", "w-morning"]},
     {"id": "s-good-night", "en": "Good night!", "es": "¡Buenas noches!", "pron": "gud náit", "block": 1, "emoji": "🌃", "words": ["w-good", "w-night"]},
     {"id": "s-yes-please", "en": "Yes, please.", "es": "Sí, por favor.", "pron": "ies, plis", "block": 1, "emoji": "👍", "words": ["w-yes", "w-please"]},
     {"id": "s-no-thank-you", "en": "No, thank you.", "es": "No, gracias.", "pron": "nóu, zánkiu", "block": 1, "emoji": "🙅", "words": ["w-you", "w-no", "w-thank-you"]}

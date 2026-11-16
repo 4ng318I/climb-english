@@ -5,7 +5,10 @@ import { norm } from './util.js';
 
 const synth = 'speechSynthesis' in window ? window.speechSynthesis : null;
 let voices = [];
-const refresh = () => { voices = synth ? synth.getVoices() : []; };
+const refresh = () => {
+  voices = synth ? synth.getVoices() : [];
+  window.dispatchEvent(new Event('voices-ready'));
+};
 
 export function initSpeech() {
   if (!synth) return;
@@ -25,14 +28,39 @@ function voice() {
 }
 
 export const canSpeak = () => !!synth;
+
+// El dispositivo ya ha dado su lista de voces y en ella no hay ninguna inglesa.
+// En ese caso el navegador leería el inglés con la voz española ("I" sonaría "i"):
+// es peor que el silencio, así que la app se calla y avisa a los mayores.
+export const noEnglishVoice = () => voices.length > 0 && !voice();
+export const voiceBlocked = () => noEnglishVoice() && !state.settings.forceVoice;
 export const englishVoiceName = () => voice()?.name || '';
+
+const ACCENTS = {
+  'en-GB': 'británico', 'en-US': 'americano', 'en-AU': 'australiano', 'en-IE': 'irlandés',
+  'en-IN': 'de la India', 'en-CA': 'canadiense', 'en-NZ': 'neozelandés', 'en-ZA': 'sudafricano',
+};
+export const accentName = lang => ACCENTS[lang] || `otro (${lang})`;
+
+// Qué voz está leyendo de verdad y cuáles hay. known=false: el dispositivo no dice qué voces tiene.
+export function voiceInfo() {
+  const v = voice();
+  const english = voices.filter(x => /^en[-_]/i.test(x.lang)).map(x => ({ name: x.name, lang: langOf(x) }));
+  return {
+    known: voices.length > 0,
+    wanted: state.settings.voice,
+    inUse: v ? { name: v.name, lang: langOf(v) } : null,
+    english,
+  };
+}
 
 export function stopSpeaking() { try { synth?.cancel(); } catch { /* nada */ } }
 
 // Lee un texto en inglés. Devuelve una promesa que se cumple al terminar.
-export function speak(text, { slow = false } = {}) {
+export function speak(text, { slow = false, force = false } = {}) {
   return new Promise(resolve => {
     if (!synth || !text) return resolve(false);
+    if (voiceBlocked() && !force) return resolve(false);
     let done = false;
     const fin = ok => { if (!done) { done = true; resolve(ok); } };
     try {
