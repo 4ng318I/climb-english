@@ -143,8 +143,11 @@ export default function settings(el) {
   $('#update', el).onclick = async () => {
     if (!navigator.onLine) return bubble('Hace falta conexión a internet 📶');
     try {
-      // Solo se borra la copia de archivos de la app; el progreso está en otro sitio (localStorage).
-      for (const key of await caches.keys()) await caches.delete(key);
+      // Solo se borran las cachés de ESTA app (el origen lo comparten varias apps);
+      // el progreso no se toca, porque vive en localStorage.
+      for (const key of await caches.keys()) {
+        if (key.startsWith('climbenglish-') || key.startsWith('ingles-a1-')) await caches.delete(key);
+      }
       const reg = await navigator.serviceWorker?.getRegistration();
       await reg?.update();
     } catch { /* aunque falle, la recarga pide los archivos a la red */ }

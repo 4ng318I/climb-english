@@ -1,7 +1,15 @@
 // Service worker: deja la app entera guardada en la tablet para que funcione sin internet.
 // Estrategia: primero la red (así los cambios en los JSON llegan solos) y, si no hay
 // red o tarda, la copia guardada. Los vídeos y el reconocimiento de voz no pasan por aquí.
-const CACHE = 'ingles-a1-v3';
+//
+// Todas las apps publicadas en 4ng318i.github.io comparten el mismo origen y, por tanto,
+// el mismo almacén de cachés. Por eso el nombre lleva prefijo propio y en la activación
+// SOLO se borran las cachés propias: borrar las demás dejaría sin conexión a otra app.
+const PREFIX = 'climbenglish-';
+const VERSION = 4;
+const CACHE = PREFIX + 'v' + VERSION;
+// Nombres usados antes de adoptar el prefijo; se limpian, pero solo estos.
+const LEGACY_CACHES = ['ingles-a1-v1', 'ingles-a1-v2', 'ingles-a1-v3'];
 
 const CORE = [
   './', 'index.html', 'manifest.json',
@@ -35,7 +43,8 @@ self.addEventListener('install', event => {
 
 self.addEventListener('activate', event => {
   event.waitUntil((async () => {
-    for (const key of await caches.keys()) if (key !== CACHE) await caches.delete(key);
+    const mine = k => (k.startsWith(PREFIX) || LEGACY_CACHES.includes(k)) && k !== CACHE;
+    for (const key of await caches.keys()) if (mine(key)) await caches.delete(key);
     await self.clients.claim();
   })());
 });
