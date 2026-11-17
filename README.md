@@ -1,141 +1,295 @@
-<p align="center"><img src="assets/icon-192.png" width="120" alt="Icono de Climb English: una montaña con una bandera y el rótulo A1"></p>
+<p align="center"><img src="assets/icon-192.png" width="110" alt="Icono de Climb English: una montaña con una bandera y el rótulo A1"></p>
 
 # Climb English
 
-Aplicación web para que una niña o un niño de unos 10 años aprenda inglés desde cero hasta
-el nivel A1 **jugando**, con la escalada, las manualidades y la música como hilo conductor.
+App para que una niña de unos 10 años aprenda inglés desde cero hasta el nivel A1 **jugando**,
+con la escalada, las manualidades y la música como hilo conductor.
 
-**Abrir la app:** https://4ng318i.github.io/climb-english/
+**La app:** https://4ng318i.github.io/climb-english/
 
-- 325 palabras y 132 frases en 20 bloques, 14 reglas de gramática y 6 minijuegos.
-- Sesiones de 5 a 10 minutos, con 3 palabras nuevas o 1 frase nueva como mucho.
-- Nunca dice «está mal»: primero lo que salió bien y luego cómo queda todavía mejor.
-- Sin deberes, sin rachas y sin contadores que castiguen.
-- Funciona sin conexión una vez instalada. Sin cuentas, sin servidor y sin recoger datos:
-  el nombre y el progreso se guardan solo en el dispositivo.
-- HTML, CSS y JavaScript sin compilar y sin dependencias externas.
+Este README es para el adulto que la instala y la mantiene, no para quien la usa.
 
-## Instalarla en una tablet Android
+![El panel de la app](docs/img/panel.png)
 
-Hazlo tú la primera vez; después la niña o el niño ya puede usarla a solas.
+---
 
-1. Con la tablet conectada a la wifi, abre **Chrome** y entra en
-   https://4ng318i.github.io/climb-english/
-2. Toca el menú **⋮** (arriba a la derecha) y elige **Añadir a pantalla de inicio**
-   (en algunas tablets pone **Instalar aplicación**). Confirma con **Instalar**.
-3. En la pantalla de inicio aparece el icono de la montaña con la bandera. Ábrela desde ahí:
-   se abre a pantalla completa, como cualquier otra aplicación.
-4. La primera vez pregunta el nombre. Escribe el de quien va a usarla y toca **¡A escalar!**
-5. Sin salir de la wifi, espera medio minuto en el panel para que termine de guardarse todo.
-   A partir de aquí funciona **sin conexión**; solo necesitan internet los vídeos de las
+## Índice
+
+1. [Instalarla en la tablet](#1-instalarla-en-la-tablet)
+2. [Qué hace ella en cada parte](#2-qué-hace-ella-en-cada-parte)
+3. [Cómo leer su progreso](#3-cómo-leer-su-progreso)
+4. [Copia de seguridad y cambio de tablet](#4-copia-de-seguridad-y-cambio-de-tablet)
+5. [Empezar de cero](#5-empezar-de-cero)
+6. [Qué NO hace la app](#6-qué-no-hace-la-app)
+7. [Publicar una versión nueva](#7-publicar-una-versión-nueva)
+8. [Corregir o añadir contenido](#8-corregir-o-añadir-contenido)
+9. [Herramientas y pruebas](#9-herramientas-y-pruebas)
+10. [Cómo está hecha](#10-cómo-está-hecha)
+
+---
+
+## 1. Instalarla en la tablet
+
+Hazlo tú la primera vez; después ella ya puede usarla sola.
+
+1. Con la tablet en wifi, abre **Chrome** y entra en https://4ng318i.github.io/climb-english/
+2. Menú **⋮** → **Añadir a pantalla de inicio** (en algunas tablets, **Instalar aplicación**).
+   Confirma con **Instalar**.
+3. Ábrela desde el icono de la montaña. Se abre a pantalla completa, como cualquier app.
+4. La primera vez pregunta el nombre. Escríbelo y toca **¡A escalar!**; después Grip, la
+   lagartija, le explica el ritmo de aprendizaje.
+5. Sin salir de la wifi, deja la app abierta medio minuto para que termine de guardarse todo.
+   A partir de ahí funciona **sin conexión**; solo necesitan internet los vídeos de las
    canciones y el micrófono.
 
-### Comprueba la voz inglesa (importante)
+### Comprueba la voz inglesa (esto es importante)
 
-La app lee en voz alta con la voz del propio Android, y esa voz es la referencia de
-pronunciación. Compruébala antes de entregar la tablet:
+La app lee en voz alta con la voz del propio Android, y **esa voz es la única referencia de
+pronunciación que ella va a tener**. Compruébala antes de entregar la tablet:
 
-1. En el panel, mantén pulsado **Mayores** (abajo a la derecha) dos segundos.
-2. Mira qué pone en **Voz en uso** y **Acento**: tiene que ser **británico (en-GB)**, porque
-   las pistas de «suena parecido a» están escritas para ese acento.
+1. Mantén pulsado **Mayores**, abajo a la derecha, dos segundos.
+2. Mira **Voz en uso** y **Acento**: tiene que poner **británico (en-GB)**, porque las pistas
+   de «suena parecido a» están escritas para ese acento.
 3. Toca **Probar la voz**. Dice «I», «car» y una frase. «I» tiene que sonar «ái», y en «car»
-   no debe oírse la r final (si se oye, la voz es americana).
-4. Si no es británica, suena con acento español o no suena: Ajustes de Android → Sistema → Idiomas →
-   **Síntesis de voz** → motor de Google → **Instalar datos de voz** →
-   *English (United Kingdom)*. Descárgala para que funcione también sin conexión.
+   **no** debe oírse la r final (si se oye, la voz es americana).
+4. Si falta o no es británica: Ajustes de Android → Sistema → Idiomas → **Síntesis de voz** →
+   motor de Google → **Instalar datos de voz** → *English (United Kingdom)*. Descárgala, para
+   que funcione también sin conexión.
 
-Si el dispositivo no tiene ninguna voz inglesa, el navegador leería las palabras inglesas con
-la voz española (y «I» sonaría «i»). Para no enseñar una pronunciación equivocada, en ese
-caso la app **se queda callada** y muestra un aviso amarillo en el panel hasta que se instale
-la voz. Lo mismo vale para probarla en un ordenador: en Windows, Configuración → Hora e
-idioma → Voz → Agregar voces → Inglés (Reino Unido).
-
-En ese mismo rincón puedes cambiar la velocidad de la voz,
-el modo claro u oscuro (viene en oscuro) y cambiar el nombre.
+Si el aparato no tiene ninguna voz inglesa, la app **se queda callada** y avisa en el panel,
+antes que enseñar una pronunciación equivocada.
 
 ### El micrófono (opcional, apagado por defecto)
 
-El reconocimiento de voz de Chrome **envía el audio a Google** para transcribirlo y necesita
-internet. Por eso viene apagado: la sección de pronunciación funciona en modo
-«escucha y repite», sin puntuar y sin que salga nada de la tablet. Si prefieres activarlo,
-hazlo en **Mayores → Micrófono**; Chrome pedirá permiso la primera vez. Si el micro falla
-o no hay conexión, la app vuelve sola a «escucha y repite».
+El reconocimiento de voz de Chrome **envía el audio a Google** y necesita internet. Por eso
+viene apagado: la sección de pronunciación funciona en modo «escucha y repite», sin puntuar y
+sin que salga nada de la tablet. Para activarlo: **Mayores → Micrófono**. Si falla o no hay
+conexión, la app vuelve sola a «escucha y repite».
 
-### No perder el progreso
+---
 
-El progreso vive en la tablet. Si alguien borra los datos de Chrome o desinstala la app,
-se pierde. En **Mayores → Copia del progreso**:
+## 2. Qué hace ella en cada parte
 
-- **Exportar a archivo** descarga `progreso-NOMBRE-FECHA.json` en la carpeta Descargas.
-- **Importar de archivo** recupera una copia (pide confirmación, porque sustituye lo que haya).
+### 🎮 Aprender jugando
 
-Exporta de vez en cuando y guarda el archivo fuera de la tablet. Esas copias contienen el
-nombre: no las subas a este repositorio (el `.gitignore` ya las excluye).
+Es el botón grande y la entrada principal. Cada partida dura entre 5 y 10 minutos: presenta
+**3 palabras nuevas o 1 frase nueva**, y luego encadena 4 minijuegos que mezclan lo nuevo con
+repaso de días anteriores.
 
-### Recibir novedades
+![Una palabra nueva](docs/img/sesion.png)
 
-Cuando se publican cambios aquí, la tablet los recoge sola: cada vez que se abre la app con
-conexión, pregunta al servidor si algún archivo ha cambiado. Si la wifi va lenta, esa vez
-enseña la copia guardada y los cambios aparecen la siguiente vez que se abra.
+Los seis minijuegos van rotando: emparejar palabra y dibujo, cazar al intruso, ordenar una
+frase, contar los golpecitos de una palabra, memory inglés-español e inventar frases tontas.
 
-Para forzarlo: **Mayores → Actualizar contenido → Descargar la última versión**, con wifi.
-No toca el progreso. No uses «Borrar datos del sitio» de Chrome para esto: eso sí borra el
-progreso.
+![Puzzle de frase](docs/img/juego.png)
 
-## Cómo funciona por dentro
+**Nunca dice que algo está mal.** Si falla, primero le dice qué le salió bien («¡tienes 3
+letras perfectas!») y luego cómo queda mejor. No hay cruces rojas ni sonidos de error.
 
-- **Sesión de juego:** presenta 3 palabras nuevas, o 1 frase nueva, y luego encadena
-  4 minijuegos que mezclan lo nuevo con repaso. Las sesiones van alternando palabras y frases.
-- **Límite diario:** hasta 2 sesiones de palabras (6 palabras) y 2 de frases (2 frases) al
-  día; en las dos últimas etapas, 3 frases. Es deliberado: poco cada día y con repaso se retiene; mucho de golpe se olvida.
-  La app lo explica antes de que se llegue al tope: en la bienvenida, en el botón grande del
-  panel («Nuevo para hoy: 3 palabras y 1 frase»), en el botón «¿Por qué solo unas pocas al
-  día?» del panel, que se puede releer siempre, y en el rincón de mayores. Cuando se
-  acaba lo nuevo, el día no se acaba: se puede seguir jugando con lo ya aprendido.
-- **Celebraciones:** al terminar cada partida, al completar cada agarre (bloque), al coronar
-  cada etapa y con cada medalla.
-- **Qué hace falta para subir de etapa:** descubrir **todas las palabras y todas las frases**
-  de sus cuatro bloques. Cada agarre del mapa es un bloque y se completa con sus palabras.
+**Límite diario: 6 palabras y 2 frases nuevas** (3 frases en las dos últimas etapas). Cuando
+se acaba lo nuevo, el día no se acaba: puede seguir jugando con lo que ya sabe, que es
+justamente el repaso que fija las palabras. La app se lo dice en positivo, y el botón
+«¿Por qué solo unas pocas al día?» del panel se lo explica las veces que quiera.
 
-  | Etapa | Bloques | Palabras | Frases | Frases al día | Días mínimos | Interfaz en inglés |
-  |---|---|---|---|---|---|---|
-  | 1 Campo base | 1 | 16 | 7 | 2 | 4 | 0 % |
-  | 2 Primeros agarres | 2–3 | 32 | 10 | 2 | 6 | 10 % |
-  | 3 La travesía | 4–5 | 32 | 13 | 2 | 7 | 20 % |
-  | 4 La gran pared | 6–8 | 51 | 18 | 2 | 9 | 30 % |
-  | 5 El desplome | 9–11 | 50 | 18 | 2 | 9 | 45 % |
-  | 6 La cornisa | 12–15 | 64 | 28 | 3 | 11 | 60 % |
-  | 7 La cima A1 | 16–20 | 80 | 38 | 3 | 14 | 70 % |
+### 🗣️ Pronunciación
 
-  La primera etapa es corta a propósito (se corona en 4 días) y las siguientes crecen poco a
-  poco. Los días son al ritmo máximo. Los trucos, la voz y la escritura se ven en
-  «Mi progreso», pero no bloquean la subida. Para cambiar el reparto basta con editar
-  `stage` en cada bloque de `data/blocks.json`.
-- **Mi progreso:** «Tu siguiente paso» dice exactamente qué falta para completar el agarre y para subir de etapa («te faltan 9 palabras y
-  2 frases»). Las barras cuentan siempre sobre el total de la etapa («3 de 64»).
-- **Mis palabras:** lista de todo lo descubierto, por bloque, con significado, grafía y
-  botón de escuchar. ⭐ «me la sé» (ha acertado varios repasos) o 🌱 «creciendo».
-- **Orden:** las palabras salen en el orden en que están escritas en los archivos, bloque a
-  bloque. Una frase solo aparece cuando ya se conocen todas las palabras de su lista `words`.
-- **Repaso espaciado:** cada palabra vive en una caja de 1 a 5 y vuelve a los 1, 2, 4, 8 o
-  16 días, siempre dentro de un juego. Un fallo baja una caja y no se muestra en ningún sitio.
-- **Interfaz que se pasa al inglés:** va por etapas del camino: 0 %, 10 %, 20 %, 30 %, 45 %,
-  60 % y 70 % (columna de la tabla). Al coronar una etapa hay una celebración que enseña qué
-  textos cambian. Los textos recién cambiados llevan el español en pequeño debajo las
-  primeras veces.
-- **Pronunciación:** el botón de escuchar es lo primero y lo más grande. La grafía española
-  («uóte») es solo una ayuda visual y se presenta siempre como «suena parecido a».
-- **Gramática:** una regla nueva al día como máximo; las ya vistas se pueden repetir siempre.
-- **Canciones:** sin letras. Cada día que se abre una canción se desbloquean hasta 3 palabras.
-  Son un extra: **no cuentan para el camino** (no son temario A1 y cambian con cada canción
-  que añadas), pero se guardan y se ven en «Mi progreso» y al final de «Mis palabras».
+Escuchar es lo primero y lo más grande de la pantalla; la grafía española va debajo y siempre
+como «suena parecido a», nunca como «se dice así».
 
-## Añadir o corregir contenido sin tocar el código
+![Pronunciación](docs/img/pronunciacion.png)
 
-Todo el contenido está en la carpeta `data/`. Después de editar, comprueba que no se ha
-roto nada (hace falta Python):
+### ✍️ Escribir
 
+Dictados muy cortos de palabras que ya domina, con teclado grande en pantalla.
+
+![Escribir](docs/img/escribir.png)
+
+### 📚 Trucos de gramática
+
+Una regla nueva al día como mucho, explicada con dibujos y sin tecnicismos («la palabrita que
+acompaña»). Las ya vistas se pueden repetir siempre; las que aún no tocan aparecen como regalos.
+
+![Trucos de gramática](docs/img/gramatica.png)
+
+### 🎵 Canción
+
+Canciones actuales, **sin letra** (por copyright): título, artista, enlace al vídeo oficial y
+entre 5 y 8 palabras sueltas con su significado. Cada día que abre una canción se desbloquean
+hasta 3 palabras nuevas.
+
+![Canción](docs/img/cancion.png)
+
+### 📒 Mis palabras
+
+Todo lo que ha descubierto, por bloques, con significado, grafía y botón para escucharlo. No
+puntúa nada: es para mirar cuando le apetezca. ⭐ «me la sé» o 🌱 «creciendo».
+
+![Mis palabras](docs/img/palabras.png)
+
+---
+
+## 3. Cómo leer su progreso
+
+![Mi progreso](docs/img/progreso.png)
+
+De arriba abajo:
+
+- **Los cuatro números.** Palabras, frases y medallas conseguidas, y aparte las palabras que
+  vienen de canciones (que no cuentan para el camino, ver más abajo).
+- **Tu siguiente paso.** Lo más útil para ti: dice con números exactos qué falta para
+  completar el agarre actual y para subir de etapa, y qué le queda nuevo para hoy.
+- **Mi camino a la cima.** La montaña. Cada agarre es un bloque temático (20 en total) y cada
+  color, una etapa (7). Tocando un agarre se ve cuánto lleva de él.
+- **En esta etapa.** Cinco barras, todas contadas sobre el total de la etapa («3 de 64»), sin
+  porcentajes sueltos. Para subir de etapa solo cuentan palabras y frases; trucos, voz y
+  escritura son para presumir.
+- **Mi diario de escalada.** Un sello por cada día que ha jugado, con un punto por palabra y
+  un cuadradito por frase. **Los días que no entra no aparecen**: no hay rachas que romper. A
+  partir de cuatro días con palabras nuevas aparece además una gráfica.
+- **Mis medallas.** 36 en total; las que faltan se ven en gris con la pista de cómo lograrlas.
+
+### El camino a A1
+
+Subir de etapa pide descubrir **todas las palabras y todas las frases** de sus bloques.
+
+| Etapa | Bloques | Palabras | Frases | Frases al día | Días mínimos | Interfaz en inglés |
+|---|---|---|---|---|---|---|
+| 1 Campo base | 1 | 16 | 7 | 2 | 4 | 0 % |
+| 2 Primeros agarres | 2–3 | 32 | 10 | 2 | 6 | 10 % |
+| 3 La travesía | 4–5 | 32 | 13 | 2 | 7 | 20 % |
+| 4 La gran pared | 6–8 | 51 | 18 | 2 | 9 | 30 % |
+| 5 El desplome | 9–11 | 50 | 18 | 2 | 9 | 45 % |
+| 6 La cornisa | 12–15 | 64 | 28 | 3 | 11 | 60 % |
+| 7 La cima A1 | 16–20 | 80 | 38 | 3 | 14 | 70 % |
+
+Al ritmo máximo, el camino entero son unos dos meses. La primera etapa es corta a propósito:
+es la que decide si sigue o lo deja.
+
+**La interfaz se va pasando al inglés sola.** Empieza todo en español y, al coronar cada
+etapa, parte de los textos cambian a inglés (primero los más repetidos: «¡Muy bien!» →
+«Great!»). Las primeras veces, el español aparece en pequeñito debajo. Llega hasta el 70 %.
+
+### Celebraciones
+
+Las hay en cuatro escalas, para que nunca pasen muchos días sin una: al terminar cada partida,
+al completar cada agarre (unos tres días), al coronar cada etapa y con cada medalla.
+
+---
+
+## 4. Copia de seguridad y cambio de tablet
+
+El progreso vive **solo en esa tablet**, en el almacenamiento local de Chrome. Si se borran los
+datos del navegador o se desinstala la app, se pierde. No hay servidor ni cuenta.
+
+![Rincón de mayores](docs/img/mayores.png)
+
+En **Mayores → Copia del progreso**:
+
+- **Exportar a archivo** descarga `climbenglish-<nombre>-<fecha>.json` en la carpeta Descargas.
+- **Importar de archivo** lo recupera, pidiendo confirmación antes de sustituir nada.
+
+El archivo lleva dentro el nombre de la app y la versión del formato, así que la app **rechaza
+los archivos de otras apps** (por ejemplo los de Deutsch_B2) con un mensaje claro, en lugar de
+cargarlos y romperse.
+
+**Para pasar el progreso a otra tablet:**
+
+1. En la tablet vieja: Mayores → **Exportar a archivo**.
+2. Pasa el `.json` a la nueva (correo, nube, cable; es un archivo de texto pequeño).
+3. En la tablet nueva: instala la app como en el apartado 1, escribe el nombre, y luego
+   Mayores → **Importar de archivo** → elige el archivo → **Sí, importar**.
+
+Conviene exportar de vez en cuando y guardar el archivo fuera de la tablet. **Ese archivo
+contiene el nombre de la niña: no lo subas a este repositorio** (el `.gitignore` ya lo excluye).
+
+---
+
+## 5. Empezar de cero
+
+**Mayores → Empezar de cero** borra todo el progreso de esa tablet (palabras, frases, medallas
+y el nombre) y vuelve a salir la bienvenida, como recién instalada. Pide confirmación y **no se
+puede deshacer**; los ajustes de voz y el tema se conservan.
+
+Sirve para probar la app desde el principio, o para dejarla limpia si algo se ha torcido.
+
+---
+
+## 6. Qué NO hace la app
+
+Para que no haya sorpresas:
+
+- **No recoge ningún dato.** No hay cuenta, ni servidor, ni analítica, ni publicidad. El nombre
+  y el progreso no salen de la tablet. Nadie, yo incluido, puede ver desde fuera cómo le va.
+- **No corrige la pronunciación de verdad.** Con el micrófono apagado (lo normal) no escucha
+  nada: ella repite y la app la anima. Con el micrófono encendido usa el reconocimiento de voz
+  de Chrome, que es generoso y manda el audio a Google.
+- **No enseña a conversar.** Es vocabulario, frases hechas, gramática básica y pronunciación de
+  A1. No hay diálogo libre ni corrección de textos escritos por ella.
+- **No tiene letras de canciones** (copyright): solo palabras sueltas y el enlace al vídeo
+  oficial. Si un vídeo no permite incrustarse, queda el enlace para abrirlo en YouTube.
+- **No pone deberes, horarios ni rachas.** Si deja de entrar tres días, al volver la recibe
+  igual de bien; no hay contadores que se rompan.
+- **No deja avanzar más rápido.** El límite diario es deliberado y no se puede cambiar desde la
+  app: lo que se aprende de golpe se olvida de golpe.
+- **No es un sustituto de clase ni de hablar con alguien.** Es la referencia que ella no tiene
+  en casa, no un profesor.
+- **No filtra YouTube.** El vídeo se abre dentro de la app con `youtube-nocookie.com`, pero si
+  hay que abrirlo en YouTube (el plan B cuando no se puede incrustar), ya es YouTube con todo
+  lo que eso trae.
+
+---
+
+## 7. Publicar una versión nueva
+
+Desde la carpeta del proyecto:
+
+```sh
+python tools/validate.py          # comprueba el contenido de data/
+git add -A
+git commit -m "Corrijo grafías del bloque 4"
+git push
 ```
+
+GitHub Pages tarda uno o dos minutos. **Al tocar cualquier archivo que se sirva hay que subir
+`VERSION` en `sw.js`**; el hook de pre-commit no te dejará hacer el commit si se te olvida, y
+te dirá qué número poner. En un clon nuevo, actívalo una vez:
+
+```sh
+git config core.hooksPath .githooks
+```
+
+### Cómo llega el cambio a la tablet
+
+La app busca novedades sola: al abrirla, al volver a ella (desbloquear la tablet, cambiar de
+app) y al recuperar la conexión. Cuando encuentra una versión nueva la instala en segundo plano
+y la aplica **en un momento seguro**: al abrir la app o al salir de una partida, nunca en mitad
+de un juego. No hay ningún botón de «recargar» que ella tenga que pulsar.
+
+Sin conexión no pasa nada: falla en silencio y lo reintenta la próxima vez.
+
+Si has publicado algo y no aparece, con wifi: **Mayores → Actualizar contenido → Descargar la
+última versión**. No toca el progreso. **No** uses «Borrar datos del sitio» de Chrome para
+esto: eso sí borra el progreso.
+
+### Convivencia con las otras apps del mismo GitHub
+
+Todas las apps de `4ng318i.github.io` comparten origen, y con él el almacenamiento y las
+cachés del navegador. Por eso aquí:
+
+- las claves de almacenamiento empiezan por `climbenglish:`;
+- las cachés se llaman `climbenglish-vN` y el service worker **solo borra las suyas**;
+- los archivos de copia llevan el nombre de la app dentro.
+
+`tools/e2e.py` comprueba precisamente esto: siembra datos y cachés de otra app y verifica que
+siguen intactos después de instalar y de actualizar.
+
+---
+
+## 8. Corregir o añadir contenido
+
+Todo el contenido está en `data/`, separado del código. Después de editar:
+
+```sh
 python tools/validate.py
 ```
 
@@ -143,11 +297,38 @@ Avisa si falta una coma, un campo o si hay un identificador repetido.
 
 ### Corregir una grafía
 
-Abre el archivo del bloque en `data/blocks/` y cambia el campo `pron` de la palabra o frase.
+Abre el archivo del bloque en `data/blocks/` y cambia el campo `pron`.
+
+### Cómo se escribe la grafía (`pron`)
+
+Es una muleta visual: quien manda es la voz. Se escribe para que una niña de 10 años la lea tal
+cual, y sigue el **inglés británico**:
+
+- Solo letras y sonidos del español, sin vocales dobles ni signos raros.
+- La tilde marca el golpe de voz: `uóte` (water), `guitá` (guitar).
+- La **r detrás de vocal no suena** y no se escribe: `ca` (car), `fo` (four), `gáden` (garden).
+  Al final de palabra, `-er` suena como una «e» floja: `uóte`, `síste`, `tíche`.
+- Excepción: la vocal de *bird*, *girl*, *word* no existe en español y se escribe `er`
+  (`berd`, `guerl`, `uerd`). Esa r sobra: la voz británica no la dice, y es ella quien enseña.
+- `z` es la zeta española (three = `zri`), `j` una jota muy suave (hello = `jelóu`), `sh` como
+  para pedir silencio, `y` como en «yo» dicho con fuerza (jump = `yamp`).
+- Las letras mudas no se escriben: `cláim` (climb), `lísen` (listen), `nóu` (know).
+- Es normal que dos palabras queden escritas igual (`am` vale para *am* y *arm*): el español no
+  tiene esos sonidos y la diferencia la enseña la voz.
+
+### Si la voz lee mal una palabra suelta (`say`)
+
+Algunas voces pronuncian mal ciertas palabras aisladas; la «I» suelta, por ejemplo, puede sonar
+«i». Añade el campo opcional `say` con el texto que se le dará a la voz; en pantalla se sigue
+viendo la palabra de verdad:
+
+```json
+{"id": "w-i", "en": "I", "say": "eye", "es": "yo", "pron": "ái"}
+```
 
 ### Una canción nueva — `data/songs.json`
 
-Copia un bloque entero y cambia los datos. **No pongas la letra**, solo de 5 a 8 palabras sueltas:
+Copia un bloque entero y cambia los datos. **No pongas la letra**, solo de 5 a 8 palabras:
 
 ```json
 {
@@ -161,9 +342,8 @@ Copia un bloque entero y cambia los datos. **No pongas la letra**, solo de 5 a 8
 }
 ```
 
-El vídeo se muestra dentro de la app con `youtube-nocookie.com`. Muchos vídeos musicales no
-permiten incrustarse: en ese caso, debajo está siempre el enlace
-«¿No se ve el vídeo? Ábrelo en YouTube».
+Las palabras de canciones **no cuentan para el camino a A1** (no son temario A1 y cambian con
+cada canción que añadas), pero se guardan y se ven en «Mi progreso» y en «Mis palabras».
 
 ### Una palabra nueva — `data/blocks/NN-nombre.json`, lista `words`
 
@@ -174,43 +354,15 @@ permiten incrustarse: en ese caso, debajo está siempre el enlace
 
 | Campo | Qué es |
 |---|---|
-| `id` | Único en toda la app. Usa `w-` + la palabra en minúsculas con guiones. |
+| `id` | Único en toda la app: `w-` + la palabra en minúsculas con guiones. |
 | `en`, `es` | Inglés y español. |
-| `pron` | Cómo suena en inglés británico, escrito en español. Ver «Cómo se escribe la grafía» más abajo. |
+| `pron` | Cómo suena, en grafía española (ver arriba). |
 | `pos` | `nombre`, `acción`, `cualidad`, `número`, `palabrita`, `persona`, `saludo`, `pregunta` o `día`. Las cuatro primeras se usan como huecos en las frases tontas. |
 | `block` | Número del bloque (el mismo que el archivo). |
-| `emoji` | El dibujo. Procura que no se repita dentro del mismo bloque. |
-| `syllables`, `stress` | Número de golpecitos de la palabra y cuál suena más fuerte (para el juego del tambor). |
+| `emoji` | El dibujo. Que no se repita dentro del mismo bloque. |
+| `syllables`, `stress` | Golpecitos de la palabra y cuál suena más fuerte (juego del tambor). |
 | `theme` | Opcional: `escalada`, `manualidades` o `musica`. |
-
-### Cómo se escribe la grafía (`pron`)
-
-La grafía es una muleta visual: quien manda es la voz. Se escribe para que una niña de
-10 años la lea tal cual, sin tropezar, y sigue el **inglés británico**:
-
-- Solo letras y sonidos del español, sin vocales dobles ni signos raros.
-- La tilde marca dónde va el golpe de voz: `uóte` (water), `guitá` (guitar).
-- La **r detrás de vocal no suena** y no se escribe: `ca` (car), `fo` (four), `gáden` (garden).
-  Al final de palabra, `-er` suena como una «e» floja: `uóte`, `síste`, `tíche`.
-- Excepción: la vocal de *bird*, *girl*, *word* no existe en español y se escribe `er`
-  (`berd`, `guerl`, `uerd`). Esa r sobra: la voz británica no la dice y es ella quien lo enseña.
-- `z` es la zeta española (three = `zri`), `j` es una jota muy suave (hello = `jelóu`),
-  `sh` como para pedir silencio, `y` como en «yo» dicho con fuerza (jump = `yamp`).
-- Las letras mudas no se escriben: `cláim` (climb), `lísen` (listen), `nóu` (know), `uók` (walk).
-- Es normal que dos palabras distintas queden escritas igual (`am` vale para *am* y *arm*):
-  el español no tiene esos sonidos y la diferencia la enseña la voz.
-
-### Si la voz lee mal una palabra suelta (`say`)
-
-Algunas voces pronuncian mal ciertas palabras cuando van solas. La «I» suelta, por ejemplo,
-puede sonar «i». Para esos casos, añade a la palabra el campo opcional `say` con el texto que
-se le dará a la voz en su lugar; en pantalla se sigue viendo la palabra de verdad:
-
-```json
-{"id": "w-i", "en": "I", "say": "eye", "es": "yo", "pron": "ái"}
-```
-
-Solo afecta a la palabra suelta, no a las frases que la contienen.
+| `say` | Opcional: qué darle a la voz si lee mal la palabra suelta. |
 
 ### Una frase nueva — mismo archivo, lista `sentences`
 
@@ -220,76 +372,94 @@ Solo afecta a la palabra suelta, no a las frases que la contienen.
  "words": ["w-i", "w-fly", "w-my", "w-kite"]}
 ```
 
-`words` son los `id` de las palabras que hay que conocer antes de ver la frase; solo pueden
-ser de ese bloque o de bloques anteriores. `grammar` (opcional) es el `id` de la regla que
-ilustra. Si escribes `{name}` en una frase, la app pone ahí el nombre guardado en la tablet.
+`words` son las palabras que hay que conocer antes de ver la frase; solo de ese bloque o de
+anteriores. `grammar` (opcional) es el `id` de la regla que ilustra. Si escribes `{name}` en una
+frase, la app pone ahí el nombre guardado en la tablet.
 
 ### Un bloque nuevo
 
-1. Crea `data/blocks/21-lo-que-sea.json` copiando la forma de otro bloque.
+1. Crea `data/blocks/21-lo-que-sea.json` copiando la forma de otro.
 2. Añádelo a la lista `blocks` de `data/blocks.json` con su `n`, `file`, `stage`, `title` y `emoji`.
 
 ### Lo demás
 
-- `data/grammar.json` — reglas: la idea (sin tecnicismos), los ejemplos (`scenes`) y el
-  juego de huecos (`play`; el hueco se escribe con tres guiones bajos `___`).
-- `data/silly.json` — moldes de las frases tontas: palabras fijas y huecos por categoría.
-- `data/medals.json` — medallas. `rule.type` puede ser `words`, `sentences`, `stages`,
-  `grammar`, `said`, `written`, `silly`, `songs`, `sessions` o `blocks` (agarres completados).
-- `data/ui-strings.json` — todos los textos de la interfaz en español e inglés. `from` es el
-  porcentaje de inglés a partir del cual se muestra en inglés (10, 20, 30, 45, 60 o 70; con 100 se
-  queda siempre en español).
-- `data/blocks.json` — etapas y bloques. `english` es el porcentaje de inglés de cada etapa
-  y `sentencesPerDay` las frases nuevas al día en esa etapa.
+- `data/grammar.json` — reglas: la idea (sin tecnicismos), los ejemplos (`scenes`) y el juego
+  de huecos (`play`; el hueco se escribe `___`).
+- `data/silly.json` — moldes de las frases tontas.
+- `data/medals.json` — medallas. `rule.type`: `words`, `sentences`, `stages`, `blocks`,
+  `grammar`, `said`, `written`, `silly`, `songs` o `sessions`.
+- `data/ui-strings.json` — todos los textos de la interfaz, en español e inglés. `from` es el
+  porcentaje de inglés a partir del cual se muestra en inglés (10, 20, 30, 45, 60 o 70; con 100
+  se queda siempre en español).
+- `data/blocks.json` — etapas y bloques. `english` es el porcentaje de inglés de cada etapa y
+  `sentencesPerDay` las frases nuevas al día.
 
-## Publicar los cambios
+---
 
-Desde la carpeta del proyecto, cada vez que cambies algo:
+## 9. Herramientas y pruebas
 
+Todas se lanzan desde la carpeta del proyecto.
+
+| Orden | Qué hace |
+|---|---|
+| `python tools/validate.py` | Valida el contenido de `data/`: campos, referencias, ids repetidos. |
+| `python tools/check_version.py` | Dice si hace falta subir `VERSION` en `sw.js`. |
+| `python tools/test_check_version.py` | Prueba lo anterior y el hook en un repositorio temporal. |
+| `python tools/e2e.py` | Prueba la app entera en Chromium: convivencia con otras apps, prefijos, copia de seguridad, borrado, sin conexión y actualización automática. |
+| `python tools/screenshots.py` | Regenera las capturas de este README con un progreso de demostración. |
+
+Las dos últimas necesitan Playwright:
+
+```sh
+pip install playwright
+python -m playwright install chromium
 ```
-python tools/validate.py
-git add -A
-git commit -m "Corrijo grafías del bloque 4"
-git push
-```
 
-GitHub Pages tarda uno o dos minutos en publicar. Para un retoque pequeño también puedes
-editar el archivo en github.com (icono del lápiz) y pulsar **Commit changes**; en ese caso,
-ejecuta `git pull` en el ordenador antes de volver a trabajar ahí.
+Para verla en el ordenador (no vale abrir `index.html` a pelo):
 
-## Probarla en el ordenador
-
-La app necesita servirse por HTTP (abrir `index.html` con doble clic no funciona):
-
-```
+```sh
 python -m http.server 8000
 ```
 
-y abre `http://localhost:8000` en Chrome o Edge.
+y entra en `http://localhost:8000`.
 
-## Estructura del proyecto
+---
+
+## 10. Cómo está hecha
+
+HTML, CSS y JavaScript sin compilar, sin dependencias y sin backend. Es una PWA: se instala y
+funciona sin conexión.
 
 ```
 index.html, manifest.json, sw.js     página, datos de instalación y modo sin conexión
 css/        base.css · components.css · games.css
 js/app.js                            arranque y navegación
-js/core/    store (progreso) · backup · content · srs (repaso) · session · path (etapas y medallas)
-            i18n (paso al inglés) · speech (voz y micro) · nav · theme · util
+js/core/    store (progreso, esquema y migraciones) · backup · content · srs (repaso)
+            session · path (etapas, límites y medallas) · i18n (paso al inglés)
+            speech (voz y micro) · updates (versión nueva) · nav · theme · util
 js/ui/      feedback (ánimos, confeti) · layout · charts (gráficas SVG) · keyboard · nextstep
-js/screens/ welcome · home · play · pronunciation · writing · grammar · song · words · progress · settings
+js/screens/ welcome · home · play · pronunciation · writing · grammar · song · words
+            progress · settings
 js/games/   match · intruder · scramble · taps · memory · silly
-data/       todo el contenido
+data/       todo el contenido (ver apartado 8)
 assets/     iconos y la fuente Nunito (licencia SIL Open Font License)
-tools/      validate.py · check_version.py · e2e.py · screenshots.py
+docs/img/   capturas de este README, generadas por tools/screenshots.py
+tools/      validate.py · check_version.py · test_check_version.py · e2e.py · screenshots.py
+.githooks/  pre-commit
 ```
 
-Todas las rutas son relativas, así que la app funciona igual en la raíz de un dominio que en
-una subcarpeta como la de GitHub Pages. Si añades un archivo nuevo en `js/` o `css/`,
-apúntalo en la lista `CORE` de `sw.js` para que también funcione sin conexión.
+Detalles que conviene saber si vuelves a tocarlo:
 
-## Cosas que conviene saber
-
-- La grafía de `pron` está escrita a mano y puede tener imprecisiones. La voz de la app es
-  siempre la referencia.
-- Los emojis se ven con el diseño de cada dispositivo; alguno muy reciente puede no existir
-  en una tablet antigua. Si ves un cuadrado vacío, cambia ese emoji en el JSON.
+- **Todas las rutas son relativas**, para que funcione igual en la raíz de un dominio que en la
+  subcarpeta de GitHub Pages. No metas rutas que empiecen por `/`.
+- **Si añades un archivo** en `js/` o `css/`, apúntalo en la lista `ASSETS` de `sw.js`, o no
+  estará disponible sin conexión. Los de `data/blocks/` no hace falta: el service worker los
+  descubre leyendo `data/blocks.json`.
+- **El progreso guardado lleva su versión de esquema** en el campo `v`. Si algún día cambia el
+  formato, sube `SCHEMA` en `js/core/store.js` y añade el paso correspondiente a `MIGRATIONS`;
+  el mecanismo ya está puesto, hoy sin ninguna migración. Un progreso de una versión más nueva
+  de la app no se sobrescribe nunca.
+- **Repaso espaciado:** cada palabra vive en una caja de 1 a 5 y vuelve a los 1, 2, 4, 8 o 16
+  días, siempre dentro de un juego. Un fallo baja una caja, y eso no se muestra en ningún sitio.
+- **Los emojis** se ven con el diseño de cada aparato; alguno muy reciente puede no existir en
+  una tablet antigua. Si ves un cuadrado vacío, cambia ese emoji en el JSON.
