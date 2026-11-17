@@ -17,6 +17,7 @@ import settings from './screens/settings.js';
 import welcome, { why } from './screens/welcome.js';
 import words from './screens/words.js';
 import { state } from './core/store.js';
+import { initUpdates } from './core/updates.js';
 
 const routes = { home, play, pron, write, grammar, song, progress, settings, welcome, words, why };
 
@@ -63,9 +64,7 @@ async function start() {
   window.addEventListener('hashchange', render);
   render();
   document.addEventListener('visibilitychange', () => { if (document.hidden) save(); });
-  if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
-    navigator.serviceWorker.register('sw.js').catch(err => console.warn('Sin modo offline:', err));
-  }
+  initUpdates();
 }
 
 start();

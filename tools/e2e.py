@@ -103,12 +103,13 @@ def sw_listo(page):
 def entrar(page, url, nombre="Alumna"):
     """Pasa la bienvenida (nombre + explicacion del ritmo) hasta el panel."""
     page.goto(url)
-    page.wait_for_selector("#who", timeout=20000)
-    page.fill("#who", nombre)
-    page.click("#start")
-    page.wait_for_selector("#go")
-    page.click("#go")
-    page.wait_for_selector(".play-big", timeout=20000)
+    page.wait_for_selector("#who, .play-big", timeout=25000)
+    if page.locator("#who").count():          # bienvenida: solo la primera vez
+        page.fill("#who", nombre)
+        page.click("#start")
+        page.wait_for_selector("#go")
+        page.click("#go")
+    page.wait_for_selector(".play-big", timeout=25000)
 
 
 def main():
@@ -205,19 +206,29 @@ def main():
         check(bool(page.inner_text(".wcard .en").strip()), "y se puede jugar: el contenido sale de la copia local")
         ctx.set_offline(False)
 
-        print("\nActualizacion al abrir")
+        print("")
+        print("Actualizacion automatica")
+        entrar(page, url)
+        page.goto(url + "#play")
+        page.wait_for_selector(".wcard", timeout=25000)
+        page.evaluate("() => { window.__marca = 1; }")
         antes = page.evaluate("async () => (await caches.keys()).filter(k => k.startsWith('climbenglish-'))")
-        Handler.nueva_version = True
-        page.goto(url)
+
+        Handler.nueva_version = True   # a partir de aqui el servidor sirve una VERSION mayor
+        page.evaluate("async () => { const r = await navigator.serviceWorker.getRegistration(); await r.update(); }")
+        page.wait_for_timeout(5000)
+        check(page.evaluate("() => window.__marca") == 1, "una version nueva no recarga mientras esta jugando")
+        check(page.evaluate("() => location.hash") == "#play", "sigue en el juego, sin interrumpir")
+
+        page.evaluate("() => { location.hash = '#home'; }")
+        page.wait_for_function("() => window.__marca === undefined", timeout=30000)
         page.wait_for_selector(".play-big", timeout=25000)
-        page.wait_for_timeout(4000)
-        page.goto(url)
-        page.wait_for_selector(".play-big", timeout=25000)
-        page.wait_for_timeout(3000)
         despues = page.evaluate("async () => (await caches.keys()).filter(k => k.startsWith('climbenglish-'))")
-        check(despues != antes, "la version nueva se instala sola al abrir: %s -> %s" % (antes, despues))
+        check(despues != antes, "al salir del juego se aplica sola: %s -> %s" % (antes, despues))
         check(len(despues) == 1, "y deja una sola cache propia: %s" % despues)
         check(OTRA_CACHE in caches_de(page), "la cache de la otra app sigue intacta tras actualizar")
+        activo = page.evaluate("async () => { const r = await navigator.serviceWorker.getRegistration(); return !!r.active; }")
+        check(activo, "queda un service worker activo tras la actualizacion")
         Handler.nueva_version = False
 
         reales = [e for e in errores if "favicon" not in e.lower()]
