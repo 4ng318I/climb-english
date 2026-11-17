@@ -6,7 +6,7 @@
 // el mismo almacén de cachés. Por eso el nombre lleva prefijo propio y en la activación
 // SOLO se borran las cachés propias: borrar las demás dejaría sin conexión a otra app.
 const PREFIX = 'climbenglish-';
-const VERSION = 5;
+const VERSION = 6;
 const CACHE = PREFIX + 'v' + VERSION;
 // Nombres usados antes de adoptar el prefijo; se limpian, pero solo estos.
 const LEGACY_CACHES = ['ingles-a1-v1', 'ingles-a1-v2', 'ingles-a1-v3'];
@@ -17,7 +17,7 @@ const CORE = [
   'js/app.js',
   'js/core/util.js', 'js/core/store.js', 'js/core/content.js', 'js/core/srs.js', 'js/core/path.js',
   'js/core/i18n.js', 'js/core/speech.js', 'js/core/backup.js', 'js/core/nav.js', 'js/core/session.js',
-  'js/core/theme.js',
+  'js/core/theme.js', 'js/core/updates.js',
   'js/ui/feedback.js', 'js/ui/layout.js', 'js/ui/charts.js', 'js/ui/keyboard.js', 'js/ui/nextstep.js',
   'js/screens/home.js', 'js/screens/play.js', 'js/screens/pronunciation.js', 'js/screens/writing.js',
   'js/screens/grammar.js', 'js/screens/song.js', 'js/screens/progress.js', 'js/screens/settings.js', 'js/screens/welcome.js', 'js/screens/words.js',
@@ -37,8 +37,13 @@ self.addEventListener('install', event => {
       const index = await (await fetch('data/blocks.json', { cache: 'no-cache' })).json();
       await cache.addAll(index.blocks.map(b => new Request('data/blocks/' + b.file, { cache: 'no-cache' })));
     } catch (e) { /* se guardarán al usarlos */ }
-    await self.skipWaiting();
   })());
+});
+
+// Sin skipWaiting al instalar: la versión nueva espera a que la app la active en un
+// momento seguro (ver js/core/updates.js), para no cambiar los archivos a mitad de un juego.
+self.addEventListener('message', event => {
+  if (event.data === 'SKIP_WAITING') self.skipWaiting();
 });
 
 self.addEventListener('activate', event => {
