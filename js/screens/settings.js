@@ -2,7 +2,7 @@
 // Esta pantalla es para adultos y está siempre en español.
 import { $, esc } from '../core/util.js';
 import { content } from '../core/content.js';
-import { state, save } from '../core/store.js';
+import { state, save, reset, status, APP, SCHEMA } from '../core/store.js';
 import { speak, canSpeak, micSupported, voiceInfo, accentName } from '../core/speech.js';
 import { exportProgress, readBackup, importProgress } from '../core/backup.js';
 import { learnedWords, englishLevel, currentStage, leftToday, DAILY, NEW_WORDS } from '../core/path.js';
@@ -102,6 +102,14 @@ export default function settings(el) {
         <p class="note">El límite es deliberado y no se cambia desde la app.</p>
       </div>
 
+      ${status.state === 'ok' ? '' : `<div class="panel warn">
+        <h2>⚠️ Atención al progreso guardado</h2>
+        <p class="note">${esc(status.msg)}</p>
+        <p class="note">${status.state === 'futuro'
+          ? 'Mientras tanto la app no guarda nada, para no estropear ese progreso. Abre la app con wifi para que se actualice sola.'
+          : 'Se ha empezado de cero. Si tienes una copia en un archivo, puedes importarla aquí abajo.'}</p>
+      </div>`}
+
       <div class="panel">
         <h2>💾 Copia del progreso</h2>
         <p class="note">El progreso se guarda solo en esta tablet. Si se borran los datos de Chrome, se pierde:
@@ -111,6 +119,17 @@ export default function settings(el) {
           <label class="btn ghost file">⬆️ Importar de archivo<input type="file" id="import" accept=".json,application/json" hidden></label>
         </div>
         <div id="confirm"></div>
+        <p class="note">El archivo lleva dentro el nombre de la app («${APP}») y la versión del formato (${SCHEMA}),
+          así que esta app solo acepta sus propias copias y nunca las de otra (por ejemplo Deutsch_B2).</p>
+      </div>
+
+      <div class="panel danger">
+        <h2>🧹 Empezar de cero</h2>
+        <p class="note">Borra todo el progreso de esta tablet: palabras, frases, medallas y el nombre. Vuelve a salir
+          la bienvenida, como recién instalada. Los ajustes de voz y el tema se conservan. <b>No se puede deshacer</b>,
+          así que exporta antes una copia si quieres poder volver.</p>
+        <button class="btn ghost" id="reset">🧹 Borrar el progreso y empezar de cero</button>
+        <div id="reset-confirm"></div>
       </div>
 
       <div class="panel">
@@ -155,6 +174,16 @@ export default function settings(el) {
     location.reload();
   };
 
+  $('#reset', el).onclick = () => {
+    const box = $('#reset-confirm', el);
+    const n = Object.keys(state.words).length;
+    box.innerHTML = `<p class="note"><b>¿Seguro? Se borrarán ${n} palabras y todo lo demás.</b></p>
+      <div class="row"><button class="btn" id="reset-no">Cancelar</button>
+      <button class="btn ghost" id="reset-yes">Sí, borrar todo</button></div>`;
+    $('#reset-no', box).onclick = () => { box.innerHTML = ''; };
+    $('#reset-yes', box).onclick = () => { reset(); location.hash = '#home'; location.reload(); };
+  };
+
   $('#import', el).onchange = async e => {
     const file = e.target.files[0];
     e.target.value = '';
@@ -163,13 +192,14 @@ export default function settings(el) {
     try {
       const backup = await readBackup(file);
       // Importar sustituye lo que hay: se pide confirmación antes.
-      box.innerHTML = `<p class="note"><b>La copia tiene ${backup.words} palabras${backup.exported ? ` (del ${esc(backup.exported)})` : ''}.</b>
-        En esta tablet hay ${Object.keys(state.words).length}. Al importar se sustituye el progreso actual.</p>
+      box.innerHTML = `<p class="note"><b>La copia es de ${esc(backup.name || 'sin nombre')} y tiene ${backup.words} palabras
+        y ${backup.sentences} frases${backup.exported ? ` (del ${esc(backup.exported)})` : ''}.</b>
+        En esta tablet hay ${Object.keys(state.words).length} palabras. Al importar se sustituye el progreso actual.</p>
         <div class="row"><button class="btn ghost" id="no">Cancelar</button><button class="btn" id="yes">Sí, importar</button></div>`;
       $('#no', box).onclick = () => { box.innerHTML = ''; };
       $('#yes', box).onclick = () => { importProgress(backup); location.hash = '#home'; location.reload(); };
-    } catch {
-      box.innerHTML = '<p class="note">Ese archivo no parece una copia de esta app. No se ha cambiado nada.</p>';
+    } catch (err) {
+      box.innerHTML = `<p class="note"><b>No se ha importado nada.</b> ${esc(err.message)}</p>`;
     }
   };
 }
