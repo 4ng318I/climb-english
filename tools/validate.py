@@ -1,6 +1,6 @@
 """Comprueba el contenido de data/ despues de editarlo a mano.
 
-Uso (desde la carpeta del proyecto):   python tools/validar_contenido.py
+Uso (desde la carpeta del proyecto):   python tools/validate.py
 
 No cambia ningun archivo: solo avisa de lo que haya que arreglar.
 """

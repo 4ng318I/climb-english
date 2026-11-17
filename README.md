@@ -136,7 +136,7 @@ Todo el contenido está en la carpeta `data/`. Después de editar, comprueba que
 roto nada (hace falta Python):
 
 ```
-python tools/validar_contenido.py
+python tools/validate.py
 ```
 
 Avisa si falta una coma, un campo o si hay un identificador repetido.
@@ -247,7 +247,7 @@ ilustra. Si escribes `{name}` en una frase, la app pone ahí el nombre guardado 
 Desde la carpeta del proyecto, cada vez que cambies algo:
 
 ```
-python tools/validar_contenido.py
+python tools/validate.py
 git add -A
 git commit -m "Corrijo grafías del bloque 4"
 git push
@@ -280,7 +280,7 @@ js/screens/ welcome · home · play · pronunciation · writing · grammar · so
 js/games/   match · intruder · scramble · taps · memory · silly
 data/       todo el contenido
 assets/     iconos y la fuente Nunito (licencia SIL Open Font License)
-tools/      validar_contenido.py
+tools/      validate.py · check_version.py · e2e.py · screenshots.py
 ```
 
 Todas las rutas son relativas, así que la app funciona igual en la raíz de un dominio que en

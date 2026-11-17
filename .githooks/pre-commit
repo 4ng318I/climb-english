@@ -1,0 +1,9 @@
+#!/bin/sh
+# Evita commits que cambien un archivo servido sin subir VERSION en sw.js,
+# y comprueba de paso que el contenido de data/ sigue siendo legible.
+# Activar (una vez por clon):  git config core.hooksPath .githooks
+cd "$(git rev-parse --show-toplevel)" || exit 1
+PY=python
+command -v "$PY" >/dev/null 2>&1 || PY=python3
+"$PY" tools/check_version.py --staged || exit 1
+exec "$PY" tools/validate.py

@@ -11,7 +11,7 @@ const CACHE = PREFIX + 'v' + VERSION;
 // Nombres usados antes de adoptar el prefijo; se limpian, pero solo estos.
 const LEGACY_CACHES = ['ingles-a1-v1', 'ingles-a1-v2', 'ingles-a1-v3'];
 
-const CORE = [
+const ASSETS = [
   './', 'index.html', 'manifest.json',
   'css/base.css', 'css/components.css', 'css/games.css',
   'js/app.js',
@@ -31,7 +31,7 @@ const CORE = [
 self.addEventListener('install', event => {
   event.waitUntil((async () => {
     const cache = await caches.open(CACHE);
-    await cache.addAll(CORE.map(url => new Request(url, { cache: 'no-cache' })));
+    await cache.addAll(ASSETS.map(url => new Request(url, { cache: 'no-cache' })));
     // Los archivos de bloques se leen del índice: añadir un bloque no obliga a tocar esto.
     try {
       const index = await (await fetch('data/blocks.json', { cache: 'no-cache' })).json();
