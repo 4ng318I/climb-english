@@ -76,7 +76,7 @@ conexión, la app vuelve sola a «escucha y repite».
 ### ✨ Aprender lo nuevo
 
 Es el botón grande y la entrada principal. **Dice lo que va a dar**: «Aprender lo nuevo —
-Nuevo para hoy: 8 palabras y 1 frase». Cuando ya no queda nada nuevo, cambia solo a
+Nuevo para hoy: 8 palabras y 3 frases». Cuando ya no queda nada nuevo, cambia solo a
 «Repasar jugando».
 
 Lo nuevo va **siempre al principio** de cada tanda: 3 palabras nuevas o 1 frase nueva, y
@@ -143,8 +143,11 @@ Dictados muy cortos de palabras que ya domina, con teclado grande en pantalla.
 
 ### 📚 Trucos de gramática
 
-Una regla nueva al día como mucho, explicada con dibujos y sin tecnicismos («la palabrita que
-acompaña»). Las ya vistas se pueden repetir siempre; las que aún no tocan aparecen como regalos.
+**95 fichas en total: 18 reglas y 77 trucos.** Al día se abren como mucho **una regla y dos
+trucos**: la regla monta frases («la palabrita que acompaña», nunca «verbo auxiliar») y el
+truco es un hallazgo suelto y corto, del tipo «la b de *climb* no se oye» o «*to*, *too* y
+*two* suenan igual». Todo con dibujos y sin tecnicismos. Las ya vistas se pueden repetir
+siempre; las que aún no tocan aparecen como regalos.
 
 ![Trucos de gramática](docs/img/gramatica.png)
 
@@ -178,7 +181,11 @@ De arriba abajo:
 - **Tu siguiente paso.** Lo más útil para ti: dice con números exactos qué falta para
   completar el agarre actual y para subir de etapa, y qué le queda nuevo para hoy.
 - **Mi camino a la cima.** La montaña. Cada agarre es un bloque temático (20 en total) y cada
-  color, una etapa (7). Tocando un agarre se ve cuánto lleva de él.
+  color, una etapa (7). Tocando un agarre se ve cuánto lleva de él. **La lagartija no se
+  agarra al bloque: va por el sendero**, en el punto exacto que le toca según las palabras
+  que lleva de ese bloque, y llega al agarre siguiente justo cuando lo completa. Al abrir el
+  mapa sube deslizándose desde donde se quedó la última vez, con el trozo ya subido pintado
+  detrás, para que el avance del día se vea. A 8 palabras al día cruza medio tramo diario.
 - **En esta etapa.** Cinco barras, todas contadas sobre el total de la etapa («3 de 64»), sin
   porcentajes sueltos. Para subir de etapa solo cuentan palabras y frases; trucos, voz y
   escritura son para presumir.
@@ -191,18 +198,24 @@ De arriba abajo:
 
 Subir de etapa pide descubrir **todas las palabras y todas las frases** de sus bloques.
 
-| Etapa | Bloques | Palabras | Frases del camino | Días mínimos | Interfaz en inglés |
-|---|---|---|---|---|---|
-| 1 Campo base | 1 | 16 | 7 | 3 | 0 % |
-| 2 Primeros agarres | 2–3 | 32 | 10 | 4 | 10 % |
-| 3 La travesía | 4–5 | 32 | 13 | 5 | 20 % |
-| 4 La gran pared | 6–8 | 51 | 18 | 7 | 30 % |
-| 5 El desplome | 9–11 | 50 | 18 | 7 | 45 % |
-| 6 La cornisa | 12–15 | 64 | 28 | 10 | 60 % |
-| 7 La cima A1 | 16–20 | 80 | 38 | 13 | 70 % |
+| Etapa | Bloques | Palabras | Frases del camino | De práctica | Días mínimos | Interfaz en inglés |
+|---|---|---|---|---|---|---|
+| 1 Campo base | 1 | 16 | 6 | 6 | 2 | 0 % |
+| 2 Primeros agarres | 2–3 | 32 | 12 | 12 | 4 | 10 % |
+| 3 La travesía | 4–5 | 33 | 12 | 12 | 5 | 20 % |
+| 4 La gran pared | 6–8 | 51 | 18 | 18 | 7 | 30 % |
+| 5 El desplome | 9–11 | 52 | 18 | 18 | 7 | 45 % |
+| 6 La cornisa | 12–15 | 66 | 24 | 24 | 9 | 60 % |
+| 7 La cima A1 | 16–20 | 80 | 30 | 30 | 10 | 70 % |
+| **Total** | **1–20** | **330** | **120** | **120** | **44** | **70 %** |
 
-Al ritmo máximo (8 palabras y 3 frases al día), el camino entero son unas seis semanas. La primera etapa es corta a propósito:
-es la que decide si sigue o lo deja.
+**Las frases van en dos grupos.** Las *del camino* son las que hay que descubrir para subir
+de etapa. Las *de práctica* son otras tantas que salen en los juegos y en el rocódromo pero
+no cierran nada: están para que haya material de sobra con el que repasar sin que las frases
+se conviertan en el cuello de botella.
+
+Al ritmo máximo (8 palabras y 3 frases al día), el camino entero son unas seis semanas. La
+primera etapa es corta a propósito: es la que decide si sigue o lo deja.
 
 **La interfaz se va pasando al inglés sola.** Empieza todo en español y, al coronar cada
 etapa, parte de los textos cambian a inglés (primero los más repetidos: «¡Muy bien!» →
@@ -445,13 +458,31 @@ Todas se lanzan desde la carpeta del proyecto.
 
 | Orden | Qué hace |
 |---|---|
-| `python tools/validate.py` | Valida el contenido de `data/`: campos, referencias, ids repetidos. |
+| `python tools/validate.py` | Valida el contenido de `data/`. Ver abajo todo lo que comprueba. |
 | `python tools/check_version.py` | Dice si hace falta subir `VERSION` en `sw.js`. |
 | `python tools/test_check_version.py` | Prueba lo anterior y el hook en un repositorio temporal. |
-| `python tools/e2e.py` | Prueba la app entera en Chromium: convivencia con otras apps, prefijos, copia de seguridad, borrado, sin conexión y actualización automática. |
+| `python tools/e2e.py` | Prueba la app entera en Chromium: convivencia con otras apps, prefijos, copia de seguridad, borrado, sin conexión, actualización automática, llegar a todo lo nuevo del día, el rocódromo y la lagartija del mapa. |
+| `python tools/e2e.py --solo=lagartija` | Una sola sección, en segundos. Admite `tandas`, `gym`, `lagartija` y `migracion`. |
 | `python tools/screenshots.py` | Regenera las capturas de este README con un progreso de demostración. |
 
-Las dos últimas necesitan Playwright:
+La batería entera tarda unos minutos: para un retoque de una pantalla usa `--solo=`, y deja
+la completa para antes de publicar.
+
+**Qué comprueba `validate.py`**, además de los campos, las referencias y los ids repetidos:
+
+- **La regla de las 3k.** La frase número *k* del camino de un bloque solo puede usar
+  palabras que estén entre las primeras *3k* de ese bloque. Así ninguna frase pide palabras
+  que todavía no ha visto.
+- **El texto de cada frase, no solo su lista `words`.** «My name is {name}» declaraba tres
+  palabras y colaba `is`, que es de otro bloque. Ahora se mira palabra por palabra el texto
+  en inglés. Acepta plurales y la `-s` de he/she si la base ya se conoce.
+- **Que la grafía no se contradiga.** Una frase tiene que escribir cada palabra igual que su
+  ficha, y ninguna puede llevar vocales dobles. Se colaron 55 frases con la grafía vieja
+  (`aa` por *are*, `beeds` por *birds*) al quitar las vocales dobles de las fichas.
+- **Que no haya alfabeto fonético.** Ningún texto que ella lea puede llevar símbolos como
+  `æ` o `ə`: la grafía se escribe con letras españolas y el sonido se explica con palabras.
+
+Las órdenes de `e2e.py` y `screenshots.py` necesitan Playwright:
 
 ```sh
 pip install playwright
@@ -507,7 +538,7 @@ Detalles que conviene saber si vuelves a tocarlo:
 - **Las partidas no se alargan con el tiempo.** Cada minijuego tiene un tamaño fijo: emparejar
   4 parejas, intruso 4 rondas, frase revuelta 2 frases, golpecitos 3 palabras, frases tontas
   hasta 3, y memory 4 parejas (6 a partir de la etapa 4). Una sesión ve como mucho 8 palabras,
-  tenga ella 10 o 325. Lo único que crece es al principio, mientras no hay material suficiente
+  tenga ella 10 o 330. Lo único que crece es al principio, mientras no hay material suficiente
   para llenar esos tamaños.
 - **Los emojis** se ven con el diseño de cada aparato; alguno muy reciente puede no existir en
   una tablet antigua. Si ves un cuadrado vacío, cambia ese emoji en el JSON.
