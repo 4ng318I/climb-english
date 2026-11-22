@@ -99,7 +99,8 @@ def main():
             errors.append(f"ui-strings.json: «{key}» necesita «es» y «from»")
     used = set()
     for js in (ROOT / "js").rglob("*.js"):
-        used |= set(re.findall(r"""\b[tT]\(\s*['"]([a-z0-9_]+)['"]""", js.read_text(encoding="utf-8")))
+        # Solo claves literales: si tras la comilla viene un "+", la clave se arma al vuelo.
+        used |= set(re.findall(r"""\b[tT]\(\s*['"]([a-z0-9_]+)['"]\s*[,)]""", js.read_text(encoding="utf-8")))
         used |= set(re.findall(r"""(?:howto|empty)\([^)]*?['"]([a-z][a-z0-9_]+)['"]\s*[,)]""", js.read_text(encoding="utf-8")))
     for key in sorted(used - set(ui)):
         warnings.append(f"ui-strings.json: el codigo usa el texto «{key}» y no esta en el archivo")

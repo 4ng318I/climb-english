@@ -73,18 +73,32 @@ conexión, la app vuelve sola a «escucha y repite».
 
 ## 2. Qué hace ella en cada parte
 
-### 🎮 Aprender jugando
+### ✨ Aprender lo nuevo
 
-Es el botón grande y la entrada principal. Cada partida dura entre 5 y 10 minutos: presenta
-**3 palabras nuevas o 1 frase nueva**, y luego encadena 4 minijuegos que mezclan lo nuevo con
-repaso de días anteriores.
+Es el botón grande y la entrada principal. **Dice lo que va a dar**: «Aprender lo nuevo —
+Nuevo para hoy: 6 palabras y 1 frase». Cuando ya no queda nada nuevo, cambia solo a
+«Repasar jugando».
+
+Lo nuevo va **siempre al principio** de cada tanda: 3 palabras nuevas o 1 frase nueva, y
+después 4 minijuegos que las mezclan con repaso de días anteriores.
 
 ![Una palabra nueva](docs/img/sesion.png)
 
 Los seis minijuegos van rotando: emparejar palabra y dibujo, cazar al intruso, ordenar una
 frase, contar los golpecitos de una palabra, memory inglés-español e inventar frases tontas.
+En las sesiones de aprender **la rotación es fija y no se elige**: una palabra nueva hay que
+verla, oírla, escribirla y montarla, no solo reconocerla. Para elegir está el rocódromo.
 
 ![Puzzle de frase](docs/img/juego.png)
+
+**Las tandas se encadenan.** Al terminar los juegos de una tanda, si todavía queda algo nuevo
+del día, aparece un puente que dice exactamente qué falta:
+
+![El puente entre tandas](docs/img/puente.png)
+
+Así se llega a todo lo del día sin salir de la pantalla ni acertar con la secuencia correcta.
+Y parar es igual de fácil que seguir: «Luego sigo» no es abandonar, lo descubierto ya está
+guardado. Si sale a mitad, el botón del panel entrega la tanda siguiente al primer toque.
 
 **Nunca dice que algo está mal.** Si falla, primero le dice qué le salió bien («¡tienes 3
 letras perfectas!») y luego cómo queda mejor. No hay cruces rojas ni sonidos de error.
@@ -106,6 +120,10 @@ aparece solo entonces: el temario tiene su ritmo, pero **jugar no tiene techo**.
 mezcla las palabras que hoy tocaba repasar con otras al azar, así que entrenar aquí alimenta
 el mismo repaso espaciado que las partidas de aprender. Lleva su marcador de racha y de
 entrenos, celebra cada cuatro partidas, y tiene su propio panel en «Mi progreso».
+
+**Aquí sí se elige juego.** El rocódromo abre con «🎲 Sorpresa» (la opción grande, la que
+viene por defecto) y, debajo, los seis minijuegos para elegir uno y repetirlo. Elegir es
+posible, nunca obligatorio. No hay coste pedagógico, porque aquí se entrena lo que ya sabe.
 
 Lo que el rocódromo **no** hace: dar palabras nuevas. Eso sigue siendo cosa del otro botón.
 
@@ -481,5 +499,10 @@ Detalles que conviene saber si vuelves a tocarlo:
   de la app no se sobrescribe nunca.
 - **Repaso espaciado:** cada palabra vive en una caja de 1 a 5 y vuelve a los 1, 2, 4, 8 o 16
   días, siempre dentro de un juego. Un fallo baja una caja, y eso no se muestra en ningún sitio.
+- **Las partidas no se alargan con el tiempo.** Cada minijuego tiene un tamaño fijo: emparejar
+  4 parejas, intruso 4 rondas, frase revuelta 2 frases, golpecitos 3 palabras, frases tontas
+  hasta 3, y memory 4 parejas (6 a partir de la etapa 4). Una sesión ve como mucho 8 palabras,
+  tenga ella 10 o 325. Lo único que crece es al principio, mientras no hay material suficiente
+  para llenar esos tamaños.
 - **Los emojis** se ven con el diseño de cada aparato; alguno muy reciente puede no existir en
   una tablet antigua. Si ves un cuadrado vacío, cambia ese emoji en el JSON.

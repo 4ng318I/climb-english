@@ -2,7 +2,7 @@
 import { $, esc, pick, dayKey, daysBetween } from '../core/util.js';
 import { state, save } from '../core/store.js';
 import { T, t, tt } from '../core/i18n.js';
-import { currentStage, learnedWords } from '../core/path.js';
+import { currentStage, learnedWords, leftToday } from '../core/path.js';
 import { go } from '../core/nav.js';
 import { applyTheme } from '../core/theme.js';
 import { bubble } from '../ui/feedback.js';
@@ -28,6 +28,9 @@ export default function home(el) {
   state.lastVisit = now;
   save();
 
+  // El botón grande dice lo que de verdad va a dar hoy, no un título genérico.
+  const nuevo = leftToday();
+  const hayNuevo = nuevo.words > 0 || nuevo.sentences > 0;
   const stage = currentStage();
   const n = learnedWords().length;
   el.innerHTML = `
@@ -38,7 +41,8 @@ export default function home(el) {
     <div class="alert" id="voice-alert" hidden></div>
     <div class="big-row">
       <button class="play-big" data-go="play">
-        <span class="pb-emoji">🎮</span><span class="pb-text">${T('play_title')}</span>
+        <span class="pb-emoji">${hayNuevo ? '✨' : '🎮'}</span>
+        <span class="pb-text">${T(hayNuevo ? 'learn_new' : 'review_play')}</span>
         <span class="pb-sub">${esc(todayShort())}</span>
       </button>
       <button class="play-big gym-big" data-go="gym">

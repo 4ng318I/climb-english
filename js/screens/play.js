@@ -1,16 +1,19 @@
-// APRENDER JUGANDO: presenta lo nuevo (3 palabras o 1 frase) y encadena minijuegos.
+// APRENDER LO NUEVO: presenta lo nuevo (3 palabras o 1 frase), lo trabaja con minijuegos
+// y, si todavía queda algo nuevo hoy, ENCADENA la tanda siguiente sin salir de aquí.
+//
+// Lo nuevo nunca está escondido: va al principio de cada tanda, y entre tandas hay un
+// puente que dice cuánto queda y deja seguir con un toque. Parar es igual de fácil y no
+// se presenta como abandonar.
 import { $, esc } from '../core/util.js';
 import { content } from '../core/content.js';
 import { state, save, today } from '../core/store.js';
 import { T, tt, newlyEnglish } from '../core/i18n.js';
 import { speak } from '../core/speech.js';
 import { makePlan, pickGames, learnWords, learnSentence, record, playedGame, sinFallos } from '../core/session.js';
-import { learnedWords, stagesDone, englishLevel, checkMedals } from '../core/path.js';
+import { learnedWords, stagesDone, englishLevel, checkMedals, blockDone, currentBlock } from '../core/path.js';
 import { wordCard } from '../ui/layout.js';
-import { chime, confetti } from '../ui/feedback.js';
-import { nextStep, nothingNewToday } from '../ui/nextstep.js';
-import { bubble } from '../ui/feedback.js';
-import { blockDone, currentBlock } from '../core/path.js';
+import { chime, confetti, bubble } from '../ui/feedback.js';
+import { nextStep, nothingNewToday, howMany } from '../ui/nextstep.js';
 
 const tap = (root, sel) => new Promise(resolve => {
   root.onclick = e => { if (e.target.closest(sel)) { root.onclick = null; resolve(); } };
@@ -52,10 +55,60 @@ async function crown(stage) {
   await tap(stage, '.next');
 }
 
+// Celebración al completar un bloque del mapa.
+async function holds(stage) {
+  const seen = state.ui.blocksSeen || (state.ui.blocksSeen = []);
+  const conquered = content.blocks.filter(b => blockDone(b) && !seen.includes(b.n));
+  if (!conquered.length) return true;
+  seen.push(...conquered.map(b => b.n));
+  save();
+  const b = conquered[conquered.length - 1], next = currentBlock();
+  stage.className = 'stage';
+  stage.innerHTML = `
+    <div class="finish crown">
+      <div class="big-emoji">${esc(b.emoji)}</div>
+      <h2>${T('hold_done', { block: tt(b.title) })}</h2>
+      <p>${T('hold_done_text', { n: content.words.filter(w => w.block === b.n).length })}</p>
+      ${next.n !== b.n ? `<p class="next-line">🪨 ${T('hold_next', { block: tt(next.title) })} ${esc(next.emoji)}</p>` : ''}
+      <button class="btn next">${T('continue')} ➜</button>
+    </div>`;
+  chime();
+  confetti(36);
+  await tap(stage, '.next');
+  return stage.isConnected;
+}
+
+// ¿La tanda siguiente trae algo nuevo de verdad? (makePlan no cambia nada al mirarlo)
+function queda() {
+  const p = makePlan();
+  return { words: p.newWords.length, sentence: p.newSentence ? 1 : 0 };
+}
+
+// El puente entre tandas. Seguir es el botón principal; parar es igual de fácil y se
+// presenta como "lo dejo para luego", nunca como rendirse.
+async function bridge(stage, pendiente) {
+  stage.className = 'stage';
+  stage.innerHTML = `
+    <div class="finish bridge">
+      <div class="big-emoji">✨</div>
+      <h2>${T('bridge_title')}</h2>
+      <p class="bridge-what">${T('bridge_what', { what: howMany(pendiente.words, pendiente.sentence) })}</p>
+      <button class="btn bridge-go" id="seguir">✨ ${T('bridge_go')}</button>
+      <button class="btn ghost" id="parar">${T('bridge_stop')}</button>
+      <p class="note">${T('bridge_stop_note')}</p>
+    </div>`;
+  chime();
+  confetti(14);
+  return new Promise(resolve => {
+    stage.onclick = e => {
+      if (e.target.closest('#seguir')) { stage.onclick = null; resolve(true); }
+      else if (e.target.closest('#parar')) { stage.onclick = null; resolve(false); }
+    };
+  });
+}
+
 export default async function play(el) {
-  const plan = makePlan();
   const started = Date.now();
-  let perfectas = 0;
   el.innerHTML = `
     <header class="bar">
       <button class="round" data-go="home" aria-label="Inicio">🏠</button>
@@ -63,74 +116,70 @@ export default async function play(el) {
     </header>
     <section class="stage" id="stage"></section>`;
   const stage = $('#stage', el);
-
-  if (plan.newWords.length) {
-    if (!await introduce(stage, plan.newWords, 'new_word')) return;
-    learnWords(plan.newWords);
-  } else if (plan.newSentence) {
-    if (!await introduce(stage, [plan.newSentence], 'new_sentence')) return;
-    learnSentence(plan.newSentence);
-  }
-
-  // Partida sin novedades (lo de hoy ya está descubierto): se dice al empezar, en positivo.
-  if (!plan.newWords.length && !plan.newSentence && nothingNewToday()) bubble(T('review_only'), 4200);
-
-  const ctx = { ...plan, learned: learnedWords() };
-  const games = pickGames(ctx);
   const steps = $('#steps', el);
-  for (let i = 0; i < games.length; i++) {
-    steps.innerHTML = games.map((g, k) =>
-      `<span class="step${k < i ? ' done' : k === i ? ' now' : ''}">${g.icon}</span>`).join('');
-    stage.className = 'stage game-' + games[i].id;
-    stage.innerHTML = '';
-    playedGame(games[i].id);
-    const results = await games[i].play(stage, ctx);
-    if (!stage.isConnected) return;
-    record(results);
-    if (sinFallos(results)) perfectas++;
-  }
-  steps.innerHTML = '';
+  const descubierto = [];   // todo lo nuevo de esta visita, para la pantalla final
+  let medals = [];
 
-  state.stats.sessions++;
-  if (perfectas === games.length && games.length) state.stats.perfect++;
-  today().minutes += Math.min(15, Math.max(1, Math.round((Date.now() - started) / 60000)));
-  const medals = checkMedals();
-  save();
-  // Agarre conquistado: una celebración por cada bloque completado.
-  const seen = state.ui.blocksSeen || (state.ui.blocksSeen = []);
-  const conquered = content.blocks.filter(b => blockDone(b) && !seen.includes(b.n));
-  if (conquered.length) {
-    seen.push(...conquered.map(b => b.n));
+  // Una vuelta por tanda: lo nuevo, los juegos, y el puente si queda más.
+  for (;;) {
+    const plan = makePlan();
+
+    if (plan.newWords.length) {
+      if (!await introduce(stage, plan.newWords, 'new_word')) return;
+      learnWords(plan.newWords);
+      descubierto.push(...plan.newWords);
+    } else if (plan.newSentence) {
+      if (!await introduce(stage, [plan.newSentence], 'new_sentence')) return;
+      learnSentence(plan.newSentence);
+      descubierto.push(plan.newSentence);
+    } else if (!descubierto.length && nothingNewToday()) {
+      // Partida sin novedades: se dice al empezar, en positivo.
+      bubble(T('review_only'), 4200);
+    }
+
+    const ctx = { ...plan, learned: learnedWords() };
+    const games = pickGames(ctx);
+    let perfectas = 0;
+    for (let i = 0; i < games.length; i++) {
+      steps.innerHTML = games.map((g, k) =>
+        `<span class="step${k < i ? ' done' : k === i ? ' now' : ''}">${g.icon}</span>`).join('');
+      stage.className = 'stage game-' + games[i].id;
+      stage.innerHTML = '';
+      playedGame(games[i].id);
+      const results = await games[i].play(stage, ctx);
+      if (!stage.isConnected) return;
+      record(results);
+      if (sinFallos(results)) perfectas++;
+    }
+    steps.innerHTML = '';
+
+    state.stats.sessions++;
+    if (games.length && perfectas === games.length) state.stats.perfect++;
+    medals = medals.concat(checkMedals());
     save();
-    const b = conquered[conquered.length - 1], next = currentBlock();
-    stage.className = 'stage';
-    stage.innerHTML = `
-      <div class="finish crown">
-        <div class="big-emoji">${esc(b.emoji)}</div>
-        <h2>${T('hold_done', { block: tt(b.title) })}</h2>
-        <p>${T('hold_done_text', { n: content.words.filter(w => w.block === b.n).length })}</p>
-        ${next.n !== b.n ? `<p class="next-line">🪨 ${T('hold_next', { block: tt(next.title) })} ${esc(next.emoji)}</p>` : ''}
-        <button class="btn next">${T('continue')} ➜</button>
-      </div>`;
-    chime();
-    confetti(36);
-    await tap(stage, '.next');
+
+    if (!await holds(stage)) return;
+    if (stagesDone() > state.ui.stageSeen) {
+      await crown(stage);
+      if (!stage.isConnected) return;
+    }
+
+    const pendiente = queda();
+    if (!pendiente.words && !pendiente.sentence) break;
+    if (!await bridge(stage, pendiente)) break;
     if (!stage.isConnected) return;
   }
 
-  if (stagesDone() > state.ui.stageSeen) {
-    await crown(stage);
-    if (!stage.isConnected) return;
-  }
+  today().minutes += Math.min(30, Math.max(1, Math.round((Date.now() - started) / 60000)));
+  save();
 
-  const fresh = [...plan.newWords, ...(plan.newSentence ? [plan.newSentence] : [])];
   stage.className = 'stage';
   stage.innerHTML = `
     <div class="finish">
       <div class="big-emoji">🏆</div>
       <h2>${T('finish_title')}</h2>
-      ${fresh.length ? `<p>${T('finish_new')}</p>
-        <div class="chips">${fresh.map(w =>
+      ${descubierto.length ? `<p>${T('finish_new')}</p>
+        <div class="chips">${descubierto.map(w =>
           `<button class="chip-word" data-say="${esc(w.en)}">${esc(w.emoji)} ${esc(w.en)}</button>`).join('')}</div>` : ''}
       ${medals.length ? `<p>${T('new_medal')}</p>
         <div class="chips">${medals.map(m =>
@@ -139,10 +188,9 @@ export default async function play(el) {
       <div class="row">
         <button class="btn ghost" data-go="progress">📊 ${T('see_progress')}</button>
         ${nothingNewToday()
-          ? `<button class="btn ghost" data-go="song">🎵 ${T('song_title')}</button>
-             <button class="btn" data-go="gym">🧗 ${T('gym_title')}</button>`
-          : `<button class="btn ghost" data-go="gym">🧗 ${T('gym_title')}</button>
-             <button class="btn" data-go="play">🎮 ${T('play_again')}</button>`}
+          ? `<button class="btn ghost" data-go="song">🎵 ${T('song_title')}</button>`
+          : `<button class="btn ghost" data-go="play">✨ ${T('learn_new')}</button>`}
+        <button class="btn" data-go="gym">🧗 ${T('gym_title')}</button>
       </div>
     </div>`;
   chime();

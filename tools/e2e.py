@@ -221,6 +221,58 @@ def comparar(viejo, nuevo):
     return fallos
 
 
+def prueba_tandas(navegador, url):
+    """Lo nuevo del dia tiene que alcanzarse sin salir ni acertar la secuencia buena."""
+    print("Llegar a todo lo nuevo del dia")
+    ctx = navegador.new_context(reduced_motion="reduce")
+    page = ctx.new_page()
+    errores = []
+    page.on("pageerror", lambda e: errores.append(str(e)))
+    entrar(page, url)
+
+    boton = page.inner_text(".big-row .play-big").replace(chr(10), " ")
+    check("lo nuevo" in boton.lower(), "el boton grande dice lo que da: %r" % boton[:60])
+    promete = page.inner_text(".play-big .pb-sub")
+    page.click(".big-row [data-go='play']")
+
+    SEL = (".stage .btn.next, .stage #seguir, .stage .tile:not(.done), .stage .piece, "
+           ".stage .mcard:not(.done), .stage #drum, .stage .chip, .stage .dot, .stage #ok, .stage #go")
+    puentes = 0
+    for _ in range(2000):
+        if page.locator(".finish:not(.bridge):not(.crown)").count():
+            break
+        if page.locator(".bridge").count() and not page.locator(".bridge.visto").count():
+            puentes += 1
+            page.evaluate("() => document.querySelector('.bridge').classList.add('visto')")
+            check(page.locator(".bridge #seguir").count() == 1 and page.locator(".bridge #parar").count() == 1,
+                  "el puente %d ofrece seguir y parar" % puentes)
+        loc = page.locator(SEL)
+        n = loc.count()
+        if not n:
+            page.wait_for_timeout(250)
+            continue
+        try:
+            loc.nth(random.randrange(n)).click(timeout=1200)
+        except Exception:
+            pass
+        page.wait_for_timeout(70)
+
+    check(puentes >= 1, "aparece el puente entre tandas (%d)" % puentes)
+    fin = page.evaluate("() => JSON.parse(localStorage.getItem('climbenglish:progress'))")
+    check(len(fin["words"]) == 6, "se llega a las 6 palabras nuevas del dia (%d)" % len(fin["words"]))
+    check(len(fin["sentences"]) == 1, "y a la frase nueva (%d)" % len(fin["sentences"]))
+    check("6 palabras" in promete, "el panel prometia %r y se ha cumplido" % promete)
+
+    page.goto(url + "#home")
+    page.reload()
+    page.wait_for_selector(".play-big", timeout=25000)
+    ahora = page.inner_text(".big-row .play-big").replace(chr(10), " ")
+    check("epasar" in ahora, "cuando ya no queda nada nuevo, el boton cambia: %r" % ahora[:60])
+    check(not errores, "sin errores de JavaScript: %s" % errores[:2])
+    ctx.close()
+    print("")
+
+
 def prueba_gym(navegador, url):
     """El rocodromo: entrenar sin limite con lo que ya sabe."""
     print("El rocodromo")
@@ -239,9 +291,17 @@ def prueba_gym(navegador, url):
           "el del rocodromo esta al lado del de aprender, no escondido en un rincon")
 
     antes = page.evaluate("() => JSON.parse(localStorage.getItem('climbenglish:progress')).stats")
-    page.click("[data-go='gym']")
-    page.wait_for_selector(".gym-score", timeout=25000)
-    check(True, "se entra a entrenar directamente, sin agotar antes nada")
+    page.click(".big-row [data-go='gym']")
+    page.wait_for_selector(".gym-pick", timeout=25000)
+    check(True, "el rocodromo abre con el selector de juego")
+    check(page.locator(".gym-pick .surprise").count() == 1, "Sorpresa es la opcion grande por defecto")
+    tarjetas = page.locator(".gym-pick .game-card").count()
+    check(tarjetas == 6, "y debajo estan los 6 minijuegos para elegir (%d)" % tarjetas)
+
+    # Elegir un juego concreto: el de emparejar
+    page.click(".gym-pick .game-card[data-arg='match']")
+    page.wait_for_selector(".game-match .tile", timeout=25000)
+    check(page.evaluate("() => location.hash") == "#gym/match", "elegir un juego lleva a ese juego")
     page.wait_for_selector(".stage .tile, .stage .piece, .stage .mcard, .stage #drum, .stage .chip",
                            timeout=25000)
 
@@ -274,7 +334,8 @@ def prueba_gym(navegador, url):
     check(bool(dia) and dia.get("free", 0) >= 1, "y se apunta en el diario del dia: %s" % (dia or "sin dia"))
     palabras = page.evaluate("() => Object.keys(JSON.parse(localStorage.getItem('climbenglish:progress')).words).length")
     check(palabras == 10, "entrenar NO da palabras nuevas: siguen siendo %d" % palabras)
-    check(page.evaluate("() => location.hash") == "#gym", "sigue entrenando, no la echa fuera")
+    check(page.evaluate("() => location.hash") == "#gym/match", "sigue en el juego elegido, no la echa fuera")
+    check(list(despues["games"]) == ["match"], "y solo ha jugado al que eligio: %s" % list(despues["games"]))
 
     page.goto(url + "#progress")
     page.reload()
@@ -465,6 +526,7 @@ def main():
         check(activo, "queda un service worker activo tras la actualizacion")
 
         print("")
+        prueba_tandas(navegador, url)
         prueba_gym(navegador, url)
 
         print("Dias sin conexion y una semana sin abrir")
