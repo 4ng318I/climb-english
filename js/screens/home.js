@@ -36,10 +36,16 @@ export default function home(el) {
       <button class="round" id="dark" aria-label="Modo oscuro">${state.settings.dark ? '☀️' : '🌙'}</button>
     </header>
     <div class="alert" id="voice-alert" hidden></div>
-    <button class="play-big" data-go="play">
-      <span class="pb-emoji">🎮</span><span class="pb-text">${T('play_title')}</span>
-      <span class="pb-sub">${esc(todayShort())}</span>
-    </button>
+    <div class="big-row">
+      <button class="play-big" data-go="play">
+        <span class="pb-emoji">🎮</span><span class="pb-text">${T('play_title')}</span>
+        <span class="pb-sub">${esc(todayShort())}</span>
+      </button>
+      <button class="play-big gym-big" data-go="gym">
+        <span class="pb-emoji">🧗</span><span class="pb-text">${T('gym_title')}</span>
+        <span class="pb-sub">${esc(t('gym_sub'))}</span>
+      </button>
+    </div>
     <nav class="tiles">${TILES.map(([route, emoji, key], i) => `
       <button class="home-tile t${i + 1}" data-go="${route}"><span class="ht-emoji">${emoji}</span><span>${T(key)}</span></button>`).join('')}
     </nav>

@@ -16,10 +16,11 @@ import progress from './screens/progress.js';
 import settings from './screens/settings.js';
 import welcome, { why } from './screens/welcome.js';
 import words from './screens/words.js';
+import gym from './screens/gym.js';
 import { state } from './core/store.js';
 import { initUpdates } from './core/updates.js';
 
-const routes = { home, play, pron, write, grammar, song, progress, settings, welcome, words, why };
+const routes = { home, play, pron, write, grammar, song, progress, settings, welcome, words, why, gym };
 
 function render() {
   stopSpeaking();

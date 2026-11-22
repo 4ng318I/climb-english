@@ -138,9 +138,11 @@ export default async function play(el) {
       <div class="next-box">${nextStep({ compact: true })}</div>
       <div class="row">
         <button class="btn ghost" data-go="progress">📊 ${T('see_progress')}</button>
-        ${nothingNewToday() ? `<button class="btn ghost" data-go="words">📒 ${T('mywords_title')}</button>
-        <button class="btn ghost" data-go="song">🎵 ${T('song_title')}</button>` : ''}
-        <button class="btn" data-go="play">🎮 ${T(nothingNewToday() ? 'play_known' : 'play_again')}</button>
+        ${nothingNewToday()
+          ? `<button class="btn ghost" data-go="song">🎵 ${T('song_title')}</button>
+             <button class="btn" data-go="gym">🧗 ${T('gym_title')}</button>`
+          : `<button class="btn ghost" data-go="gym">🧗 ${T('gym_title')}</button>
+             <button class="btn" data-go="play">🎮 ${T('play_again')}</button>`}
       </div>
     </div>`;
   chime();

@@ -128,11 +128,11 @@
 
 /* ---------- Mi progreso ---------- */
 .progress { align-items: stretch; text-align: left; }
-.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.stats { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
 .stat { border-radius: 26px; padding: 14px 10px; text-align: center; box-shadow: var(--shadow); color: #2B2350; }
 .stat b { display: block; font-size: 2.8rem; font-weight: 1000; line-height: 1; }
 .stat span { font-size: 1rem; font-weight: 800; }
-.s1 { background: #FFD166; } .s2 { background: #8EE3D6; } .s3 { background: #FFA8CF; } .s4 { background: #C9B8FF; }
+.s1 { background: #FFD166; } .s2 { background: #8EE3D6; } .s3 { background: #FFA8CF; } .s4 { background: #C9B8FF; } .s5 { background: #B9F0A0; }
 .panel { background: var(--card); border-radius: 30px; box-shadow: var(--shadow); padding: 18px 20px 22px; }
 .panel h2 { font-size: 1.4rem; font-weight: 1000; margin-bottom: 12px; }
 .caption { text-align: center; font-weight: 900; min-height: 1.6em; margin: 6px 0 12px; }
@@ -274,3 +274,16 @@ i.ds { border-radius: 5px; background: var(--teal); }
   background: var(--soft); border-radius: 18px; padding: 10px 16px; font-size: .95rem; font-weight: 700;
 }
 .backup small { display: block; color: var(--ink2); font-weight: 700; }
+
+/* ---------- El rocódromo ---------- */
+.gym-score {
+  display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
+  font-weight: 900; color: var(--ink2); font-size: 1rem;
+}
+.gym-score span { background: var(--soft); border-radius: 999px; padding: 6px 16px; }
+.gym-score .gym-streak { background: var(--sun); color: #2B2350; }
+.finish .gym-score { margin: 4px 0 8px; }
+
+.panel.gym-panel { border: 4px solid var(--teal); }
+.gym-panel .btn { align-self: center; margin-top: 12px; }
+.gym-panel { display: flex; flex-direction: column; }

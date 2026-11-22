@@ -11,6 +11,9 @@ Este README es para el adulto que la instala y la mantiene, no para quien la usa
 
 ![El panel de la app](docs/img/panel.png)
 
+El panel abre con dos botones grandes: **aprender** (temario nuevo, a ritmo sano) y
+**entrenar** (el rocódromo, sin límite).
+
 ---
 
 ## Índice
@@ -91,6 +94,21 @@ se acaba lo nuevo, el día no se acaba: puede seguir jugando con lo que ya sabe,
 justamente el repaso que fija las palabras. La app se lo dice en positivo, y el botón
 «¿Por qué solo unas pocas al día?» del panel se lo explica las veces que quiera.
 
+### 🧗 El rocódromo
+
+El segundo botón grande, ahí **desde el primer día**. Es donde entrena con lo que ya sabe,
+sin ningún límite: partidas encadenadas hasta que ella quiera parar.
+
+![El rocódromo](docs/img/rocodromo.png)
+
+No es el premio de consolación de cuando se acaba lo nuevo, y por eso no está escondido ni
+aparece solo entonces: el temario tiene su ritmo, pero **jugar no tiene techo**. Cada ronda
+mezcla las palabras que hoy tocaba repasar con otras al azar, así que entrenar aquí alimenta
+el mismo repaso espaciado que las partidas de aprender. Lleva su marcador de racha y de
+entrenos, celebra cada cuatro partidas, y tiene su propio panel en «Mi progreso».
+
+Lo que el rocódromo **no** hace: dar palabras nuevas. Eso sigue siendo cosa del otro botón.
+
 ### 🗣️ Pronunciación
 
 Escuchar es lo primero y lo más grande de la pantalla; la grafía española va debajo y siempre
@@ -134,8 +152,10 @@ puntúa nada: es para mirar cuando le apetezca. ⭐ «me la sé» o 🌱 «creci
 
 De arriba abajo:
 
-- **Los cuatro números.** Palabras, frases y medallas conseguidas, y aparte las palabras que
-  vienen de canciones (que no cuentan para el camino, ver más abajo).
+- **Los cinco números.** Palabras, frases y medallas conseguidas, las palabras que vienen de
+  canciones (que no cuentan para el camino, ver más abajo) y los entrenos del rocódromo.
+- **El rocódromo.** Entrenos, repasos hechos, su mejor racha de aciertos y cuántos minijuegos
+  distintos ha probado.
 - **Tu siguiente paso.** Lo más útil para ti: dice con números exactos qué falta para
   completar el agarre actual y para subir de etapa, y qué le queda nuevo para hoy.
 - **Mi camino a la cima.** La montaña. Cada agarre es un bloque temático (20 en total) y cada
@@ -438,8 +458,8 @@ js/core/    store (progreso, esquema y migraciones) · backup · content · srs 
             session · path (etapas, límites y medallas) · i18n (paso al inglés)
             speech (voz y micro) · updates (versión nueva) · nav · theme · util
 js/ui/      feedback (ánimos, confeti) · layout · charts (gráficas SVG) · keyboard · nextstep
-js/screens/ welcome · home · play · pronunciation · writing · grammar · song · words
-            progress · settings
+js/screens/ welcome · home · play · gym (rocódromo) · pronunciation · writing · grammar
+            song · words · progress · settings
 js/games/   match · intruder · scramble · taps · memory · silly
 data/       todo el contenido (ver apartado 8)
 assets/     iconos y la fuente Nunito (licencia SIL Open Font License)

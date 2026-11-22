@@ -109,4 +109,30 @@ export function playedGame(id) {
 }
 
 // ¿Ha salido la partida entera sin un solo tropiezo?
+// --- El rocódromo: entrenamiento libre con lo que ya sabe ---
+
+// Cada ronda mezcla lo que toca repasar hoy con un puñado de palabras al azar, así que
+// entrenar de verdad sirve: alimenta las mismas cajas del repaso espaciado.
+export function makeFreePlan() {
+  const learned = learnedWords();
+  const due = dueIds(state.words, 4).map(id => content.wordById.get(id)).filter(Boolean);
+  const resto = shuffle(learned.filter(w => !due.includes(w))).slice(0, Math.max(0, 8 - due.length));
+  return {
+    newWords: [], newSentence: null, fresh: new Set(),
+    words: shuffle([...due, ...resto]),
+    sentences: shuffle(learnedSentences()).slice(0, 4),
+    learned,
+  };
+}
+
+// Minijuegos que se pueden jugar con ese material.
+export const freeGames = plan => GAMES.filter(g => g.can(plan));
+
+// Una partida del rocódromo.
+export function recordFree(gameId) {
+  state.stats.freeGames++;
+  today().free++;
+  playedGame(gameId);
+}
+
 export const sinFallos = results => results.length > 0 && results.every(r => r.ok);

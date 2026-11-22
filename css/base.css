@@ -177,18 +177,24 @@ h1, h2, p { margin: 0; }
   background: var(--card); border-radius: 24px; padding: 12px 18px; box-shadow: var(--shadow);
   font-size: 1.15rem; font-weight: 800; position: relative;
 }
+/* Los dos botones grandes: aprender y entrenar, uno al lado del otro desde el primer día */
+.big-row { flex: 1; display: grid; grid-template-columns: 1.25fr 1fr; gap: 14px; min-height: 190px; }
 .play-big {
-  flex: 1; min-height: 190px; border-radius: 36px; color: #fff;
+  min-height: 190px; border-radius: 36px; color: #fff;
   background: linear-gradient(135deg, #F4573A, #F03E8E 55%, #6C4CF1);
   box-shadow: 0 10px 0 var(--edge);
   display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px;
   font-weight: 1000; font-size: 2.2rem; text-shadow: 0 2px 0 rgba(0, 0, 0, .18);
-  animation: breathe 3.2s ease-in-out infinite;
 }
+.play-big:not(.gym-big) { animation: breathe 3.2s ease-in-out infinite; }
 .play-big:active { transform: translateY(6px); box-shadow: none; }
 .pb-emoji { font-size: 4.6rem; line-height: 1; }
 .pb-sub { font-size: 1.1rem; font-weight: 800; text-shadow: none; background: rgba(23, 19, 46, .32); border-radius: 999px; padding: 6px 18px; margin-top: 8px; max-width: 92%; }
 .pb-sub:empty { display: none; }
+.gym-big { background: linear-gradient(135deg, #0E9F93, #2F8FED 55%, #6C4CF1); font-size: 1.9rem; }
+:root[data-theme="dark"] .gym-big { background: linear-gradient(135deg, #2CCDBF, #63B0FF 55%, #9B83FF); }
+:root[data-theme="dark"] .gym-big, :root[data-theme="dark"] .gym-big .pb-sub { color: #17132E; }
+:root[data-theme="dark"] .gym-big .pb-sub { background: rgba(255, 255, 255, .34); }
 @keyframes breathe { 50% { transform: scale(1.015); } }
 .tiles { display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; }
 .home-tile {
@@ -216,7 +222,8 @@ h1, h2, p { margin: 0; }
 
 @media (orientation: portrait) {
   .tiles { grid-template-columns: repeat(2, 1fr); }
-  .play-big { min-height: 240px; }
+  .big-row { grid-template-columns: 1fr; }
+  .play-big { min-height: 190px; }
 }
 @media (max-width: 520px) {
   body { font-size: 18px; }

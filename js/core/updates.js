@@ -10,8 +10,8 @@ let reg = null;
 let pendiente = false;   // hay una versión nueva instalada, esperando su momento
 let recargando = false;
 
-// En mitad de una partida no se toca nada.
-const ocupada = () => location.hash.startsWith('#play');
+// En mitad de una partida, o entrenando en el rocódromo, no se toca nada.
+const ocupada = () => location.hash.startsWith('#play') || location.hash.startsWith('#gym');
 
 function aplicar() {
   if (!pendiente || recargando || ocupada() || !reg?.waiting) return;

@@ -19,6 +19,7 @@ import http.server
 import json
 import os
 import pathlib
+import random
 import re
 import sys
 import tempfile
@@ -88,6 +89,26 @@ SEMBRAR = """() => {
   localStorage.setItem('deutschb2:settings', 'x');
   return caches.open('deutschb2-v2').then(c => c.put('/Deutsch_B2/index.html', new Response('Deutsch B2')));
 }"""
+
+
+SEMBRAR_PALABRAS = """(() => {
+  // Progreso completo de una alumna que ya lleva unos dias: con esto se puede entrenar.
+  const w = {}, ids = ['w-hello','w-i','w-am','w-you','w-are','w-goodbye','w-yes','w-no','w-please','w-name'];
+  for (const id of ids) w[id] = { box: 2, learned: '2026-11-01', due: '2026-11-05',
+    last: '2026-11-02', ok: 3, seen: 4, said: 0, written: 0 };
+  localStorage.setItem('climbenglish:progress', JSON.stringify({
+    v: 2, created: '2026-11-01',
+    settings: { name: 'Alumna', dark: true, mic: false, voice: 'en-GB', rate: 0.85, forceVoice: false },
+    words: w,
+    sentences: { 's-hello-i-am': { box: 2, learned: '2026-11-01', due: '2026-11-05',
+      last: '2026-11-02', ok: 2, seen: 3 } },
+    grammar: {}, songs: {}, days: [], medals: {},
+    stats: { sessions: 4, silly: 0, said: 0, written: 0, reviews: 0, freeGames: 0,
+             perfect: 0, streak: 0, bestStreak: 0, games: {} },
+    ui: { flipped: {}, stageSeen: 0, rot: 0, lastNew: 'words', blocksSeen: [] },
+    lastVisit: '2026-11-02', lastExport: null,
+  }));
+})();"""
 
 
 def claves(page):
@@ -198,6 +219,70 @@ def comparar(viejo, nuevo):
         else:
             fallos += diferencias(d, igual, "days[%s]" % d["date"])
     return fallos
+
+
+def prueba_gym(navegador, url):
+    """El rocodromo: entrenar sin limite con lo que ya sabe."""
+    print("El rocodromo")
+    ctx = navegador.new_context()
+    # Se siembra antes de que arranque la app, para que ningun guardado anterior lo pise.
+    ctx.add_init_script(SEMBRAR_PALABRAS)
+    page = ctx.new_page()
+    errores = []
+    page.on("pageerror", lambda e: errores.append(str(e)))
+
+    page.goto(url)
+    page.wait_for_selector(".play-big", timeout=25000)
+    botones = page.locator(".big-row .play-big").count()
+    check(botones == 2, "el panel abre con DOS botones grandes: aprender y entrenar (%d)" % botones)
+    check(page.locator(".big-row [data-go='gym']").count() == 1,
+          "el del rocodromo esta al lado del de aprender, no escondido en un rincon")
+
+    antes = page.evaluate("() => JSON.parse(localStorage.getItem('climbenglish:progress')).stats")
+    page.click("[data-go='gym']")
+    page.wait_for_selector(".gym-score", timeout=25000)
+    check(True, "se entra a entrenar directamente, sin agotar antes nada")
+    page.wait_for_selector(".stage .tile, .stage .piece, .stage .mcard, .stage #drum, .stage .chip",
+                           timeout=25000)
+
+    # Jugar "a lo loco": se pulsa un elemento al azar de los que haya, hasta cerrar una
+    # partida. Al azar y no siempre el primero, porque en el de emparejar hay que alternar.
+    SELECTOR = (".stage .tile:not(.done), .stage .piece, .stage .mcard:not(.done), "
+                ".stage #drum, .stage .chip, .stage .dot, .stage #ok, .stage .btn")
+    for _ in range(200):
+        objetivo = page.locator(SELECTOR)
+        n = objetivo.count()
+        if not n:
+            page.wait_for_timeout(300)
+            continue
+        try:
+            objetivo.nth(random.randrange(n)).click(timeout=1500)
+        except Exception:
+            pass
+        page.wait_for_timeout(150)
+        hechas = page.evaluate("() => JSON.parse(localStorage.getItem('climbenglish:progress')).stats.freeGames")
+        if hechas > antes["freeGames"]:
+            break
+    page.wait_for_timeout(1500)
+
+    despues = page.evaluate("() => JSON.parse(localStorage.getItem('climbenglish:progress')).stats")
+    check(despues["freeGames"] > antes["freeGames"],
+          "las partidas del rocodromo se apuntan (%d -> %d)" % (antes["freeGames"], despues["freeGames"]))
+    check(len(despues["games"]) >= 1, "queda registrado que minijuego se ha probado")
+    check(despues["reviews"] >= antes["reviews"], "entrenar cuenta como repaso de verdad")
+    dia = page.evaluate("() => JSON.parse(localStorage.getItem('climbenglish:progress')).days.at(-1)")
+    check(bool(dia) and dia.get("free", 0) >= 1, "y se apunta en el diario del dia: %s" % (dia or "sin dia"))
+    palabras = page.evaluate("() => Object.keys(JSON.parse(localStorage.getItem('climbenglish:progress')).words).length")
+    check(palabras == 10, "entrenar NO da palabras nuevas: siguen siendo %d" % palabras)
+    check(page.evaluate("() => location.hash") == "#gym", "sigue entrenando, no la echa fuera")
+
+    page.goto(url + "#progress")
+    page.reload()
+    page.wait_for_selector(".progress", timeout=25000)
+    check(page.locator(".gym-panel").count() == 1, "el rocodromo tiene su propio panel en Mi progreso")
+    check(not errores, "sin errores de JavaScript en el rocodromo: %s" % errores[:2])
+    ctx.close()
+    print("")
 
 
 def prueba_migracion(navegador, url):
@@ -380,6 +465,8 @@ def main():
         check(activo, "queda un service worker activo tras la actualizacion")
 
         print("")
+        prueba_gym(navegador, url)
+
         print("Dias sin conexion y una semana sin abrir")
         Handler.publicaciones += 1      # se publica algo mientras la tablet esta apagada
         ctx.set_offline(True)

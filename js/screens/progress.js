@@ -11,6 +11,7 @@ import {
 import { header } from '../ui/layout.js';
 import { areaChart, wireChart, domainBars, routeMap } from '../ui/charts.js';
 import { nextStep, howMany } from '../ui/nextstep.js';
+import { GAMES } from '../core/session.js';
 
 const DIARY_DAYS = 7;   // días de juego que enseña el diario
 const CHART_FROM = 4;   // a partir de cuántos días de juego aparece la gráfica
@@ -68,6 +69,7 @@ export default function progress(el) {
         <div class="stat s2"><b>${sentences}</b><span>${T('sentences')}</span></div>
         <div class="stat s3"><b>${medals}</b><span>${T('medals')}</span></div>
         <div class="stat s4"><b>${songWords}</b><span>${T('stat_songs')}</span></div>
+        <div class="stat s5"><b>${state.stats.freeGames}</b><span>${T('stat_free')}</span></div>
       </div>
       <button class="btn ghost" data-go="words">📒 ${T('see_words')}</button>
 
@@ -76,8 +78,22 @@ export default function progress(el) {
         ${nextStep()}
       </div>
 
+      <div class="panel gym-panel">
+        <h2>🧗 ${T('gym_title')}</h2>
+        <div class="bars">
+          ${domainBars([
+            { emoji: '🧗', label: T('gym_rounds'), value: state.stats.freeGames, total: Math.max(10, Math.ceil((state.stats.freeGames + 1) / 10) * 10) },
+            { emoji: '🔁', label: T('gym_reviews'), value: state.stats.reviews, total: Math.max(50, Math.ceil((state.stats.reviews + 1) / 50) * 50) },
+            { emoji: '🔥', label: T('gym_streak'), value: state.stats.bestStreak, total: Math.max(10, Math.ceil((state.stats.bestStreak + 1) / 10) * 10) },
+            { emoji: '🎲', label: T('gym_games'), value: Object.keys(state.stats.games).length, total: GAMES.length },
+          ], t('of'))}
+        </div>
+        <p class="note">${T('gym_note')}</p>
+        <button class="btn" data-go="gym">🧗 ${T('gym_go')}</button>
+      </div>
+
       <div class="panel">
-        <h2>🧗 ${T('map_title')}</h2>
+        <h2>🗺️ ${T('map_title')}</h2>
         ${routeMap(holds)}
         <p class="caption" id="caption">${esc(holds.find(h => h.status === 'current')?.tip || '')}</p>
         <p class="note center">${T('map_hint')}</p>
