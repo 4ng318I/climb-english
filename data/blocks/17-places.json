@@ -1,8 +1,6 @@
 {
   "block": 17,
   "words": [
-    {"id": "w-in", "en": "in", "es": "dentro de / en", "pron": "in", "pos": "palabrita", "block": 17, "emoji": "📥", "syllables": 1, "stress": 1},
-    {"id": "w-on", "en": "on", "es": "encima de", "pron": "on", "pos": "palabrita", "block": 17, "emoji": "🔛", "syllables": 1, "stress": 1},
     {"id": "w-under", "en": "under", "es": "debajo de", "pron": "ánde", "pos": "palabrita", "block": 17, "emoji": "🔽", "syllables": 2, "stress": 1},
     {"id": "w-next-to", "en": "next to", "es": "al lado de", "pron": "necs tu", "pos": "palabrita", "block": 17, "emoji": "↔️", "syllables": 2, "stress": 1},
     {"id": "w-behind", "en": "behind", "es": "detrás de", "pron": "bijáind", "pos": "palabrita", "block": 17, "emoji": "🔙", "syllables": 2, "stress": 2},

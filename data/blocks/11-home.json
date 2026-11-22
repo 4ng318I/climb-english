@@ -1,29 +1,37 @@
 {
   "block": 11,
   "words": [
+    {"id": "w-there", "en": "there", "es": "ahí / hay", "pron": "déa", "pos": "palabrita", "block": 11, "emoji": "📌", "syllables": 1, "stress": 1},
     {"id": "w-house", "en": "house", "es": "casa", "pron": "jáus", "pos": "nombre", "block": 11, "emoji": "🏠", "syllables": 1, "stress": 1},
     {"id": "w-room", "en": "room", "es": "habitación", "pron": "rum", "pos": "nombre", "block": 11, "emoji": "🗝️", "syllables": 1, "stress": 1},
+    {"id": "w-in", "en": "in", "es": "dentro de / en", "pron": "in", "pos": "palabrita", "block": 11, "emoji": "📥", "syllables": 1, "stress": 1},
+    {"id": "w-bed", "en": "bed", "es": "cama", "pron": "bed", "pos": "nombre", "block": 11, "emoji": "🛏️", "syllables": 1, "stress": 1},
     {"id": "w-bedroom", "en": "bedroom", "es": "dormitorio", "pron": "bédrum", "pos": "nombre", "block": 11, "emoji": "🛌", "syllables": 2, "stress": 1},
-    {"id": "w-kitchen", "en": "kitchen", "es": "cocina", "pron": "kíchin", "pos": "nombre", "block": 11, "emoji": "🍳", "syllables": 2, "stress": 1},
-    {"id": "w-bathroom", "en": "bathroom", "es": "baño", "pron": "bázrum", "pos": "nombre", "block": 11, "emoji": "🛁", "syllables": 2, "stress": 1},
     {"id": "w-door", "en": "door", "es": "puerta", "pron": "do", "pos": "nombre", "block": 11, "emoji": "🚪", "syllables": 1, "stress": 1},
     {"id": "w-window", "en": "window", "es": "ventana", "pron": "uíndou", "pos": "nombre", "block": 11, "emoji": "🪟", "syllables": 2, "stress": 1},
+    {"id": "w-on", "en": "on", "es": "encima de", "pron": "on", "pos": "palabrita", "block": 11, "emoji": "🔛", "syllables": 1, "stress": 1},
     {"id": "w-table", "en": "table", "es": "mesa", "pron": "téibel", "pos": "nombre", "block": 11, "emoji": "🍽️", "syllables": 2, "stress": 1},
     {"id": "w-chair", "en": "chair", "es": "silla", "pron": "chéa", "pos": "nombre", "block": 11, "emoji": "🪑", "syllables": 1, "stress": 1},
-    {"id": "w-bed", "en": "bed", "es": "cama", "pron": "bed", "pos": "nombre", "block": 11, "emoji": "🛏️", "syllables": 1, "stress": 1},
+    {"id": "w-kitchen", "en": "kitchen", "es": "cocina", "pron": "kíchin", "pos": "nombre", "block": 11, "emoji": "🍳", "syllables": 2, "stress": 1},
+    {"id": "w-we", "en": "we", "es": "nosotros / nosotras", "pron": "uí", "pos": "persona", "block": 11, "emoji": "🧑‍🤝‍🧑", "syllables": 1, "stress": 1},
     {"id": "w-sofa", "en": "sofa", "es": "sofá", "pron": "sóufa", "pos": "nombre", "block": 11, "emoji": "🛋️", "syllables": 2, "stress": 1},
     {"id": "w-lamp", "en": "lamp", "es": "lámpara", "pron": "lamp", "pos": "nombre", "block": 11, "emoji": "💡", "syllables": 1, "stress": 1},
     {"id": "w-garden", "en": "garden", "es": "jardín", "pron": "gáden", "pos": "nombre", "block": 11, "emoji": "🌻", "syllables": 2, "stress": 1},
-    {"id": "w-there", "en": "there", "es": "ahí / hay", "pron": "déa", "pos": "palabrita", "block": 11, "emoji": "📌", "syllables": 1, "stress": 1},
-    {"id": "w-we", "en": "we", "es": "nosotros / nosotras", "pron": "uí", "pos": "persona", "block": 11, "emoji": "🧑‍🤝‍🧑", "syllables": 1, "stress": 1},
-    {"id": "w-floor", "en": "floor", "es": "suelo", "pron": "flo", "pos": "nombre", "block": 11, "emoji": "🟫", "syllables": 1, "stress": 1}
+    {"id": "w-floor", "en": "floor", "es": "suelo", "pron": "flo", "pos": "nombre", "block": 11, "emoji": "🟫", "syllables": 1, "stress": 1},
+    {"id": "w-bathroom", "en": "bathroom", "es": "baño", "pron": "bázrum", "pos": "nombre", "block": 11, "emoji": "🛁", "syllables": 2, "stress": 1}
   ],
   "sentences": [
-    {"id": "s-there-is-a-guitar-in-my-room", "en": "There is a guitar in my room.", "es": "Hay una guitarra en mi habitación.", "pron": "déa is a guitá in mái rum", "block": 11, "emoji": "🎸", "grammar": "g-there-is", "words": ["w-i", "w-my", "w-is", "w-guitar", "w-a", "w-room", "w-there"]},
-    {"id": "s-there-are-two-windows", "en": "There are two windows.", "es": "Hay dos ventanas.", "pron": "déa a tu uíndous", "block": 11, "emoji": "🪟", "grammar": "g-there-is", "words": ["w-are", "w-two", "w-window", "w-there"]},
-    {"id": "s-there-is-a-big-garden", "en": "There is a big garden.", "es": "Hay un jardín grande.", "pron": "déa is a big gáden", "block": 11, "emoji": "🌻", "grammar": "g-there-is", "words": ["w-i", "w-big", "w-is", "w-a", "w-garden", "w-there"]},
-    {"id": "s-we-are-in-the-kitchen", "en": "We are in the kitchen.", "es": "Estamos en la cocina.", "pron": "uí a in de kíchin", "block": 11, "emoji": "🍳", "words": ["w-are", "w-the", "w-kitchen", "w-we"]},
-    {"id": "s-the-door-is-blue", "en": "The door is blue.", "es": "La puerta es azul.", "pron": "de do is blu", "block": 11, "emoji": "🚪", "words": ["w-i", "w-blue", "w-is", "w-the", "w-door"]},
-    {"id": "s-there-are-four-chairs-and-a-table", "en": "There are four chairs and a table.", "es": "Hay cuatro sillas y una mesa.", "pron": "déa a fo chéas and a téibel", "block": 11, "emoji": "🪑", "grammar": "g-there-is", "words": ["w-are", "w-four", "w-and", "w-a", "w-table", "w-chair", "w-there"]}
+    {"id": "s-there-is-a-house", "en": "There is a house.", "es": "Hay una casa.", "pron": "déa is a jáus", "block": 11, "emoji": "🏠", "words": ["w-there", "w-house"], "grammar": "g-there-is"},
+    {"id": "s-a-bed-in-my-room", "en": "There is a bed in my room.", "es": "Hay una cama en mi habitación.", "pron": "déa is a bed in mái rum", "block": 11, "emoji": "🛏️", "words": ["w-there", "w-bed", "w-in", "w-room"], "grammar": "g-there-is"},
+    {"id": "s-there-are-two-windows", "en": "There are two windows.", "es": "Hay dos ventanas.", "pron": "déa aa tu uíndous", "block": 11, "emoji": "🪟", "words": ["w-there", "w-window"], "grammar": "g-there-is"},
+    {"id": "s-the-cat-is-on-the-table", "en": "The cat is on the table.", "es": "El gato está encima de la mesa.", "pron": "de cat is on de téibel", "block": 11, "emoji": "🐱", "words": ["w-on", "w-table"]},
+    {"id": "s-we-are-in-the-kitchen", "en": "We are in the kitchen.", "es": "Estamos en la cocina.", "pron": "uí aa in de kíchin", "block": 11, "emoji": "🍳", "words": ["w-we", "w-in", "w-kitchen"]},
+    {"id": "s-there-is-a-big-garden", "en": "There is a big garden.", "es": "Hay un jardín grande.", "pron": "déa is a big gáaden", "block": 11, "emoji": "🌻", "words": ["w-there", "w-garden"], "grammar": "g-there-is"},
+    {"id": "s-the-door-is-blue", "en": "The door is blue.", "es": "La puerta es azul.", "pron": "de doo is blu", "block": 11, "emoji": "🚪", "words": ["w-door"], "extra": true},
+    {"id": "s-there-are-four-chairs", "en": "There are four chairs.", "es": "Hay cuatro sillas.", "pron": "déa aa fo chéas", "block": 11, "emoji": "🪑", "words": ["w-there", "w-chair"], "extra": true},
+    {"id": "s-my-bedroom-is-small", "en": "My bedroom is small.", "es": "Mi dormitorio es pequeño.", "pron": "mái bédrum is smol", "block": 11, "emoji": "🛌", "words": ["w-bedroom"], "extra": true},
+    {"id": "s-the-lamp-is-on-the-table", "en": "The lamp is on the table.", "es": "La lámpara está encima de la mesa.", "pron": "de lamp is on de téibel", "block": 11, "emoji": "💡", "words": ["w-lamp", "w-on", "w-table"], "extra": true},
+    {"id": "s-a-sofa-in-my-house", "en": "There is a sofa in my house.", "es": "Hay un sofá en mi casa.", "pron": "déa is a sóufa in mái jáus", "block": 11, "emoji": "🛋️", "words": ["w-there", "w-sofa", "w-in", "w-house"], "extra": true},
+    {"id": "s-the-floor-is-brown", "en": "The floor is brown.", "es": "El suelo es marrón.", "pron": "de flo is bráun", "block": 11, "emoji": "🟫", "words": ["w-floor"], "extra": true}
   ]
 }

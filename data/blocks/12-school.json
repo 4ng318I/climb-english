@@ -1,29 +1,35 @@
 {
   "block": 12,
   "words": [
-    {"id": "w-school", "en": "school", "es": "colegio", "pron": "scul", "pos": "nombre", "block": 12, "emoji": "🏫", "syllables": 1, "stress": 1},
     {"id": "w-book", "en": "book", "es": "libro", "pron": "buk", "pos": "nombre", "block": 12, "emoji": "📖", "syllables": 1, "stress": 1},
-    {"id": "w-pen", "en": "pen", "es": "boli", "pron": "pen", "pos": "nombre", "block": 12, "emoji": "🖊️", "syllables": 1, "stress": 1},
-    {"id": "w-teacher", "en": "teacher", "es": "profe", "pron": "tíche", "pos": "nombre", "block": 12, "emoji": "👩‍🏫", "syllables": 2, "stress": 1},
-    {"id": "w-class", "en": "class", "es": "clase", "pron": "clas", "pos": "nombre", "block": 12, "emoji": "🎓", "syllables": 1, "stress": 1},
-    {"id": "w-story", "en": "story", "es": "cuento", "pron": "stóri", "pos": "nombre", "block": 12, "emoji": "📕", "syllables": 2, "stress": 1},
-    {"id": "w-ruler", "en": "ruler", "es": "regla", "pron": "rúle", "pos": "nombre", "block": 12, "emoji": "📐", "syllables": 2, "stress": 1},
-    {"id": "w-rubber", "en": "rubber", "es": "goma de borrar", "pron": "rábe", "pos": "nombre", "block": 12, "emoji": "🧽", "syllables": 2, "stress": 1},
-    {"id": "w-notebook", "en": "notebook", "es": "cuaderno", "pron": "nóutbuk", "pos": "nombre", "block": 12, "emoji": "📓", "syllables": 2, "stress": 1},
     {"id": "w-read", "en": "read", "es": "leer", "pron": "rid", "pos": "acción", "block": 12, "emoji": "👓", "syllables": 1, "stress": 1},
+    {"id": "w-school", "en": "school", "es": "colegio", "pron": "scul", "pos": "nombre", "block": 12, "emoji": "🏫", "syllables": 1, "stress": 1},
+    {"id": "w-pen", "en": "pen", "es": "boli", "pron": "pen", "pos": "nombre", "block": 12, "emoji": "🖊️", "syllables": 1, "stress": 1},
     {"id": "w-write", "en": "write", "es": "escribir", "pron": "ráit", "pos": "acción", "block": 12, "emoji": "✍️", "syllables": 1, "stress": 1},
+    {"id": "w-word", "en": "word", "es": "palabra", "pron": "uerd", "pos": "nombre", "block": 12, "emoji": "💬", "syllables": 1, "stress": 1},
     {"id": "w-learn", "en": "learn", "es": "aprender", "pron": "lern", "pos": "acción", "block": 12, "emoji": "🧠", "syllables": 1, "stress": 1},
     {"id": "w-english", "en": "English", "es": "inglés", "pron": "ínglish", "pos": "nombre", "block": 12, "emoji": "🇬🇧", "syllables": 2, "stress": 1},
-    {"id": "w-word", "en": "word", "es": "palabra", "pron": "uerd", "pos": "nombre", "block": 12, "emoji": "💬", "syllables": 1, "stress": 1},
+    {"id": "w-class", "en": "class", "es": "clase", "pron": "clas", "pos": "nombre", "block": 12, "emoji": "🎓", "syllables": 1, "stress": 1},
+    {"id": "w-teacher", "en": "teacher", "es": "profe", "pron": "tíche", "pos": "nombre", "block": 12, "emoji": "👩‍🏫", "syllables": 2, "stress": 1},
+    {"id": "w-open", "en": "open", "es": "abrir", "pron": "óupen", "pos": "acción", "block": 12, "emoji": "📂", "syllables": 2, "stress": 1},
+    {"id": "w-story", "en": "story", "es": "cuento", "pron": "stóri", "pos": "nombre", "block": 12, "emoji": "📕", "syllables": 2, "stress": 1},
+    {"id": "w-notebook", "en": "notebook", "es": "cuaderno", "pron": "nóutbuk", "pos": "nombre", "block": 12, "emoji": "📓", "syllables": 2, "stress": 1},
     {"id": "w-letter", "en": "letter", "es": "letra / carta", "pron": "léte", "pos": "nombre", "block": 12, "emoji": "🔤", "syllables": 2, "stress": 1},
-    {"id": "w-open", "en": "open", "es": "abrir", "pron": "óupen", "pos": "acción", "block": 12, "emoji": "📂", "syllables": 2, "stress": 1}
+    {"id": "w-ruler", "en": "ruler", "es": "regla", "pron": "rúle", "pos": "nombre", "block": 12, "emoji": "📐", "syllables": 2, "stress": 1},
+    {"id": "w-rubber", "en": "rubber", "es": "goma de borrar", "pron": "rábe", "pos": "nombre", "block": 12, "emoji": "🧽", "syllables": 2, "stress": 1}
   ],
   "sentences": [
-    {"id": "s-i-read-a-book", "en": "I read a book.", "es": "Leo un libro.", "pron": "ái rid a buk", "block": 12, "emoji": "📖", "words": ["w-i", "w-a", "w-book", "w-read"]},
-    {"id": "s-i-learn-english", "en": "I learn English.", "es": "Aprendo inglés.", "pron": "ái lern ínglish", "block": 12, "emoji": "🇬🇧", "words": ["w-i", "w-learn", "w-english"]},
-    {"id": "s-a-pen-a-pencil-and-an-orange-rubber", "en": "A pen, a pencil and an orange rubber.", "es": "Un boli, un lápiz y una goma naranja.", "pron": "a pen, a pénsil and an órinch rábe", "block": 12, "emoji": "🧽", "grammar": "g-a-an", "words": ["w-and", "w-orange", "w-pencil", "w-a", "w-an", "w-pen", "w-rubber"]},
-    {"id": "s-open-your-book-please", "en": "Open your book, please.", "es": "Abre tu libro, por favor.", "pron": "óupen ió buk, plis", "block": 12, "emoji": "📂", "words": ["w-please", "w-your", "w-book", "w-open"]},
-    {"id": "s-i-write-a-word", "en": "I write a word.", "es": "Escribo una palabra.", "pron": "ái ráit a uerd", "block": 12, "emoji": "✍️", "words": ["w-i", "w-a", "w-write", "w-word"]},
-    {"id": "s-my-teacher-is-good", "en": "My teacher is good.", "es": "Mi profe es buena.", "pron": "mái tíche is gud", "block": 12, "emoji": "👩‍🏫", "words": ["w-i", "w-my", "w-good", "w-is", "w-teacher"]}
+    {"id": "s-i-read-a-book", "en": "I read a book.", "es": "Leo un libro.", "pron": "ái rid a buk", "block": 12, "emoji": "📖", "words": ["w-read", "w-book"]},
+    {"id": "s-i-write-a-word", "en": "I write a word.", "es": "Escribo una palabra.", "pron": "ái ráit a ueed", "block": 12, "emoji": "✍️", "words": ["w-write", "w-word"]},
+    {"id": "s-i-learn-english", "en": "I learn English.", "es": "Aprendo inglés.", "pron": "ái leen ínglish", "block": 12, "emoji": "🇬🇧", "words": ["w-learn", "w-english"]},
+    {"id": "s-open-your-book", "en": "Open your book, please!", "es": "¡Abre tu libro, por favor!", "pron": "óupen ioo buk, plis", "block": 12, "emoji": "📂", "words": ["w-open", "w-book"], "grammar": "g-imperativo"},
+    {"id": "s-my-teacher-is-good", "en": "My teacher is good.", "es": "Mi profe es buena.", "pron": "mái tíche is gud", "block": 12, "emoji": "👩‍🏫", "words": ["w-teacher"]},
+    {"id": "s-pen-pencil-rubber", "en": "A pen, a pencil and an orange rubber.", "es": "Un boli, un lápiz y una goma naranja.", "pron": "a pen, a pénsil and an órinch rábe", "block": 12, "emoji": "🧽", "words": ["w-pen", "w-rubber"], "grammar": "g-a-an"},
+    {"id": "s-i-read-a-story", "en": "I read a story.", "es": "Leo un cuento.", "pron": "ái rid a stóri", "block": 12, "emoji": "📕", "words": ["w-read", "w-story"], "extra": true},
+    {"id": "s-my-notebook-is-blue", "en": "My notebook is blue.", "es": "Mi cuaderno es azul.", "pron": "mái nóutbuk is blu", "block": 12, "emoji": "📓", "words": ["w-notebook"], "extra": true},
+    {"id": "s-the-class-is-big", "en": "The class is big.", "es": "La clase es grande.", "pron": "de clas is big", "block": 12, "emoji": "🎓", "words": ["w-class"], "extra": true},
+    {"id": "s-i-write-with-my-pen", "en": "I write with my pen.", "es": "Escribo con mi boli.", "pron": "ái ráit uíd mái pen", "block": 12, "emoji": "🖊️", "words": ["w-write", "w-pen"], "extra": true},
+    {"id": "s-my-ruler-is-long", "en": "My ruler is long.", "es": "Mi regla es larga.", "pron": "mái rúle is long", "block": 12, "emoji": "📐", "words": ["w-ruler"], "extra": true},
+    {"id": "s-i-like-my-school", "en": "I like my school.", "es": "Me gusta mi cole.", "pron": "ái láik mái scul", "block": 12, "emoji": "🏫", "words": ["w-like", "w-school"], "extra": true}
   ]
 }

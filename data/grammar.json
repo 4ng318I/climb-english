@@ -1168,6 +1168,55 @@
     ]
   },
   {
+    "id": "t-r-inglesa",
+    "block": 5,
+    "emoji": "🪢",
+    "kind": "truco",
+    "title": {
+      "es": "La r inglesa no vibra",
+      "en": "The English r doesn't roll"
+    },
+    "idea": "Nuestra r vibra: «rrropa», «perro». La inglesa no: la lengua se queda quieta en medio de la boca y no toca nada, como un gruñidito flojo. Y hay más: cuando la r va al FINAL, directamente desaparece. Por eso «ca» es car y «uóte» es water.",
+    "scenes": [
+      {
+        "emoji": "🪢",
+        "en": "rope",
+        "es": "cuerda",
+        "pron": "róup (sin vibrar)"
+      },
+      {
+        "emoji": "🪨",
+        "en": "rock",
+        "es": "roca",
+        "pron": "roc (sin vibrar)"
+      },
+      {
+        "emoji": "🚗",
+        "en": "car",
+        "es": "coche",
+        "pron": "ca (la r final se va)"
+      }
+    ],
+    "play": [
+      {
+        "q": "La r de «rope», ¿cómo es?",
+        "answer": "Floja, sin vibrar",
+        "options": [
+          "Floja, sin vibrar",
+          "Vibrando, como en «rosa»"
+        ]
+      },
+      {
+        "q": "¿Y la r del final de «car»?",
+        "answer": "No se oye",
+        "options": [
+          "Se oye fuerte",
+          "No se oye"
+        ]
+      }
+    ]
+  },
+  {
     "id": "t-scissors-plural",
     "block": 6,
     "emoji": "✂️",
@@ -1241,7 +1290,7 @@
       "es": "Pencil NO es pincel",
       "en": "Pencil is not a paintbrush"
     },
-    "idea": "Cuidado con esta: «pencil» se parece muchísimo a «pincel», pero NO es un pincel. «pencil» es un lápiz. Hay palabras que se parecen y te engañan; esta es de las peores, porque las dos son de manualidades.",
+    "idea": "Antes te dije que te fiaras de las palabras que se parecen, y sigue siendo buen consejo: aciertas casi siempre. Pero unas pocas te la juegan, y esta es la peor: «pencil» se parece muchísimo a «pincel» y NO es un pincel, es un lápiz. Las dos son de manualidades, así que es fácil liarse.",
     "scenes": [
       {
         "emoji": "✏️",
@@ -1490,6 +1539,42 @@
     ]
   },
   {
+    "id": "t-sh-callar",
+    "block": 7,
+    "emoji": "🤫",
+    "kind": "truco",
+    "title": {
+      "es": "El sonido de mandar callar",
+      "en": "The shhh sound"
+    },
+    "idea": "Cuando veas «sh» en una pista, es el sonido de mandar callar: shhh. En español no lo tenemos, así que nos sale una ch o una s. No es ninguna de las dos: es el soplo largo, con los labios un poco hacia fuera. Pruébalo con «she»: shiii.",
+    "scenes": [
+      {
+        "emoji": "👧",
+        "en": "she",
+        "es": "ella",
+        "pron": "shi (shhh, no «chi»)"
+      },
+      {
+        "emoji": "🐟",
+        "en": "fish",
+        "es": "pez",
+        "pron": "fish"
+      }
+    ],
+    "play": [
+      {
+        "q": "«she» suena…",
+        "answer": "shi, como mandar callar",
+        "options": [
+          "shi, como mandar callar",
+          "chi, como «chico»",
+          "si, como «sí»"
+        ]
+      }
+    ]
+  },
+  {
     "id": "t-knee-k",
     "block": 8,
     "emoji": "🧎",
@@ -1732,6 +1817,118 @@
     "kind": "regla"
   },
   {
+    "id": "t-a-de-cat",
+    "block": 9,
+    "emoji": "🐱",
+    "kind": "truco",
+    "title": {
+      "es": "La a de cat no es nuestra a",
+      "en": "The a in cat"
+    },
+    "idea": "Cuando escribo «cat», «jand» o «am», esa a no es la nuestra. La inglesa se dice con la boca más abierta y estirada, a medio camino entre la a y la e: algo así como «cæt». Si dices la a española no pasa nada grave, pero suena a español.",
+    "scenes": [
+      {
+        "emoji": "🐱",
+        "en": "cat",
+        "es": "gato",
+        "pron": "cat (boca ancha, entre a y e)"
+      },
+      {
+        "emoji": "✋",
+        "en": "hand",
+        "es": "mano",
+        "pron": "jand"
+      }
+    ],
+    "play": [
+      {
+        "q": "La a de «cat» se dice…",
+        "answer": "Con la boca más abierta, entre a y e",
+        "options": [
+          "Con la boca más abierta, entre a y e",
+          "Igual que la a de «casa»"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "t-s-que-zumba",
+    "block": 9,
+    "emoji": "🐝",
+    "kind": "truco",
+    "title": {
+      "es": "La s que zumba",
+      "en": "The buzzing s"
+    },
+    "idea": "Al poner la s del plural, a veces no suena «s» sino un zumbido de abeja, como una z pero con voz: cats suena «cats», pero dogs suena «dogz» y birds suena «beedz». No hace falta aprendérselo: sale solo si dejas que la garganta vibre.",
+    "scenes": [
+      {
+        "emoji": "🐱",
+        "en": "two cats",
+        "es": "dos gatos",
+        "pron": "tu cats (s normal)"
+      },
+      {
+        "emoji": "🐶",
+        "en": "two dogs",
+        "es": "dos perros",
+        "pron": "tu dogs (zumbando)"
+      }
+    ],
+    "play": [
+      {
+        "q": "¿En cuál zumba la s del final?",
+        "answer": "dogs",
+        "options": [
+          "cats",
+          "dogs"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "t-animales-parecidos",
+    "block": 9,
+    "emoji": "🎁",
+    "kind": "truco",
+    "title": {
+      "es": "Animales de regalo",
+      "en": "Free animals"
+    },
+    "idea": "Tres que ya te sabes sin saberlo: animal/animal, lion/león, elephant/elefante. Y una que NO se parece a nada: mouse es ratón. Cuando no se parezca, habrá que currársela.",
+    "scenes": [
+      {
+        "emoji": "🦁",
+        "en": "lion",
+        "es": "león",
+        "pron": "láien"
+      },
+      {
+        "emoji": "🐘",
+        "en": "elephant",
+        "es": "elefante",
+        "pron": "élifent"
+      },
+      {
+        "emoji": "🐭",
+        "en": "mouse",
+        "es": "ratón",
+        "pron": "máus"
+      }
+    ],
+    "play": [
+      {
+        "q": "¿Cuál NO se parece al español?",
+        "answer": "mouse",
+        "options": [
+          "lion",
+          "mouse",
+          "animal"
+        ]
+      }
+    ]
+  },
+  {
     "id": "g-a-an",
     "block": 10,
     "emoji": "🍎",
@@ -1801,6 +1998,152 @@
     "kind": "regla"
   },
   {
+    "id": "g-like",
+    "block": 10,
+    "emoji": "😍",
+    "kind": "regla",
+    "title": {
+      "es": "Me gusta, al revés",
+      "en": "I like it"
+    },
+    "idea": "Ojo con esta, que está del revés. Nosotros decimos «me gusta la pizza»: manda la pizza. En inglés mandas tú: «I like pizza», o sea «yo gusto pizza». Primero quien lo quiere, después like, y luego la cosa.",
+    "scenes": [
+      {
+        "emoji": "🍕",
+        "en": "I like pizza.",
+        "es": "Me gusta la pizza.",
+        "pron": "ái láik pítsa"
+      },
+      {
+        "emoji": "🎵",
+        "en": "I like music.",
+        "es": "Me gusta la música.",
+        "pron": "ái láik miúsic"
+      }
+    ],
+    "play": [
+      {
+        "en": "___ like cake.",
+        "answer": "I",
+        "options": [
+          "I",
+          "Me",
+          "To me"
+        ],
+        "es": "Me gusta la tarta."
+      },
+      {
+        "q": "«Me gusta el agua» en inglés empieza por…",
+        "answer": "I",
+        "options": [
+          "I",
+          "Me"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "t-water-sorpresa",
+    "block": 10,
+    "emoji": "💧",
+    "kind": "truco",
+    "title": {
+      "es": "Water no se lee como se escribe",
+      "en": "Water is a trap"
+    },
+    "idea": "«water» parece que debería sonar «uater», pero no: suena «uóte». La a se convierte en o, y la r del final se va, como ya sabes. El inglés escribe una cosa y dice otra más veces de las que te gustaría.",
+    "scenes": [
+      {
+        "emoji": "💧",
+        "en": "water",
+        "es": "agua",
+        "pron": "uóte"
+      }
+    ],
+    "play": [
+      {
+        "q": "¿Cómo suena «water»?",
+        "answer": "uóte",
+        "options": [
+          "uáter",
+          "uóte",
+          "guater"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "t-eat-it",
+    "block": 10,
+    "emoji": "👀",
+    "kind": "truco",
+    "title": {
+      "es": "Eat e it, casi iguales",
+      "en": "Eat and it"
+    },
+    "idea": "Cuidado con estas dos: «eat» (comer) e «it» (eso) suenan casi igual. La diferencia es el largo: eat es una i LARGA, iiit; it es cortita, it. En mis pistas las dos salen como «it», así que esta tienes que oírla: dale al altavoz.",
+    "scenes": [
+      {
+        "emoji": "🍴",
+        "en": "eat",
+        "es": "comer",
+        "pron": "it (iii larga)"
+      },
+      {
+        "emoji": "👉",
+        "en": "it",
+        "es": "eso",
+        "pron": "it (cortita)"
+      }
+    ],
+    "play": [
+      {
+        "q": "¿En cuál se alarga la i?",
+        "answer": "eat",
+        "options": [
+          "eat",
+          "it"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "t-comida-viajera",
+    "block": 10,
+    "emoji": "🍕",
+    "kind": "truco",
+    "title": {
+      "es": "Comida que viaja con su nombre",
+      "en": "Food travels with its name"
+    },
+    "idea": "pizza, banana, chocolate… la comida viaja de un país a otro y se lleva el nombre puesto. Por eso suenan parecido en los dos idiomas. Ojo con pizza: se dice «pítsa», con una ts.",
+    "scenes": [
+      {
+        "emoji": "🍕",
+        "en": "pizza",
+        "es": "pizza",
+        "pron": "pítsa"
+      },
+      {
+        "emoji": "🍌",
+        "en": "banana",
+        "es": "plátano",
+        "pron": "banána"
+      }
+    ],
+    "play": [
+      {
+        "q": "¿Cómo suena «pizza»?",
+        "answer": "pítsa",
+        "options": [
+          "pizza",
+          "pítsa",
+          "pídza"
+        ]
+      }
+    ]
+  },
+  {
     "id": "g-there-is",
     "block": 11,
     "emoji": "🏠",
@@ -1859,6 +2202,258 @@
       }
     ],
     "kind": "regla"
+  },
+  {
+    "id": "t-bedroom-pegada",
+    "block": 11,
+    "emoji": "🛌",
+    "kind": "truco",
+    "title": {
+      "es": "Cuarto de camas, cuarto de baño",
+      "en": "Bed + room"
+    },
+    "idea": "Otra vez palabras pegadas, y esta vez las puedes partir tú: bedroom es bed (cama) + room (cuarto), el cuarto de la cama. Y bathroom es bath (baño) + room. Cuando veas una palabra larga, pártela: casi siempre son dos que ya conoces.",
+    "scenes": [
+      {
+        "emoji": "🛌",
+        "en": "bedroom",
+        "es": "dormitorio",
+        "pron": "bédrum"
+      },
+      {
+        "emoji": "🛁",
+        "en": "bathroom",
+        "es": "cuarto de baño",
+        "pron": "bázrum"
+      }
+    ],
+    "play": [
+      {
+        "q": "«bedroom» está hecha de…",
+        "answer": "bed + room",
+        "options": [
+          "bed + room",
+          "be + droom"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "t-there-dos",
+    "block": 11,
+    "emoji": "📌",
+    "kind": "truco",
+    "title": {
+      "es": "There hace dos trabajos",
+      "en": "There has two jobs"
+    },
+    "idea": "«there» sirve para dos cosas distintas. Con «is» o «are» delante de una cosa, quiere decir HAY: There is a house (hay una casa). Pero sola quiere decir AHÍ. Fíjate en lo que viene detrás y lo sabrás.",
+    "scenes": [
+      {
+        "emoji": "🏠",
+        "en": "There is a house.",
+        "es": "Hay una casa.",
+        "pron": "déa is a jáus"
+      },
+      {
+        "emoji": "📌",
+        "en": "there",
+        "es": "ahí",
+        "pron": "déa"
+      }
+    ],
+    "play": [
+      {
+        "q": "«There are two windows» quiere decir…",
+        "answer": "Hay dos ventanas",
+        "options": [
+          "Hay dos ventanas",
+          "Ahí están dos ventanas"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "t-casa-parecidas",
+    "block": 11,
+    "emoji": "🛋️",
+    "kind": "truco",
+    "title": {
+      "es": "Tres regalos en casa",
+      "en": "Three free house words"
+    },
+    "idea": "sofa/sofá, lamp/lámpara y garden/jardín se parecen bastante. Pero cuidado con el acento: en inglés casi siempre manda la PRIMERA parte: SÓU-fa, no so-FÁ.",
+    "scenes": [
+      {
+        "emoji": "🛋️",
+        "en": "sofa",
+        "es": "sofá",
+        "pron": "sóufa"
+      },
+      {
+        "emoji": "💡",
+        "en": "lamp",
+        "es": "lámpara",
+        "pron": "lamp"
+      }
+    ],
+    "play": [
+      {
+        "q": "¿Dónde suena más fuerte «sofa»?",
+        "answer": "Al principio: SÓU-fa",
+        "options": [
+          "Al principio: SÓU-fa",
+          "Al final: so-FÁ"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "t-write-w",
+    "block": 12,
+    "emoji": "✍️",
+    "kind": "truco",
+    "title": {
+      "es": "La w de write no escribe",
+      "en": "The w that doesn't write"
+    },
+    "idea": "«write» empieza con w y no se oye: suena «ráit». Cada vez que veas «wr» juntas al principio, la w está callada. Ya llevas unas cuantas letras fantasma: la b de climb, la k de knee, la gh de night, y ahora esta.",
+    "scenes": [
+      {
+        "emoji": "✍️",
+        "en": "write",
+        "es": "escribir",
+        "pron": "ráit"
+      }
+    ],
+    "play": [
+      {
+        "q": "¿Cómo suena «write»?",
+        "answer": "ráit",
+        "options": [
+          "uráit",
+          "ráit",
+          "vráit"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "t-english-mayuscula",
+    "block": 12,
+    "emoji": "🔠",
+    "kind": "truco",
+    "title": {
+      "es": "Los idiomas, con mayúscula",
+      "en": "Languages get capitals"
+    },
+    "idea": "«English» va siempre con mayúscula, aunque esté en medio de la frase. En inglés los idiomas y los países se escriben así: English, Spain, Monday. En español no: escribimos inglés y lunes con minúscula. Son manías de cada idioma.",
+    "scenes": [
+      {
+        "emoji": "🇬🇧",
+        "en": "I learn English.",
+        "es": "Aprendo inglés.",
+        "pron": "ái leen ínglish"
+      }
+    ],
+    "play": [
+      {
+        "q": "¿Cuál está bien escrita?",
+        "answer": "I learn English.",
+        "options": [
+          "I learn English.",
+          "I learn english."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "t-notebook-pegada",
+    "block": 12,
+    "emoji": "📓",
+    "kind": "truco",
+    "title": {
+      "es": "Un libro de notas",
+      "en": "A book for notes"
+    },
+    "idea": "«notebook» es note (nota) + book (libro): un libro para notas, un cuaderno. Las dos mitades ya te las sabías. Esto del inglés de pegar palabras es un chollo.",
+    "scenes": [
+      {
+        "emoji": "📓",
+        "en": "notebook",
+        "es": "cuaderno",
+        "pron": "nóutbuk"
+      }
+    ],
+    "play": [
+      {
+        "q": "«notebook» está hecha de…",
+        "answer": "note + book",
+        "options": [
+          "note + book",
+          "no + tebook"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "t-teacher-er",
+    "block": 12,
+    "emoji": "👩‍🏫",
+    "kind": "truco",
+    "title": {
+      "es": "Otra vez el -er",
+      "en": "The -er again"
+    },
+    "idea": "¿Te acuerdas de sing → singer? Pues teach quiere decir enseñar, y teacher es quien enseña: la profe. Ya tienes el truco: acción + er = quien la hace.",
+    "scenes": [
+      {
+        "emoji": "👩‍🏫",
+        "en": "teacher",
+        "es": "profe",
+        "pron": "tíche"
+      }
+    ],
+    "play": [
+      {
+        "q": "Si «read» es leer, ¿quién lee será…?",
+        "answer": "reader",
+        "options": [
+          "reader",
+          "reading",
+          "reads"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "t-rubber-britanico",
+    "block": 12,
+    "emoji": "🧽",
+    "kind": "truco",
+    "title": {
+      "es": "Rubber, solo en Inglaterra",
+      "en": "Rubber is British"
+    },
+    "idea": "A la goma de borrar los ingleses la llaman «rubber». Los americanos NO: ellos dicen «eraser». Como el colour con u, es otra cosa en la que los dos inglés no se ponen de acuerdo. Nosotros usamos el de Inglaterra.",
+    "scenes": [
+      {
+        "emoji": "🧽",
+        "en": "rubber",
+        "es": "goma de borrar",
+        "pron": "rábe"
+      }
+    ],
+    "play": [
+      {
+        "q": "En Inglaterra, la goma de borrar es…",
+        "answer": "rubber",
+        "options": [
+          "rubber",
+          "eraser"
+        ]
+      }
+    ]
   },
   {
     "id": "g-have-got",
