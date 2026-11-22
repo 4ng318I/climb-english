@@ -1,213 +1,1086 @@
 [
   {
-    "id": "g-i-am", "block": 1, "emoji": "🙋",
-    "title": {"es": "Yo soy, tú eres", "en": "I am, you are"},
+    "id": "g-i-am",
+    "block": 1,
+    "emoji": "🙋",
+    "title": {
+      "es": "Yo soy, tú eres",
+      "en": "I am, you are"
+    },
     "idea": "Cuando hablas de ti, «I» va siempre con «am». Cuando hablas de la otra persona, «you» va siempre con «are». ¡Son parejas inseparables, como la cuerda y el arnés!",
     "scenes": [
-      {"emoji": "🙋", "en": "I am {name}.", "es": "Soy {name}.", "pron": "ái am {name}"},
-      {"emoji": "🤝", "en": "You are my friend.", "es": "Eres mi amiga.", "pron": "iú a mái frend"},
-      {"emoji": "🔟", "en": "I am ten.", "es": "Tengo diez años.", "pron": "ái am ten"}
+      {
+        "emoji": "🙋",
+        "en": "I am {name}.",
+        "es": "Soy {name}.",
+        "pron": "ái am {name}"
+      },
+      {
+        "emoji": "🤝",
+        "en": "You are my friend.",
+        "es": "Eres mi amiga.",
+        "pron": "iú a mái frend"
+      },
+      {
+        "emoji": "🔟",
+        "en": "I am ten.",
+        "es": "Tengo diez años.",
+        "pron": "ái am ten"
+      }
     ],
     "play": [
-      {"en": "I ___ {name}.", "answer": "am", "options": ["am", "are"], "es": "Soy {name}."},
-      {"en": "You ___ my friend.", "answer": "are", "options": ["am", "are"], "es": "Eres mi amiga."},
-      {"en": "I ___ ten.", "answer": "am", "options": ["are", "am"], "es": "Tengo diez años."}
+      {
+        "en": "I ___ {name}.",
+        "answer": "am",
+        "options": [
+          "am",
+          "are"
+        ],
+        "es": "Soy {name}."
+      },
+      {
+        "en": "You ___ my friend.",
+        "answer": "are",
+        "options": [
+          "am",
+          "are"
+        ],
+        "es": "Eres mi amiga."
+      },
+      {
+        "en": "I ___ ten.",
+        "answer": "am",
+        "options": [
+          "are",
+          "am"
+        ],
+        "es": "Tengo diez años."
+      }
+    ],
+    "kind": "regla"
+  },
+  {
+    "id": "t-i-mayuscula",
+    "block": 1,
+    "emoji": "🔠",
+    "kind": "truco",
+    "title": {
+      "es": "La I siempre es grande",
+      "en": "I is always big"
+    },
+    "idea": "¿Te has fijado? «I» (yo) se escribe SIEMPRE con mayúscula, esté donde esté en la frase. Es la única palabra del inglés que lo hace. Como si dijera: cuando hablas de ti, se te ve de lejos.",
+    "scenes": [
+      {
+        "emoji": "🙋",
+        "en": "I am {name}.",
+        "es": "Soy {name}.",
+        "pron": "ái am {name}"
+      },
+      {
+        "emoji": "👍",
+        "en": "Yes, I am.",
+        "es": "Sí, lo soy.",
+        "pron": "ies, ái am"
+      }
+    ],
+    "play": [
+      {
+        "q": "¿Cuál está bien escrita?",
+        "answer": "I am good!",
+        "options": [
+          "I am good!",
+          "i am good!"
+        ]
+      },
+      {
+        "q": "Y esta, ¿cuál es la buena?",
+        "answer": "Yes, I am.",
+        "options": [
+          "Yes, i am.",
+          "Yes, I am."
+        ]
+      }
     ]
   },
   {
-    "id": "g-it-is", "block": 3, "emoji": "👉",
-    "title": {"es": "Es rojo, es azul", "en": "It is red"},
+    "id": "t-e-muda",
+    "block": 1,
+    "emoji": "🤫",
+    "kind": "truco",
+    "title": {
+      "es": "La e del final no se oye",
+      "en": "The silent e"
+    },
+    "idea": "Un montón de palabras inglesas acaban en «e» y esa e no se oye: está escrita, pero calla. Ojo, en las palabritas muy cortas como the, he o she la e sí suena. Cuando dudes, escucha.",
+    "scenes": [
+      {
+        "emoji": "📛",
+        "en": "name",
+        "es": "nombre",
+        "pron": "néim"
+      },
+      {
+        "emoji": "🙏",
+        "en": "please",
+        "es": "por favor",
+        "pron": "plis"
+      },
+      {
+        "emoji": "🖐️",
+        "en": "goodbye",
+        "es": "adiós",
+        "pron": "gudbái"
+      }
+    ],
+    "play": [
+      {
+        "q": "En «name», ¿se oye la e del final?",
+        "answer": "No, calla",
+        "options": [
+          "No, calla",
+          "Sí, suena"
+        ]
+      },
+      {
+        "q": "¿Y en «please»?",
+        "answer": "No, calla",
+        "options": [
+          "Sí, suena",
+          "No, calla"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "t-gh-muda",
+    "block": 1,
+    "emoji": "🌙",
+    "kind": "truco",
+    "title": {
+      "es": "Las letras fantasma de night",
+      "en": "The ghost letters in night"
+    },
+    "idea": "«night» se escribe con g y con h, y no se oye ninguna de las dos: suena «náit». El inglés guarda letras antiguas que ya nadie pronuncia, como fósiles. Te las vas a encontrar más veces: light, eight, high.",
+    "scenes": [
+      {
+        "emoji": "🌃",
+        "en": "night",
+        "es": "noche",
+        "pron": "náit"
+      },
+      {
+        "emoji": "🌃",
+        "en": "Good night!",
+        "es": "¡Buenas noches!",
+        "pron": "gud náit"
+      }
+    ],
+    "play": [
+      {
+        "q": "¿Cuántas letras de «night» NO se oyen?",
+        "answer": "Dos: la g y la h",
+        "options": [
+          "Ninguna",
+          "Dos: la g y la h",
+          "Todas"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "t-mas-corto",
+    "block": 1,
+    "emoji": "⚡",
+    "kind": "truco",
+    "title": {
+      "es": "En inglés se tarda menos",
+      "en": "English is quicker"
+    },
+    "idea": "Fíjate en los golpecitos: muchas veces, lo que en español son tres, en inglés es uno solo. No siempre pasa, pero pasa muchísimo. Por eso las canciones en inglés caben tantas palabras.",
+    "scenes": [
+      {
+        "emoji": "🙏",
+        "en": "please",
+        "es": "por favor (3 golpes, y en inglés 1)",
+        "pron": "plis"
+      },
+      {
+        "emoji": "🤝",
+        "en": "friend",
+        "es": "amigo (3 golpes, y en inglés 1)",
+        "pron": "frend"
+      }
+    ],
+    "play": [
+      {
+        "q": "¿Cuántos golpecitos tiene «friend»?",
+        "answer": "Uno",
+        "options": [
+          "Uno",
+          "Dos",
+          "Tres"
+        ]
+      },
+      {
+        "q": "¿Y «please»?",
+        "answer": "Uno",
+        "options": [
+          "Tres",
+          "Uno",
+          "Dos"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "t-good-delante",
+    "block": 1,
+    "emoji": "👍",
+    "kind": "truco",
+    "title": {
+      "es": "«Good» se pone delante",
+      "en": "«Good» goes first"
+    },
+    "idea": "«good» quiere decir bueno, y en inglés se pone DELANTE de la otra palabra para desear cosas: good morning, good night. En español es al revés: buenos DÍAS, buenas NOCHES. Y mira «goodbye»: ahí dentro también está escondido.",
+    "scenes": [
+      {
+        "emoji": "🌅",
+        "en": "Good morning!",
+        "es": "¡Buenos días!",
+        "pron": "gud móonin"
+      },
+      {
+        "emoji": "🌃",
+        "en": "Good night!",
+        "es": "¡Buenas noches!",
+        "pron": "gud náit"
+      }
+    ],
+    "play": [
+      {
+        "en": "___ morning!",
+        "answer": "Good",
+        "options": [
+          "Good",
+          "Morning"
+        ],
+        "es": "¡Buenos días!"
+      },
+      {
+        "q": "¿Cuál está bien dicho en inglés?",
+        "answer": "Good night!",
+        "options": [
+          "Night good!",
+          "Good night!"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "g-it-is",
+    "block": 3,
+    "emoji": "👉",
+    "title": {
+      "es": "Es rojo, es azul",
+      "en": "It is red"
+    },
     "idea": "Para hablar de una cosa usamos «it». Y «it» va siempre con «is». Así puedes decir de qué color es cualquier cosa.",
     "scenes": [
-      {"emoji": "🔴", "en": "It is red.", "es": "Es rojo.", "pron": "it is red"},
-      {"emoji": "🔵", "en": "It is blue.", "es": "Es azul.", "pron": "it is blu"},
-      {"emoji": "🌈", "en": "What colour is it?", "es": "¿De qué color es?", "pron": "uót cále is it"}
+      {
+        "emoji": "🔴",
+        "en": "It is red.",
+        "es": "Es rojo.",
+        "pron": "it is red"
+      },
+      {
+        "emoji": "🔵",
+        "en": "It is blue.",
+        "es": "Es azul.",
+        "pron": "it is blu"
+      },
+      {
+        "emoji": "🌈",
+        "en": "What colour is it?",
+        "es": "¿De qué color es?",
+        "pron": "uót cále is it"
+      }
     ],
     "play": [
-      {"en": "It ___ green.", "answer": "is", "options": ["is", "am", "are"], "es": "Es verde."},
-      {"en": "I ___ {name}.", "answer": "am", "options": ["is", "am", "are"], "es": "Soy {name}."},
-      {"en": "___ is yellow.", "answer": "It", "options": ["It", "I", "You"], "es": "Es amarillo."}
-    ]
+      {
+        "en": "It ___ green.",
+        "answer": "is",
+        "options": [
+          "is",
+          "am",
+          "are"
+        ],
+        "es": "Es verde."
+      },
+      {
+        "en": "I ___ {name}.",
+        "answer": "am",
+        "options": [
+          "is",
+          "am",
+          "are"
+        ],
+        "es": "Soy {name}."
+      },
+      {
+        "en": "___ is yellow.",
+        "answer": "It",
+        "options": [
+          "It",
+          "I",
+          "You"
+        ],
+        "es": "Es amarillo."
+      }
+    ],
+    "kind": "regla"
   },
   {
-    "id": "g-the", "block": 4, "emoji": "🎸",
-    "title": {"es": "La palabrita «the»", "en": "The little word «the»"},
+    "id": "g-the",
+    "block": 4,
+    "emoji": "🎸",
+    "title": {
+      "es": "La palabrita «the»",
+      "en": "The little word «the»"
+    },
     "idea": "En español decimos el, la, los, las. ¡En inglés solo hay una palabrita para todo: «the»! Más fácil imposible.",
     "scenes": [
-      {"emoji": "🎸", "en": "the guitar", "es": "la guitarra", "pron": "de guitá"},
-      {"emoji": "🥁", "en": "the drum", "es": "el tambor", "pron": "de dram"},
-      {"emoji": "🎶", "en": "the songs", "es": "las canciones", "pron": "de songs"}
+      {
+        "emoji": "🎸",
+        "en": "the guitar",
+        "es": "la guitarra",
+        "pron": "de guitá"
+      },
+      {
+        "emoji": "🥁",
+        "en": "the drum",
+        "es": "el tambor",
+        "pron": "de dram"
+      },
+      {
+        "emoji": "🎶",
+        "en": "the songs",
+        "es": "las canciones",
+        "pron": "de songs"
+      }
     ],
     "play": [
-      {"en": "I play ___ guitar.", "answer": "the", "options": ["the", "is", "am"], "es": "Toco la guitarra."},
-      {"en": "___ drum is loud.", "answer": "The", "options": ["The", "It", "You"], "es": "El tambor suena fuerte."},
-      {"en": "Listen to ___ music!", "answer": "the", "options": ["are", "the", "my is"], "es": "¡Escucha la música!"}
-    ]
+      {
+        "en": "I play ___ guitar.",
+        "answer": "the",
+        "options": [
+          "the",
+          "is",
+          "am"
+        ],
+        "es": "Toco la guitarra."
+      },
+      {
+        "en": "___ drum is loud.",
+        "answer": "The",
+        "options": [
+          "The",
+          "It",
+          "You"
+        ],
+        "es": "El tambor suena fuerte."
+      },
+      {
+        "en": "Listen to ___ music!",
+        "answer": "the",
+        "options": [
+          "are",
+          "the",
+          "my is"
+        ],
+        "es": "¡Escucha la música!"
+      }
+    ],
+    "kind": "regla"
   },
   {
-    "id": "g-he-she", "block": 7, "emoji": "👧",
-    "title": {"es": "Él y ella", "en": "He and she"},
+    "id": "g-he-she",
+    "block": 7,
+    "emoji": "👧",
+    "title": {
+      "es": "Él y ella",
+      "en": "He and she"
+    },
     "idea": "«He» es para un chico y «she» es para una chica. Los dos van con «is», igual que «it».",
     "scenes": [
-      {"emoji": "👬", "en": "He is my brother.", "es": "Él es mi hermano.", "pron": "ji is mái bráde"},
-      {"emoji": "💁‍♀️", "en": "She is my aunt.", "es": "Ella es mi tía.", "pron": "shi is mái ant"},
-      {"emoji": "👩", "en": "This is my mum. She is strong.", "es": "Esta es mi madre. Es fuerte.", "pron": "dis is mái mam. shi is strong"}
+      {
+        "emoji": "👬",
+        "en": "He is my brother.",
+        "es": "Él es mi hermano.",
+        "pron": "ji is mái bráde"
+      },
+      {
+        "emoji": "💁‍♀️",
+        "en": "She is my aunt.",
+        "es": "Ella es mi tía.",
+        "pron": "shi is mái ant"
+      },
+      {
+        "emoji": "👩",
+        "en": "This is my mum. She is strong.",
+        "es": "Esta es mi madre. Es fuerte.",
+        "pron": "dis is mái mam. shi is strong"
+      }
     ],
     "play": [
-      {"en": "My dad: ___ is strong.", "answer": "he", "options": ["he", "she", "it"], "es": "Mi padre: él es fuerte."},
-      {"en": "My sister: ___ is ten.", "answer": "she", "options": ["he", "she", "it"], "es": "Mi hermana: ella tiene diez años."},
-      {"en": "She ___ my grandma.", "answer": "is", "options": ["am", "is", "are"], "es": "Ella es mi abuela."}
-    ]
+      {
+        "en": "My dad: ___ is strong.",
+        "answer": "he",
+        "options": [
+          "he",
+          "she",
+          "it"
+        ],
+        "es": "Mi padre: él es fuerte."
+      },
+      {
+        "en": "My sister: ___ is ten.",
+        "answer": "she",
+        "options": [
+          "he",
+          "she",
+          "it"
+        ],
+        "es": "Mi hermana: ella tiene diez años."
+      },
+      {
+        "en": "She ___ my grandma.",
+        "answer": "is",
+        "options": [
+          "am",
+          "is",
+          "are"
+        ],
+        "es": "Ella es mi abuela."
+      }
+    ],
+    "kind": "regla"
   },
   {
-    "id": "g-plurals", "block": 9, "emoji": "🐱",
-    "title": {"es": "Uno o muchos", "en": "One or many"},
+    "id": "g-plurals",
+    "block": 9,
+    "emoji": "🐱",
+    "title": {
+      "es": "Uno o muchos",
+      "en": "One or many"
+    },
     "idea": "Cuando hay más de uno, a la palabra le crece una «s» al final. Igual que en español: gato, gatos.",
     "scenes": [
-      {"emoji": "🐱", "en": "one cat", "es": "un gato", "pron": "uán cat"},
-      {"emoji": "🐱🐱", "en": "two cats", "es": "dos gatos", "pron": "tu cats"},
-      {"emoji": "🎸🎸🎸", "en": "three guitars", "es": "tres guitarras", "pron": "zri guitás"}
+      {
+        "emoji": "🐱",
+        "en": "one cat",
+        "es": "un gato",
+        "pron": "uán cat"
+      },
+      {
+        "emoji": "🐱🐱",
+        "en": "two cats",
+        "es": "dos gatos",
+        "pron": "tu cats"
+      },
+      {
+        "emoji": "🎸🎸🎸",
+        "en": "three guitars",
+        "es": "tres guitarras",
+        "pron": "zri guitás"
+      }
     ],
     "play": [
-      {"en": "two ___", "answer": "dogs", "options": ["dog", "dogs"], "es": "dos perros"},
-      {"en": "one ___", "answer": "rope", "options": ["rope", "ropes"], "es": "una cuerda"},
-      {"en": "five ___", "answer": "birds", "options": ["birds", "bird"], "es": "cinco pájaros"}
-    ]
+      {
+        "en": "two ___",
+        "answer": "dogs",
+        "options": [
+          "dog",
+          "dogs"
+        ],
+        "es": "dos perros"
+      },
+      {
+        "en": "one ___",
+        "answer": "rope",
+        "options": [
+          "rope",
+          "ropes"
+        ],
+        "es": "una cuerda"
+      },
+      {
+        "en": "five ___",
+        "answer": "birds",
+        "options": [
+          "birds",
+          "bird"
+        ],
+        "es": "cinco pájaros"
+      }
+    ],
+    "kind": "regla"
   },
   {
-    "id": "g-a-an", "block": 10, "emoji": "🍎",
-    "title": {"es": "«a» o «an»", "en": "«a» or «an»"},
+    "id": "g-a-an",
+    "block": 10,
+    "emoji": "🍎",
+    "title": {
+      "es": "«a» o «an»",
+      "en": "«a» or «an»"
+    },
     "idea": "Para decir «un» o «una» usamos «a». Pero si la palabra siguiente empieza por a, e, i, o, u, le ponemos una «n» para que no se choquen los sonidos: «an».",
     "scenes": [
-      {"emoji": "🍌", "en": "a banana", "es": "un plátano", "pron": "a ban{name}"},
-      {"emoji": "🍎", "en": "an apple", "es": "una manzana", "pron": "an ápel"},
-      {"emoji": "🥚", "en": "an egg", "es": "un huevo", "pron": "an eg"}
+      {
+        "emoji": "🍌",
+        "en": "a banana",
+        "es": "un plátano",
+        "pron": "a ban{name}"
+      },
+      {
+        "emoji": "🍎",
+        "en": "an apple",
+        "es": "una manzana",
+        "pron": "an ápel"
+      },
+      {
+        "emoji": "🥚",
+        "en": "an egg",
+        "es": "un huevo",
+        "pron": "an eg"
+      }
     ],
     "play": [
-      {"en": "___ apple", "answer": "an", "options": ["a", "an"], "es": "una manzana"},
-      {"en": "___ guitar", "answer": "a", "options": ["a", "an"], "es": "una guitarra"},
-      {"en": "___ elephant", "answer": "an", "options": ["an", "a"], "es": "un elefante"},
-      {"en": "___ rope", "answer": "a", "options": ["an", "a"], "es": "una cuerda"}
-    ]
+      {
+        "en": "___ apple",
+        "answer": "an",
+        "options": [
+          "a",
+          "an"
+        ],
+        "es": "una manzana"
+      },
+      {
+        "en": "___ guitar",
+        "answer": "a",
+        "options": [
+          "a",
+          "an"
+        ],
+        "es": "una guitarra"
+      },
+      {
+        "en": "___ elephant",
+        "answer": "an",
+        "options": [
+          "an",
+          "a"
+        ],
+        "es": "un elefante"
+      },
+      {
+        "en": "___ rope",
+        "answer": "a",
+        "options": [
+          "an",
+          "a"
+        ],
+        "es": "una cuerda"
+      }
+    ],
+    "kind": "regla"
   },
   {
-    "id": "g-there-is", "block": 11, "emoji": "🏠",
-    "title": {"es": "Hay una cosa, hay muchas", "en": "There is, there are"},
+    "id": "g-there-is",
+    "block": 11,
+    "emoji": "🏠",
+    "title": {
+      "es": "Hay una cosa, hay muchas",
+      "en": "There is, there are"
+    },
     "idea": "Para decir «hay»: si hay una sola cosa, «there is». Si hay varias, «there are».",
     "scenes": [
-      {"emoji": "🎸", "en": "There is a guitar.", "es": "Hay una guitarra.", "pron": "déa is a guitá"},
-      {"emoji": "🪟🪟", "en": "There are two windows.", "es": "Hay dos ventanas.", "pron": "déa a tu uíndous"},
-      {"emoji": "🛏️", "en": "There is a bed in my bedroom.", "es": "Hay una cama en mi dormitorio.", "pron": "déa is a bed in mái bédrum"}
+      {
+        "emoji": "🎸",
+        "en": "There is a guitar.",
+        "es": "Hay una guitarra.",
+        "pron": "déa is a guitá"
+      },
+      {
+        "emoji": "🪟🪟",
+        "en": "There are two windows.",
+        "es": "Hay dos ventanas.",
+        "pron": "déa a tu uíndous"
+      },
+      {
+        "emoji": "🛏️",
+        "en": "There is a bed in my bedroom.",
+        "es": "Hay una cama en mi dormitorio.",
+        "pron": "déa is a bed in mái bédrum"
+      }
     ],
     "play": [
-      {"en": "There ___ a lamp.", "answer": "is", "options": ["is", "are"], "es": "Hay una lámpara."},
-      {"en": "There ___ four chairs.", "answer": "are", "options": ["is", "are"], "es": "Hay cuatro sillas."},
-      {"en": "There ___ a big garden.", "answer": "is", "options": ["are", "is"], "es": "Hay un jardín grande."}
-    ]
+      {
+        "en": "There ___ a lamp.",
+        "answer": "is",
+        "options": [
+          "is",
+          "are"
+        ],
+        "es": "Hay una lámpara."
+      },
+      {
+        "en": "There ___ four chairs.",
+        "answer": "are",
+        "options": [
+          "is",
+          "are"
+        ],
+        "es": "Hay cuatro sillas."
+      },
+      {
+        "en": "There ___ a big garden.",
+        "answer": "is",
+        "options": [
+          "are",
+          "is"
+        ],
+        "es": "Hay un jardín grande."
+      }
+    ],
+    "kind": "regla"
   },
   {
-    "id": "g-have-got", "block": 13, "emoji": "👟",
-    "title": {"es": "Lo que tengo", "en": "What I have got"},
+    "id": "g-have-got",
+    "block": 13,
+    "emoji": "👟",
+    "title": {
+      "es": "Lo que tengo",
+      "en": "What I have got"
+    },
     "idea": "Para decir lo que tienes: «I have got». Con he y she, «have» se cambia de ropa y se convierte en «has»: «she has got».",
     "scenes": [
-      {"emoji": "👟", "en": "I have got new shoes.", "es": "Tengo zapatos nuevos.", "pron": "ái jav got niú shus"},
-      {"emoji": "🧢", "en": "She has got a red hat.", "es": "Ella tiene un gorro rojo.", "pron": "shi jas got a red jat"},
-      {"emoji": "🐹", "en": "Have you got a pet?", "es": "¿Tienes mascota?", "pron": "jav iú got a pet"}
+      {
+        "emoji": "👟",
+        "en": "I have got new shoes.",
+        "es": "Tengo zapatos nuevos.",
+        "pron": "ái jav got niú shus"
+      },
+      {
+        "emoji": "🧢",
+        "en": "She has got a red hat.",
+        "es": "Ella tiene un gorro rojo.",
+        "pron": "shi jas got a red jat"
+      },
+      {
+        "emoji": "🐹",
+        "en": "Have you got a pet?",
+        "es": "¿Tienes mascota?",
+        "pron": "jav iú got a pet"
+      }
     ],
     "play": [
-      {"en": "I ___ got a guitar.", "answer": "have", "options": ["have", "has"], "es": "Tengo una guitarra."},
-      {"en": "He ___ got a helmet.", "answer": "has", "options": ["have", "has"], "es": "Él tiene un casco."},
-      {"en": "You have ___ a rope.", "answer": "got", "options": ["got", "is", "are"], "es": "Tienes una cuerda."}
-    ]
+      {
+        "en": "I ___ got a guitar.",
+        "answer": "have",
+        "options": [
+          "have",
+          "has"
+        ],
+        "es": "Tengo una guitarra."
+      },
+      {
+        "en": "He ___ got a helmet.",
+        "answer": "has",
+        "options": [
+          "have",
+          "has"
+        ],
+        "es": "Él tiene un casco."
+      },
+      {
+        "en": "You have ___ a rope.",
+        "answer": "got",
+        "options": [
+          "got",
+          "is",
+          "are"
+        ],
+        "es": "Tienes una cuerda."
+      }
+    ],
+    "kind": "regla"
   },
   {
-    "id": "g-describe", "block": 14, "emoji": "🌺",
-    "title": {"es": "Primero cómo es, luego qué es", "en": "A happy girl"},
+    "id": "g-describe",
+    "block": 14,
+    "emoji": "🌺",
+    "title": {
+      "es": "Primero cómo es, luego qué es",
+      "en": "A happy girl"
+    },
     "idea": "En español decimos «una canción preciosa». En inglés va al revés: primero cómo es y después la cosa: «a beautiful song».",
     "scenes": [
-      {"emoji": "🌺", "en": "a beautiful song", "es": "una canción preciosa", "pron": "a biútiful song"},
-      {"emoji": "🧢", "en": "a red hat", "es": "un gorro rojo", "pron": "a red jat"},
-      {"emoji": "🤣", "en": "a funny girl", "es": "una chica divertida", "pron": "a fáni guerl"}
+      {
+        "emoji": "🌺",
+        "en": "a beautiful song",
+        "es": "una canción preciosa",
+        "pron": "a biútiful song"
+      },
+      {
+        "emoji": "🧢",
+        "en": "a red hat",
+        "es": "un gorro rojo",
+        "pron": "a red jat"
+      },
+      {
+        "emoji": "🤣",
+        "en": "a funny girl",
+        "es": "una chica divertida",
+        "pron": "a fáni guerl"
+      }
     ],
     "play": [
-      {"en": "a ___", "answer": "big mountain", "options": ["big mountain", "mountain big"], "es": "una montaña grande"},
-      {"en": "a ___", "answer": "blue guitar", "options": ["guitar blue", "blue guitar"], "es": "una guitarra azul"},
-      {"en": "a ___", "answer": "happy cat", "options": ["happy cat", "cat happy"], "es": "un gato contento"}
-    ]
+      {
+        "en": "a ___",
+        "answer": "big mountain",
+        "options": [
+          "big mountain",
+          "mountain big"
+        ],
+        "es": "una montaña grande"
+      },
+      {
+        "en": "a ___",
+        "answer": "blue guitar",
+        "options": [
+          "guitar blue",
+          "blue guitar"
+        ],
+        "es": "una guitarra azul"
+      },
+      {
+        "en": "a ___",
+        "answer": "happy cat",
+        "options": [
+          "happy cat",
+          "cat happy"
+        ],
+        "es": "un gato contento"
+      }
+    ],
+    "kind": "regla"
   },
   {
-    "id": "g-can", "block": 15, "emoji": "🦸",
-    "title": {"es": "Lo que sé hacer", "en": "What I can do"},
+    "id": "g-can",
+    "block": 15,
+    "emoji": "🦸",
+    "title": {
+      "es": "Lo que sé hacer",
+      "en": "What I can do"
+    },
     "idea": "Para decir que sabes hacer algo, pon la palabrita «can» delante de la acción. Si no sabes, «can't». Y no cambia nunca: I can, she can, we can.",
     "scenes": [
-      {"emoji": "🧗", "en": "I can climb.", "es": "Sé escalar.", "pron": "ái can cláim"},
-      {"emoji": "🐟", "en": "A fish can't fly.", "es": "Un pez no sabe volar.", "pron": "a fish cant flái"},
-      {"emoji": "🏊", "en": "Can you swim?", "es": "¿Sabes nadar?", "pron": "can iú suím"}
+      {
+        "emoji": "🧗",
+        "en": "I can climb.",
+        "es": "Sé escalar.",
+        "pron": "ái can cláim"
+      },
+      {
+        "emoji": "🐟",
+        "en": "A fish can't fly.",
+        "es": "Un pez no sabe volar.",
+        "pron": "a fish cant flái"
+      },
+      {
+        "emoji": "🏊",
+        "en": "Can you swim?",
+        "es": "¿Sabes nadar?",
+        "pron": "can iú suím"
+      }
     ],
     "play": [
-      {"en": "I ___ play the guitar.", "answer": "can", "options": ["can", "is", "have"], "es": "Sé tocar la guitarra."},
-      {"en": "A cat ___ fly.", "answer": "can't", "options": ["can", "can't"], "es": "Un gato no sabe volar."},
-      {"en": "She ___ climb.", "answer": "can", "options": ["cans", "can"], "es": "Ella sabe escalar."}
-    ]
+      {
+        "en": "I ___ play the guitar.",
+        "answer": "can",
+        "options": [
+          "can",
+          "is",
+          "have"
+        ],
+        "es": "Sé tocar la guitarra."
+      },
+      {
+        "en": "A cat ___ fly.",
+        "answer": "can't",
+        "options": [
+          "can",
+          "can't"
+        ],
+        "es": "Un gato no sabe volar."
+      },
+      {
+        "en": "She ___ climb.",
+        "answer": "can",
+        "options": [
+          "cans",
+          "can"
+        ],
+        "es": "Ella sabe escalar."
+      }
+    ],
+    "kind": "regla"
   },
   {
-    "id": "g-in-on-under", "block": 17, "emoji": "📦",
-    "title": {"es": "Dentro, encima, debajo", "en": "In, on, under"},
+    "id": "g-in-on-under",
+    "block": 17,
+    "emoji": "📦",
+    "title": {
+      "es": "Dentro, encima, debajo",
+      "en": "In, on, under"
+    },
     "idea": "Tres palabritas para decir dónde está algo: «in» es dentro, «on» es encima y «under» es debajo.",
     "scenes": [
-      {"emoji": "📦", "en": "The glue is in the box.", "es": "El pegamento está dentro de la caja.", "pron": "de glu is in de bocs"},
-      {"emoji": "🛋️", "en": "The cat is on the sofa.", "es": "El gato está encima del sofá.", "pron": "de cat is on de sóufa"},
-      {"emoji": "🛏️", "en": "The shoes are under the bed.", "es": "Los zapatos están debajo de la cama.", "pron": "de shus a ánde de bed"}
+      {
+        "emoji": "📦",
+        "en": "The glue is in the box.",
+        "es": "El pegamento está dentro de la caja.",
+        "pron": "de glu is in de bocs"
+      },
+      {
+        "emoji": "🛋️",
+        "en": "The cat is on the sofa.",
+        "es": "El gato está encima del sofá.",
+        "pron": "de cat is on de sóufa"
+      },
+      {
+        "emoji": "🛏️",
+        "en": "The shoes are under the bed.",
+        "es": "Los zapatos están debajo de la cama.",
+        "pron": "de shus a ánde de bed"
+      }
     ],
     "play": [
-      {"en": "The beads are ___ the box. 📥", "answer": "in", "options": ["in", "on", "under"], "es": "Las cuentas están dentro de la caja."},
-      {"en": "The book is ___ the table. 🔛", "answer": "on", "options": ["in", "on", "under"], "es": "El libro está encima de la mesa."},
-      {"en": "The dog is ___ the chair. 🔽", "answer": "under", "options": ["in", "on", "under"], "es": "El perro está debajo de la silla."}
-    ]
+      {
+        "en": "The beads are ___ the box. 📥",
+        "answer": "in",
+        "options": [
+          "in",
+          "on",
+          "under"
+        ],
+        "es": "Las cuentas están dentro de la caja."
+      },
+      {
+        "en": "The book is ___ the table. 🔛",
+        "answer": "on",
+        "options": [
+          "in",
+          "on",
+          "under"
+        ],
+        "es": "El libro está encima de la mesa."
+      },
+      {
+        "en": "The dog is ___ the chair. 🔽",
+        "answer": "under",
+        "options": [
+          "in",
+          "on",
+          "under"
+        ],
+        "es": "El perro está debajo de la silla."
+      }
+    ],
+    "kind": "regla"
   },
   {
-    "id": "g-s", "block": 18, "emoji": "🎹",
-    "title": {"es": "La «s» de he y she", "en": "The «s» for he and she"},
+    "id": "g-s",
+    "block": 18,
+    "emoji": "🎹",
+    "title": {
+      "es": "La «s» de he y she",
+      "en": "The «s» for he and she"
+    },
     "idea": "Cuando cuentas lo que hace él o ella, a la acción le crece una «s» al final: I climb, pero she climbs.",
     "scenes": [
-      {"emoji": "🧗", "en": "I climb. He climbs.", "es": "Yo escalo. Él escala.", "pron": "ái cláim. ji cláims"},
-      {"emoji": "🎹", "en": "She plays the piano.", "es": "Ella toca el piano.", "pron": "shi pléis de piánou"},
-      {"emoji": "🎤", "en": "You sing. She sings.", "es": "Tú cantas. Ella canta.", "pron": "iú sing. shi sings"}
+      {
+        "emoji": "🧗",
+        "en": "I climb. He climbs.",
+        "es": "Yo escalo. Él escala.",
+        "pron": "ái cláim. ji cláims"
+      },
+      {
+        "emoji": "🎹",
+        "en": "She plays the piano.",
+        "es": "Ella toca el piano.",
+        "pron": "shi pléis de piánou"
+      },
+      {
+        "emoji": "🎤",
+        "en": "You sing. She sings.",
+        "es": "Tú cantas. Ella canta.",
+        "pron": "iú sing. shi sings"
+      }
     ],
     "play": [
-      {"en": "She ___ the guitar.", "answer": "plays", "options": ["play", "plays"], "es": "Ella toca la guitarra."},
-      {"en": "I ___ on Saturday.", "answer": "climb", "options": ["climb", "climbs"], "es": "Escalo los sábados."},
-      {"en": "He ___ a song.", "answer": "sings", "options": ["sings", "sing"], "es": "Él canta una canción."}
-    ]
+      {
+        "en": "She ___ the guitar.",
+        "answer": "plays",
+        "options": [
+          "play",
+          "plays"
+        ],
+        "es": "Ella toca la guitarra."
+      },
+      {
+        "en": "I ___ on Saturday.",
+        "answer": "climb",
+        "options": [
+          "climb",
+          "climbs"
+        ],
+        "es": "Escalo los sábados."
+      },
+      {
+        "en": "He ___ a song.",
+        "answer": "sings",
+        "options": [
+          "sings",
+          "sing"
+        ],
+        "es": "Él canta una canción."
+      }
+    ],
+    "kind": "regla"
   },
   {
-    "id": "g-dont", "block": 19, "emoji": "🙅‍♀️",
-    "title": {"es": "Para decir que no", "en": "I don't"},
+    "id": "g-dont",
+    "block": 19,
+    "emoji": "🙅‍♀️",
+    "title": {
+      "es": "Para decir que no",
+      "en": "I don't"
+    },
     "idea": "Para decir que no haces algo, pon «don't» delante de la acción: «I don't like».",
     "scenes": [
-      {"emoji": "🌧️", "en": "I like the rain.", "es": "Me gusta la lluvia.", "pron": "ái láik de réin"},
-      {"emoji": "🌬️", "en": "I don't like the wind.", "es": "No me gusta el viento.", "pron": "ái dóunt láik de uínd"},
-      {"emoji": "🧗", "en": "I don't climb in the rain.", "es": "No escalo con lluvia.", "pron": "ái dóunt cláim in de réin"}
+      {
+        "emoji": "🌧️",
+        "en": "I like the rain.",
+        "es": "Me gusta la lluvia.",
+        "pron": "ái láik de réin"
+      },
+      {
+        "emoji": "🌬️",
+        "en": "I don't like the wind.",
+        "es": "No me gusta el viento.",
+        "pron": "ái dóunt láik de uínd"
+      },
+      {
+        "emoji": "🧗",
+        "en": "I don't climb in the rain.",
+        "es": "No escalo con lluvia.",
+        "pron": "ái dóunt cláim in de réin"
+      }
     ],
     "play": [
-      {"en": "I ___ like cheese. 🙅‍♀️", "answer": "don't", "options": ["don't", "not", "no"], "es": "No me gusta el queso."},
-      {"en": "I don't ___ the piano.", "answer": "play", "options": ["play", "plays"], "es": "No toco el piano."},
-      {"en": "We ___ sleep at school.", "answer": "don't", "options": ["am not", "don't"], "es": "No dormimos en el cole."}
-    ]
+      {
+        "en": "I ___ like cheese. 🙅‍♀️",
+        "answer": "don't",
+        "options": [
+          "don't",
+          "not",
+          "no"
+        ],
+        "es": "No me gusta el queso."
+      },
+      {
+        "en": "I don't ___ the piano.",
+        "answer": "play",
+        "options": [
+          "play",
+          "plays"
+        ],
+        "es": "No toco el piano."
+      },
+      {
+        "en": "We ___ sleep at school.",
+        "answer": "don't",
+        "options": [
+          "am not",
+          "don't"
+        ],
+        "es": "No dormimos en el cole."
+      }
+    ],
+    "kind": "regla"
   },
   {
-    "id": "g-questions", "block": 20, "emoji": "❓",
-    "title": {"es": "Para preguntar", "en": "Asking questions"},
+    "id": "g-questions",
+    "block": 20,
+    "emoji": "❓",
+    "title": {
+      "es": "Para preguntar",
+      "en": "Asking questions"
+    },
     "idea": "Para preguntar a alguien qué hace, empieza con la palabrita «Do»: «Do you like music?». Para contestar: «Yes, I do» o «No, I don't».",
     "scenes": [
-      {"emoji": "🎵", "en": "Do you like music?", "es": "¿Te gusta la música?", "pron": "du iú láik miúsic"},
-      {"emoji": "👍", "en": "Yes, I do.", "es": "Sí.", "pron": "ies, ái du"},
-      {"emoji": "🙅", "en": "No, I don't.", "es": "No.", "pron": "nóu, ái dóunt"}
+      {
+        "emoji": "🎵",
+        "en": "Do you like music?",
+        "es": "¿Te gusta la música?",
+        "pron": "du iú láik miúsic"
+      },
+      {
+        "emoji": "👍",
+        "en": "Yes, I do.",
+        "es": "Sí.",
+        "pron": "ies, ái du"
+      },
+      {
+        "emoji": "🙅",
+        "en": "No, I don't.",
+        "es": "No.",
+        "pron": "nóu, ái dóunt"
+      }
     ],
     "play": [
-      {"en": "___ you like pizza?", "answer": "Do", "options": ["Do", "Are", "Is"], "es": "¿Te gusta la pizza?"},
-      {"en": "Yes, I ___.", "answer": "do", "options": ["do", "am", "like"], "es": "Sí."},
-      {"en": "Do ___ play the drums?", "answer": "you", "options": ["you", "is", "the"], "es": "¿Tocas la batería?"}
-    ]
+      {
+        "en": "___ you like pizza?",
+        "answer": "Do",
+        "options": [
+          "Do",
+          "Are",
+          "Is"
+        ],
+        "es": "¿Te gusta la pizza?"
+      },
+      {
+        "en": "Yes, I ___.",
+        "answer": "do",
+        "options": [
+          "do",
+          "am",
+          "like"
+        ],
+        "es": "Sí."
+      },
+      {
+        "en": "Do ___ play the drums?",
+        "answer": "you",
+        "options": [
+          "you",
+          "is",
+          "the"
+        ],
+        "es": "¿Tocas la batería?"
+      }
+    ],
+    "kind": "regla"
   }
 ]

@@ -309,3 +309,10 @@ i.ds { border-radius: 5px; background: var(--teal); }
 .game-card:active { transform: translateY(4px); box-shadow: none; }
 .game-card.locked { opacity: .4; box-shadow: none; }
 .gc-emoji { font-size: 2.4rem; line-height: 1; }
+
+/* Trucos agrupados por bloque */
+.rule-list { align-items: stretch; text-align: left; }
+.rule-list > .howto { align-self: center; text-align: center; }
+.rule-group h2 { font-size: 1.25rem; font-weight: 1000; margin: 14px 0 10px; }
+.rule-card.truco { border-left: 8px solid var(--teal); }
+.rule-card.regla { border-left: 8px solid var(--violet); }

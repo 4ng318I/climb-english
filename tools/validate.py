@@ -95,11 +95,15 @@ def main():
             warnings.append(f'{b["file"]}: la frase "{s["en"]}" apunta a una regla que no existe: {s["grammar"]}')
 
     for g in grammar:
+        if g.get("kind", "regla") not in ("regla", "truco"):
+            errors.append(f'grammar.json ({g.get("id")}): kind debe ser "regla" o "truco"')
         for q in g.get("play", []):
-            if "___" not in q.get("en", ""):
-                errors.append(f'grammar.json ({g.get("id")}): a "{q.get("en")}" le falta el hueco ___')
+            # Un juego es o un hueco en una frase ("en" con ___) o una pregunta suelta ("q").
+            etiqueta = q.get("en") or q.get("q") or "?"
+            if not q.get("q") and "___" not in q.get("en", ""):
+                errors.append(f'grammar.json ({g.get("id")}): a "{etiqueta}" le falta el hueco ___ (o un campo "q")')
             if q.get("answer") not in q.get("options", []):
-                errors.append(f'grammar.json ({g.get("id")}): la respuesta de "{q.get("en")}" no esta entre las opciones')
+                errors.append(f'grammar.json ({g.get("id")}): la respuesta de "{etiqueta}" no esta entre las opciones')
 
     songs = (load(DATA / "songs.json") or {}).get("songs", [])
     for s in songs:

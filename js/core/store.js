@@ -35,7 +35,9 @@ const STATS = () => ({
 
 const DIA = date => ({
   date,
-  newWords: 0, newSentences: 0, wordSessions: 0, sentenceSessions: 0, minutes: 0, grammar: 0,
+  newWords: 0, newSentences: 0, wordSessions: 0, sentenceSessions: 0, minutes: 0,
+  grammar: 0,        // reglas de gramática abiertas ese día (1 al día)
+  tricks: 0,         // trucos abiertos ese día (2 al día: pesan menos)
   rev: [0, 0],       // repasos del día: [respondidos, acertados a la primera]
   lapses: 0,         // palabras que bajaron de caja
   free: 0,           // partidas del rocódromo
@@ -267,5 +269,6 @@ export function today() {
   if (!Array.isArray(d.rev)) d.rev = [0, 0];
   if (typeof d.lapses !== 'number') d.lapses = 0;
   if (typeof d.free !== 'number') d.free = 0;
+  if (typeof d.tricks !== 'number') d.tricks = 0;
   return d;
 }
