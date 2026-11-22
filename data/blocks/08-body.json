@@ -1,30 +1,36 @@
 {
   "block": 8,
   "words": [
+    {"id": "w-touch", "en": "touch", "es": "tocar (con la mano)", "pron": "tach", "pos": "acción", "block": 8, "emoji": "👆", "syllables": 1, "stress": 1},
+    {"id": "w-your", "en": "your", "es": "tu", "pron": "ió", "pos": "palabrita", "block": 8, "emoji": "🎀", "syllables": 1, "stress": 1},
     {"id": "w-head", "en": "head", "es": "cabeza", "pron": "jed", "pos": "nombre", "block": 8, "emoji": "🧑", "syllables": 1, "stress": 1},
-    {"id": "w-hair", "en": "hair", "es": "pelo", "pron": "jéa", "pos": "nombre", "block": 8, "emoji": "💇", "syllables": 1, "stress": 1},
-    {"id": "w-eye", "en": "eye", "es": "ojo", "pron": "ái", "pos": "nombre", "block": 8, "emoji": "👁️", "syllables": 1, "stress": 1},
-    {"id": "w-ear", "en": "ear", "es": "oreja", "pron": "ía", "pos": "nombre", "block": 8, "emoji": "👂", "syllables": 1, "stress": 1},
     {"id": "w-nose", "en": "nose", "es": "nariz", "pron": "nóus", "pos": "nombre", "block": 8, "emoji": "👃", "syllables": 1, "stress": 1},
-    {"id": "w-mouth", "en": "mouth", "es": "boca", "pron": "máuz", "pos": "nombre", "block": 8, "emoji": "👄", "syllables": 1, "stress": 1},
     {"id": "w-hand", "en": "hand", "es": "mano", "pron": "jand", "pos": "nombre", "block": 8, "emoji": "✋", "syllables": 1, "stress": 1, "theme": "escalada"},
-    {"id": "w-finger", "en": "finger", "es": "dedo", "pron": "fíngue", "pos": "nombre", "block": 8, "emoji": "☝️", "syllables": 2, "stress": 1, "theme": "escalada"},
+    {"id": "w-eye", "en": "eye", "es": "ojo", "pron": "ái", "pos": "nombre", "block": 8, "emoji": "👁️", "syllables": 1, "stress": 1},
+    {"id": "w-hair", "en": "hair", "es": "pelo", "pron": "jéa", "pos": "nombre", "block": 8, "emoji": "💇", "syllables": 1, "stress": 1},
+    {"id": "w-long", "en": "long", "es": "largo / larga", "pron": "long", "pos": "cualidad", "block": 8, "emoji": "📏", "syllables": 1, "stress": 1},
+    {"id": "w-face", "en": "face", "es": "cara", "pron": "féis", "pos": "nombre", "block": 8, "emoji": "😀", "syllables": 1, "stress": 1},
+    {"id": "w-mouth", "en": "mouth", "es": "boca", "pron": "máuz", "pos": "nombre", "block": 8, "emoji": "👄", "syllables": 1, "stress": 1},
+    {"id": "w-ear", "en": "ear", "es": "oreja", "pron": "ía", "pos": "nombre", "block": 8, "emoji": "👂", "syllables": 1, "stress": 1},
     {"id": "w-arm", "en": "arm", "es": "brazo", "pron": "am", "pos": "nombre", "block": 8, "emoji": "🦾", "syllables": 1, "stress": 1, "theme": "escalada"},
     {"id": "w-leg", "en": "leg", "es": "pierna", "pron": "leg", "pos": "nombre", "block": 8, "emoji": "🦵", "syllables": 1, "stress": 1, "theme": "escalada"},
     {"id": "w-foot", "en": "foot", "es": "pie", "pron": "fut", "pos": "nombre", "block": 8, "emoji": "🦶", "syllables": 1, "stress": 1, "theme": "escalada"},
     {"id": "w-knee", "en": "knee", "es": "rodilla", "pron": "ni", "pos": "nombre", "block": 8, "emoji": "🧎", "syllables": 1, "stress": 1},
-    {"id": "w-body", "en": "body", "es": "cuerpo", "pron": "bódi", "pos": "nombre", "block": 8, "emoji": "🧍", "syllables": 2, "stress": 1},
-    {"id": "w-face", "en": "face", "es": "cara", "pron": "féis", "pos": "nombre", "block": 8, "emoji": "😀", "syllables": 1, "stress": 1},
-    {"id": "w-touch", "en": "touch", "es": "tocar (con la mano)", "pron": "tach", "pos": "acción", "block": 8, "emoji": "👆", "syllables": 1, "stress": 1},
-    {"id": "w-long", "en": "long", "es": "largo / larga", "pron": "long", "pos": "cualidad", "block": 8, "emoji": "📏", "syllables": 1, "stress": 1},
-    {"id": "w-your", "en": "your", "es": "tu", "pron": "ió", "pos": "palabrita", "block": 8, "emoji": "🎀", "syllables": 1, "stress": 1}
+    {"id": "w-finger", "en": "finger", "es": "dedo", "pron": "fíngue", "pos": "nombre", "block": 8, "emoji": "☝️", "syllables": 2, "stress": 1, "theme": "escalada"},
+    {"id": "w-body", "en": "body", "es": "cuerpo", "pron": "bódi", "pos": "nombre", "block": 8, "emoji": "🧍", "syllables": 2, "stress": 1}
   ],
   "sentences": [
-    {"id": "s-touch-your-nose", "en": "Touch your nose!", "es": "¡Tócate la nariz!", "pron": "tach ió nóus", "block": 8, "emoji": "👃", "words": ["w-nose", "w-touch", "w-your"]},
-    {"id": "s-my-hair-is-long", "en": "My hair is long.", "es": "Mi pelo es largo.", "pron": "mái jéa is long", "block": 8, "emoji": "💇", "words": ["w-i", "w-my", "w-is", "w-hair", "w-long"]},
-    {"id": "s-my-arms-are-strong", "en": "My arms are strong.", "es": "Mis brazos son fuertes.", "pron": "mái ams a strong", "block": 8, "emoji": "🦾", "words": ["w-are", "w-my", "w-strong", "w-arm"]},
-    {"id": "s-i-climb-with-my-hands", "en": "I climb with my hands.", "es": "Escalo con las manos.", "pron": "ái cláim uíd mái jands", "block": 8, "emoji": "✋", "words": ["w-i", "w-my", "w-climb", "w-with", "w-hand"]},
-    {"id": "s-your-eyes-are-brown", "en": "Your eyes are brown.", "es": "Tus ojos son marrones.", "pron": "ió áis a bráun", "block": 8, "emoji": "👁️", "words": ["w-are", "w-brown", "w-eye", "w-your"]},
-    {"id": "s-one-nose-two-ears-ten-fingers", "en": "One nose, two ears, ten fingers!", "es": "¡Una nariz, dos orejas, diez dedos!", "pron": "uán nóus, tu ías, ten fíngues", "block": 8, "emoji": "☝️", "words": ["w-one", "w-two", "w-ten", "w-ear", "w-nose", "w-finger"]}
+    {"id": "s-touch-your-head", "en": "Touch your head!", "es": "¡Tócate la cabeza!", "pron": "tach ioo jed", "block": 8, "emoji": "🧑", "words": ["w-touch", "w-your", "w-head"], "grammar": "g-imperativo"},
+    {"id": "s-touch-your-nose", "en": "Touch your nose!", "es": "¡Tócate la nariz!", "pron": "tach ioo nóus", "block": 8, "emoji": "👃", "words": ["w-touch", "w-your", "w-nose"], "grammar": "g-imperativo"},
+    {"id": "s-my-hair-is-long", "en": "My hair is long.", "es": "Mi pelo es largo.", "pron": "mái jéa is long", "block": 8, "emoji": "💇", "words": ["w-hair", "w-long"]},
+    {"id": "s-your-eyes-are-brown", "en": "Your eyes are brown.", "es": "Tus ojos son marrones.", "pron": "ioo áis aa bráun", "block": 8, "emoji": "👁️", "words": ["w-your", "w-eye"]},
+    {"id": "s-my-arms-are-strong", "en": "My arms are strong.", "es": "Mis brazos son fuertes.", "pron": "mái aams aa strong", "block": 8, "emoji": "🦾", "words": ["w-arm"]},
+    {"id": "s-one-nose-two-ears", "en": "One nose, two ears, ten fingers!", "es": "¡Una nariz, dos orejas, diez dedos!", "pron": "uán nóus, tu ías, ten fíngues", "block": 8, "emoji": "☝️", "words": ["w-nose", "w-ear", "w-finger"]},
+    {"id": "s-touch-your-face", "en": "Touch your face!", "es": "¡Tócate la cara!", "pron": "tach ioo féis", "block": 8, "emoji": "😀", "words": ["w-touch", "w-your", "w-face"], "extra": true},
+    {"id": "s-my-hand-is-small", "en": "My hand is small.", "es": "Mi mano es pequeña.", "pron": "mái jand is smol", "block": 8, "emoji": "✋", "words": ["w-hand"], "extra": true},
+    {"id": "s-i-climb-with-my-hands", "en": "I climb with my hands.", "es": "Escalo con las manos.", "pron": "ái cláim uíd mái jands", "block": 8, "emoji": "✋", "words": ["w-hand"], "extra": true},
+    {"id": "s-touch-your-knee", "en": "Touch your knee!", "es": "¡Tócate la rodilla!", "pron": "tach ioo ni", "block": 8, "emoji": "🧎", "words": ["w-touch", "w-your", "w-knee"], "extra": true},
+    {"id": "s-my-mouth-is-big", "en": "My mouth is big!", "es": "¡Mi boca es grande!", "pron": "mái máuz is big", "block": 8, "emoji": "👄", "words": ["w-mouth"], "extra": true},
+    {"id": "s-your-eyes-are-blue", "en": "Your eyes are blue.", "es": "Tus ojos son azules.", "pron": "ioo áis aa blu", "block": 8, "emoji": "🔵", "words": ["w-your", "w-eye"], "extra": true}
   ]
 }

@@ -277,6 +277,35 @@
     ]
   },
   {
+    "id": "t-j-soplo",
+    "block": 1,
+    "emoji": "🌬️",
+    "kind": "truco",
+    "title": {
+      "es": "La j de jelóu es un soplo",
+      "en": "A gentle h"
+    },
+    "idea": "Cuando en las pistas pongo una j (jelóu, jái), NO es la jota fuerte de «jamón». En inglés es un soplo suavecito, como cuando empañas un cristal: hhhello. Si te sale la jota española, suena raro. Prueba a soplar.",
+    "scenes": [
+      {
+        "emoji": "👋",
+        "en": "hello",
+        "es": "hola",
+        "pron": "jelóu (soplando, no «jamón»)"
+      }
+    ],
+    "play": [
+      {
+        "q": "La j de «hello», ¿cómo es?",
+        "answer": "Un soplo suave",
+        "options": [
+          "Un soplo suave",
+          "Como la j de jamón"
+        ]
+      }
+    ]
+  },
+  {
     "id": "t-two-w",
     "block": 2,
     "emoji": "✌️",
@@ -599,7 +628,7 @@
         ]
       },
       {
-        "q": "¿Cuál es la rebelde, la que suena con j?",
+        "q": "¿Cuál es la rebelde, la que suena «ju»?",
         "answer": "who",
         "options": [
           "what",
@@ -903,6 +932,366 @@
     ]
   },
   {
+    "id": "t-v-labio",
+    "block": 4,
+    "emoji": "🦷",
+    "kind": "truco",
+    "title": {
+      "es": "La v se muerde el labio",
+      "en": "Bite your lip for v"
+    },
+    "idea": "En español la v y la b suenan igual: «vaca» y «baca». En inglés NO. Para la v hay que apoyar los dientes de arriba en el labio de abajo y dejar salir el aire. Pruébalo con violin: vvvaiolín, no «baiolín».",
+    "scenes": [
+      {
+        "emoji": "🎻",
+        "en": "violin",
+        "es": "violín",
+        "pron": "vaiolín"
+      },
+      {
+        "emoji": "5️⃣",
+        "en": "five",
+        "es": "cinco",
+        "pron": "fáiv"
+      }
+    ],
+    "play": [
+      {
+        "q": "Para decir la v inglesa…",
+        "answer": "Dientes sobre el labio",
+        "options": [
+          "Dientes sobre el labio",
+          "Los labios juntos, como la b"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "g-imperativo",
+    "block": 5,
+    "emoji": "📣",
+    "kind": "regla",
+    "title": {
+      "es": "Para mandar, la palabra sola",
+      "en": "Giving orders"
+    },
+    "idea": "Para decirle a alguien que haga algo, en inglés basta con la acción sola, sin nada delante: Climb! Go! Stop! Listen! No hace falta poner «you».",
+    "scenes": [
+      {
+        "emoji": "🧗",
+        "en": "Climb!",
+        "es": "¡Escala!",
+        "pron": "cláim"
+      },
+      {
+        "emoji": "🛑",
+        "en": "Stop!",
+        "es": "¡Para!",
+        "pron": "stop"
+      },
+      {
+        "emoji": "🔝",
+        "en": "Go up to the top!",
+        "es": "¡Sube hasta la cima!",
+        "pron": "góu ap tu de top"
+      }
+    ],
+    "play": [
+      {
+        "en": "___ up!",
+        "answer": "Go",
+        "options": [
+          "Go",
+          "You go",
+          "I go"
+        ],
+        "es": "¡Sube!"
+      },
+      {
+        "q": "¿Cómo se dice «¡Para!»?",
+        "answer": "Stop!",
+        "options": [
+          "You stop!",
+          "Stop!"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "t-climb-b",
+    "block": 5,
+    "emoji": "🧗",
+    "kind": "truco",
+    "title": {
+      "es": "La b de climb no sube",
+      "en": "The b that doesn't climb"
+    },
+    "idea": "«climb» acaba en b, pero esa b no se oye: suena «cláim». Se quedó abajo mientras la palabra subía. Otra letra fantasma para tu colección.",
+    "scenes": [
+      {
+        "emoji": "🧗",
+        "en": "climb",
+        "es": "escalar",
+        "pron": "cláim"
+      },
+      {
+        "emoji": "🧗",
+        "en": "I climb the wall.",
+        "es": "Escalo la pared.",
+        "pron": "ái cláim de uól"
+      }
+    ],
+    "play": [
+      {
+        "q": "¿Cómo suena «climb»?",
+        "answer": "cláim",
+        "options": [
+          "clímb",
+          "cláim",
+          "clímbe"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "t-s-sin-e",
+    "block": 5,
+    "emoji": "🚫",
+    "kind": "truco",
+    "title": {
+      "es": "No le pongas una e delante",
+      "en": "No e in front"
+    },
+    "idea": "En español ninguna palabra empieza por s + otra consonante: decimos España, escalar, estrella. Por eso nos sale solo poner una e delante. En inglés NO la lleva: es «strong», no «estrong»; «stop», no «estop»; «small», no «esmall». Empieza directamente con la s.",
+    "scenes": [
+      {
+        "emoji": "💪",
+        "en": "strong",
+        "es": "fuerte",
+        "pron": "strong (sin e delante)"
+      },
+      {
+        "emoji": "🛑",
+        "en": "stop",
+        "es": "parar",
+        "pron": "stop (sin e delante)"
+      }
+    ],
+    "play": [
+      {
+        "q": "¿Cuál está bien dicho?",
+        "answer": "strong",
+        "options": [
+          "estrong",
+          "strong"
+        ]
+      },
+      {
+        "q": "¿Y este?",
+        "answer": "stop",
+        "options": [
+          "stop",
+          "estop"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "t-silaba-floja",
+    "block": 5,
+    "emoji": "🔉",
+    "kind": "truco",
+    "title": {
+      "es": "La segunda sílaba se encoge",
+      "en": "The weak second bit"
+    },
+    "idea": "«mountain» se escribe como «mountáin», pero no se dice «maun-TÁIN»: el final se encoge y suena «máuntin». En inglés casi siempre manda la primera parte y la segunda se apaga. Pasa igual en helmet (jélmit) y ready (rédi).",
+    "scenes": [
+      {
+        "emoji": "⛰️",
+        "en": "mountain",
+        "es": "montaña",
+        "pron": "máuntin"
+      },
+      {
+        "emoji": "⛑️",
+        "en": "helmet",
+        "es": "casco",
+        "pron": "jélmit"
+      }
+    ],
+    "play": [
+      {
+        "q": "¿Dónde suena más fuerte «mountain»?",
+        "answer": "Al principio: MÁUN-tin",
+        "options": [
+          "Al principio: MÁUN-tin",
+          "Al final: maun-TÁIN"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "t-escalada-parecidas",
+    "block": 5,
+    "emoji": "🎁",
+    "kind": "truco",
+    "title": {
+      "es": "Dos regalos de la escalada",
+      "en": "Two free climbing words"
+    },
+    "idea": "«rock» y «roca» se parecen. «mountain» y «montaña» también: las dos empiezan por «mont». Cuando una palabra inglesa te suene de algo, fíate: muchas veces acertarás.",
+    "scenes": [
+      {
+        "emoji": "🪨",
+        "en": "rock",
+        "es": "roca",
+        "pron": "roc"
+      },
+      {
+        "emoji": "⛰️",
+        "en": "mountain",
+        "es": "montaña",
+        "pron": "máuntin"
+      }
+    ],
+    "play": [
+      {
+        "q": "«rock» quiere decir…",
+        "answer": "roca",
+        "options": [
+          "roca",
+          "rueda",
+          "rojo"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "t-scissors-plural",
+    "block": 6,
+    "emoji": "✂️",
+    "kind": "truco",
+    "title": {
+      "es": "Las tijeras, siempre dos",
+      "en": "Scissors are always plural"
+    },
+    "idea": "«scissors» lleva una s al final y va SIEMPRE en plural, igual que nuestras «tijeras»: nunca se dice «a scissor». Y ojo con el principio: la c no se oye, suena «síses».",
+    "scenes": [
+      {
+        "emoji": "✂️",
+        "en": "scissors",
+        "es": "tijeras",
+        "pron": "síses"
+      }
+    ],
+    "play": [
+      {
+        "q": "¿Cómo suena «scissors»?",
+        "answer": "síses",
+        "options": [
+          "skísors",
+          "síses",
+          "esíses"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "t-dos-th",
+    "block": 6,
+    "emoji": "👅",
+    "kind": "truco",
+    "title": {
+      "es": "Hay dos th",
+      "en": "Two kinds of th"
+    },
+    "idea": "¿Te acuerdas de la th de «three», como una z? Pues hay otra th más suave, con voz, que suena casi como una d: «with» se dice «uíd». La lengua va en el mismo sitio, entre los dientes, pero esta vibra.",
+    "scenes": [
+      {
+        "emoji": "3️⃣",
+        "en": "three",
+        "es": "tres",
+        "pron": "zri (como una z)"
+      },
+      {
+        "emoji": "🔗",
+        "en": "with",
+        "es": "con",
+        "pron": "uíd (más suave, con voz)"
+      }
+    ],
+    "play": [
+      {
+        "q": "¿Cuál de las dos lleva voz, como una d?",
+        "answer": "with",
+        "options": [
+          "three",
+          "with"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "t-pencil-pincel",
+    "block": 6,
+    "emoji": "⚠️",
+    "kind": "truco",
+    "title": {
+      "es": "Pencil NO es pincel",
+      "en": "Pencil is not a paintbrush"
+    },
+    "idea": "Cuidado con esta: «pencil» se parece muchísimo a «pincel», pero NO es un pincel. «pencil» es un lápiz. Hay palabras que se parecen y te engañan; esta es de las peores, porque las dos son de manualidades.",
+    "scenes": [
+      {
+        "emoji": "✏️",
+        "en": "pencil",
+        "es": "lápiz (¡no pincel!)",
+        "pron": "pénsil"
+      }
+    ],
+    "play": [
+      {
+        "q": "«pencil» es…",
+        "answer": "un lápiz",
+        "options": [
+          "un lápiz",
+          "un pincel"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "t-paper-parecida",
+    "block": 6,
+    "emoji": "📄",
+    "kind": "truco",
+    "title": {
+      "es": "Paper y papel",
+      "en": "Paper and papel"
+    },
+    "idea": "«paper» y «papel» son casi la misma palabra, solo cambia el final. Pero cuidado con cómo suena: no es «pa-PÉR», es «PÉI-pe», con la fuerza al principio y la r del final sin sonar.",
+    "scenes": [
+      {
+        "emoji": "📄",
+        "en": "paper",
+        "es": "papel",
+        "pron": "péipe"
+      }
+    ],
+    "play": [
+      {
+        "q": "¿Cómo suena «paper»?",
+        "answer": "péipe",
+        "options": [
+          "papér",
+          "péipe",
+          "papel"
+        ]
+      }
+    ]
+  },
+  {
     "id": "g-he-she",
     "block": 7,
     "emoji": "👧",
@@ -964,6 +1353,323 @@
       }
     ],
     "kind": "regla"
+  },
+  {
+    "id": "t-grand-compuestas",
+    "block": 7,
+    "emoji": "👵",
+    "kind": "truco",
+    "title": {
+      "es": "Palabras pegadas",
+      "en": "Two words stuck together"
+    },
+    "idea": "«grandma» y «grandpa» son dos trozos pegados: grand (grande) + ma (mamá) y grand + pa (papá). El inglés pega palabras continuamente para hacer otras nuevas. A partir de ahora, cuando veas una palabra larga, prueba a partirla.",
+    "scenes": [
+      {
+        "emoji": "👵",
+        "en": "grandma",
+        "es": "abuela",
+        "pron": "gránma"
+      },
+      {
+        "emoji": "👴",
+        "en": "grandpa",
+        "es": "abuelo",
+        "pron": "gránpa"
+      }
+    ],
+    "play": [
+      {
+        "q": "«grandma» está hecha de…",
+        "answer": "grand + ma",
+        "options": [
+          "grand + ma",
+          "gran + dma"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "t-family-parecida",
+    "block": 7,
+    "emoji": "👨‍👩‍👧",
+    "kind": "truco",
+    "title": {
+      "es": "Family y familia",
+      "en": "Family and familia"
+    },
+    "idea": "«family» y «familia» se parecen tanto que no hay que aprenderla, solo oírla: «fámili». La fuerza va al principio, como en español.",
+    "scenes": [
+      {
+        "emoji": "👨‍👩‍👧",
+        "en": "family",
+        "es": "familia",
+        "pron": "fámili"
+      }
+    ],
+    "play": [
+      {
+        "q": "«I love my family» quiere decir…",
+        "answer": "Quiero a mi familia",
+        "options": [
+          "Quiero a mi familia",
+          "Me gusta mi casa"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "t-mum-dad-cortas",
+    "block": 7,
+    "emoji": "👩",
+    "kind": "truco",
+    "title": {
+      "es": "Mamá y papá, de un golpe",
+      "en": "Mum and dad, one beat"
+    },
+    "idea": "Nosotros decimos ma-MÁ y pa-PÁ, dos golpes y la fuerza al final. En inglés es un solo golpe: mum, dad. Y en Estados Unidos a mum le dicen «mom».",
+    "scenes": [
+      {
+        "emoji": "👩",
+        "en": "mum",
+        "es": "mamá",
+        "pron": "mam"
+      },
+      {
+        "emoji": "👨",
+        "en": "dad",
+        "es": "papá",
+        "pron": "dad"
+      }
+    ],
+    "play": [
+      {
+        "q": "¿Cuántos golpecitos tiene «mum»?",
+        "answer": "Uno",
+        "options": [
+          "Uno",
+          "Dos"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "t-this-brother-th",
+    "block": 7,
+    "emoji": "👬",
+    "kind": "truco",
+    "title": {
+      "es": "Otra vez la th suave",
+      "en": "The soft th again"
+    },
+    "idea": "«this» y «brother» llevan la th suave, la que vibra: suenan «dis» y «bráde». Si te fijas, las palabritas que más se usan (this, the, they) llevan casi siempre la suave.",
+    "scenes": [
+      {
+        "emoji": "👇",
+        "en": "this",
+        "es": "este / esta",
+        "pron": "dis"
+      },
+      {
+        "emoji": "👬",
+        "en": "brother",
+        "es": "hermano",
+        "pron": "bráde"
+      }
+    ],
+    "play": [
+      {
+        "q": "¿Cómo suena «this»?",
+        "answer": "dis",
+        "options": [
+          "zis",
+          "dis",
+          "tis"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "t-knee-k",
+    "block": 8,
+    "emoji": "🧎",
+    "kind": "truco",
+    "title": {
+      "es": "La k de knee se arrodilla",
+      "en": "The kneeling k"
+    },
+    "idea": "«knee» (rodilla) empieza con k, y esa k no se oye: suena «ni». Cada vez que veas «kn» al principio de una palabra, la k está callada.",
+    "scenes": [
+      {
+        "emoji": "🧎",
+        "en": "knee",
+        "es": "rodilla",
+        "pron": "ni"
+      }
+    ],
+    "play": [
+      {
+        "q": "¿Cómo suena «knee»?",
+        "answer": "ni",
+        "options": [
+          "kni",
+          "ni",
+          "ké-ne"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "t-eye-igual-i",
+    "block": 8,
+    "emoji": "👁️",
+    "kind": "truco",
+    "title": {
+      "es": "«Eye» suena igual que «I»",
+      "en": "Eye sounds like I"
+    },
+    "idea": "Mira qué curioso: «eye» (ojo) y «I» (yo) se escriben distinto pero suenan EXACTAMENTE igual: «ái». El inglés está lleno de parejas así. Para saber cuál es, hay que mirar el resto de la frase.",
+    "scenes": [
+      {
+        "emoji": "👁️",
+        "en": "eye",
+        "es": "ojo",
+        "pron": "ái"
+      },
+      {
+        "emoji": "🙋",
+        "en": "I",
+        "es": "yo",
+        "pron": "ái"
+      }
+    ],
+    "play": [
+      {
+        "q": "«ái» puede ser…",
+        "answer": "ojo o yo",
+        "options": [
+          "ojo o yo",
+          "solo ojo",
+          "solo yo"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "t-foot-feet",
+    "block": 8,
+    "emoji": "🦶",
+    "kind": "truco",
+    "title": {
+      "es": "Un pie, dos pies rebeldes",
+      "en": "One foot, two feet"
+    },
+    "idea": "Casi todos los plurales ingleses se hacen con una s. Pero hay unos pocos rebeldes que cambian por dentro: one foot (un pie), two feet (dos pies). No lleva s por ningún lado.",
+    "scenes": [
+      {
+        "emoji": "🦶",
+        "en": "foot",
+        "es": "pie",
+        "pron": "fut"
+      },
+      {
+        "emoji": "👣",
+        "en": "feet",
+        "es": "pies",
+        "pron": "fit"
+      }
+    ],
+    "play": [
+      {
+        "q": "¿Cómo se dicen «dos pies»?",
+        "answer": "two feet",
+        "options": [
+          "two foots",
+          "two feet",
+          "two footes"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "t-cuerpo-un-golpe",
+    "block": 8,
+    "emoji": "⚡",
+    "kind": "truco",
+    "title": {
+      "es": "El cuerpo, casi todo de un golpe",
+      "en": "One-beat body"
+    },
+    "idea": "Cuenta: head, hair, eye, ear, nose, mouth, hand, arm, leg, foot, knee… ¡todas de un golpe! En español casi ninguna lo es: ca-be-za, na-riz, ro-di-lla. Por eso cuesta seguir a los ingleses.",
+    "scenes": [
+      {
+        "emoji": "🧑",
+        "en": "head",
+        "es": "cabeza (3 golpes, y en inglés 1)",
+        "pron": "jed"
+      },
+      {
+        "emoji": "🧎",
+        "en": "knee",
+        "es": "rodilla (3 golpes, y en inglés 1)",
+        "pron": "ni"
+      }
+    ],
+    "play": [
+      {
+        "q": "¿Cuál de estas tiene DOS golpecitos?",
+        "answer": "finger",
+        "options": [
+          "hand",
+          "finger",
+          "nose"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "t-you-your",
+    "block": 8,
+    "emoji": "🎀",
+    "kind": "truco",
+    "title": {
+      "es": "You y your se parecen, pero no",
+      "en": "You and your"
+    },
+    "idea": "«you» es tú. «your» es tu, de pertenecer: your nose es tu nariz. Se parecen muchísimo. Para distinguirlas, mira cómo están ESCRITAS: your lleva una r al final. Oírla no te servirá, porque esa r no suena (como todas las erres del final).",
+    "scenes": [
+      {
+        "emoji": "🫵",
+        "en": "you",
+        "es": "tú",
+        "pron": "iú"
+      },
+      {
+        "emoji": "👃",
+        "en": "your nose",
+        "es": "tu nariz",
+        "pron": "ioo nóus"
+      }
+    ],
+    "play": [
+      {
+        "en": "Touch ___ nose!",
+        "answer": "your",
+        "options": [
+          "your",
+          "you"
+        ],
+        "es": "¡Tócate la nariz!"
+      },
+      {
+        "q": "La r de «your», ¿se oye?",
+        "answer": "No, solo se escribe",
+        "options": [
+          "No, solo se escribe",
+          "Sí, se oye fuerte"
+        ]
+      }
+    ]
   },
   {
     "id": "g-plurals",
