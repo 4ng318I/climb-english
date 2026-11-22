@@ -47,7 +47,7 @@ export default function progress(el) {
     const f = pr.wordsTotal ? pr.words / pr.wordsTotal : 0;
     return Math.min(content.blocks.length - 1, Math.max(0, i) + f);
   })();
-  // De donde viene: lo ultimo que Alumna vio. Asi el avance del dia se ve MOVERSE.
+  // De donde viene: lo ultimo que vio la alumna. Asi el avance del dia se ve MOVERSE.
   const geckoFrom = Number.isFinite(state.stats.geckoAt) ? state.stats.geckoAt : geckoTo;
   const crowned = stagesDone();
   const stage = currentStage();

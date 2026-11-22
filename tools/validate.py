@@ -90,7 +90,7 @@ def main():
 
     # Toda palabra que aparezca en el TEXTO de una frase tiene que ser una palabra del banco
     # de ese bloque o de uno anterior. No basta con mirar la lista "words": la frase
-    # "My name is Alumna" declaraba tres palabras y colaba "is", que es del bloque 3.
+    # "My name is {name}" declaraba tres palabras y colaba "is", que es del bloque 3.
     # Se aceptan el plural y la -s de he/she (windows, plays) si la base ya se conoce.
     conocidas = {}
     for w in words:
@@ -117,7 +117,7 @@ def main():
 
     # La grafia de una palabra dentro de una frase tiene que ser la MISMA que en su ficha.
     # Se colaron 55 frases con la grafia vieja (vocales dobles: "aa" por are, "beeds" por
-    # berds) despues de quitarlas de las fichas. Alumna lee las dos pantallas: no pueden discrepar.
+    # berds) despues de quitarlas de las fichas. La alumna lee las dos pantallas: no pueden discrepar.
     def sin_tildes(t):
         return "".join(c for c in unicodedata.normalize("NFD", t.lower())
                        if not unicodedata.combining(c))
@@ -141,7 +141,7 @@ def main():
     grammar = load(DATA / "grammar.json") or []
 
     # Nunca alfabeto fonetico: la grafia se escribe con letras españolas y punto. Una sola
-    # excepcion rompe la norma, y Alumna puede acabar escribiendo el simbolo en el juego de
+    # excepcion rompe la norma, y la alumna puede acabar escribiendo el simbolo en el juego de
     # escribir o creyendo que es una letra del ingles. Se explica con palabras o no se explica.
     def textos_de_contenido():
         for w in words:
