@@ -10,7 +10,7 @@ import { header, wordCard, howto } from '../ui/layout.js';
 import { bubble } from '../ui/feedback.js';
 import memory from '../games/memory.js';
 
-const PER_DAY = 3; // palabras nuevas de una canción por día (misma regla que al jugar)
+const PER_DAY = 5; // palabras nuevas de una canción por día
 
 const safeUrl = u => (/^https:\/\//i.test(u || '') ? u : '');
 

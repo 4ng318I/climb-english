@@ -7,13 +7,48 @@
       "artist": "Pharrell Williams",
       "youtube": "https://www.youtube.com/watch?v=ZbZSe6N_BXs",
       "words": [
-        {"en": "happy", "es": "feliz", "pron": "jápi", "emoji": "😊"},
-        {"en": "clap", "es": "dar palmas", "pron": "clap", "emoji": "👏"},
-        {"en": "room", "es": "habitación", "pron": "rum", "emoji": "🚪"},
-        {"en": "roof", "es": "tejado", "pron": "ruf", "emoji": "🏠"},
-        {"en": "truth", "es": "verdad", "pron": "truz", "emoji": "💬"},
-        {"en": "sunshine", "es": "luz del sol", "pron": "sánshain", "emoji": "☀️"},
-        {"en": "feel", "es": "sentir", "pron": "fil", "emoji": "💓"}
+        {
+          "en": "happy",
+          "es": "feliz",
+          "pron": "jápi",
+          "emoji": "😊"
+        },
+        {
+          "en": "clap",
+          "es": "dar palmas",
+          "pron": "clap",
+          "emoji": "👏"
+        },
+        {
+          "en": "room",
+          "es": "habitación",
+          "pron": "rum",
+          "emoji": "🚪"
+        },
+        {
+          "en": "roof",
+          "es": "tejado",
+          "pron": "ruf",
+          "emoji": "🏠"
+        },
+        {
+          "en": "truth",
+          "es": "verdad",
+          "pron": "truz",
+          "emoji": "💬"
+        },
+        {
+          "en": "sunshine",
+          "es": "luz del sol",
+          "pron": "sánshain",
+          "emoji": "☀️"
+        },
+        {
+          "en": "feel",
+          "es": "sentir",
+          "pron": "fil",
+          "emoji": "💓"
+        }
       ]
     },
     {
@@ -22,13 +57,48 @@
       "artist": "Katy Perry",
       "youtube": "https://www.youtube.com/watch?v=CevxZvSJLk8",
       "words": [
-        {"en": "roar", "es": "rugido", "pron": "ro", "emoji": "🦁"},
-        {"en": "tiger", "es": "tigre", "pron": "táigue", "emoji": "🐯"},
-        {"en": "fire", "es": "fuego", "pron": "fáie", "emoji": "🔥"},
-        {"en": "champion", "es": "campeona", "pron": "chámpion", "emoji": "🏆"},
-        {"en": "eye", "es": "ojo", "pron": "ái", "emoji": "👁️"},
-        {"en": "hear", "es": "oír", "pron": "jía", "emoji": "👂"},
-        {"en": "thunder", "es": "trueno", "pron": "zánde", "emoji": "⛈️"}
+        {
+          "en": "roar",
+          "es": "rugido",
+          "pron": "ro",
+          "emoji": "🦁"
+        },
+        {
+          "en": "tiger",
+          "es": "tigre",
+          "pron": "táigue",
+          "emoji": "🐯"
+        },
+        {
+          "en": "fire",
+          "es": "fuego",
+          "pron": "fáie",
+          "emoji": "🔥"
+        },
+        {
+          "en": "champion",
+          "es": "campeona",
+          "pron": "chámpion",
+          "emoji": "🏆"
+        },
+        {
+          "en": "eye",
+          "es": "ojo",
+          "pron": "ái",
+          "emoji": "👁️"
+        },
+        {
+          "en": "hear",
+          "es": "oír",
+          "pron": "jía",
+          "emoji": "👂"
+        },
+        {
+          "en": "thunder",
+          "es": "trueno",
+          "pron": "zánde",
+          "emoji": "⛈️"
+        }
       ]
     },
     {
@@ -37,13 +107,498 @@
       "artist": "Taylor Swift",
       "youtube": "https://www.youtube.com/watch?v=nfWlot6h_JM",
       "words": [
-        {"en": "shake", "es": "sacudir", "pron": "shéik", "emoji": "🪇"},
-        {"en": "play", "es": "jugar", "pron": "pléi", "emoji": "🎮"},
-        {"en": "break", "es": "romper", "pron": "bréik", "emoji": "💔"},
-        {"en": "music", "es": "música", "pron": "miúsic", "emoji": "🎵"},
-        {"en": "late", "es": "tarde", "pron": "léit", "emoji": "🦉"},
-        {"en": "brain", "es": "cerebro", "pron": "bréin", "emoji": "🧠"},
-        {"en": "feet", "es": "pies", "pron": "fit", "emoji": "🦶"}
+        {
+          "en": "shake",
+          "es": "sacudir",
+          "pron": "shéik",
+          "emoji": "🪇"
+        },
+        {
+          "en": "play",
+          "es": "jugar",
+          "pron": "pléi",
+          "emoji": "🎮"
+        },
+        {
+          "en": "break",
+          "es": "romper",
+          "pron": "bréik",
+          "emoji": "💔"
+        },
+        {
+          "en": "music",
+          "es": "música",
+          "pron": "miúsic",
+          "emoji": "🎵"
+        },
+        {
+          "en": "late",
+          "es": "tarde",
+          "pron": "léit",
+          "emoji": "🦉"
+        },
+        {
+          "en": "brain",
+          "es": "cerebro",
+          "pron": "bréin",
+          "emoji": "🧠"
+        },
+        {
+          "en": "feet",
+          "es": "pies",
+          "pron": "fit",
+          "emoji": "🦶"
+        }
+      ]
+    },
+    {
+      "id": "walking-on-sunshine",
+      "title": "Walking on Sunshine",
+      "artist": "Katrina and the Waves",
+      "youtube": "https://www.youtube.com/watch?v=iPUmE-tne5U",
+      "words": [
+        {
+          "en": "walking",
+          "es": "andando",
+          "pron": "uókin",
+          "emoji": "🚶"
+        },
+        {
+          "en": "sunshine",
+          "es": "luz del sol",
+          "pron": "sánshain",
+          "emoji": "🌞"
+        },
+        {
+          "en": "feel",
+          "es": "sentir",
+          "pron": "fil",
+          "emoji": "💓"
+        },
+        {
+          "en": "good",
+          "es": "bien",
+          "pron": "gud",
+          "emoji": "👌"
+        },
+        {
+          "en": "street",
+          "es": "calle",
+          "pron": "strit",
+          "emoji": "🛣️"
+        },
+        {
+          "en": "love",
+          "es": "amor",
+          "pron": "lav",
+          "emoji": "❤️"
+        },
+        {
+          "en": "baby",
+          "es": "cariño",
+          "pron": "béibi",
+          "emoji": "🥰"
+        }
+      ]
+    },
+    {
+      "id": "better-when-i-m-dancin",
+      "title": "Better When I'm Dancin'",
+      "artist": "Meghan Trainor",
+      "youtube": "https://www.youtube.com/watch?v=pkCyfBibIbI",
+      "words": [
+        {
+          "en": "dancing",
+          "es": "bailando",
+          "pron": "dánsin",
+          "emoji": "💃"
+        },
+        {
+          "en": "better",
+          "es": "mejor",
+          "pron": "béte",
+          "emoji": "👍"
+        },
+        {
+          "en": "move",
+          "es": "moverse",
+          "pron": "muv",
+          "emoji": "🕺"
+        },
+        {
+          "en": "smile",
+          "es": "sonreír",
+          "pron": "smáil",
+          "emoji": "😄"
+        },
+        {
+          "en": "music",
+          "es": "música",
+          "pron": "miúsic",
+          "emoji": "🎵"
+        },
+        {
+          "en": "hands",
+          "es": "manos",
+          "pron": "jands",
+          "emoji": "🙌"
+        },
+        {
+          "en": "feel",
+          "es": "sentir",
+          "pron": "fil",
+          "emoji": "💓"
+        }
+      ]
+    },
+    {
+      "id": "sunroof",
+      "title": "Sunroof",
+      "artist": "Nicky Youre y dazy",
+      "youtube": "https://www.youtube.com/watch?v=G5xSLbYMr-I",
+      "words": [
+        {
+          "en": "sunroof",
+          "es": "techo solar del coche",
+          "pron": "sánruf",
+          "emoji": "🚗"
+        },
+        {
+          "en": "sun",
+          "es": "sol",
+          "pron": "san",
+          "emoji": "🌞"
+        },
+        {
+          "en": "car",
+          "es": "coche",
+          "pron": "ca",
+          "emoji": "🚙"
+        },
+        {
+          "en": "head",
+          "es": "cabeza",
+          "pron": "jed",
+          "emoji": "🧑"
+        },
+        {
+          "en": "summer",
+          "es": "verano",
+          "pron": "sáme",
+          "emoji": "🏖️"
+        },
+        {
+          "en": "night",
+          "es": "noche",
+          "pron": "náit",
+          "emoji": "🌃"
+        },
+        {
+          "en": "girl",
+          "es": "chica",
+          "pron": "guerl",
+          "emoji": "👧"
+        }
+      ]
+    },
+    {
+      "id": "golden",
+      "title": "Golden",
+      "artist": "HUNTR/X (KPop Demon Hunters)",
+      "youtube": "https://www.youtube.com/watch?v=yebNIHKAC4A",
+      "words": [
+        {
+          "en": "golden",
+          "es": "dorado",
+          "pron": "góulden",
+          "emoji": "✨"
+        },
+        {
+          "en": "shine",
+          "es": "brillar",
+          "pron": "sháin",
+          "emoji": "🌟"
+        },
+        {
+          "en": "light",
+          "es": "luz",
+          "pron": "láit",
+          "emoji": "💡"
+        },
+        {
+          "en": "sky",
+          "es": "cielo",
+          "pron": "scái",
+          "emoji": "🌌"
+        },
+        {
+          "en": "star",
+          "es": "estrella",
+          "pron": "sta",
+          "emoji": "⭐"
+        },
+        {
+          "en": "dream",
+          "es": "sueño",
+          "pron": "drim",
+          "emoji": "💭"
+        },
+        {
+          "en": "up",
+          "es": "arriba",
+          "pron": "ap",
+          "emoji": "⬆️"
+        }
+      ]
+    },
+    {
+      "id": "stargazing",
+      "title": "Stargazing",
+      "artist": "Myles Smith",
+      "youtube": "https://www.youtube.com/watch?v=9p9EauIOPm8",
+      "words": [
+        {
+          "en": "star",
+          "es": "estrella",
+          "pron": "sta",
+          "emoji": "⭐"
+        },
+        {
+          "en": "heart",
+          "es": "corazón",
+          "pron": "jat",
+          "emoji": "💜"
+        },
+        {
+          "en": "break",
+          "es": "romper",
+          "pron": "bréik",
+          "emoji": "💔"
+        },
+        {
+          "en": "night",
+          "es": "noche",
+          "pron": "náit",
+          "emoji": "🌃"
+        },
+        {
+          "en": "light",
+          "es": "luz",
+          "pron": "láit",
+          "emoji": "💡"
+        },
+        {
+          "en": "dance",
+          "es": "bailar",
+          "pron": "dans",
+          "emoji": "💃"
+        },
+        {
+          "en": "young",
+          "es": "joven",
+          "pron": "iang",
+          "emoji": "🧒"
+        }
+      ]
+    },
+    {
+      "id": "nice-to-meet-you",
+      "title": "Nice To Meet You",
+      "artist": "Myles Smith",
+      "youtube": "https://www.youtube.com/watch?v=9VbDkDALT7w",
+      "words": [
+        {
+          "en": "nice",
+          "es": "simpático",
+          "pron": "náis",
+          "emoji": "🥰"
+        },
+        {
+          "en": "meet",
+          "es": "conocer",
+          "pron": "mit",
+          "emoji": "🤝"
+        },
+        {
+          "en": "smile",
+          "es": "sonreír",
+          "pron": "smáil",
+          "emoji": "😄"
+        },
+        {
+          "en": "dance",
+          "es": "bailar",
+          "pron": "dans",
+          "emoji": "💃"
+        },
+        {
+          "en": "name",
+          "es": "nombre",
+          "pron": "néim",
+          "emoji": "📛"
+        },
+        {
+          "en": "lucky",
+          "es": "con suerte",
+          "pron": "láki",
+          "emoji": "🍀"
+        },
+        {
+          "en": "hello",
+          "es": "hola",
+          "pron": "jelóu",
+          "emoji": "👋"
+        }
+      ]
+    },
+    {
+      "id": "sapphire",
+      "title": "Sapphire",
+      "artist": "Ed Sheeran",
+      "youtube": "https://www.youtube.com/watch?v=JgDNFQ2RaLQ",
+      "words": [
+        {
+          "en": "sapphire",
+          "es": "zafiro (piedra azul)",
+          "pron": "sáfaia",
+          "emoji": "💎"
+        },
+        {
+          "en": "eyes",
+          "es": "ojos",
+          "pron": "áis",
+          "emoji": "👁️"
+        },
+        {
+          "en": "blue",
+          "es": "azul",
+          "pron": "blu",
+          "emoji": "🔵"
+        },
+        {
+          "en": "shine",
+          "es": "brillar",
+          "pron": "sháin",
+          "emoji": "🌟"
+        },
+        {
+          "en": "light",
+          "es": "luz",
+          "pron": "láit",
+          "emoji": "💡"
+        },
+        {
+          "en": "sky",
+          "es": "cielo",
+          "pron": "scái",
+          "emoji": "🌌"
+        },
+        {
+          "en": "hold",
+          "es": "sujetar",
+          "pron": "jóuld",
+          "emoji": "🤲"
+        }
+      ]
+    },
+    {
+      "id": "levitating",
+      "title": "Levitating",
+      "artist": "Dua Lipa",
+      "youtube": "https://www.youtube.com/watch?v=N000qglmmY0",
+      "words": [
+        {
+          "en": "moon",
+          "es": "luna",
+          "pron": "mun",
+          "emoji": "🌙"
+        },
+        {
+          "en": "star",
+          "es": "estrella",
+          "pron": "sta",
+          "emoji": "⭐"
+        },
+        {
+          "en": "night",
+          "es": "noche",
+          "pron": "náit",
+          "emoji": "🌃"
+        },
+        {
+          "en": "dance",
+          "es": "bailar",
+          "pron": "dans",
+          "emoji": "💃"
+        },
+        {
+          "en": "fly",
+          "es": "volar",
+          "pron": "flái",
+          "emoji": "🕊️"
+        },
+        {
+          "en": "sugar",
+          "es": "azúcar",
+          "pron": "shúgue",
+          "emoji": "🍬"
+        },
+        {
+          "en": "galaxy",
+          "es": "galaxia",
+          "pron": "gálacsi",
+          "emoji": "🌌"
+        }
+      ]
+    },
+    {
+      "id": "apt",
+      "title": "APT.",
+      "artist": "ROSÉ y Bruno Mars",
+      "youtube": "https://www.youtube.com/watch?v=ekr2nIex040",
+      "words": [
+        {
+          "en": "apartment",
+          "es": "piso",
+          "pron": "apátment",
+          "emoji": "🏢"
+        },
+        {
+          "en": "game",
+          "es": "juego",
+          "pron": "guéim",
+          "emoji": "🕹️"
+        },
+        {
+          "en": "hand",
+          "es": "mano",
+          "pron": "jand",
+          "emoji": "✋"
+        },
+        {
+          "en": "eyes",
+          "es": "ojos",
+          "pron": "áis",
+          "emoji": "👁️"
+        },
+        {
+          "en": "night",
+          "es": "noche",
+          "pron": "náit",
+          "emoji": "🌃"
+        },
+        {
+          "en": "stop",
+          "es": "parar",
+          "pron": "stop",
+          "emoji": "🛑"
+        },
+        {
+          "en": "count",
+          "es": "contar",
+          "pron": "cáunt",
+          "emoji": "🧮"
+        }
       ]
     }
   ]
