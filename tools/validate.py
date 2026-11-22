@@ -83,6 +83,34 @@ def main():
                     '%s: la frase %d del camino "%s" usa %s, que esta(n) despues de la palabra %d '
                     "del bloque (regla de las 3k)" % (b["file"], k, s_.get("en", "?"), ", ".join(tarde), tope))
 
+    # Toda palabra que aparezca en el TEXTO de una frase tiene que ser una palabra del banco
+    # de ese bloque o de uno anterior. No basta con mirar la lista "words": la frase
+    # "My name is Alumna" declaraba tres palabras y colaba "is", que es del bloque 3.
+    # Se aceptan el plural y la -s de he/she (windows, plays) si la base ya se conoce.
+    conocidas = {}
+    for w in words:
+        conocidas.setdefault(str(w.get("en", "")).lower(), w.get("block", 99))
+    varias = sorted([w for w in conocidas if " " in w], key=len, reverse=True)
+
+    def disponible(tok, hasta):
+        for cand in (tok, re.sub(r"'s$", "", tok), re.sub(r"s$", "", tok), re.sub(r"es$", "", tok),
+                     re.sub(r"ies$", "y", tok), re.sub(r"'t$", "", tok), tok.replace("'", "")):
+            if conocidas.get(cand, 99) <= hasta:
+                return True
+        return False
+
+    for b, s_ in sentences:
+        texto = s_.get("en", "")
+        for m in varias:                       # primero las entradas de varias palabras
+            if conocidas[m] <= b["n"]:
+                texto = re.sub(re.escape(m), " ", texto, flags=re.I)
+        fuera = [t for t in re.findall(r"[A-Za-z]+(?:'[A-Za-z]+)?", texto.replace("{name}", " "))
+                 if not disponible(t.lower(), b["n"])]
+        if fuera:
+            # AVISO mientras se reescriben los bloques; pasara a error con los 20 limpios.
+            warnings.append('%s: la frase "%s" usa %s, que la alumna todavia no conoce'
+                            % (b["file"], s_.get("en", "?"), ", ".join(sorted(set(fuera)))))
+
     grammar = load(DATA / "grammar.json") or []
     rule_ids = {g.get("id") for g in grammar}
     for b, s in sentences:
