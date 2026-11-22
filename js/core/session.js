@@ -3,7 +3,7 @@
 import { content } from './content.js';
 import { state, today, save } from './store.js';
 import { introduce, result, dueIds } from './srs.js';
-import { learnedWords, learnedSentences, nextWords, nextSentence, newToday, NEW_WORDS } from './path.js';
+import { learnedWords, learnedSentences, nextWords, nextSentence, newToday, leftToday, NEW_WORDS } from './path.js';
 import { shuffle } from './util.js';
 import match from '../games/match.js';
 import intruder from '../games/intruder.js';
@@ -20,8 +20,9 @@ const GAMES_PER_SESSION = 4;
 export function makePlan() {
   // Cada sesión trae 3 palabras nuevas O 1 frase nueva, alternando. Las palabras y las
   // frases tienen cada una su tope diario (ver DAILY en path.js).
-  const left = newToday();
-  const words = left.words ? nextWords(NEW_WORDS) : [];
+  const left = leftToday();
+  // La última tanda del día puede traer menos de 3, si es lo que queda de cupo.
+  const words = nextWords(Math.min(NEW_WORDS, left.words));
   const sentence = left.sentences ? nextSentence() : null;
   let newWords = [], newSentence = null;
   if (sentence && (state.ui.lastNew === 'words' || !words.length)) newSentence = sentence;

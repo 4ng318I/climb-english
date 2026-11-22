@@ -33,6 +33,8 @@ OTRA_CACHE = "deutschb2-v2"       # caché de otra app del mismo origen
 OTRA_CLAVE = "deutschb2:progress"
 SCHEMA = int(re.search(r"export const SCHEMA = (\d+);",
                        (ROOT / "js" / "core" / "store.js").read_text(encoding="utf-8")).group(1))
+TOPE_PALABRAS = int(re.search(r"words: (\d+),",
+                              (ROOT / "js" / "core" / "path.js").read_text(encoding="utf-8")).group(1))
 sys.stdout.reconfigure(encoding="utf-8")
 
 fallos = []
@@ -259,9 +261,10 @@ def prueba_tandas(navegador, url):
 
     check(puentes >= 1, "aparece el puente entre tandas (%d)" % puentes)
     fin = page.evaluate("() => JSON.parse(localStorage.getItem('climbenglish:progress'))")
-    check(len(fin["words"]) == 6, "se llega a las 6 palabras nuevas del dia (%d)" % len(fin["words"]))
-    check(len(fin["sentences"]) == 1, "y a la frase nueva (%d)" % len(fin["sentences"]))
-    check("6 palabras" in promete, "el panel prometia %r y se ha cumplido" % promete)
+    check(len(fin["words"]) == TOPE_PALABRAS,
+          "se llega a las %d palabras nuevas del dia (%d)" % (TOPE_PALABRAS, len(fin["words"])))
+    check(len(fin["sentences"]) >= 1, "y a la frase nueva (%d)" % len(fin["sentences"]))
+    check("%d palabras" % TOPE_PALABRAS in promete, "el panel prometia %r y se ha cumplido" % promete)
 
     page.goto(url + "#home")
     page.reload()

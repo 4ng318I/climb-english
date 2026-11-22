@@ -70,7 +70,7 @@ export function nextStep({ compact = false } = {}) {
       ${meter('🧠', esc(t('bar_words')), sp.words, sp.wordsTotal)}
       ${meter('💬', esc(t('bar_sentences')), sp.sentences, sp.sentencesTotal)}
     </div>
-    <p class="note">${T('daily_rule', { words: DAILY.wordSessions * NEW_WORDS, sentences: DAILY.sentenceSessions, each: NEW_WORDS })}</p>`;
+    <p class="note">${T('daily_rule', { words: DAILY.words, sentences: DAILY.sentences, each: NEW_WORDS })}</p>`;
 }
 
 // Para el pie del panel: una sola línea corta.

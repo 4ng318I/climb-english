@@ -59,6 +59,30 @@ def main():
             sentences.append((b, s))
 
     word_block = {w["id"]: w.get("block") for w in words if "id" in w}
+    # Regla de las 3k: la frase nº k DEL CAMINO de un bloque solo puede usar palabras
+    # que esten entre las primeras 3k de ese bloque (o de bloques anteriores). Asi
+    # siempre hay una frase lista en cuanto entra una tanda de 3 palabras nuevas.
+    # Las frases marcadas "extra": true son de practica y no entran en el camino.
+    for b in index["blocks"]:
+        data = load(DATA / "blocks" / b["file"])
+        if not data:
+            continue
+        orden = {w.get("id"): i + 1 for i, w in enumerate(data.get("words", []))}
+        k = 0
+        for s_ in data.get("sentences", []):
+            if s_.get("extra"):
+                continue
+            k += 1
+            tope = 3 * k
+            tarde = [wid for wid in s_.get("words", [])
+                     if orden.get(wid, 0) > tope]
+            if tarde:
+                # AVISO mientras se reescribe el banco de frases bloque a bloque. En cuanto
+                # esten los 20 revisados, esto pasa a errors y deja de poder romperse.
+                warnings.append(
+                    '%s: la frase %d del camino "%s" usa %s, que esta(n) despues de la palabra %d '
+                    "del bloque (regla de las 3k)" % (b["file"], k, s_.get("en", "?"), ", ".join(tarde), tope))
+
     grammar = load(DATA / "grammar.json") or []
     rule_ids = {g.get("id") for g in grammar}
     for b, s in sentences:

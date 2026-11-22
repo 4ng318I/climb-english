@@ -3,12 +3,12 @@ import { content, blockWords } from './content.js';
 import { state, today } from './store.js';
 import { dayKey } from './util.js';
 
-// Sesiones con novedad al día. Cada sesión trae 3 palabras nuevas o 1 frase nueva,
-// así que el máximo diario es de 6 palabras y 2 frases (3 frases en las últimas etapas).
+// Tope diario de material nuevo, contado en palabras y frases (no en sesiones): cada
+// sesión trae como mucho 3 palabras nuevas o 1 frase nueva, y se encadenan hasta el tope.
 export const DAILY = {
-  wordSessions: 2,
-  // Las frases por día las marca la etapa en data/blocks.json (2 al principio, 3 al final).
-  get sentenceSessions() { return currentStage()?.sentencesPerDay || 2; },
+  words: 8,
+  // Las frases por día las marca la etapa en data/blocks.json.
+  get sentences() { return currentStage()?.sentencesPerDay || 3; },
 };
 export const NEW_WORDS = 3;
 
@@ -90,9 +90,9 @@ export function nextSentence() {
 // Cuánto nuevo queda HOY, en números: { words, sentences }.
 export function leftToday() {
   const day = today();
-  const wordSessions = Math.max(0, DAILY.wordSessions - (day.wordSessions || 0));
-  const sentenceSessions = Math.max(0, DAILY.sentenceSessions - (day.sentenceSessions || 0));
-  const words = Math.min(wordSessions * NEW_WORDS, content.words.filter(w => !state.words[w.id]).length);
+  const cupoPalabras = Math.max(0, DAILY.words - (day.newWords || 0));
+  const cupoFrases = Math.max(0, DAILY.sentences - (day.newSentences || 0));
+  const words = Math.min(cupoPalabras, content.words.filter(w => !state.words[w.id]).length);
   const pending = content.sentences.filter(s => !state.sentences[s.id]);
   // Frases que hoy pueden salir de verdad: las que ya tienen todas sus palabras, contando
   // también las palabras que aún se pueden descubrir hoy (para no prometer de más).
@@ -100,15 +100,15 @@ export function leftToday() {
   const known = new Set([...Object.keys(state.words), ...coming.map(w => w.id)]);
   const limit = Math.max(currentBlock().n, ...coming.map(w => w.block));
   const ready = pending.filter(s => s.block <= limit && s.words.every(id => known.has(id))).length;
-  return { words, sentences: Math.min(sentenceSessions, ready) };
+  return { words, sentences: Math.min(cupoFrases, ready) };
 }
 
 // ¿Queda algo nuevo que descubrir HOY? (por el límite diario y por lo que quede en el banco)
 export function newToday() {
   const day = today();
   return {
-    words: (day.wordSessions || 0) < DAILY.wordSessions && nextWords(1).length > 0,
-    sentences: (day.sentenceSessions || 0) < DAILY.sentenceSessions && !!nextSentence(),
+    words: (day.newWords || 0) < DAILY.words && nextWords(1).length > 0,
+    sentences: (day.newSentences || 0) < DAILY.sentences && !!nextSentence(),
     anythingLeft: nextWords(1).length > 0 || content.sentences.some(s => !state.sentences[s.id]),
   };
 }

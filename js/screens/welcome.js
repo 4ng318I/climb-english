@@ -1,7 +1,7 @@
 // Primera vez: la mascota pregunta el nombre. Se guarda solo en este dispositivo
 // (el repositorio público no contiene el nombre de nadie).
 import { $, esc } from '../core/util.js';
-import { DAILY, NEW_WORDS } from '../core/path.js';
+import { DAILY } from '../core/path.js';
 import { state, save } from '../core/store.js';
 import { T, t } from '../core/i18n.js';
 import { header } from '../ui/layout.js';
@@ -13,7 +13,7 @@ export const cleanName = raw => String(raw ?? '').replace(/[{}<>]/g, '').replace
 // El truco del ritmo, con sus palabras. Se usa en la bienvenida y en la pantalla
 // "¿Por qué solo unas pocas al día?", a la que puede volver cuando quiera desde el panel.
 function rhythm(introKey, extra = '') {
-  const n = { name: state.settings.name, words: DAILY.wordSessions * NEW_WORDS, sentences: DAILY.sentenceSessions };
+  const n = { name: state.settings.name, words: DAILY.words, sentences: DAILY.sentences };
   return `
       <div class="rhythm">
         <p><b>${esc(t(introKey, n))}</b></p>
