@@ -76,7 +76,7 @@ conexión, la app vuelve sola a «escucha y repite».
 ### ✨ Aprender lo nuevo
 
 Es el botón grande y la entrada principal. **Dice lo que va a dar**: «Aprender lo nuevo —
-Nuevo para hoy: 6 palabras y 1 frase». Cuando ya no queda nada nuevo, cambia solo a
+Nuevo para hoy: 8 palabras y 1 frase». Cuando ya no queda nada nuevo, cambia solo a
 «Repasar jugando».
 
 Lo nuevo va **siempre al principio** de cada tanda: 3 palabras nuevas o 1 frase nueva, y
@@ -103,7 +103,8 @@ guardado. Si sale a mitad, el botón del panel entrega la tanda siguiente al pri
 **Nunca dice que algo está mal.** Si falla, primero le dice qué le salió bien («¡tienes 3
 letras perfectas!») y luego cómo queda mejor. No hay cruces rojas ni sonidos de error.
 
-**Límite diario: 6 palabras y 2 frases nuevas** (3 frases en las dos últimas etapas). Cuando
+**Límite diario: 8 palabras y 3 frases nuevas**, contadas en elementos y no en sesiones:
+las tandas se encadenan hasta agotar el cupo del día. Cuando
 se acaba lo nuevo, el día no se acaba: puede seguir jugando con lo que ya sabe, que es
 justamente el repaso que fija las palabras. La app se lo dice en positivo, y el botón
 «¿Por qué solo unas pocas al día?» del panel se lo explica las veces que quiera.
@@ -190,17 +191,17 @@ De arriba abajo:
 
 Subir de etapa pide descubrir **todas las palabras y todas las frases** de sus bloques.
 
-| Etapa | Bloques | Palabras | Frases | Frases al día | Días mínimos | Interfaz en inglés |
-|---|---|---|---|---|---|---|
-| 1 Campo base | 1 | 16 | 7 | 2 | 4 | 0 % |
-| 2 Primeros agarres | 2–3 | 32 | 10 | 2 | 6 | 10 % |
-| 3 La travesía | 4–5 | 32 | 13 | 2 | 7 | 20 % |
-| 4 La gran pared | 6–8 | 51 | 18 | 2 | 9 | 30 % |
-| 5 El desplome | 9–11 | 50 | 18 | 2 | 9 | 45 % |
-| 6 La cornisa | 12–15 | 64 | 28 | 3 | 11 | 60 % |
-| 7 La cima A1 | 16–20 | 80 | 38 | 3 | 14 | 70 % |
+| Etapa | Bloques | Palabras | Frases del camino | Días mínimos | Interfaz en inglés |
+|---|---|---|---|---|---|
+| 1 Campo base | 1 | 16 | 7 | 3 | 0 % |
+| 2 Primeros agarres | 2–3 | 32 | 10 | 4 | 10 % |
+| 3 La travesía | 4–5 | 32 | 13 | 5 | 20 % |
+| 4 La gran pared | 6–8 | 51 | 18 | 7 | 30 % |
+| 5 El desplome | 9–11 | 50 | 18 | 7 | 45 % |
+| 6 La cornisa | 12–15 | 64 | 28 | 10 | 60 % |
+| 7 La cima A1 | 16–20 | 80 | 38 | 13 | 70 % |
 
-Al ritmo máximo, el camino entero son unos dos meses. La primera etapa es corta a propósito:
+Al ritmo máximo (8 palabras y 3 frases al día), el camino entero son unas seis semanas. La primera etapa es corta a propósito:
 es la que decide si sigue o lo deja.
 
 **La interfaz se va pasando al inglés sola.** Empieza todo en español y, al coronar cada
