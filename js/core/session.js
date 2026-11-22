@@ -89,6 +89,24 @@ export function learnSentence(s) {
 export function record(results) {
   for (const r of results || []) {
     result(state.words[r.id] || state.sentences[r.id], r.ok);
+    // Racha de aciertos seguidos, para las medallas. Un tropiezo la pone a cero, pero
+    // eso no se le enseña: solo se celebra cuando sube.
+    if (r.ok) {
+      state.stats.streak++;
+      if (state.stats.streak > state.stats.bestStreak) state.stats.bestStreak = state.stats.streak;
+    } else {
+      state.stats.streak = 0;
+    }
   }
   save();
 }
+
+// Apunta que se ha jugado a un minijuego (para la medalla de "los has probado todos").
+export function playedGame(id) {
+  const g = state.stats.games;
+  g[id] = (g[id] || 0) + 1;
+  save();
+}
+
+// ¿Ha salido la partida entera sin un solo tropiezo?
+export const sinFallos = results => results.length > 0 && results.every(r => r.ok);

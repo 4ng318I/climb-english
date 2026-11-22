@@ -2,7 +2,7 @@
 // Esta pantalla es para adultos y está siempre en español.
 import { $, esc } from '../core/util.js';
 import { content } from '../core/content.js';
-import { state, save, reset, status, APP, SCHEMA } from '../core/store.js';
+import { state, save, reset, status, backups, restoreBackup, APP, SCHEMA } from '../core/store.js';
 import { speak, canSpeak, micSupported, voiceInfo, accentName } from '../core/speech.js';
 import { exportProgress, readBackup, importProgress } from '../core/backup.js';
 import { learnedWords, englishLevel, currentStage, leftToday, DAILY, NEW_WORDS } from '../core/path.js';
@@ -47,6 +47,7 @@ function voiceReport(s) {
 export default function settings(el) {
   const s = state.settings;
   const left = leftToday();
+  const copias = backups();
   el.innerHTML = `${header('Rincón de mayores', '👨‍👩‍👧')}
     <section class="stage settings">
       <div class="panel">
@@ -111,6 +112,20 @@ export default function settings(el) {
       </div>`}
 
       <div class="panel">
+        <h2>🛟 Copias automáticas</h2>
+        <p class="note">La app guarda sola una copia del progreso cada día, y también antes de
+          actualizarlo, importarlo o borrarlo. Se conservan las dos últimas, aquí en la tablet.</p>
+        ${copias.length ? `<div class="backups">${copias.map(c => `
+          <div class="backup">
+            <div><b>${esc(c.date)}</b> · ${c.words} palabras, ${c.sentences} frases, ${c.medals} medallas
+              <small>${esc(c.motivo)}</small></div>
+            <button class="btn ghost" data-restore="${esc(c.clave)}">↩️ Recuperar esta</button>
+          </div>`).join('')}</div>
+          <div id="restore-confirm"></div>`
+          : '<p class="note">Todavía no hay ninguna copia automática: aparecerá la primera vez que se abra la app con progreso guardado.</p>'}
+      </div>
+
+      <div class="panel">
         <h2>💾 Copia del progreso</h2>
         <p class="note">El progreso se guarda solo en esta tablet. Si se borran los datos de Chrome, se pierde:
           exporta una copia de vez en cuando. ${state.lastExport ? `Última copia: ${esc(state.lastExport)}.` : 'Todavía no hay ninguna copia.'}</p>
@@ -173,6 +188,23 @@ export default function settings(el) {
     location.hash = '#home';
     location.reload();
   };
+
+  for (const b of el.querySelectorAll('[data-restore]')) {
+    b.onclick = () => {
+      const c = copias.find(x => x.clave === b.dataset.restore);
+      const box = $('#restore-confirm', el);
+      box.innerHTML = `<p class="note"><b>Volver a la copia del ${esc(c.date)}</b> (${c.words} palabras,
+        ${c.medals} medallas). Lo que hay ahora en la tablet (${Object.keys(state.words).length} palabras)
+        se guardará a su vez como copia antes de sustituirlo.</p>
+        <div class="row"><button class="btn ghost" id="rest-no">Cancelar</button>
+        <button class="btn" id="rest-yes">Sí, recuperar</button></div>`;
+      $('#rest-no', box).onclick = () => { box.innerHTML = ''; };
+      $('#rest-yes', box).onclick = () => {
+        if (restoreBackup(c.clave)) { location.hash = '#home'; location.reload(); }
+        else box.innerHTML = '<p class="note">No se ha podido escribir el progreso recuperado. No se ha cambiado nada.</p>';
+      };
+    };
+  }
 
   $('#reset', el).onclick = () => {
     const box = $('#reset-confirm', el);

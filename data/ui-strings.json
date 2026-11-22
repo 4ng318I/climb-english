@@ -24,6 +24,7 @@
   "progress_title": {"es": "Mi progreso", "en": "My progress", "from": 20},
   "sentences": {"es": "frases", "en": "sentences", "from": 20},
   "medals": {"es": "medallas", "en": "medals", "from": 20},
+  "old_medal": {"es": "Medalla antigua", "en": "Old medal", "from": 45},
   "medals_title": {"es": "Mis medallas", "en": "My medals", "from": 20},
   "mywords_title": {"es": "Mis palabras", "en": "My words", "from": 30},
   "see_words": {"es": "Ver mis palabras", "en": "See my words", "from": 45},

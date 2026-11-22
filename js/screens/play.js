@@ -4,7 +4,7 @@ import { content } from '../core/content.js';
 import { state, save, today } from '../core/store.js';
 import { T, tt, newlyEnglish } from '../core/i18n.js';
 import { speak } from '../core/speech.js';
-import { makePlan, pickGames, learnWords, learnSentence, record } from '../core/session.js';
+import { makePlan, pickGames, learnWords, learnSentence, record, playedGame, sinFallos } from '../core/session.js';
 import { learnedWords, stagesDone, englishLevel, checkMedals } from '../core/path.js';
 import { wordCard } from '../ui/layout.js';
 import { chime, confetti } from '../ui/feedback.js';
@@ -55,6 +55,7 @@ async function crown(stage) {
 export default async function play(el) {
   const plan = makePlan();
   const started = Date.now();
+  let perfectas = 0;
   el.innerHTML = `
     <header class="bar">
       <button class="round" data-go="home" aria-label="Inicio">🏠</button>
@@ -82,13 +83,16 @@ export default async function play(el) {
       `<span class="step${k < i ? ' done' : k === i ? ' now' : ''}">${g.icon}</span>`).join('');
     stage.className = 'stage game-' + games[i].id;
     stage.innerHTML = '';
+    playedGame(games[i].id);
     const results = await games[i].play(stage, ctx);
     if (!stage.isConnected) return;
     record(results);
+    if (sinFallos(results)) perfectas++;
   }
   steps.innerHTML = '';
 
   state.stats.sessions++;
+  if (perfectas === games.length && games.length) state.stats.perfect++;
   today().minutes += Math.min(15, Math.max(1, Math.round((Date.now() - started) / 60000)));
   const medals = checkMedals();
   save();

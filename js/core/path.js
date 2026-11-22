@@ -134,6 +134,11 @@ export function counts() {
 }
 
 // Concede las medallas que toquen y devuelve las nuevas.
+//
+// INVARIANTE: de state.medals no se borra nada, nunca. Una medalla conseguida sigue
+// conseguida aunque cambie cómo se cuenta, aunque suba el listón o aunque desaparezca del
+// catálogo (en ese caso se sigue viendo en "Mi progreso" como medalla antigua). Perder una
+// medalla ya ganada le sentaría peor que cualquier fallo.
 export function checkMedals() {
   const c = counts(), fresh = [];
   for (const m of content.medals) {

@@ -30,6 +30,8 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 BASE = "/climb-english/"          # subcarpeta, igual que en GitHub Pages
 OTRA_CACHE = "deutschb2-v2"       # caché de otra app del mismo origen
 OTRA_CLAVE = "deutschb2:progress"
+SCHEMA = int(re.search(r"export const SCHEMA = (\d+);",
+                       (ROOT / "js" / "core" / "store.js").read_text(encoding="utf-8")).group(1))
 sys.stdout.reconfigure(encoding="utf-8")
 
 fallos = []
@@ -49,7 +51,7 @@ def _watchdog():
 class Handler(http.server.SimpleHTTPRequestHandler):
     """Sirve el proyecto bajo /climb-english/ y puede fingir una version nueva."""
 
-    nueva_version = False
+    publicaciones = 0   # cada +1 es una version publicada en el servidor
 
     def log_message(self, *a):
         pass
@@ -65,10 +67,10 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         if limpio == BASE + "__seed.html":
             # Pagina vacia del mismo origen, para sembrar datos antes de cargar la app.
             return self._enviar(b"<!doctype html><meta charset=utf-8><title>seed</title>", "text/html")
-        if Handler.nueva_version and limpio.endswith("/sw.js"):
+        if Handler.publicaciones and limpio.endswith("/sw.js"):
             texto = (ROOT / "sw.js").read_text(encoding="utf-8")
             v = int(re.search(r"const VERSION = (\d+);", texto).group(1))
-            texto = texto.replace("const VERSION = %d;" % v, "const VERSION = %d;" % (v + 1))
+            texto = texto.replace("const VERSION = %d;" % v, "const VERSION = %d;" % (v + Handler.publicaciones))
             return self._enviar(texto.encode("utf-8"), "text/javascript")
         return super().do_GET()
 
@@ -112,6 +114,148 @@ def entrar(page, url, nombre="Alumna"):
     page.wait_for_selector(".play-big", timeout=25000)
 
 
+# Un progreso REAL del esquema 1: sin los contadores nuevos, con medallas conseguidas,
+# palabras en varias cajas y días jugados. Es lo que tiene la tablet antes de actualizarse.
+PROGRESO_V1 = {
+    "v": 1,
+    "created": "2026-11-10",
+    "settings": {"name": "Alumna", "dark": True, "mic": False, "voice": "en-GB",
+                 "rate": 0.85, "forceVoice": False},
+    "words": {
+        "w-hello": {"box": 5, "learned": "2026-11-10", "due": "2026-12-01", "last": "2026-11-15",
+                    "ok": 9, "seen": 11, "said": 3, "written": 2, "moved": "2026-11-15"},
+        "w-i":     {"box": 3, "learned": "2026-11-10", "due": "2026-11-23", "last": "2026-11-19",
+                    "ok": 5, "seen": 7, "said": 2, "written": 0},
+        "w-am":    {"box": 1, "learned": "2026-11-19", "due": "2026-11-20", "last": "2026-11-19",
+                    "ok": 1, "seen": 3, "said": 0, "written": 1},
+        "w-you":   {"box": 4, "learned": "2026-11-11", "due": "2026-11-27", "last": "2026-11-19",
+                    "ok": 6, "seen": 6, "said": 1, "written": 0},
+        "w-are":   {"box": 2, "learned": "2026-11-18", "due": "2026-11-21", "last": "2026-11-19",
+                    "ok": 2, "seen": 4, "said": 0, "written": 0},
+    },
+    "sentences": {
+        "s-hello-i-am": {"box": 3, "learned": "2026-11-12", "due": "2026-11-24",
+                         "last": "2026-11-20", "ok": 4, "seen": 5},
+        "s-my-name-is": {"box": 1, "learned": "2026-11-20", "due": "2026-11-21",
+                         "last": "2026-11-20", "ok": 1, "seen": 1},
+    },
+    "grammar": {"g-i-am": {"seen": "2026-11-14", "plays": 2}},
+    "songs": {"happy": {"unlocked": 3, "day": "2026-11-20"}},
+    "days": [
+        {"date": "2026-11-15", "newWords": 6, "newSentences": 2, "wordSessions": 2,
+         "sentenceSessions": 2, "minutes": 9, "grammar": 1},
+        {"date": "2026-11-19", "newWords": 3, "newSentences": 1, "wordSessions": 1,
+         "sentenceSessions": 1, "minutes": 7, "grammar": 0},
+        {"date": "2026-11-20", "newWords": 6, "newSentences": 2, "wordSessions": 2,
+         "sentenceSessions": 2, "minutes": 12, "grammar": 1},
+    ],
+    # La última no existe en el catálogo: una medalla ganada no se puede perder ni aunque
+    # desaparezca de data/medals.json.
+    "medals": {"first-word": "2026-11-10", "words-10": "2026-11-12", "stage-1": "2026-11-16",
+               "medalla-retirada": "2026-11-17"},
+    "stats": {"sessions": 12, "silly": 3, "said": 17, "written": 8},
+    "ui": {"flipped": {"great": 3}, "stageSeen": 1, "rot": 4, "lastNew": "words",
+           "blocksSeen": [1]},
+    "lastVisit": "2026-11-21",
+    "lastExport": "2026-11-18",
+}
+
+NUEVOS_EN_STATS = ["reviews", "freeGames", "perfect", "streak", "bestStreak", "games"]
+# La app apunta la visita de hoy al abrirse: ese campo SI puede cambiar, es su trabajo.
+CAMBIAN_A_PROPOSITO = {"v", "lastVisit", "days"}
+NUEVOS_EN_DIA = ["rev", "lapses", "free"]
+
+
+def diferencias(viejo, nuevo, ruta=""):
+    """Todo lo que había en el progreso viejo tiene que seguir igual en el nuevo."""
+    fallos = []
+    if isinstance(viejo, dict):
+        if not isinstance(nuevo, dict):
+            return ["%s: ya no es un objeto" % ruta]
+        for k, v in viejo.items():
+            if k not in nuevo:
+                fallos.append("%s.%s: ha desaparecido" % (ruta, k))
+            else:
+                fallos += diferencias(v, nuevo[k], "%s.%s" % (ruta, k))
+    elif isinstance(viejo, list):
+        if not isinstance(nuevo, list) or len(nuevo) != len(viejo):
+            return ["%s: la lista ha cambiado de tamano" % ruta]
+        for i, v in enumerate(viejo):
+            fallos += diferencias(v, nuevo[i], "%s[%d]" % (ruta, i))
+    elif viejo != nuevo:
+        fallos.append("%s: %r -> %r" % (ruta, viejo, nuevo))
+    return fallos
+
+
+def comparar(viejo, nuevo):
+    """Todo lo de antes sigue igual. Los dias se comparan por fecha: pueden anadirse nuevos,
+    pero ninguno de los de antes puede desaparecer ni cambiar."""
+    fallos = diferencias({k: v for k, v in viejo.items() if k not in CAMBIAN_A_PROPOSITO}, nuevo)
+    for d in viejo["days"]:
+        igual = next((x for x in nuevo["days"] if x["date"] == d["date"]), None)
+        if igual is None:
+            fallos.append("days[%s]: ha desaparecido" % d["date"])
+        else:
+            fallos += diferencias(d, igual, "days[%s]" % d["date"])
+    return fallos
+
+
+def prueba_migracion(navegador, url):
+    """Actualiza una tablet con progreso del esquema 1 y comprueba que no se pierde nada."""
+    print("Actualizacion de una tablet con progreso guardado (esquema 1 -> 2)")
+    ctx = navegador.new_context()
+    page = ctx.new_page()
+    errores = []
+    page.on("pageerror", lambda e: errores.append(str(e)))
+
+    page.goto(url + "__seed.html")
+    page.evaluate("p => localStorage.setItem('climbenglish:progress', JSON.stringify(p))", PROGRESO_V1)
+    antes_texto = page.evaluate("() => localStorage.getItem('climbenglish:progress')")
+
+    page.goto(url)                      # aqui se actualiza sola
+    page.wait_for_selector(".play-big", timeout=25000)
+    nuevo = page.evaluate("() => JSON.parse(localStorage.getItem('climbenglish:progress'))")
+
+    check(nuevo["v"] == SCHEMA, "el progreso queda en el esquema %d" % SCHEMA)
+    difs = comparar(PROGRESO_V1, nuevo)
+    check(not difs, "no se pierde ni cambia nada de lo anterior%s" % ("" if not difs else ": " + "; ".join(difs[:4])))
+
+    check(all(k in nuevo["stats"] for k in NUEVOS_EN_STATS), "aparecen los contadores nuevos de stats")
+    check(all(nuevo["stats"][k] == 0 for k in NUEVOS_EN_STATS if k != "games"),
+          "los contadores nuevos empiezan en cero, no dan error")
+    check(all(all(k in d for k in NUEVOS_EN_DIA) for d in nuevo["days"]),
+          "los dias antiguos reciben los contadores nuevos")
+    check(all(d["rev"] == [0, 0] and d["lapses"] == 0 for d in nuevo["days"]),
+          "y empiezan a contar hoy, sin inventarse datos de los dias pasados")
+
+    check(sorted(nuevo["medals"]) == sorted(PROGRESO_V1["medals"]), "estan TODAS las medallas conseguidas")
+    check(nuevo["medals"].get("medalla-retirada") == "2026-11-17",
+          "una medalla que ya no esta en el catalogo tampoco se pierde")
+    page.goto(url + "#progress")
+    page.wait_for_selector(".medals", timeout=20000)
+    ganadas = page.locator(".medal.got").count()
+    check(ganadas >= 4, "las 4 medallas se siguen viendo en Mi progreso (%d)" % ganadas)
+
+    copias = page.evaluate("() => Object.keys(localStorage).filter(k => k.startsWith('climbenglish:backup'))")
+    check("climbenglish:backup" in copias, "se ha guardado una copia de seguridad")
+    copia = page.evaluate("() => JSON.parse(localStorage.getItem('climbenglish:backup'))")
+    check(copia["texto"] == antes_texto, "la copia es exactamente el progreso de antes de actualizar")
+    check("formato 1" in copia["motivo"], "y dice por que se hizo: %r" % copia["motivo"])
+
+    page.goto(url + "#settings")
+    page.wait_for_selector(".settings", timeout=20000)
+    check(page.locator("[data-restore]").count() >= 1, "la copia se puede recuperar desde Mayores")
+
+    # Volver a abrir no vuelve a migrar ni pierde nada.
+    page.goto(url)
+    page.wait_for_selector(".play-big", timeout=25000)
+    otra = page.evaluate("() => JSON.parse(localStorage.getItem('climbenglish:progress'))")
+    check(not comparar(PROGRESO_V1, otra), "al abrirla de nuevo sigue todo en su sitio")
+    check(not errores, "sin errores de JavaScript durante la actualizacion: %s" % errores[:2])
+    ctx.close()
+    print("")
+
+
 def main():
     wd = threading.Timer(360, _watchdog)
     wd.daemon = True
@@ -127,7 +271,11 @@ def main():
         page = ctx.new_page()
         errores = []
         page.on("pageerror", lambda e: errores.append(str(e)))
-        page.on("console", lambda m: errores.append(m.text) if m.type == "error" else None)
+        # Los fallos de red son de la prueba sin conexion, no de la app.
+        de_red = lambda t: "ERR_" in t or "Failed to load resource" in t
+        page.on("console", lambda m: errores.append(m.text) if m.type == "error" and not de_red(m.text) else None)
+
+        prueba_migracion(navegador, url)
 
         print("Convivencia con otra app del mismo origen")
         page.goto(url + "__seed.html")
@@ -148,9 +296,10 @@ def main():
         page.click("#go")
         page.wait_for_selector(".play-big", timeout=20000)
         nuestras = [k for k in claves(page) if not k.startswith("deutschb2:")]
-        check(nuestras == ["climbenglish:progress"], "solo escribe su clave con prefijo: %s" % nuestras)
+        check(all(k.startswith("climbenglish:") for k in nuestras) and "climbenglish:progress" in nuestras,
+              "todas sus claves llevan su prefijo: %s" % nuestras)
         guardado = page.evaluate("() => JSON.parse(localStorage.getItem('climbenglish:progress'))")
-        check(guardado.get("v") == 1, "el progreso lleva version de esquema v=%s" % guardado.get("v"))
+        check(guardado.get("v") == SCHEMA, "el progreso lleva version de esquema v=%s" % guardado.get("v"))
         check(guardado["settings"]["name"] == "Alumna", "el nombre se ha guardado")
 
         print("\nCopia de seguridad")
@@ -160,7 +309,7 @@ def main():
             page.click("#export")
         fichero = json.loads(pathlib.Path(dl.value.path()).read_text(encoding="utf-8"))
         check(fichero.get("app") == "climbenglish", "el archivo dice de que app es: %r" % fichero.get("app"))
-        check(fichero.get("schema") == 1, "el archivo dice la version de formato: %r" % fichero.get("schema"))
+        check(fichero.get("schema") == SCHEMA, "el archivo dice la version de formato: %r" % fichero.get("schema"))
         check(fichero.get("progress", {}).get("settings", {}).get("name") == "Alumna", "el archivo lleva el progreso")
         check(dl.value.suggested_filename.startswith("climbenglish-"),
               "nombre de archivo: %s" % dl.value.suggested_filename)
@@ -214,7 +363,7 @@ def main():
         page.evaluate("() => { window.__marca = 1; }")
         antes = page.evaluate("async () => (await caches.keys()).filter(k => k.startsWith('climbenglish-'))")
 
-        Handler.nueva_version = True   # a partir de aqui el servidor sirve una VERSION mayor
+        Handler.publicaciones += 1   # a partir de aqui el servidor sirve una VERSION mayor
         page.evaluate("async () => { const r = await navigator.serviceWorker.getRegistration(); await r.update(); }")
         page.wait_for_timeout(5000)
         check(page.evaluate("() => window.__marca") == 1, "una version nueva no recarga mientras esta jugando")
@@ -229,9 +378,33 @@ def main():
         check(OTRA_CACHE in caches_de(page), "la cache de la otra app sigue intacta tras actualizar")
         activo = page.evaluate("async () => { const r = await navigator.serviceWorker.getRegistration(); return !!r.active; }")
         check(activo, "queda un service worker activo tras la actualizacion")
-        Handler.nueva_version = False
 
-        reales = [e for e in errores if "favicon" not in e.lower()]
+        print("")
+        print("Dias sin conexion y una semana sin abrir")
+        Handler.publicaciones += 1      # se publica algo mientras la tablet esta apagada
+        ctx.set_offline(True)
+        page.goto(url)
+        page.wait_for_selector(".play-big", timeout=25000)
+        propias = page.evaluate("async () => (await caches.keys()).filter(k => k.startsWith('climbenglish-'))")
+        check(len(propias) == 1, "sin conexion abre con su version de siempre, sin quedarse a medias: %s" % propias)
+        page.goto(url + "#words")
+        page.wait_for_selector(".mywords, .empty", timeout=20000)
+        check(True, "y se puede usar con normalidad")
+
+        ctx.set_offline(False)          # vuelve el wifi dias despues
+        page.goto(url)
+        page.wait_for_selector(".play-big", timeout=25000)
+        page.wait_for_timeout(4000)
+        page.goto(url)
+        page.wait_for_selector(".play-big", timeout=25000)
+        page.wait_for_timeout(3000)
+        final = page.evaluate("async () => (await caches.keys()).filter(k => k.startsWith('climbenglish-'))")
+        check(final != propias, "al volver la conexion se pone al dia sola: %s -> %s" % (propias, final))
+        check(len(final) == 1, "y queda una sola version, nunca dos a medias: %s" % final)
+        vivo = page.evaluate("() => !!document.querySelector('.play-big')")
+        check(vivo, "la app sigue entera despues de todo el proceso")
+
+        reales = [e for e in errores if "favicon" not in e.lower() and not de_red(e)]
         check(not reales, "sin errores de JavaScript (%d): %s" % (len(reales), reales[:3]))
         navegador.close()
 

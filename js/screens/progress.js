@@ -101,7 +101,10 @@ export default function progress(el) {
         <h2>🏅 ${T('medals_title')}</h2>
         <div class="medals">${content.medals.map(m => state.medals[m.id]
           ? `<div class="medal got"><span class="m-emoji">${esc(m.emoji)}</span><b>${esc(tt(m.title))}</b><small>${niceDate(state.medals[m.id])}</small></div>`
-          : `<div class="medal"><span class="m-emoji">❔</span><small>${esc(tt(m.desc))}</small></div>`).join('')}</div>
+          : `<div class="medal"><span class="m-emoji">❔</span><small>${esc(tt(m.desc))}</small></div>`).join('')}
+          ${/* Medallas ganadas que ya no están en el catálogo: se siguen viendo, no se pierden. */ ''}
+          ${Object.keys(state.medals).filter(id => !content.medals.some(m => m.id === id)).map(id =>
+            `<div class="medal got"><span class="m-emoji">🏅</span><b>${T('old_medal')}</b><small>${niceDate(state.medals[id])}</small></div>`).join('')}</div>
       </div>
     </section>`;
 
