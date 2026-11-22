@@ -26,6 +26,11 @@ def load(path):
     return None
 
 
+FONETICOS = set("æɑɒɔəɛɜɤɨɪɵ"
+                "ʃʊʌʒʔʤʧθðŋɲ"
+                "ɹɾːˈˌ͡")
+
+
 def main():
     index = load(DATA / "blocks.json")
     if not index:
@@ -134,6 +139,35 @@ def main():
                               % (b["file"], s_.get("en", "?"), en, pw, pron))
 
     grammar = load(DATA / "grammar.json") or []
+
+    # Nunca alfabeto fonetico: la grafia se escribe con letras españolas y punto. Una sola
+    # excepcion rompe la norma, y Alumna puede acabar escribiendo el simbolo en el juego de
+    # escribir o creyendo que es una letra del ingles. Se explica con palabras o no se explica.
+    def textos_de_contenido():
+        for w in words:
+            for campo in ("en", "es", "pron", "say"):
+                yield str(w.get(campo) or ""), "palabra %s (%s)" % (w.get("id"), campo)
+        for b, s_ in sentences:
+            for campo in ("en", "es", "pron"):
+                yield str(s_.get(campo) or ""), "%s, frase %s (%s)" % (b["file"], s_.get("id"), campo)
+        for g_ in grammar:
+            yield str(g_.get("idea") or ""), "grammar.json (%s: idea)" % g_.get("id")
+            for t in (g_.get("title") or {}).values():
+                yield str(t or ""), "grammar.json (%s: title)" % g_.get("id")
+            for e in g_.get("scenes") or []:
+                for campo in ("en", "es", "pron"):
+                    yield str(e.get(campo) or ""), "grammar.json (%s: scenes.%s)" % (g_.get("id"), campo)
+            for q in g_.get("play") or []:
+                for campo in ("q", "en", "es", "answer"):
+                    yield str(q.get(campo) or ""), "grammar.json (%s: play.%s)" % (g_.get("id"), campo)
+                for o in q.get("options") or []:
+                    yield str(o or ""), "grammar.json (%s: play.options)" % g_.get("id")
+
+    for texto, donde in textos_de_contenido():
+        colados = sorted({c for c in texto if c in FONETICOS})
+        if colados:
+            errors.append("%s: usa simbolos del alfabeto fonetico (%s); explicalo con palabras"
+                          % (donde, ", ".join("U+%04X" % ord(c) for c in colados)))
     rule_ids = {g.get("id") for g in grammar}
     for b, s in sentences:
         for wid in s.get("words", []):

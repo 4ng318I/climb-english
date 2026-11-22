@@ -2,14 +2,14 @@
 // Regla de esta pantalla: todo número dice de dónde sale ("3 de 64"), nada de porcentajes sueltos.
 import { $, esc, niceDate } from '../core/util.js';
 import { content } from '../core/content.js';
-import { state } from '../core/store.js';
+import { state, saveSoon } from '../core/store.js';
 import { T, t, tt } from '../core/i18n.js';
 import {
   learnedWords, learnedSentences, blockDone, blockProgress, currentBlock, currentStage,
   stageProgress, stagesDone, songWordCount,
 } from '../core/path.js';
 import { header } from '../ui/layout.js';
-import { areaChart, wireChart, domainBars, routeMap } from '../ui/charts.js';
+import { areaChart, wireChart, domainBars, routeMap, wireGecko } from '../ui/charts.js';
 import { nextStep, howMany } from '../ui/nextstep.js';
 import { GAMES } from '../core/session.js';
 
@@ -38,6 +38,17 @@ export default function progress(el) {
   const medals = Object.keys(state.medals).length;
   const songWords = songWordCount();
   const cur = currentBlock();
+  // Donde esta la lagartija, en "agarres": el agarre actual mas la parte del bloque que
+  // lleva hecha. Avanza con cada palabra nueva, no de golpe al cerrar el bloque, que es
+  // lo que hacia que pareciera quieta. Y llega justo al agarre siguiente cuando se cierra.
+  const geckoTo = (() => {
+    const i = content.blocks.findIndex(b => b.n === cur.n);
+    const pr = blockProgress(cur);
+    const f = pr.wordsTotal ? pr.words / pr.wordsTotal : 0;
+    return Math.min(content.blocks.length - 1, Math.max(0, i) + f);
+  })();
+  // De donde viene: lo ultimo que Alumna vio. Asi el avance del dia se ve MOVERSE.
+  const geckoFrom = Number.isFinite(state.stats.geckoAt) ? state.stats.geckoAt : geckoTo;
   const crowned = stagesDone();
   const stage = currentStage();
   const sp = stageProgress(stage);
@@ -94,7 +105,7 @@ export default function progress(el) {
 
       <div class="panel">
         <h2>🗺️ ${T('map_title')}</h2>
-        ${routeMap(holds)}
+        ${routeMap(holds, { from: geckoFrom, to: geckoTo })}
         <p class="caption" id="caption">${esc(holds.find(h => h.status === 'current')?.tip || '')}</p>
         <p class="note center">${T('map_hint')}</p>
         <div class="legend">${content.stages.map(s => `
@@ -125,6 +136,11 @@ export default function progress(el) {
     </section>`;
 
   wireChart(el);
+  wireGecko(el);
+  if (state.stats.geckoAt !== geckoTo) {
+    state.stats.geckoAt = geckoTo;
+    saveSoon();
+  }
   const caption = $('#caption', el);
   const tip = e => {
     const h = e.target.closest('.hold');

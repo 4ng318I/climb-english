@@ -6,7 +6,7 @@
 // el mismo almacén de cachés. Por eso el nombre lleva prefijo propio y en la activación
 // SOLO se borran las cachés propias: borrar las demás dejaría sin conexión a otra app.
 const PREFIX = 'climbenglish-';
-const VERSION = 17;
+const VERSION = 18;
 const CACHE = PREFIX + 'v' + VERSION;
 // Nombres usados antes de adoptar el prefijo; se limpian, pero solo estos.
 const LEGACY_CACHES = ['ingles-a1-v1', 'ingles-a1-v2', 'ingles-a1-v3'];

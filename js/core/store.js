@@ -31,6 +31,7 @@ const STATS = () => ({
   streak: 0,         // racha de aciertos seguidos
   bestStreak: 0,
   games: {},         // id de minijuego -> veces jugado
+  geckoAt: 0,        // donde se quedo la lagartija del mapa, en "agarres" (3.5 = a medio tramo)
 });
 
 const DIA = date => ({

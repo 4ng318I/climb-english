@@ -156,8 +156,19 @@
 .hold.locked circle { stroke-dasharray: 6 6; opacity: .75; }
 .hold.locked text { font-size: 15px; opacity: .7; }
 .hold.current circle { stroke-width: 7; animation: glow 1.6s ease-in-out infinite; }
-.hold .gecko { font-size: 30px; }
+
+/* La lagartija ya no cuelga del agarre: va por el sendero, y al abrir el mapa sube
+   desde donde se quedo hasta donde esta ahora, para que el avance del dia se vea. */
+.route .gecko { font-size: 30px; }
+.route .gecko.walking { transition: transform 1.5s cubic-bezier(.34, .9, .3, 1); }
+/* El trozo de sendero ya subido, en continuo y en color, hasta la lagartija. */
+.trail.climbed { stroke: var(--violet); stroke-dasharray: none; stroke-width: 5; opacity: 1;
+  transition: d 1.5s cubic-bezier(.34, .9, .3, 1); }
 @keyframes glow { 50% { stroke-width: 12; stroke-opacity: .5; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .route .gecko.walking, .trail.climbed { transition: none; }
+}
 
 .chart { position: relative; }
 .chart svg { width: 100%; height: auto; display: block; }

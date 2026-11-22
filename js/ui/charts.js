@@ -73,7 +73,9 @@ export function domainBars(rows, of) {
 
 // --- Mapa del camino: una montaña con un agarre por bloque ---
 // holds: [{ emoji, stage, status: 'done' | 'current' | 'locked', tip }]
-export function routeMap(holds) {
+// gecko: { from, to } en "agarres": 3.5 es a mitad de camino del agarre 3 al 4. La lagartija
+// se dibuja en `from` y se desliza hasta `to`, para que el avance del día se VEA moverse.
+export function routeMap(holds, gecko) {
   const W = 600, H = 760, n = holds.length;
   // Media anchura de la montaña a cada altura (se estrecha hacia la cima).
   const half = y => (y < 150 ? 80 * (y - 18) / 132 : y < 330 ? 80 + 90 * (y - 150) / 180 : 170 + 120 * (y - 330) / 418);
@@ -83,19 +85,53 @@ export function routeMap(holds) {
     const amp = Math.max(40, half(y) - 34);
     return { x: W / 2 + amp * ZIGZAG[i % ZIGZAG.length], y };
   });
+  // Punto del sendero a una altura fraccionaria: entre un agarre y el siguiente.
+  const punto = p => {
+    const q = Math.max(0, Math.min(n - 1, p)), i = Math.floor(q), f = q - i;
+    const a = pos[i], b = pos[Math.min(i + 1, n - 1)];
+    return { x: a.x + (b.x - a.x) * f, y: a.y + (b.y - a.y) * f };
+  };
+  // El trozo de sendero ya subido, hasta donde esté la lagartija.
+  const hasta = p => {
+    const q = Math.max(0, Math.min(n - 1, p)), i = Math.floor(q);
+    const g = punto(q);
+    return pos.slice(0, i + 1).map((pt, j) => `${j ? 'L' : 'M'}${pt.x.toFixed(1)},${pt.y.toFixed(1)}`)
+      .concat(`L${g.x.toFixed(1)},${g.y.toFixed(1)}`).join(' ');
+  };
   const trail = pos.map((p, i) => `${i ? 'L' : 'M'}${p.x.toFixed(1)},${p.y.toFixed(1)}`).join(' ');
   const marks = holds.map((h, i) => `
     <g class="hold st${h.stage} ${h.status}" data-tip="${esc(h.tip)}" tabindex="0">
       <circle cx="${pos[i].x.toFixed(1)}" cy="${pos[i].y.toFixed(1)}" r="19"/>
       <text x="${pos[i].x.toFixed(1)}" y="${(pos[i].y + 7).toFixed(1)}" text-anchor="middle">${h.status === 'locked' ? '🔒' : esc(h.emoji)}</text>
-      ${h.status === 'current' ? `<text class="gecko" x="${(pos[i].x + 30).toFixed(1)}" y="${(pos[i].y - 12).toFixed(1)}" text-anchor="middle">🦎</text>` : ''}
     </g>`).join('');
+  const g = gecko || { from: 0, to: 0 };
+  const desde = punto(g.from), hacia = punto(g.to);
   return `
     <svg class="route" viewBox="0 0 ${W} ${H}" role="img" aria-label="Mapa">
       <polygon class="peak" points="300,18 380,150 470,330 590,748 10,748 130,330 220,150"/>
       <polygon class="snow" points="300,18 337,79 314,68 297,88 266,74"/>
       <text x="${W / 2}" y="62" text-anchor="middle" font-size="30">🚩</text>
       <path class="trail" d="${trail}"/>
+      <path class="trail climbed" id="climbed" d="${hasta(g.from)}" data-to="${hasta(g.to)}"/>
       ${marks}
+      <text class="gecko" id="gecko" x="0" y="0" text-anchor="middle" aria-hidden="true"
+        style="transform:translate(${(desde.x + 30).toFixed(1)}px, ${(desde.y - 12).toFixed(1)}px)"
+        data-from="translate(${(desde.x + 30).toFixed(1)}px, ${(desde.y - 12).toFixed(1)}px)"
+        data-to="translate(${(hacia.x + 30).toFixed(1)}px, ${(hacia.y - 12).toFixed(1)}px)">🦎</text>
     </svg>`;
+}
+
+// Suelta la lagartija: salta de donde estaba a donde está ahora. Se llama al abrir
+// la pantalla, una sola vez; si no se ha movido nada, no hay nada que animar.
+export function wireGecko(root) {
+  const g = $('#gecko', root), c = $('#climbed', root);
+  if (!g || !g.dataset.to || g.dataset.from === g.dataset.to) return;
+  requestAnimationFrame(() => {
+    g.classList.add('walking');
+    void g.getBoundingClientRect();
+    requestAnimationFrame(() => {
+      g.style.transform = g.dataset.to;
+      if (c && c.dataset.to) c.setAttribute('d', c.dataset.to);
+    });
+  });
 }

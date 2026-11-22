@@ -349,6 +349,107 @@ def prueba_gym(navegador, url):
     print("")
 
 
+def prueba_lagartija(navegador, url):
+    """La lagartija del mapa: se desplaza por el tramo segun lo que lleva del bloque."""
+    print("La lagartija del mapa")
+    # El guion de siembra corre en CADA navegacion, asi que recargar borraba lo que el
+    # test iba aprendiendo. Aqui se siembra solo la primera vez, como en la tablet.
+    semilla = SEMBRAR_PALABRAS.replace("(() => {", "(() => { if (localStorage.getItem('climbenglish:progress')) return;", 1)
+    ctx = navegador.new_context()
+    ctx.add_init_script(semilla)        # 10 palabras del bloque 1, que tiene 16
+    page = ctx.new_page()
+    errores = []
+    page.on("pageerror", lambda e: errores.append(str(e)))
+
+    leer = lambda: page.evaluate(
+        "() => JSON.parse(localStorage.getItem('climbenglish:progress')).stats.geckoAt")
+    # Donde esta pintada de verdad. El atributo salta al instante; lo que se desliza es esto.
+    donde = lambda: page.evaluate(
+        "() => getComputedStyle(document.querySelector('#gecko')).transform")
+    meta = lambda: page.evaluate("() => document.querySelector('#gecko').dataset.to")
+    anda = lambda: page.evaluate(
+        "() => document.querySelector('#gecko').classList.contains('walking')")
+
+    def aprende(ids, dia):
+        """Mete palabras como si las hubiera aprendido otro dia, y recarga."""
+        guion = ("(() => { const K = 'climbenglish:progress';"
+                 " const p = JSON.parse(localStorage.getItem(K) || 'null'); if (!p) return;"
+                 " for (const id of " + json.dumps(ids) + ")"
+                 "   p.words[id] = { box: 1, learned: " + json.dumps(dia) + ","
+                 "     due: " + json.dumps(dia) + ", last: " + json.dumps(dia) + ","
+                 "     ok: 1, seen: 1, said: 0, written: 0 };"
+                 " localStorage.setItem(K, JSON.stringify(p)); })();")
+        ctx.add_init_script(guion)
+        page.reload()
+        page.wait_for_selector(".route #gecko", timeout=25000)
+
+    def xy(v):
+        """Saca los dos numeros de un matrix(...) o de un translate(...px, ...px)."""
+        n = [float(x) for x in re.findall(r"-?\d+\.?\d*", v)]
+        return (round(n[-2], 1), round(n[-1], 1))
+
+    def hasta_quieta(limite=60):
+        """Sigue la lagartija hasta que para. Devuelve las posiciones por las que pasa."""
+        vistas, quieta = [], 0
+        for _ in range(limite):
+            v = donde()
+            if not vistas or vistas[-1] != v:
+                vistas.append(v)
+                quieta = 0
+            else:
+                quieta += 1
+                if len(vistas) > 1 and quieta >= 3:
+                    break
+            page.wait_for_timeout(100)
+        return vistas
+
+    page.goto(url + "#progress")
+    page.wait_for_selector(".route #gecko", timeout=25000)
+    check(page.locator(".route #gecko").count() == 1, "hay una sola lagartija, y va en el sendero")
+    check(page.locator(".hold .gecko").count() == 0, "ya no cuelga del agarre")
+    check(page.locator(".route #climbed").count() == 1, "y detras lleva el sendero ya subido")
+
+    # El progreso sembrado no traia geckoAt: sale de abajo y tiene tramo que recorrer.
+    paso = hasta_quieta()
+    check(anda(), "arranca con camino que hacer, no pegada a su sitio")
+    check(len(paso) >= 3,
+          "y se DESLIZA: pasa por %d posiciones, no da un salto seco" % len(paso))
+    check(xy(paso[-1]) == xy(meta()),
+          "hasta plantarse donde le toca: %s (meta %s)" % (xy(paso[-1]), xy(meta())))
+
+    uno = leer()
+    check(0 < uno < 1, "queda a medio tramo, no pegada al agarre: %.3f" % uno)
+    check(abs(uno - 10 / 16) < 0.01,
+          "y a la altura que le toca: 10 de 16 palabras del bloque = %.3f" % uno)
+
+    # Volver a abrir el mismo dia, sin aprender nada: se queda quieta donde estaba.
+    page.goto(url + "#home")
+    page.goto(url + "#progress")
+    page.wait_for_selector(".route #gecko", timeout=25000)
+    check(not anda(), "al volver sin aprender nada se queda quieta, sin salto raro")
+    check(abs(leer() - uno) < 0.001, "y no se mueve sola: %.3f" % leer())
+
+    # Otro dia, tres palabras nuevas: tiene que volver a moverse, y un trozo que se vea.
+    aprende(["w-good", "w-my", "w-friend"], "2026-11-03")
+    check(anda(), "con tres palabras mas vuelve a tener camino que hacer")
+    paso2 = hasta_quieta()
+    check(len(paso2) >= 3, "y se vuelve a deslizar (%d posiciones)" % len(paso2))
+    dos = leer()
+    check(dos > uno, "sube: %.3f -> %.3f" % (uno, dos))
+    check(abs(dos - 13 / 16) < 0.01, "13 de 16 palabras del bloque = %.3f" % dos)
+
+    # Cerrar el bloque la deja justo en el agarre siguiente, no a medias.
+    aprende(["w-thank-you", "w-morning", "w-night"], "2026-11-04")
+    hasta_quieta()
+    cerrado = leer()
+    check(abs(cerrado - 1) < 0.001, "al cerrar el bloque llega justo al agarre 2: %.3f" % cerrado)
+    check(page.locator(".hold.done").count() >= 1, "y el agarre queda marcado como hecho")
+
+    check(not errores, "sin errores de JavaScript en el mapa: %s" % errores[:2])
+    ctx.close()
+    print("")
+
+
 def prueba_migracion(navegador, url):
     """Actualiza una tablet con progreso del esquema 1 y comprueba que no se pierde nada."""
     print("Actualizacion de una tablet con progreso guardado (esquema 1 -> 2)")
@@ -416,6 +517,24 @@ def main():
 
     with sync_playwright() as pw:
         navegador = pw.chromium.launch()
+
+        solo = None
+        for a in sys.argv[1:]:
+            if a.startswith('--solo='):
+                solo = a.split('=', 1)[1]
+        if solo:
+            sueltas = {'tandas': prueba_tandas, 'gym': prueba_gym,
+                       'lagartija': prueba_lagartija, 'migracion': prueba_migracion}
+            if solo not in sueltas:
+                print('--solo admite: %s' % ', '.join(sorted(sueltas)))
+                return 2
+            sueltas[solo](navegador, url)
+            navegador.close()
+            srv.shutdown()
+            wd.cancel()
+            print('%d fallos.' % len(fallos) if fallos else 'Todo correcto.')
+            return 1 if fallos else 0
+
         ctx = navegador.new_context(accept_downloads=True)
         page = ctx.new_page()
         errores = []
@@ -531,6 +650,7 @@ def main():
         print("")
         prueba_tandas(navegador, url)
         prueba_gym(navegador, url)
+        prueba_lagartija(navegador, url)
 
         print("Dias sin conexion y una semana sin abrir")
         Handler.publicaciones += 1      # se publica algo mientras la tablet esta apagada
