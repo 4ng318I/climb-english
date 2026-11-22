@@ -96,8 +96,10 @@ def main():
         # Los bloques de data/blocks/ no estan en ASSETS: el service worker los guarda
         # leyendo data/blocks.json. Tienen que contar igual.
         bloque = next((tmp / "data" / "blocks").glob("*.json"))
+        # El cambio tiene que seguir siendo una grafia VALIDA: el hook ejecuta validate.py
+        # despues, y exige que la ficha y las frases escriban la palabra igual, sin vocales dobles.
         texto = bloque.read_text(encoding="utf-8")
-        bloque.write_text(texto.replace("jelóu", "jeloo", 1), encoding="utf-8", newline="\n")
+        bloque.write_text(texto.replace("jelóu", "jalóu"), encoding="utf-8", newline="\n")
         bien, msg = check(tmp)
         ok(not bien and "data/blocks/" in msg, "cambiar una grafia en data/blocks/ tambien obliga a subir VERSION")
 

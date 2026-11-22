@@ -24,12 +24,12 @@
     {"id": "s-what-colour", "en": "What colour is it?", "es": "¿De qué color es?", "pron": "uót cále is it", "block": 3, "emoji": "🌈", "words": ["w-what", "w-colour", "w-is", "w-it"], "grammar": "g-it-is"},
     {"id": "s-black-and-white", "en": "It is black and white.", "es": "Es blanco y negro.", "pron": "it is blac and uáit", "block": 3, "emoji": "🦓", "words": ["w-black", "w-white"]},
     {"id": "s-it-is-orange", "en": "It is orange!", "es": "¡Es naranja!", "pron": "it is órinch", "block": 3, "emoji": "🟠", "words": ["w-orange"]},
-    {"id": "s-favourite-colour", "en": "My favourite colour is purple.", "es": "Mi color favorito es el morado.", "pron": "mái féivrit cále is péepel", "block": 3, "emoji": "🟣", "words": ["w-favourite", "w-colour", "w-purple"]},
+    {"id": "s-favourite-colour", "en": "My favourite colour is purple.", "es": "Mi color favorito es el morado.", "pron": "mái féivrit cále is pérpel", "block": 3, "emoji": "🟣", "words": ["w-favourite", "w-colour", "w-purple"]},
     {"id": "s-it-is-yellow", "en": "It is yellow.", "es": "Es amarillo.", "pron": "it is iélou", "block": 3, "emoji": "🟡", "words": ["w-yellow"], "extra": true},
     {"id": "s-it-is-brown", "en": "It is brown and grey.", "es": "Es marrón y gris.", "pron": "it is bráun and gréi", "block": 3, "emoji": "🟤", "words": ["w-brown", "w-grey"], "extra": true},
     {"id": "s-it-is-pink", "en": "It is pink!", "es": "¡Es rosa!", "pron": "it is pink", "block": 3, "emoji": "🌸", "words": ["w-pink"], "extra": true},
     {"id": "s-favourite-blue", "en": "My favourite colour is blue.", "es": "Mi color favorito es el azul.", "pron": "mái féivrit cále is blu", "block": 3, "emoji": "🔵", "words": ["w-favourite", "w-colour", "w-blue"], "extra": true},
     {"id": "s-what-colour-green", "en": "What colour is it? It is green!", "es": "¿De qué color es? ¡Es verde!", "pron": "uót cále is it? it is grin", "block": 3, "emoji": "🟢", "words": ["w-what", "w-colour", "w-green"], "extra": true},
-    {"id": "s-favourite-friend", "en": "You are my favourite friend.", "es": "Eres mi amiga favorita.", "pron": "iú aa mái féivrit frend", "block": 3, "emoji": "💖", "words": ["w-favourite"], "extra": true}
+    {"id": "s-favourite-friend", "en": "You are my favourite friend.", "es": "Eres mi amiga favorita.", "pron": "iú a mái féivrit frend", "block": 3, "emoji": "💖", "words": ["w-favourite"], "extra": true}
   ]
 }

@@ -20,16 +20,16 @@
   ],
   "sentences": [
     {"id": "s-one-two-three", "en": "One, two, three!", "es": "¡Uno, dos, tres!", "pron": "uán, tu, zri", "block": 2, "emoji": "🔢", "words": ["w-one", "w-two", "w-three"]},
-    {"id": "s-two-and-two", "en": "Two and two are four.", "es": "Dos y dos son cuatro.", "pron": "tu and tu aa fo", "block": 2, "emoji": "➕", "words": ["w-two", "w-and", "w-four"]},
-    {"id": "s-three-and-three", "en": "Three and three are six.", "es": "Tres y tres son seis.", "pron": "zri and zri aa sics", "block": 2, "emoji": "➕", "words": ["w-three", "w-and", "w-six"]},
+    {"id": "s-two-and-two", "en": "Two and two are four.", "es": "Dos y dos son cuatro.", "pron": "tu and tu a fo", "block": 2, "emoji": "➕", "words": ["w-two", "w-and", "w-four"]},
+    {"id": "s-three-and-three", "en": "Three and three are six.", "es": "Tres y tres son seis.", "pron": "zri and zri a sics", "block": 2, "emoji": "➕", "words": ["w-three", "w-and", "w-six"]},
     {"id": "s-i-am-ten", "en": "I am ten.", "es": "Tengo diez años.", "pron": "ái am ten", "block": 2, "emoji": "🔟", "words": ["w-ten"], "grammar": "g-i-am"},
-    {"id": "s-five-and-five", "en": "Five and five are ten.", "es": "Cinco y cinco son diez.", "pron": "fáiv and fáiv aa ten", "block": 2, "emoji": "🖐️", "words": ["w-five", "w-and", "w-ten"]},
+    {"id": "s-five-and-five", "en": "Five and five are ten.", "es": "Cinco y cinco son diez.", "pron": "fáiv and fáiv a ten", "block": 2, "emoji": "🖐️", "words": ["w-five", "w-and", "w-ten"]},
     {"id": "s-count-one-two-three", "en": "Count: one, two, three!", "es": "Cuenta: ¡uno, dos, tres!", "pron": "cáunt: uán, tu, zri", "block": 2, "emoji": "🧮", "words": ["w-count", "w-one", "w-two", "w-three"]},
     {"id": "s-zero-one-two", "en": "Zero, one, two, three!", "es": "¡Cero, uno, dos, tres!", "pron": "síarou, uán, tu, zri", "block": 2, "emoji": "0️⃣", "words": ["w-zero", "w-one", "w-two", "w-three"], "extra": true},
-    {"id": "s-you-are-nine", "en": "You are nine.", "es": "Tienes nueve años.", "pron": "iú aa náin", "block": 2, "emoji": "9️⃣", "words": ["w-nine"], "extra": true},
-    {"id": "s-six-and-two", "en": "Six and two are eight.", "es": "Seis y dos son ocho.", "pron": "sics and tu aa éit", "block": 2, "emoji": "8️⃣", "words": ["w-six", "w-two", "w-and", "w-eight"], "extra": true},
+    {"id": "s-you-are-nine", "en": "You are nine.", "es": "Tienes nueve años.", "pron": "iú a náin", "block": 2, "emoji": "9️⃣", "words": ["w-nine"], "extra": true},
+    {"id": "s-six-and-two", "en": "Six and two are eight.", "es": "Seis y dos son ocho.", "pron": "sics and tu a éit", "block": 2, "emoji": "8️⃣", "words": ["w-six", "w-two", "w-and", "w-eight"], "extra": true},
     {"id": "s-i-am-big", "en": "I am big!", "es": "¡Soy grande!", "pron": "ái am big", "block": 2, "emoji": "🐘", "words": ["w-big"], "extra": true},
-    {"id": "s-seven-and-three", "en": "Seven and three are ten.", "es": "Siete y tres son diez.", "pron": "séven and zri aa ten", "block": 2, "emoji": "🔟", "words": ["w-seven", "w-three", "w-and", "w-ten"], "extra": true},
+    {"id": "s-seven-and-three", "en": "Seven and three are ten.", "es": "Siete y tres son diez.", "pron": "séven and zri a ten", "block": 2, "emoji": "🔟", "words": ["w-seven", "w-three", "w-and", "w-ten"], "extra": true},
     {"id": "s-one-is-small", "en": "One, two, three, four, five!", "es": "¡Uno, dos, tres, cuatro, cinco!", "pron": "uán, tu, zri, fo, fáiv", "block": 2, "emoji": "🖐️", "words": ["w-one", "w-two", "w-three", "w-four", "w-five"], "extra": true}
   ]
 }

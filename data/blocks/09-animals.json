@@ -20,10 +20,10 @@
   ],
   "sentences": [
     {"id": "s-one-cat-two-cats", "en": "One cat, two cats.", "es": "Un gato, dos gatos.", "pron": "uán cat, tu cats", "block": 9, "emoji": "🐱", "words": ["w-cat"], "grammar": "g-plurals"},
-    {"id": "s-they-are-my-pets", "en": "They are my pets.", "es": "Son mis mascotas.", "pron": "déi aa mái pets", "block": 9, "emoji": "🐹", "words": ["w-they", "w-pet"], "grammar": "g-plurals"},
+    {"id": "s-they-are-my-pets", "en": "They are my pets.", "es": "Son mis mascotas.", "pron": "déi a mái pets", "block": 9, "emoji": "🐹", "words": ["w-they", "w-pet"], "grammar": "g-plurals"},
     {"id": "s-the-horse-is-big", "en": "The horse is big.", "es": "El caballo es grande.", "pron": "de jos is big", "block": 9, "emoji": "🐴", "words": ["w-horse"]},
     {"id": "s-the-frog-is-green", "en": "The frog is green.", "es": "La rana es verde.", "pron": "de frog is grin", "block": 9, "emoji": "🐸", "words": ["w-frog"]},
-    {"id": "s-three-birds-sing", "en": "Three birds sing my song.", "es": "Tres pájaros cantan mi canción.", "pron": "zri beeds sing mái song", "block": 9, "emoji": "🐦", "words": ["w-bird"], "grammar": "g-plurals"},
+    {"id": "s-three-birds-sing", "en": "Three birds sing my song.", "es": "Tres pájaros cantan mi canción.", "pron": "zri berds sing mái song", "block": 9, "emoji": "🐦", "words": ["w-bird"], "grammar": "g-plurals"},
     {"id": "s-elephant-and-mouse", "en": "The elephant is big and the mouse is small.", "es": "El elefante es grande y el ratón es pequeño.", "pron": "di élifent is big and de máus is smol", "block": 9, "emoji": "🐘", "words": ["w-elephant", "w-mouse"]},
     {"id": "s-the-dog-is-my-pet", "en": "The dog is my pet.", "es": "El perro es mi mascota.", "pron": "de dog is mái pet", "block": 9, "emoji": "🐶", "words": ["w-dog", "w-pet"], "extra": true},
     {"id": "s-the-cat-is-black", "en": "The cat is black.", "es": "El gato es negro.", "pron": "de cat is blac", "block": 9, "emoji": "🐱", "words": ["w-cat"], "extra": true},

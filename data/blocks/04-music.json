@@ -22,7 +22,7 @@
   "sentences": [
     {"id": "s-i-sing", "en": "I sing.", "es": "Canto.", "pron": "ái sing", "block": 4, "emoji": "🎤", "words": ["w-sing"]},
     {"id": "s-listen-to-the-music", "en": "Listen to the music!", "es": "¡Escucha la música!", "pron": "lísen tu de miúsic", "block": 4, "emoji": "🎧", "words": ["w-listen", "w-to", "w-the", "w-music"], "grammar": "g-the"},
-    {"id": "s-i-play-the-guitar", "en": "I play the guitar.", "es": "Toco la guitarra.", "pron": "ái pléi de guitáa", "block": 4, "emoji": "🎸", "words": ["w-play", "w-the", "w-guitar"], "grammar": "g-the"},
+    {"id": "s-i-play-the-guitar", "en": "I play the guitar.", "es": "Toco la guitarra.", "pron": "ái pléi de guitá", "block": 4, "emoji": "🎸", "words": ["w-play", "w-the", "w-guitar"], "grammar": "g-the"},
     {"id": "s-the-drum-is-loud", "en": "The drum is loud.", "es": "El tambor suena fuerte.", "pron": "de dram is láud", "block": 4, "emoji": "🥁", "words": ["w-the", "w-drum", "w-loud"], "grammar": "g-the"},
     {"id": "s-i-sing-my-song", "en": "I sing my favourite song.", "es": "Canto mi canción favorita.", "pron": "ái sing mái féivrit song", "block": 4, "emoji": "🎶", "words": ["w-sing", "w-song"]},
     {"id": "s-you-sing-i-dance", "en": "You sing and I dance.", "es": "Tú cantas y yo bailo.", "pron": "iú sing and ái dans", "block": 4, "emoji": "💃", "words": ["w-sing", "w-dance"]},

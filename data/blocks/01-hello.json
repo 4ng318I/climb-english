@@ -20,16 +20,16 @@
   ],
   "sentences": [
     {"id": "s-hello-i-am", "en": "Hello! I am {name}.", "es": "¡Hola! Soy {name}.", "pron": "jelóu, ái am {name}", "block": 1, "emoji": "👋", "words": ["w-hello", "w-i", "w-am"], "grammar": "g-i-am"},
-    {"id": "s-you-are-good", "en": "You are good!", "es": "¡Eres buena!", "pron": "iú aa gud", "block": 1, "emoji": "👍", "words": ["w-you", "w-are", "w-good"], "grammar": "g-i-am"},
-    {"id": "s-you-are-my-friend", "en": "You are my friend.", "es": "Eres mi amiga.", "pron": "iú aa mái frend", "block": 1, "emoji": "🤝", "words": ["w-you", "w-are", "w-my", "w-friend"], "grammar": "g-i-am"},
+    {"id": "s-you-are-good", "en": "You are good!", "es": "¡Eres buena!", "pron": "iú a gud", "block": 1, "emoji": "👍", "words": ["w-you", "w-are", "w-good"], "grammar": "g-i-am"},
+    {"id": "s-you-are-my-friend", "en": "You are my friend.", "es": "Eres mi amiga.", "pron": "iú a mái frend", "block": 1, "emoji": "🤝", "words": ["w-you", "w-are", "w-my", "w-friend"], "grammar": "g-i-am"},
     {"id": "s-yes-please", "en": "Yes, please.", "es": "Sí, por favor.", "pron": "ies, plis", "block": 1, "emoji": "🙏", "words": ["w-yes", "w-please"]},
     {"id": "s-no-thank-you", "en": "No, thank you.", "es": "No, gracias.", "pron": "nóu, zánkiu", "block": 1, "emoji": "🙅", "words": ["w-no", "w-thank-you"]},
-    {"id": "s-good-morning", "en": "Good morning!", "es": "¡Buenos días!", "pron": "gud móonin", "block": 1, "emoji": "🌅", "words": ["w-good", "w-morning"]},
+    {"id": "s-good-morning", "en": "Good morning!", "es": "¡Buenos días!", "pron": "gud mónin", "block": 1, "emoji": "🌅", "words": ["w-good", "w-morning"]},
     {"id": "s-good-night", "en": "Good night!", "es": "¡Buenas noches!", "pron": "gud náit", "block": 1, "emoji": "🌃", "words": ["w-good", "w-night"], "extra": true},
     {"id": "s-hello-my-friend", "en": "Hello, my friend!", "es": "¡Hola, amiga!", "pron": "jelóu, mái frend", "block": 1, "emoji": "👋", "words": ["w-hello", "w-my", "w-friend"], "extra": true},
     {"id": "s-thank-you-my-friend", "en": "Thank you, my friend!", "es": "¡Gracias, amiga!", "pron": "zánkiu, mái frend", "block": 1, "emoji": "💝", "words": ["w-thank-you", "w-my", "w-friend"], "extra": true},
     {"id": "s-goodbye-name", "en": "Goodbye, {name}!", "es": "¡Adiós, {name}!", "pron": "gudbái, {name}", "block": 1, "emoji": "🖐️", "words": ["w-goodbye"], "extra": true},
     {"id": "s-i-am-good", "en": "I am good!", "es": "¡Estoy bien!", "pron": "ái am gud", "block": 1, "emoji": "😊", "words": ["w-i", "w-am", "w-good"], "extra": true},
-    {"id": "s-yes-you-are-my-friend", "en": "Yes! You are my friend.", "es": "¡Sí! Eres mi amiga.", "pron": "ies, iú aa mái frend", "block": 1, "emoji": "🤝", "words": ["w-yes", "w-you", "w-are", "w-my", "w-friend"], "extra": true}
+    {"id": "s-yes-you-are-my-friend", "en": "Yes! You are my friend.", "es": "¡Sí! Eres mi amiga.", "pron": "ies, iú a mái frend", "block": 1, "emoji": "🤝", "words": ["w-yes", "w-you", "w-are", "w-my", "w-friend"], "extra": true}
   ]
 }

@@ -814,8 +814,8 @@
     "emoji": "👂",
     "kind": "truco",
     "title": {
-      "es": "Listen siempre lleva «to»",
-      "en": "Listen always takes «to»"
+      "es": "Listen y su «to»",
+      "en": "Listen and its to"
     },
     "idea": "Dos cosas de «listen»: la t de en medio no se oye (suena «lísen»), y cuando dices QUÉ escuchas tienes que poner «to» en medio: Listen TO the music. Sola sí vale: «Listen!» es «¡Escucha!».",
     "scenes": [
@@ -1140,7 +1140,7 @@
       "es": "Dos regalos de la escalada",
       "en": "Two free climbing words"
     },
-    "idea": "«rock» y «roca» se parecen. «mountain» y «montaña» también: las dos empiezan por «mont». Cuando una palabra inglesa te suene de algo, fíate: muchas veces acertarás.",
+    "idea": "«rock» y «roca» se parecen. «mountain» y «montaña» también: las dos llevan las mismas letras al empezar, mount- y mont-, solo que el inglés cuela una u. Cuando una palabra inglesa te suene de algo, fíate: muchas veces acertarás.",
     "scenes": [
       {
         "emoji": "🪨",
@@ -1225,7 +1225,7 @@
       "es": "Las tijeras, siempre dos",
       "en": "Scissors are always plural"
     },
-    "idea": "«scissors» lleva una s al final y va SIEMPRE en plural, igual que nuestras «tijeras»: nunca se dice «a scissor». Y ojo con el principio: la c no se oye, suena «síses».",
+    "idea": "«scissors» lleva una s al final y va SIEMPRE en plural: nunca se dice «a scissor». En español casi siempre decimos «tijeras» también. Y ojo con el principio: la c no se oye, suena «síses».",
     "scenes": [
       {
         "emoji": "✂️",
@@ -2517,6 +2517,99 @@
     "kind": "regla"
   },
   {
+    "id": "t-trousers-plural",
+    "block": 13,
+    "emoji": "👖",
+    "kind": "truco",
+    "title": {
+      "es": "Pantalones, siempre dos",
+      "en": "Trousers are always plural"
+    },
+    "idea": "«trousers» y «shorts» van SIEMPRE en plural, como las tijeras: nunca se dice «a trouser». Tiene sentido si lo piensas: son dos piernas. En español casi siempre decimos «pantalones» también, aunque a nosotros sí nos vale decir «un pantalón».",
+    "scenes": [
+      {
+        "emoji": "👖",
+        "en": "trousers",
+        "es": "pantalones",
+        "pron": "tráuses"
+      },
+      {
+        "emoji": "🩳",
+        "en": "shorts",
+        "es": "pantalón corto",
+        "pron": "shots"
+      }
+    ],
+    "play": [
+      {
+        "q": "¿Cuál está bien?",
+        "answer": "My trousers are blue.",
+        "options": [
+          "My trousers are blue.",
+          "My trouser is blue."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "t-jumper-britanico",
+    "block": 13,
+    "emoji": "🧶",
+    "kind": "truco",
+    "title": {
+      "es": "Y van cuatro",
+      "en": "That makes four"
+    },
+    "idea": "Al jersey los ingleses lo llaman «jumper» y los americanos «sweater». Ya van cuatro palabras en las que no se ponen de acuerdo: colour/color, mum/mom, rubber/eraser y ahora jumper/sweater. Nosotros usamos siempre la de Inglaterra.",
+    "scenes": [
+      {
+        "emoji": "🧶",
+        "en": "jumper",
+        "es": "jersey",
+        "pron": "yámpe"
+      }
+    ],
+    "play": [
+      {
+        "q": "En Inglaterra, un jersey es un…",
+        "answer": "jumper",
+        "options": [
+          "jumper",
+          "sweater"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "t-tshirt-forma",
+    "block": 13,
+    "emoji": "👕",
+    "kind": "truco",
+    "title": {
+      "es": "Una camiseta con forma de T",
+      "en": "A T-shaped shirt"
+    },
+    "idea": "«T-shirt» se llama así porque, estirada en el suelo, tiene forma de T: el cuerpo y las dos mangas. Por eso lleva esa T delante con guion. Míralo la próxima vez que dobles una.",
+    "scenes": [
+      {
+        "emoji": "👕",
+        "en": "T-shirt",
+        "es": "camiseta",
+        "pron": "tísheet"
+      }
+    ],
+    "play": [
+      {
+        "q": "¿Por qué se llama T-shirt?",
+        "answer": "Porque tiene forma de T",
+        "options": [
+          "Porque tiene forma de T",
+          "Porque es de tela"
+        ]
+      }
+    ]
+  },
+  {
     "id": "g-describe",
     "block": 14,
     "emoji": "🌺",
@@ -2575,6 +2668,151 @@
       }
     ],
     "kind": "regla"
+  },
+  {
+    "id": "g-not",
+    "block": 14,
+    "emoji": "🚫",
+    "kind": "regla",
+    "title": {
+      "es": "Para decir que no estás",
+      "en": "Saying you are not"
+    },
+    "idea": "Para decir que NO eres o NO estás, mete «not» justo detrás de am, is o are: I am not tired. She is not sad. No va delante, como en español: va detrás.",
+    "scenes": [
+      {
+        "emoji": "🥱",
+        "en": "I am not tired.",
+        "es": "No estoy cansada.",
+        "pron": "ái am not táied"
+      },
+      {
+        "emoji": "😢",
+        "en": "She is not sad.",
+        "es": "Ella no está triste.",
+        "pron": "shi is not sad"
+      }
+    ],
+    "play": [
+      {
+        "en": "I am ___ sad.",
+        "answer": "not",
+        "options": [
+          "not",
+          "no",
+          "don't"
+        ],
+        "es": "No estoy triste."
+      },
+      {
+        "q": "¿Dónde va «not»?",
+        "answer": "Detrás de am, is o are",
+        "options": [
+          "Detrás de am, is o are",
+          "Delante del todo"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "t-y-adjetivos",
+    "block": 14,
+    "emoji": "🔚",
+    "kind": "truco",
+    "title": {
+      "es": "La -y del final",
+      "en": "The -y ending"
+    },
+    "idea": "Fíjate en cuántas palabras que describen acaban en -y: happy, funny, hungry, sunny, pretty. Es una terminación muy inglesa. Cuando veas una palabra acabada en -y, hay muchas papeletas de que te esté diciendo cómo es algo.",
+    "scenes": [
+      {
+        "emoji": "😊",
+        "en": "happy",
+        "es": "contento",
+        "pron": "jápi"
+      },
+      {
+        "emoji": "🤣",
+        "en": "funny",
+        "es": "divertido",
+        "pron": "fáni"
+      }
+    ],
+    "play": [
+      {
+        "q": "¿Cuál de estas describe cómo es algo?",
+        "answer": "funny",
+        "options": [
+          "funny",
+          "jump",
+          "table"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "t-short-dos",
+    "block": 14,
+    "emoji": "🤏",
+    "kind": "truco",
+    "title": {
+      "es": "Short hace dos trabajos",
+      "en": "Short has two jobs"
+    },
+    "idea": "«short» quiere decir corto (un pelo corto) y también bajo (una persona bajita). Una sola palabra para las dos cosas. Lo contrario de short es «long» para las cosas y «tall» para las personas: ahí el inglés sí usa dos.",
+    "scenes": [
+      {
+        "emoji": "🤏",
+        "en": "short",
+        "es": "corto / bajo",
+        "pron": "shoot"
+      },
+      {
+        "emoji": "🦒",
+        "en": "tall",
+        "es": "alto (una persona)",
+        "pron": "tol"
+      }
+    ],
+    "play": [
+      {
+        "q": "Para una persona bajita se dice…",
+        "answer": "short",
+        "options": [
+          "short",
+          "long"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "t-ful",
+    "block": 14,
+    "emoji": "🧺",
+    "kind": "truco",
+    "title": {
+      "es": "-ful quiere decir lleno de",
+      "en": "-ful means full of"
+    },
+    "idea": "«beautiful» acaba en -ful, que viene de «full», lleno. Lleno de belleza. Cuando una palabra acabe en -ful, está diciendo que algo tiene mucho de eso.",
+    "scenes": [
+      {
+        "emoji": "🌺",
+        "en": "beautiful",
+        "es": "precioso",
+        "pron": "biútiful"
+      }
+    ],
+    "play": [
+      {
+        "q": "-ful quiere decir…",
+        "answer": "lleno de",
+        "options": [
+          "lleno de",
+          "sin nada de"
+        ]
+      }
+    ]
   },
   {
     "id": "g-can",
@@ -2636,6 +2874,267 @@
       }
     ],
     "kind": "regla"
+  },
+  {
+    "id": "g-ing",
+    "block": 15,
+    "emoji": "🏃",
+    "kind": "regla",
+    "title": {
+      "es": "Lo que te gusta hacer",
+      "en": "What you like doing"
+    },
+    "idea": "Para decir qué te gusta HACER, a la acción le crece «-ing» al final: I like climbing (me gusta escalar), I like dancing, I like singing. La acción se convierte así en una cosa que te gusta.",
+    "scenes": [
+      {
+        "emoji": "🧗",
+        "en": "I like climbing.",
+        "es": "Me gusta escalar.",
+        "pron": "ái láik cláimin"
+      },
+      {
+        "emoji": "💃",
+        "en": "I like dancing.",
+        "es": "Me gusta bailar.",
+        "pron": "ái láik dánsin"
+      }
+    ],
+    "play": [
+      {
+        "en": "I like ___.",
+        "answer": "singing",
+        "options": [
+          "singing",
+          "sing",
+          "sings"
+        ],
+        "es": "Me gusta cantar."
+      }
+    ]
+  },
+  {
+    "id": "t-y-fuerte",
+    "block": 15,
+    "emoji": "🤸",
+    "kind": "truco",
+    "title": {
+      "es": "La y de jump es fuerte",
+      "en": "A strong y"
+    },
+    "idea": "Cuando pongo una y en las pistas (yamp, yus, yim), no es la y flojita de «rey». Es una y con fuerza, pegando la lengua al paladar, casi como una ch con voz. Prueba a decir «¡YO!» con mucha energía: por ahí va.",
+    "scenes": [
+      {
+        "emoji": "🤸",
+        "en": "jump",
+        "es": "saltar",
+        "pron": "yamp"
+      },
+      {
+        "emoji": "🧃",
+        "en": "juice",
+        "es": "zumo",
+        "pron": "yus"
+      }
+    ],
+    "play": [
+      {
+        "q": "La y de «jump» es…",
+        "answer": "Fuerte, con la lengua pegada",
+        "options": [
+          "Fuerte, con la lengua pegada",
+          "Flojita, como en «rey»"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "t-walk-l",
+    "block": 15,
+    "emoji": "🚶",
+    "kind": "truco",
+    "title": {
+      "es": "La l de walk se queda sentada",
+      "en": "The silent l in walk"
+    },
+    "idea": "«walk» tiene una l en medio que no se oye: suena «uók». Otra letra fantasma para la colección: ya llevas la b de climb, la k de knee, la gh de night, la w de write y ahora esta.",
+    "scenes": [
+      {
+        "emoji": "🚶",
+        "en": "walk",
+        "es": "andar",
+        "pron": "uók"
+      }
+    ],
+    "play": [
+      {
+        "q": "¿Cómo suena «walk»?",
+        "answer": "uók",
+        "options": [
+          "uólk",
+          "uók",
+          "guók"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "t-deporte-parecidas",
+    "block": 15,
+    "emoji": "🎁",
+    "kind": "truco",
+    "title": {
+      "es": "Dos de regalo",
+      "en": "Two more free ones"
+    },
+    "idea": "«ball» y «balón» se parecen, y «bike» viene de lo mismo que nuestra «bici». Pero ojo con bike: no se dice «bike», se dice «báik», con la i larga antes de la k.",
+    "scenes": [
+      {
+        "emoji": "⚽",
+        "en": "ball",
+        "es": "pelota, balón",
+        "pron": "bol"
+      },
+      {
+        "emoji": "🚲",
+        "en": "bike",
+        "es": "bici",
+        "pron": "báik"
+      }
+    ],
+    "play": [
+      {
+        "q": "¿Cómo suena «bike»?",
+        "answer": "báik",
+        "options": [
+          "bike",
+          "báik",
+          "bíke"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "t-dias-mayuscula",
+    "block": 16,
+    "emoji": "🔠",
+    "kind": "truco",
+    "title": {
+      "es": "Los días, con mayúscula",
+      "en": "Days get capitals"
+    },
+    "idea": "Monday, Friday, Sunday… todos los días de la semana se escriben con mayúscula, estén donde estén. Como English y como I. En español los escribimos con minúscula: lunes, viernes.",
+    "scenes": [
+      {
+        "emoji": "📅",
+        "en": "Today is Monday.",
+        "es": "Hoy es lunes.",
+        "pron": "tudéi is mándei"
+      }
+    ],
+    "play": [
+      {
+        "q": "¿Cuál está bien escrita?",
+        "answer": "Today is Friday.",
+        "options": [
+          "Today is Friday.",
+          "Today is friday."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "t-wednesday-d",
+    "block": 16,
+    "emoji": "👻",
+    "kind": "truco",
+    "title": {
+      "es": "La d escondida de Wednesday",
+      "en": "The hidden d"
+    },
+    "idea": "«Wednesday» tiene una d en medio que no se oye: suena «uénsdei». Es de las palabras más tramposas del inglés, y a los propios ingleses les cuesta escribirla.",
+    "scenes": [
+      {
+        "emoji": "📅",
+        "en": "Wednesday",
+        "es": "miércoles",
+        "pron": "uénsdei"
+      }
+    ],
+    "play": [
+      {
+        "q": "¿Cómo suena «Wednesday»?",
+        "answer": "uénsdei",
+        "options": [
+          "uédnesdei",
+          "uénsdei"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "t-day-al-final",
+    "block": 16,
+    "emoji": "📅",
+    "kind": "truco",
+    "title": {
+      "es": "Todos acaban en -day",
+      "en": "They all end in -day"
+    },
+    "idea": "Mira los siete: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday. TODOS acaban en «day», que quiere decir día. Y «birthday» también: el día de nacer. Con saber el principio de cada uno, ya los tienes.",
+    "scenes": [
+      {
+        "emoji": "📅",
+        "en": "Sunday",
+        "es": "domingo",
+        "pron": "sándei"
+      },
+      {
+        "emoji": "🎉",
+        "en": "birthday",
+        "es": "cumpleaños",
+        "pron": "béezdei"
+      }
+    ],
+    "play": [
+      {
+        "q": "«day» quiere decir…",
+        "answer": "día",
+        "options": [
+          "día",
+          "semana",
+          "hoy"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "t-today-pegada",
+    "block": 16,
+    "emoji": "🗓️",
+    "kind": "truco",
+    "title": {
+      "es": "Today también está pegada",
+      "en": "Today is stuck together"
+    },
+    "idea": "«today» es to + day: «a este día», o sea hoy. Otra palabra pegada de las tuyas. Ya puedes partir bedroom, notebook, grandma, birthday y today.",
+    "scenes": [
+      {
+        "emoji": "🗓️",
+        "en": "today",
+        "es": "hoy",
+        "pron": "tudéi"
+      }
+    ],
+    "play": [
+      {
+        "q": "«today» está hecha de…",
+        "answer": "to + day",
+        "options": [
+          "to + day",
+          "tod + ay"
+        ]
+      }
+    ]
   },
   {
     "id": "g-in-on-under",
@@ -2701,6 +3200,76 @@
     "kind": "regla"
   },
   {
+    "id": "t-wear-where",
+    "block": 17,
+    "emoji": "👂",
+    "kind": "truco",
+    "title": {
+      "es": "Wear y where suenan igual",
+      "en": "Wear and where"
+    },
+    "idea": "«wear» (llevar puesto) y «where» (dónde) suenan EXACTAMENTE igual: «uéa». Se escriben distinto y quieren decir cosas distintas, pero al oído son gemelas. Como eye y I. Para saber cuál es, mira el resto de la frase.",
+    "scenes": [
+      {
+        "emoji": "👚",
+        "en": "wear",
+        "es": "llevar puesto",
+        "pron": "uéa"
+      },
+      {
+        "emoji": "🗺️",
+        "en": "where",
+        "es": "dónde",
+        "pron": "uéa"
+      }
+    ],
+    "play": [
+      {
+        "q": "«uéa» puede ser…",
+        "answer": "llevar puesto o dónde",
+        "options": [
+          "llevar puesto o dónde",
+          "solo dónde"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "t-transporte-parecidas",
+    "block": 17,
+    "emoji": "🚌",
+    "kind": "truco",
+    "title": {
+      "es": "Transporte de regalo",
+      "en": "Free transport"
+    },
+    "idea": "park/parque, bus/autobús y train/tren se parecen bastante. Pero fíjate: en inglés son más cortas, de un solo golpe, y sin la e del principio (es «street», no «estreet»).",
+    "scenes": [
+      {
+        "emoji": "🚆",
+        "en": "train",
+        "es": "tren",
+        "pron": "tréin"
+      },
+      {
+        "emoji": "🛣️",
+        "en": "street",
+        "es": "calle",
+        "pron": "strit"
+      }
+    ],
+    "play": [
+      {
+        "q": "¿Cuál está bien dicho?",
+        "answer": "street",
+        "options": [
+          "estreet",
+          "street"
+        ]
+      }
+    ]
+  },
+  {
     "id": "g-s",
     "block": 18,
     "emoji": "🎹",
@@ -2759,6 +3328,105 @@
       }
     ],
     "kind": "regla"
+  },
+  {
+    "id": "t-breakfast-pegada",
+    "block": 18,
+    "emoji": "🥣",
+    "kind": "truco",
+    "title": {
+      "es": "Romper el ayuno",
+      "en": "Breaking the fast"
+    },
+    "idea": "«breakfast» es break (romper) + fast (ayuno, estar sin comer). El desayuno es la comida que rompe la noche entera sin comer. En español pasa lo mismo: des-ayuno. Los dos idiomas tuvieron la misma idea.",
+    "scenes": [
+      {
+        "emoji": "🥣",
+        "en": "breakfast",
+        "es": "desayuno",
+        "pron": "brécfest"
+      }
+    ],
+    "play": [
+      {
+        "q": "«breakfast» quiere decir, por dentro…",
+        "answer": "romper el ayuno",
+        "options": [
+          "romper el ayuno",
+          "comer rápido"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "t-get-up-dos",
+    "block": 18,
+    "emoji": "🌄",
+    "kind": "truco",
+    "title": {
+      "es": "Verbos de dos piezas",
+      "en": "Two-piece verbs"
+    },
+    "idea": "«get up» son dos palabras que van juntas y significan levantarse. Por separado no valen: get es coger y up es arriba, pero juntas quieren decir otra cosa. El inglés tiene muchísimos así; hay que aprenderlos de dos en dos.",
+    "scenes": [
+      {
+        "emoji": "🌄",
+        "en": "get up",
+        "es": "levantarse",
+        "pron": "guet ap"
+      },
+      {
+        "emoji": "🌄",
+        "en": "I get up early.",
+        "es": "Me levanto temprano.",
+        "pron": "ái guet ap érli"
+      }
+    ],
+    "play": [
+      {
+        "q": "«get up» quiere decir…",
+        "answer": "levantarse",
+        "options": [
+          "levantarse",
+          "coger arriba"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "t-work-walk",
+    "block": 18,
+    "emoji": "⚠️",
+    "kind": "truco",
+    "title": {
+      "es": "Work y walk se parecen demasiado",
+      "en": "Work and walk"
+    },
+    "idea": "Cuidado con estas dos: «work» (trabajar) y «walk» (andar) se escriben casi igual, pero suenan distinto: work es «ueek» y walk es «uók». Y acuérdate de que la l de walk no se oye.",
+    "scenes": [
+      {
+        "emoji": "💼",
+        "en": "work",
+        "es": "trabajar",
+        "pron": "ueek"
+      },
+      {
+        "emoji": "🚶",
+        "en": "walk",
+        "es": "andar",
+        "pron": "uók"
+      }
+    ],
+    "play": [
+      {
+        "q": "«uók» es…",
+        "answer": "walk, andar",
+        "options": [
+          "work, trabajar",
+          "walk, andar"
+        ]
+      }
+    ]
   },
   {
     "id": "g-dont",
@@ -2822,6 +3490,111 @@
     "kind": "regla"
   },
   {
+    "id": "t-see-sea",
+    "block": 19,
+    "emoji": "🌊",
+    "kind": "truco",
+    "title": {
+      "es": "See y sea, otra pareja",
+      "en": "See and sea"
+    },
+    "idea": "Y van tres parejas que suenan igual: eye/I, wear/where y ahora see (ver) y sea (mar). Las dos suenan «si». El inglés está lleno de gemelas sonoras: por eso hay que mirar toda la frase, no solo la palabra.",
+    "scenes": [
+      {
+        "emoji": "👀",
+        "en": "see",
+        "es": "ver",
+        "pron": "si"
+      },
+      {
+        "emoji": "🌊",
+        "en": "sea",
+        "es": "mar",
+        "pron": "si"
+      }
+    ],
+    "play": [
+      {
+        "q": "«I can see the sea» quiere decir…",
+        "answer": "Veo el mar",
+        "options": [
+          "Veo el mar",
+          "Miro a ver el mar"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "t-dont-pegada",
+    "block": 19,
+    "emoji": "🙅‍♀️",
+    "kind": "truco",
+    "title": {
+      "es": "Don't son dos pegadas",
+      "en": "Don't is two words"
+    },
+    "idea": "«don't» es do + not, pegadas y con un apóstrofo donde faltan letras. Igual que «can't» es can + not. Cuando veas ese apóstrofo entre dos trozos de palabra, marca el sitio de algo que se han comido.",
+    "scenes": [
+      {
+        "emoji": "🙅‍♀️",
+        "en": "don't",
+        "es": "no (delante de una acción)",
+        "pron": "dóunt"
+      },
+      {
+        "emoji": "🐟",
+        "en": "can't",
+        "es": "no saber / no poder",
+        "pron": "cant"
+      }
+    ],
+    "play": [
+      {
+        "q": "«don't» está hecha de…",
+        "answer": "do + not",
+        "options": [
+          "do + not",
+          "don + t"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "t-naturaleza-parecidas",
+    "block": 19,
+    "emoji": "🌼",
+    "kind": "truco",
+    "title": {
+      "es": "Flores y ríos",
+      "en": "Flowers and rivers"
+    },
+    "idea": "«flower» y «flor» se parecen, y «river» y «río» también. Pero las dos acaban en esa -er inglesa que suena a «e» floja, sin r: fláue, ríve.",
+    "scenes": [
+      {
+        "emoji": "🌼",
+        "en": "flower",
+        "es": "flor",
+        "pron": "fláue"
+      },
+      {
+        "emoji": "🏞️",
+        "en": "river",
+        "es": "río",
+        "pron": "ríve"
+      }
+    ],
+    "play": [
+      {
+        "q": "¿Cómo acaba «flower» al decirla?",
+        "answer": "En una e floja, sin r",
+        "options": [
+          "En una e floja, sin r",
+          "En una r fuerte"
+        ]
+      }
+    ]
+  },
+  {
     "id": "g-questions",
     "block": 20,
     "emoji": "❓",
@@ -2883,5 +3656,117 @@
       }
     ],
     "kind": "regla"
+  },
+  {
+    "id": "t-to-too-two",
+    "block": 20,
+    "emoji": "👯",
+    "kind": "truco",
+    "title": {
+      "es": "Tres que suenan igual",
+      "en": "Three the same"
+    },
+    "idea": "Esta es la mejor de todas: «to» (a), «too» (también) y «two» (dos) suenan EXACTAMENTE igual: «tu». Tres palabras distintas, un solo sonido. Se distinguen escritas, y por lo que dice la frase.",
+    "scenes": [
+      {
+        "emoji": "2️⃣",
+        "en": "two",
+        "es": "dos",
+        "pron": "tu"
+      },
+      {
+        "emoji": "➡️",
+        "en": "to",
+        "es": "a, hacia",
+        "pron": "tu"
+      },
+      {
+        "emoji": "🫂",
+        "en": "too",
+        "es": "también",
+        "pron": "tu"
+      }
+    ],
+    "play": [
+      {
+        "q": "«I like music too» quiere decir…",
+        "answer": "A mí también me gusta",
+        "options": [
+          "A mí también me gusta",
+          "Me gustan dos músicas"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "t-know-k",
+    "block": 20,
+    "emoji": "🤓",
+    "kind": "truco",
+    "title": {
+      "es": "Otra k callada",
+      "en": "Another silent k"
+    },
+    "idea": "«know» (saber) empieza con k y no se oye, igual que «knee». Suena «nóu». Y encima suena igual que «no». Esta palabra es un nido de trampas, pero ya las conoces todas.",
+    "scenes": [
+      {
+        "emoji": "🤓",
+        "en": "know",
+        "es": "saber",
+        "pron": "nóu"
+      },
+      {
+        "emoji": "🙅",
+        "en": "no",
+        "es": "no",
+        "pron": "nóu"
+      }
+    ],
+    "play": [
+      {
+        "q": "¿Cómo suena «know»?",
+        "answer": "nóu",
+        "options": [
+          "knóu",
+          "nóu",
+          "kenóu"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "t-fun-funny",
+    "block": 20,
+    "emoji": "🥳",
+    "kind": "truco",
+    "title": {
+      "es": "Fun y funny no son lo mismo",
+      "en": "Fun is not funny"
+    },
+    "idea": "«fun» es divertido de pasárselo bien: Climbing is fun. «funny» es divertido de dar risa: una película funny te hace reír. Escalar es fun, pero no es funny. Se parecen muchísimo y no son lo mismo.",
+    "scenes": [
+      {
+        "emoji": "🥳",
+        "en": "fun",
+        "es": "divertido (se disfruta)",
+        "pron": "fan"
+      },
+      {
+        "emoji": "🤣",
+        "en": "funny",
+        "es": "gracioso (da risa)",
+        "pron": "fáni"
+      }
+    ],
+    "play": [
+      {
+        "q": "«Climbing is fun» quiere decir…",
+        "answer": "Escalar se disfruta",
+        "options": [
+          "Escalar se disfruta",
+          "Escalar da risa"
+        ]
+      }
+    ]
   }
 ]

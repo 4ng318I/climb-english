@@ -20,9 +20,9 @@
   ],
   "sentences": [
     {"id": "s-i-read-a-book", "en": "I read a book.", "es": "Leo un libro.", "pron": "ái rid a buk", "block": 12, "emoji": "📖", "words": ["w-read", "w-book"]},
-    {"id": "s-i-write-a-word", "en": "I write a word.", "es": "Escribo una palabra.", "pron": "ái ráit a ueed", "block": 12, "emoji": "✍️", "words": ["w-write", "w-word"]},
-    {"id": "s-i-learn-english", "en": "I learn English.", "es": "Aprendo inglés.", "pron": "ái leen ínglish", "block": 12, "emoji": "🇬🇧", "words": ["w-learn", "w-english"]},
-    {"id": "s-open-your-book", "en": "Open your book, please!", "es": "¡Abre tu libro, por favor!", "pron": "óupen ioo buk, plis", "block": 12, "emoji": "📂", "words": ["w-open", "w-book"], "grammar": "g-imperativo"},
+    {"id": "s-i-write-a-word", "en": "I write a word.", "es": "Escribo una palabra.", "pron": "ái ráit a uerd", "block": 12, "emoji": "✍️", "words": ["w-write", "w-word"]},
+    {"id": "s-i-learn-english", "en": "I learn English.", "es": "Aprendo inglés.", "pron": "ái lern ínglish", "block": 12, "emoji": "🇬🇧", "words": ["w-learn", "w-english"]},
+    {"id": "s-open-your-book", "en": "Open your book, please!", "es": "¡Abre tu libro, por favor!", "pron": "óupen ió buk, plis", "block": 12, "emoji": "📂", "words": ["w-open", "w-book"], "grammar": "g-imperativo"},
     {"id": "s-my-teacher-is-good", "en": "My teacher is good.", "es": "Mi profe es buena.", "pron": "mái tíche is gud", "block": 12, "emoji": "👩‍🏫", "words": ["w-teacher"]},
     {"id": "s-pen-pencil-rubber", "en": "A pen, a pencil and an orange rubber.", "es": "Un boli, un lápiz y una goma naranja.", "pron": "a pen, a pénsil and an órinch rábe", "block": 12, "emoji": "🧽", "words": ["w-pen", "w-rubber"], "grammar": "g-a-an"},
     {"id": "s-i-read-a-story", "en": "I read a story.", "es": "Leo un cuento.", "pron": "ái rid a stóri", "block": 12, "emoji": "📕", "words": ["w-read", "w-story"], "extra": true},

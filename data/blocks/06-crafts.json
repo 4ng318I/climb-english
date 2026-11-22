@@ -27,9 +27,9 @@
     {"id": "s-the-sticker-is-pretty", "en": "The sticker is pretty.", "es": "La pegatina es bonita.", "pron": "de stíque is príti", "block": 6, "emoji": "🌟", "words": ["w-sticker", "w-pretty"]},
     {"id": "s-i-draw-with-my-crayon", "en": "I draw with my crayon.", "es": "Dibujo con mi cera.", "pron": "ái dro uíd mái créion", "block": 6, "emoji": "🖍️", "words": ["w-draw", "w-with", "w-crayon"], "extra": true},
     {"id": "s-the-glue-is-white", "en": "The glue is white.", "es": "El pegamento es blanco.", "pron": "de glu is uáit", "block": 6, "emoji": "🧴", "words": ["w-glue"], "extra": true},
-    {"id": "s-i-make-my-card", "en": "I make my card.", "es": "Hago mi tarjeta.", "pron": "ái méik mái card", "block": 6, "emoji": "💌", "words": ["w-make", "w-card"], "extra": true},
+    {"id": "s-i-make-my-card", "en": "I make my card.", "es": "Hago mi tarjeta.", "pron": "ái méik mái cad", "block": 6, "emoji": "💌", "words": ["w-make", "w-card"], "extra": true},
     {"id": "s-the-box-is-big", "en": "The box is big.", "es": "La caja es grande.", "pron": "de bocs is big", "block": 6, "emoji": "📦", "words": ["w-box"], "extra": true},
     {"id": "s-i-paint-the-paper-blue", "en": "I paint the paper blue.", "es": "Pinto el papel de azul.", "pron": "ái péint de péipe blu", "block": 6, "emoji": "🎨", "words": ["w-paint", "w-paper"], "extra": true},
-    {"id": "s-my-beads-are-pretty", "en": "My beads are pretty.", "es": "Mis cuentas son bonitas.", "pron": "mái bids aa príti", "block": 6, "emoji": "📿", "words": ["w-bead", "w-pretty"], "extra": true}
+    {"id": "s-my-beads-are-pretty", "en": "My beads are pretty.", "es": "Mis cuentas son bonitas.", "pron": "mái bids a príti", "block": 6, "emoji": "📿", "words": ["w-bead", "w-pretty"], "extra": true}
   ]
 }

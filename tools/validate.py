@@ -6,6 +6,7 @@ No cambia ningun archivo: solo avisa de lo que haya que arreglar.
 """
 import json
 import re
+import unicodedata
 import sys
 from pathlib import Path
 
@@ -77,9 +78,8 @@ def main():
             tarde = [wid for wid in s_.get("words", [])
                      if orden.get(wid, 0) > tope]
             if tarde:
-                # AVISO mientras se reescribe el banco de frases bloque a bloque. En cuanto
-                # esten los 20 revisados, esto pasa a errors y deja de poder romperse.
-                warnings.append(
+                # Los 20 bloques estan revisados: esto es un error y ya no puede romperse.
+                errors.append(
                     '%s: la frase %d del camino "%s" usa %s, que esta(n) despues de la palabra %d '
                     "del bloque (regla de las 3k)" % (b["file"], k, s_.get("en", "?"), ", ".join(tarde), tope))
 
@@ -90,7 +90,7 @@ def main():
     conocidas = {}
     for w in words:
         conocidas.setdefault(str(w.get("en", "")).lower(), w.get("block", 99))
-    varias = sorted([w for w in conocidas if " " in w], key=len, reverse=True)
+    varias = sorted([w for w in conocidas if " " in w or "-" in w], key=len, reverse=True)
 
     def disponible(tok, hasta):
         for cand in (tok, re.sub(r"'s$", "", tok), re.sub(r"s$", "", tok), re.sub(r"es$", "", tok),
@@ -107,9 +107,31 @@ def main():
         fuera = [t for t in re.findall(r"[A-Za-z]+(?:'[A-Za-z]+)?", texto.replace("{name}", " "))
                  if not disponible(t.lower(), b["n"])]
         if fuera:
-            # AVISO mientras se reescriben los bloques; pasara a error con los 20 limpios.
-            warnings.append('%s: la frase "%s" usa %s, que la alumna todavia no conoce'
+            errors.append('%s: la frase "%s" usa %s, que la alumna todavia no conoce'
                             % (b["file"], s_.get("en", "?"), ", ".join(sorted(set(fuera)))))
+
+    # La grafia de una palabra dentro de una frase tiene que ser la MISMA que en su ficha.
+    # Se colaron 55 frases con la grafia vieja (vocales dobles: "aa" por are, "beeds" por
+    # berds) despues de quitarlas de las fichas. Alumna lee las dos pantallas: no pueden discrepar.
+    def sin_tildes(t):
+        return "".join(c for c in unicodedata.normalize("NFD", t.lower())
+                       if not unicodedata.combining(c))
+
+    ficha = {w.get("id"): w for w in words}
+    for b, s_ in sentences:
+        pron = s_.get("pron", "")
+        if re.search(r"(aa|ee|ii|oo|uu)", sin_tildes(pron)):
+            errors.append('%s: la frase "%s" tiene una vocal doble en «%s»; las fichas no usan ninguna'
+                          % (b["file"], s_.get("en", "?"), pron))
+        trozos = re.findall(r"[^\s,.!?¡¿]+", pron.lower())
+        for wid in s_.get("words", []):
+            w = ficha.get(wid) or {}
+            en, pw = str(w.get("en", "")), str(w.get("pron", "")).lower()
+            if " " in en or "-" in en or not pw:
+                continue
+            if pw not in trozos and not any(t.startswith(pw) for t in trozos):
+                errors.append('%s: la frase "%s" escribe %s de otra forma que su ficha («%s»): %s'
+                              % (b["file"], s_.get("en", "?"), en, pw, pron))
 
     grammar = load(DATA / "grammar.json") or []
     rule_ids = {g.get("id") for g in grammar}

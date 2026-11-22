@@ -24,7 +24,7 @@
     {"id": "s-the-mountain-is-high", "en": "The mountain is high.", "es": "La montaña es alta.", "pron": "de máuntin is jái", "block": 5, "emoji": "⛰️", "words": ["w-mountain", "w-high"]},
     {"id": "s-the-rope-is-safe", "en": "The rope is safe.", "es": "La cuerda es segura.", "pron": "de róup is séif", "block": 5, "emoji": "🪢", "words": ["w-rope", "w-safe"]},
     {"id": "s-i-am-ready", "en": "I am ready!", "es": "¡Estoy lista!", "pron": "ái am rédi", "block": 5, "emoji": "✅", "words": ["w-ready"], "grammar": "g-i-am"},
-    {"id": "s-you-are-strong", "en": "You are strong!", "es": "¡Eres fuerte!", "pron": "iú aa strong", "block": 5, "emoji": "💪", "words": ["w-strong"], "grammar": "g-i-am"},
+    {"id": "s-you-are-strong", "en": "You are strong!", "es": "¡Eres fuerte!", "pron": "iú a strong", "block": 5, "emoji": "💪", "words": ["w-strong"], "grammar": "g-i-am"},
     {"id": "s-i-climb-the-rock", "en": "I climb the rock.", "es": "Escalo la roca.", "pron": "ái cláim de roc", "block": 5, "emoji": "🪨", "words": ["w-climb", "w-rock"], "extra": true},
     {"id": "s-go-down", "en": "Go down!", "es": "¡Baja!", "pron": "góu dáun", "block": 5, "emoji": "⬇️", "words": ["w-go", "w-down"], "extra": true},
     {"id": "s-my-helmet-is-red", "en": "My helmet is red.", "es": "Mi casco es rojo.", "pron": "mái jélmit is red", "block": 5, "emoji": "⛑️", "words": ["w-helmet"], "extra": true},
