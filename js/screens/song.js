@@ -20,7 +20,9 @@ function youtubeId(url) {
 }
 
 function list(el) {
-  const songs = content.songs;
+  // Las canciones retiradas no se ofrecen, pero lo que ya se aprendio de ellas
+  // sigue contando y se sigue viendo en «Mis palabras».
+  const songs = content.songs.filter(s => !s.retired);
   el.innerHTML = `${header(T('song_title'), '🎵')}
     <section class="stage">
       ${songs.length ? howto('song_how') + `<div class="songs">${songs.map(s => `
@@ -78,6 +80,6 @@ function show(el, song) {
 }
 
 export default function song(el, id) {
-  const s = content.songs.find(x => songId(x) === id);
+  const s = content.songs.find(x => songId(x) === id && !x.retired);
   return s ? show(el, s) : list(el);
 }

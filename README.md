@@ -383,6 +383,10 @@ Copia un bloque entero y cambia los datos. **No pongas la letra**, solo de 5 a 8
 Las palabras de canciones **no cuentan para el camino a A1** (no son temario A1 y cambian con
 cada canción que añadas), pero se guardan y se ven en «Mi progreso» y en «Mis palabras».
 
+**Para quitar una canción no la borres**: ponle `"retired": true`. Desaparece de la lista, pero
+las palabras que ya se hubieran desbloqueado siguen contando y se siguen viendo en
+«Mis palabras». Borrarla del archivo sí las haría desaparecer de su progreso.
+
 ### Una palabra nueva — `data/blocks/NN-nombre.json`, lista `words`
 
 ```json

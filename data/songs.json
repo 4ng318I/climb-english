@@ -1,5 +1,5 @@
 {
-  "_ayuda": "Para añadir una canción, copia un bloque entero entre llaves, pégalo detrás del último (con una coma entre los dos) y cambia los datos. NO pongas la letra: solo de 5 a 8 palabras sueltas. 'youtube' es el enlace al vídeo oficial. 'pron' es cómo suena escrito en español.",
+  "_ayuda": "Para anadir una cancion, copia un bloque entero entre llaves, pegalo detras del ultimo (con una coma entre los dos) y cambia los datos. NO pongas la letra: solo de 5 a 8 palabras sueltas. 'youtube' es el enlace al video oficial. 'pron' es como suena escrito en espanol. Para retirar una cancion NO la borres: ponle \"retired\": true. Asi desaparece de la lista pero las palabras que ya se hubieran desbloqueado siguen contando y se siguen viendo en «Mis palabras».",
   "songs": [
     {
       "id": "happy",
@@ -349,7 +349,8 @@
           "pron": "ap",
           "emoji": "⬆️"
         }
-      ]
+      ],
+      "retired": true
     },
     {
       "id": "stargazing",
@@ -598,6 +599,56 @@
           "es": "contar",
           "pron": "cáunt",
           "emoji": "🧮"
+        }
+      ]
+    },
+    {
+      "id": "beautiful-things",
+      "title": "Beautiful Things",
+      "artist": "Benson Boone",
+      "youtube": "https://www.youtube.com/watch?v=Oa_RSwwpPaA",
+      "words": [
+        {
+          "en": "beautiful",
+          "es": "precioso",
+          "pron": "biútiful",
+          "emoji": "🌺"
+        },
+        {
+          "en": "things",
+          "es": "cosas",
+          "pron": "zings",
+          "emoji": "✨"
+        },
+        {
+          "en": "want",
+          "es": "querer",
+          "pron": "uónt",
+          "emoji": "🤩"
+        },
+        {
+          "en": "need",
+          "es": "necesitar",
+          "pron": "nid",
+          "emoji": "❗"
+        },
+        {
+          "en": "take",
+          "es": "llevarse",
+          "pron": "téik",
+          "emoji": "🤲"
+        },
+        {
+          "en": "love",
+          "es": "amor",
+          "pron": "lav",
+          "emoji": "❤️"
+        },
+        {
+          "en": "girl",
+          "es": "chica",
+          "pron": "guerl",
+          "emoji": "👧"
         }
       ]
     }
