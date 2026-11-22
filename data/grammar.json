@@ -277,6 +277,189 @@
     ]
   },
   {
+    "id": "t-two-w",
+    "block": 2,
+    "emoji": "✌️",
+    "kind": "truco",
+    "title": {
+      "es": "La w escondida de two",
+      "en": "The hidden w in two"
+    },
+    "idea": "«two» (dos) se escribe con una w en medio que no se oye para nada: suena «tu». Otra letra fantasma, como las de night.",
+    "scenes": [
+      {
+        "emoji": "2️⃣",
+        "en": "two",
+        "es": "dos",
+        "pron": "tu"
+      },
+      {
+        "emoji": "➕",
+        "en": "Two and two are four.",
+        "es": "Dos y dos son cuatro.",
+        "pron": "tu and tu aa fo"
+      }
+    ],
+    "play": [
+      {
+        "q": "¿Cómo suena «two»?",
+        "answer": "tu",
+        "options": [
+          "tu",
+          "tuo",
+          "tugo"
+        ]
+      },
+      {
+        "q": "¿Qué letra de «two» no se oye?",
+        "answer": "La w",
+        "options": [
+          "La t",
+          "La w",
+          "La o"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "t-th-three",
+    "block": 2,
+    "emoji": "🦷",
+    "kind": "truco",
+    "title": {
+      "es": "La lengua entre los dientes",
+      "en": "Tongue between your teeth"
+    },
+    "idea": "«three» empieza con th, un sonido que en español solo tenemos en la z de «zapato». Saca un poquito la lengua entre los dientes y sopla: zri. Pruébalo delante del espejo.",
+    "scenes": [
+      {
+        "emoji": "3️⃣",
+        "en": "three",
+        "es": "tres",
+        "pron": "zri"
+      },
+      {
+        "emoji": "➕",
+        "en": "Three and three are six.",
+        "es": "Tres y tres son seis.",
+        "pron": "zri and zri aa sics"
+      }
+    ],
+    "play": [
+      {
+        "q": "Para decir «three», ¿dónde va la lengua?",
+        "answer": "Entre los dientes",
+        "options": [
+          "Entre los dientes",
+          "Detrás, como en «trres»",
+          "Arriba del todo"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "t-eight-gh",
+    "block": 2,
+    "emoji": "8️⃣",
+    "kind": "truco",
+    "title": {
+      "es": "Otra vez las letras fantasma",
+      "en": "Ghost letters again"
+    },
+    "idea": "¿Te acuerdas de «night»? Pues «eight» hace lo mismo: la g y la h no se oyen. Suena «éit». Cada vez que veas «gh» juntas, desconfía: casi siempre están calladas.",
+    "scenes": [
+      {
+        "emoji": "8️⃣",
+        "en": "eight",
+        "es": "ocho",
+        "pron": "éit"
+      },
+      {
+        "emoji": "🌃",
+        "en": "night",
+        "es": "noche",
+        "pron": "náit"
+      }
+    ],
+    "play": [
+      {
+        "q": "¿Cómo suena «eight»?",
+        "answer": "éit",
+        "options": [
+          "éigt",
+          "éit",
+          "éighte"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "t-numeros-cortos",
+    "block": 2,
+    "emoji": "⚡",
+    "kind": "truco",
+    "title": {
+      "es": "Números de un solo golpe",
+      "en": "One-beat numbers"
+    },
+    "idea": "Cuenta los golpecitos: one, two, three, four, five, six, eight, nine, ten… ¡todos de uno! Solo seven y zero tienen dos. Por eso contar en inglés se hace tan rápido.",
+    "scenes": [
+      {
+        "emoji": "🔢",
+        "en": "One, two, three!",
+        "es": "¡Uno, dos, tres!",
+        "pron": "uán, tu, zri"
+      },
+      {
+        "emoji": "7️⃣",
+        "en": "seven",
+        "es": "siete",
+        "pron": "séven"
+      }
+    ],
+    "play": [
+      {
+        "q": "¿Cuál de estos números tiene DOS golpecitos?",
+        "answer": "seven",
+        "options": [
+          "five",
+          "seven",
+          "ten"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "t-number-parecida",
+    "block": 2,
+    "emoji": "🔢",
+    "kind": "truco",
+    "title": {
+      "es": "Una que ya te sabías",
+      "en": "One you already knew"
+    },
+    "idea": "«number» y «número» se parecen tanto que casi no hay que aprenderla. El inglés está lleno de estas: vete cazándolas, son regalos.",
+    "scenes": [
+      {
+        "emoji": "🔢",
+        "en": "number",
+        "es": "número",
+        "pron": "námbe"
+      }
+    ],
+    "play": [
+      {
+        "q": "«number» quiere decir…",
+        "answer": "número",
+        "options": [
+          "número",
+          "nombre",
+          "nunca"
+        ]
+      }
+    ]
+  },
+  {
     "id": "g-it-is",
     "block": 3,
     "emoji": "👉",
@@ -340,6 +523,158 @@
     "kind": "regla"
   },
   {
+    "id": "t-colour-u",
+    "block": 3,
+    "emoji": "🇬🇧",
+    "kind": "truco",
+    "title": {
+      "es": "Colour con u",
+      "en": "Colour with a u"
+    },
+    "idea": "En Inglaterra se escribe «colour», con u. En Estados Unidos la quitan y escriben «color». Las dos están bien; aquí usamos el inglés de Inglaterra, así que la u se queda. Y fíjate qué parecida es a nuestra palabra «color».",
+    "scenes": [
+      {
+        "emoji": "🌈",
+        "en": "colour",
+        "es": "color",
+        "pron": "cále"
+      },
+      {
+        "emoji": "🌈",
+        "en": "What colour is it?",
+        "es": "¿De qué color es?",
+        "pron": "uót cále is it"
+      }
+    ],
+    "play": [
+      {
+        "q": "¿Cómo se escribe en el inglés de Inglaterra?",
+        "answer": "colour",
+        "options": [
+          "colour",
+          "color",
+          "coluor"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "t-wh-what",
+    "block": 3,
+    "emoji": "❓",
+    "kind": "truco",
+    "title": {
+      "es": "La h de what se calla",
+      "en": "The silent h in what"
+    },
+    "idea": "«what» empieza con w y h, pero la h no se oye: suena «uót». Pasa igual en where y when. Ojo con «who»: esa es la rebelde, ahí calla la w y suena la h («ju»).",
+    "scenes": [
+      {
+        "emoji": "🤔",
+        "en": "what",
+        "es": "qué",
+        "pron": "uót"
+      },
+      {
+        "emoji": "🌈",
+        "en": "What colour is it?",
+        "es": "¿De qué color es?",
+        "pron": "uót cále is it"
+      },
+      {
+        "emoji": "🕵️",
+        "en": "who",
+        "es": "quién",
+        "pron": "ju"
+      }
+    ],
+    "play": [
+      {
+        "q": "¿Cómo suena «what»?",
+        "answer": "uót",
+        "options": [
+          "uót",
+          "juót",
+          "guát"
+        ]
+      },
+      {
+        "q": "¿Cuál es la rebelde, la que suena con j?",
+        "answer": "who",
+        "options": [
+          "what",
+          "who",
+          "when"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "t-black-and-white",
+    "block": 3,
+    "emoji": "🦓",
+    "kind": "truco",
+    "title": {
+      "es": "Al revés que nosotros",
+      "en": "The other way round"
+    },
+    "idea": "Nosotros decimos «blanco y negro». Los ingleses lo dicen justo al revés: «black and white», negro y blanco. Es su manera de decirlo, y siempre en ese orden.",
+    "scenes": [
+      {
+        "emoji": "🦓",
+        "en": "black and white",
+        "es": "blanco y negro",
+        "pron": "blac and uáit"
+      },
+      {
+        "emoji": "🎹",
+        "en": "The piano is black and white.",
+        "es": "El piano es negro y blanco.",
+        "pron": "de piánou is blac and uáit"
+      }
+    ],
+    "play": [
+      {
+        "q": "¿Cómo lo dicen los ingleses?",
+        "answer": "black and white",
+        "options": [
+          "black and white",
+          "white and black"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "t-orange-dos",
+    "block": 3,
+    "emoji": "🟠",
+    "kind": "truco",
+    "title": {
+      "es": "Orange sirve para dos cosas",
+      "en": "Orange means two things"
+    },
+    "idea": "«orange» es el color naranja… y también la fruta naranja. Una sola palabra para las dos cosas, igual que en español. Hay más palabras así: ya las irás pillando.",
+    "scenes": [
+      {
+        "emoji": "🟠",
+        "en": "orange",
+        "es": "naranja (el color y la fruta)",
+        "pron": "órinch"
+      }
+    ],
+    "play": [
+      {
+        "q": "«orange» puede ser…",
+        "answer": "El color y la fruta",
+        "options": [
+          "Solo el color",
+          "Solo la fruta",
+          "El color y la fruta"
+        ]
+      }
+    ]
+  },
+  {
     "id": "g-the",
     "block": 4,
     "emoji": "🎸",
@@ -401,6 +736,171 @@
       }
     ],
     "kind": "regla"
+  },
+  {
+    "id": "t-musica-parecidas",
+    "block": 4,
+    "emoji": "🎁",
+    "kind": "truco",
+    "title": {
+      "es": "La música viene regalada",
+      "en": "Music words are free"
+    },
+    "idea": "Mira cuántas palabras de música se parecen al español: music, piano, guitar, violin, trumpet, band, note. Casi no hay que aprenderlas, solo oír cómo suenan. Pasa porque la música viajó de un idioma a otro con su nombre puesto.",
+    "scenes": [
+      {
+        "emoji": "🎵",
+        "en": "music",
+        "es": "música",
+        "pron": "miúsic"
+      },
+      {
+        "emoji": "🎻",
+        "en": "violin",
+        "es": "violín",
+        "pron": "vaiolín"
+      },
+      {
+        "emoji": "🎺",
+        "en": "trumpet",
+        "es": "trompeta",
+        "pron": "trámpit"
+      }
+    ],
+    "play": [
+      {
+        "q": "¿Cuál de estas NO se parece al español?",
+        "answer": "drum",
+        "options": [
+          "piano",
+          "drum",
+          "violin"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "t-listen-to",
+    "block": 4,
+    "emoji": "👂",
+    "kind": "truco",
+    "title": {
+      "es": "Listen siempre lleva «to»",
+      "en": "Listen always takes «to»"
+    },
+    "idea": "Dos cosas de «listen»: la t de en medio no se oye (suena «lísen»), y cuando dices QUÉ escuchas tienes que poner «to» en medio: Listen TO the music. Sola sí vale: «Listen!» es «¡Escucha!».",
+    "scenes": [
+      {
+        "emoji": "🎧",
+        "en": "listen",
+        "es": "escuchar",
+        "pron": "lísen"
+      },
+      {
+        "emoji": "🎧",
+        "en": "Listen to the music!",
+        "es": "¡Escucha la música!",
+        "pron": "lísen tu de miúsic"
+      },
+      {
+        "emoji": "🤫",
+        "en": "Listen!",
+        "es": "¡Escucha!",
+        "pron": "lísen"
+      }
+    ],
+    "play": [
+      {
+        "en": "Listen ___ the music!",
+        "answer": "to",
+        "options": [
+          "to",
+          "at",
+          "the"
+        ],
+        "es": "¡Escucha la música!"
+      },
+      {
+        "q": "¿Qué letra de «listen» no se oye?",
+        "answer": "La t",
+        "options": [
+          "La l",
+          "La t",
+          "La n"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "t-play-dos",
+    "block": 4,
+    "emoji": "🎮",
+    "kind": "truco",
+    "title": {
+      "es": "Play: jugar y tocar",
+      "en": "Play: two jobs"
+    },
+    "idea": "«play» hace dos trabajos: jugar y tocar un instrumento. I play (juego) y I play the guitar (toco la guitarra). Cuando va seguido de un instrumento, es tocar.",
+    "scenes": [
+      {
+        "emoji": "🎸",
+        "en": "I play the guitar.",
+        "es": "Toco la guitarra.",
+        "pron": "ái pléi de guitáa"
+      },
+      {
+        "emoji": "🎮",
+        "en": "play",
+        "es": "jugar / tocar",
+        "pron": "pléi"
+      }
+    ],
+    "play": [
+      {
+        "q": "«I play the piano» quiere decir…",
+        "answer": "Toco el piano",
+        "options": [
+          "Toco el piano",
+          "Juego al piano"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "t-er-quien",
+    "block": 4,
+    "emoji": "👩‍🎤",
+    "kind": "truco",
+    "title": {
+      "es": "Añade -er y sale quién lo hace",
+      "en": "Add -er for the person"
+    },
+    "idea": "Truco buenísimo: coge una acción y ponle «-er» al final, y tienes a quien la hace. sing (cantar) → singer (cantante). play → player. climb → climber, ¡escaladora! No vale para todas, pero vale para un montón.",
+    "scenes": [
+      {
+        "emoji": "🎤",
+        "en": "sing",
+        "es": "cantar",
+        "pron": "sing"
+      },
+      {
+        "emoji": "👩‍🎤",
+        "en": "singer",
+        "es": "cantante",
+        "pron": "síngue"
+      }
+    ],
+    "play": [
+      {
+        "q": "Si «climb» es escalar, ¿cómo será «escaladora»?",
+        "answer": "climber",
+        "options": [
+          "climber",
+          "climbing",
+          "climbs"
+        ]
+      }
+    ]
   },
   {
     "id": "g-he-she",

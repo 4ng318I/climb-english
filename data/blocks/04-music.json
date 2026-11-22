@@ -1,29 +1,36 @@
 {
   "block": 4,
   "words": [
-    {"id": "w-music", "en": "music", "es": "música", "pron": "miúsic", "pos": "nombre", "block": 4, "emoji": "🎵", "syllables": 2, "stress": 1, "theme": "musica"},
-    {"id": "w-song", "en": "song", "es": "canción", "pron": "song", "pos": "nombre", "block": 4, "emoji": "🎶", "syllables": 1, "stress": 1, "theme": "musica"},
     {"id": "w-sing", "en": "sing", "es": "cantar", "pron": "sing", "pos": "acción", "block": 4, "emoji": "🎤", "syllables": 1, "stress": 1, "theme": "musica"},
+    {"id": "w-music", "en": "music", "es": "música", "pron": "miúsic", "pos": "nombre", "block": 4, "emoji": "🎵", "syllables": 2, "stress": 1, "theme": "musica"},
+    {"id": "w-the", "en": "the", "es": "el / la / los / las", "pron": "de", "pos": "palabrita", "block": 4, "emoji": "🔹", "syllables": 1, "stress": 1},
+    {"id": "w-to", "en": "to", "es": "a / hacia", "pron": "tu", "pos": "palabrita", "block": 4, "emoji": "➡️", "syllables": 1, "stress": 1},
+    {"id": "w-listen", "en": "listen", "es": "escuchar", "pron": "lísen", "pos": "acción", "block": 4, "emoji": "🎧", "syllables": 2, "stress": 1, "theme": "musica"},
+    {"id": "w-song", "en": "song", "es": "canción", "pron": "song", "pos": "nombre", "block": 4, "emoji": "🎶", "syllables": 1, "stress": 1, "theme": "musica"},
+    {"id": "w-play", "en": "play", "es": "tocar / jugar", "pron": "pléi", "pos": "acción", "block": 4, "emoji": "🎮", "syllables": 1, "stress": 1, "theme": "musica"},
     {"id": "w-guitar", "en": "guitar", "es": "guitarra", "pron": "guitá", "pos": "nombre", "block": 4, "emoji": "🎸", "syllables": 2, "stress": 2, "theme": "musica"},
+    {"id": "w-dance", "en": "dance", "es": "bailar", "pron": "dans", "pos": "acción", "block": 4, "emoji": "💃", "syllables": 1, "stress": 1, "theme": "musica"},
     {"id": "w-piano", "en": "piano", "es": "piano", "pron": "piánou", "pos": "nombre", "block": 4, "emoji": "🎹", "syllables": 3, "stress": 2, "theme": "musica"},
     {"id": "w-drum", "en": "drum", "es": "tambor", "pron": "dram", "pos": "nombre", "block": 4, "emoji": "🥁", "syllables": 1, "stress": 1, "theme": "musica"},
-    {"id": "w-play", "en": "play", "es": "tocar / jugar", "pron": "pléi", "pos": "acción", "block": 4, "emoji": "🎮", "syllables": 1, "stress": 1, "theme": "musica"},
-    {"id": "w-listen", "en": "listen", "es": "escuchar", "pron": "lísen", "pos": "acción", "block": 4, "emoji": "🎧", "syllables": 2, "stress": 1, "theme": "musica"},
-    {"id": "w-dance", "en": "dance", "es": "bailar", "pron": "dans", "pos": "acción", "block": 4, "emoji": "💃", "syllables": 1, "stress": 1, "theme": "musica"},
     {"id": "w-loud", "en": "loud", "es": "fuerte (de sonido)", "pron": "láud", "pos": "cualidad", "block": 4, "emoji": "🔊", "syllables": 1, "stress": 1, "theme": "musica"},
     {"id": "w-band", "en": "band", "es": "grupo de música", "pron": "band", "pos": "nombre", "block": 4, "emoji": "🧑‍🎤", "syllables": 1, "stress": 1, "theme": "musica"},
     {"id": "w-singer", "en": "singer", "es": "cantante", "pron": "síngue", "pos": "nombre", "block": 4, "emoji": "👩‍🎤", "syllables": 2, "stress": 1, "theme": "musica"},
     {"id": "w-violin", "en": "violin", "es": "violín", "pron": "vaiolín", "pos": "nombre", "block": 4, "emoji": "🎻", "syllables": 3, "stress": 3, "theme": "musica"},
     {"id": "w-trumpet", "en": "trumpet", "es": "trompeta", "pron": "trámpit", "pos": "nombre", "block": 4, "emoji": "🎺", "syllables": 2, "stress": 1, "theme": "musica"},
-    {"id": "w-note", "en": "note", "es": "nota", "pron": "nóut", "pos": "nombre", "block": 4, "emoji": "🎼", "syllables": 1, "stress": 1, "theme": "musica"},
-    {"id": "w-the", "en": "the", "es": "el / la / los / las", "pron": "de", "pos": "palabrita", "block": 4, "emoji": "🔹", "syllables": 1, "stress": 1}
+    {"id": "w-note", "en": "note", "es": "nota", "pron": "nóut", "pos": "nombre", "block": 4, "emoji": "🎼", "syllables": 1, "stress": 1, "theme": "musica"}
   ],
   "sentences": [
-    {"id": "s-i-play-the-guitar", "en": "I play the guitar.", "es": "Toco la guitarra.", "pron": "ái pléi de guitá", "block": 4, "emoji": "🎸", "grammar": "g-the", "words": ["w-i", "w-guitar", "w-play", "w-the"]},
-    {"id": "s-i-sing-my-favourite-song", "en": "I sing my favourite song.", "es": "Canto mi canción favorita.", "pron": "ái sing mái féivrit song", "block": 4, "emoji": "🎤", "words": ["w-i", "w-my", "w-favourite", "w-song", "w-sing"]},
-    {"id": "s-listen-to-the-music", "en": "Listen to the music!", "es": "¡Escucha la música!", "pron": "lísen tu de miúsic", "block": 4, "emoji": "🎧", "grammar": "g-the", "words": ["w-music", "w-listen", "w-the"]},
-    {"id": "s-the-drum-is-loud", "en": "The drum is loud.", "es": "El tambor suena fuerte.", "pron": "de dram is láud", "block": 4, "emoji": "🥁", "grammar": "g-the", "words": ["w-i", "w-is", "w-drum", "w-loud", "w-the"]},
-    {"id": "s-you-sing-and-i-dance", "en": "You sing and I dance.", "es": "Tú cantas y yo bailo.", "pron": "iú sing and ái dans", "block": 4, "emoji": "💃", "words": ["w-i", "w-you", "w-and", "w-sing", "w-dance"]},
-    {"id": "s-the-piano-is-black-and-white", "en": "The piano is black and white.", "es": "El piano es negro y blanco.", "pron": "de piánou is blac and uáit", "block": 4, "emoji": "🎹", "words": ["w-i", "w-and", "w-black", "w-white", "w-is", "w-piano", "w-the"]}
+    {"id": "s-i-sing", "en": "I sing.", "es": "Canto.", "pron": "ái sing", "block": 4, "emoji": "🎤", "words": ["w-sing"]},
+    {"id": "s-listen-to-the-music", "en": "Listen to the music!", "es": "¡Escucha la música!", "pron": "lísen tu de miúsic", "block": 4, "emoji": "🎧", "words": ["w-listen", "w-to", "w-the", "w-music"], "grammar": "g-the"},
+    {"id": "s-i-play-the-guitar", "en": "I play the guitar.", "es": "Toco la guitarra.", "pron": "ái pléi de guitáa", "block": 4, "emoji": "🎸", "words": ["w-play", "w-the", "w-guitar"], "grammar": "g-the"},
+    {"id": "s-the-drum-is-loud", "en": "The drum is loud.", "es": "El tambor suena fuerte.", "pron": "de dram is láud", "block": 4, "emoji": "🥁", "words": ["w-the", "w-drum", "w-loud"], "grammar": "g-the"},
+    {"id": "s-i-sing-my-song", "en": "I sing my favourite song.", "es": "Canto mi canción favorita.", "pron": "ái sing mái féivrit song", "block": 4, "emoji": "🎶", "words": ["w-sing", "w-song"]},
+    {"id": "s-you-sing-i-dance", "en": "You sing and I dance.", "es": "Tú cantas y yo bailo.", "pron": "iú sing and ái dans", "block": 4, "emoji": "💃", "words": ["w-sing", "w-dance"]},
+    {"id": "s-the-piano", "en": "The piano is black and white.", "es": "El piano es negro y blanco.", "pron": "de piánou is blac and uáit", "block": 4, "emoji": "🎹", "words": ["w-the", "w-piano"], "extra": true},
+    {"id": "s-i-play-the-drum", "en": "I play the drum.", "es": "Toco el tambor.", "pron": "ái pléi de dram", "block": 4, "emoji": "🥁", "words": ["w-play", "w-the", "w-drum"], "extra": true},
+    {"id": "s-listen-to-my-song", "en": "Listen to my song!", "es": "¡Escucha mi canción!", "pron": "lísen tu mái song", "block": 4, "emoji": "🎵", "words": ["w-listen", "w-to", "w-song"], "extra": true},
+    {"id": "s-the-band-is-loud", "en": "The band is loud!", "es": "¡El grupo suena fuerte!", "pron": "de band is láud", "block": 4, "emoji": "🧑‍🎤", "words": ["w-the", "w-band", "w-loud"], "extra": true},
+    {"id": "s-i-play-the-violin", "en": "I play the violin.", "es": "Toco el violín.", "pron": "ái pléi de vaiolín", "block": 4, "emoji": "🎻", "words": ["w-play", "w-the", "w-violin"], "extra": true},
+    {"id": "s-the-singer-is-good", "en": "The singer is good.", "es": "La cantante es buena.", "pron": "de síngue is gud", "block": 4, "emoji": "👩‍🎤", "words": ["w-the", "w-singer"], "extra": true}
   ]
 }
