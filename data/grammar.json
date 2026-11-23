@@ -345,7 +345,7 @@
         "options": [
           "tu",
           "tuo",
-          "tugo"
+          "tubo"
         ],
         "say": "two"
       },
@@ -429,7 +429,7 @@
         "options": [
           "éigt",
           "éit",
-          "éighte"
+          "éigue"
         ],
         "say": "eight"
       }
@@ -596,8 +596,7 @@
         "answer": "colour",
         "options": [
           "colour",
-          "color",
-          "coluor"
+          "color"
         ],
         "say": "colour"
       }
@@ -1715,7 +1714,7 @@
         "options": [
           "two foots",
           "two feet",
-          "two footes"
+          "two foot"
         ],
         "say": "two feet"
       }
@@ -2194,6 +2193,72 @@
           "pídza"
         ],
         "say": "pizza"
+      }
+    ]
+  },
+  {
+    "id": "t-vocal-larga",
+    "block": 10,
+    "emoji": "🎚️",
+    "kind": "truco",
+    "title": {
+      "es": "Sonidos que se estiran",
+      "en": "Stretched sounds"
+    },
+    "idea": "En inglés hay sonidos que se estiran y otros que se cortan, como cuando cantas y aguantas una nota o la sueltas enseguida. Y eso cambia la palabra entera: «am» es un toque corto y «arm» (brazo) es ese mismo sonido estirado. Pasa igual con «it» e «eat», y con «a» y «are». Lo malo es que mis pistas escriben las dos iguales, porque no tengo ninguna letra para decir «estira esto». Así que aquí la pista no te sirve: manda el altavoz. Y una cosa importante: al principio te van a sonar iguales, y eso es NORMAL. En español esa diferencia no existe, así que nuestro oído ni la busca. A un inglés le pasa lo mismo al revés con «pero» y «perro»: no las distingue hasta que se acostumbra. Escúchalas unas cuantas veces seguidas y un día se separan solas.",
+    "scenes": [
+      {
+        "emoji": "🙋",
+        "en": "am",
+        "es": "soy / estoy",
+        "pron": "am (corto)"
+      },
+      {
+        "emoji": "💪",
+        "en": "arm",
+        "es": "brazo",
+        "pron": "am (estirado)"
+      },
+      {
+        "emoji": "👉",
+        "en": "it",
+        "es": "eso",
+        "pron": "it (corto)"
+      },
+      {
+        "emoji": "🍎",
+        "en": "eat",
+        "es": "comer",
+        "pron": "it (estirado)"
+      }
+    ],
+    "play": [
+      {
+        "q": "¿En cuál de las dos se estira el sonido?",
+        "answer": "arm",
+        "options": [
+          "arm",
+          "am"
+        ],
+        "say": "arm"
+      },
+      {
+        "q": "¿Y en estas?",
+        "answer": "eat",
+        "options": [
+          "it",
+          "eat"
+        ],
+        "say": "eat"
+      },
+      {
+        "q": "Si al principio te suenan iguales, es porque…",
+        "answer": "En español esa diferencia no existe y hay que acostumbrar el oído",
+        "options": [
+          "En español esa diferencia no existe y hay que acostumbrar el oído",
+          "Son la misma palabra escrita de dos formas"
+        ],
+        "say": "arm"
       }
     ]
   },

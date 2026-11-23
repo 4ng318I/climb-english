@@ -474,6 +474,7 @@ Todas se lanzan desde la carpeta del proyecto.
 | `python tools/validate.py` | Valida el contenido de `data/`. Ver abajo todo lo que comprueba. |
 | `python tools/check_version.py` | Dice si hace falta subir `VERSION` en `sw.js`. |
 | `python tools/test_check_version.py` | Prueba lo anterior y el hook en un repositorio temporal. |
+| `python tools/test_validate.py` | Prueba el validador **al revés**: estropea el contenido a propósito y exige que salte el error que toca. Trabaja siempre sobre una copia temporal, nunca sobre `data/`. |
 | `python tools/e2e.py` | Prueba la app entera en Chromium: convivencia con otras apps, prefijos, copia de seguridad, borrado, sin conexión, actualización automática, llegar a todo lo nuevo del día, el rocódromo y la lagartija del mapa. |
 | `python tools/e2e.py --solo=lagartija` | Una sola sección, en segundos. Admite `tandas`, `gym`, `lagartija` y `migracion`. |
 | `python tools/screenshots.py` | Regenera las capturas de este README con un progreso de demostración. |
@@ -504,6 +505,19 @@ la completa para antes de publicar.
   decir la voz, y el validador comprueba que ese `say` —y los ejemplos de las fichas, y el
   `say` de las palabras— estén dentro del vocabulario que la app puede pronunciar.
 
+
+### Probar el validador al revés
+
+Un validador que solo se prueba cuando todo está bien no vale: si una comprobación se rompe,
+deja de avisar y nadie se entera, porque la salida sigue diciendo «Todo correcto».
+`tools/test_validate.py` estropea el contenido a propósito —una frase que usa una palabra de
+más adelante, un juego que le daría español a la voz, una opción repetida— y exige que el
+validador lo cace.
+
+**Trabaja siempre sobre una copia en una carpeta temporal.** Antes estas pruebas se hacían
+estropeando `data/` de verdad y restaurándolo después, y bastó con que se vaciara una
+variable del shell para que los datos se quedaran tocados. Una prueba negativa no puede
+poder romper nada.
 
 ### El vocabulario que la voz puede decir
 
