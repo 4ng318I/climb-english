@@ -137,19 +137,19 @@
     "play": [
       {
         "q": "En «name», ¿se oye la e del final?",
-        "answer": "No, calla",
+        "answer": "No suena",
         "options": [
-          "No, calla",
-          "Sí, suena"
+          "No suena",
+          "Sí suena"
         ],
         "say": "name"
       },
       {
         "q": "¿Y en «please»?",
-        "answer": "No, calla",
+        "answer": "No suena",
         "options": [
-          "Sí, suena",
-          "No, calla"
+          "Sí suena",
+          "No suena"
         ],
         "say": "please"
       }
@@ -184,9 +184,9 @@
         "q": "¿Cuántas letras de «night» NO se oyen?",
         "answer": "Dos: la g y la h",
         "options": [
-          "Ninguna",
+          "Una: la h",
           "Dos: la g y la h",
-          "Todas"
+          "Ninguna: se oyen todas"
         ],
         "say": "night"
       }
@@ -305,10 +305,10 @@
     "play": [
       {
         "q": "La j de «hello», ¿cómo es?",
-        "answer": "Un soplo suave",
+        "answer": "Un soplo suave, como al empañar un cristal",
         "options": [
-          "Un soplo suave",
-          "Como la j de jamón"
+          "Un soplo suave, como al empañar un cristal",
+          "Una jota fuerte, como en «jamón»"
         ],
         "say": "hello"
       }
@@ -391,8 +391,8 @@
         "answer": "Entre los dientes",
         "options": [
           "Entre los dientes",
-          "Detrás, como en «trres»",
-          "Arriba del todo"
+          "Detrás de los dientes",
+          "Arriba, en el paladar"
         ],
         "say": "three"
       }
@@ -777,9 +777,9 @@
         "en": "Listen to ___ music!",
         "answer": "the",
         "options": [
-          "are",
           "the",
-          "my is"
+          "is",
+          "are"
         ],
         "es": "¡Escucha la música!"
       }
@@ -1242,7 +1242,7 @@
         "q": "¿Y la r del final de «car»?",
         "answer": "No se oye",
         "options": [
-          "Se oye fuerte",
+          "Sí se oye",
           "No se oye"
         ],
         "say": "car"
@@ -1794,10 +1794,10 @@
       },
       {
         "q": "La r de «your», ¿se oye?",
-        "answer": "No, solo se escribe",
+        "answer": "No se oye",
         "options": [
-          "No, solo se escribe",
-          "Sí, se oye fuerte"
+          "No se oye",
+          "Sí se oye"
         ],
         "say": "your"
       }
@@ -2323,7 +2323,7 @@
         "answer": "Hay dos ventanas",
         "options": [
           "Hay dos ventanas",
-          "Ahí están dos ventanas"
+          "Ahí están las ventanas"
         ],
         "say": "There are two windows."
       }
@@ -3354,10 +3354,11 @@
     "play": [
       {
         "q": "«uéa» puede ser…",
-        "answer": "llevar puesto o dónde",
+        "answer": "Llevar puesto o dónde",
         "options": [
-          "llevar puesto o dónde",
-          "solo dónde"
+          "Llevar puesto o dónde",
+          "Solo dónde",
+          "Solo llevar puesto"
         ],
         "say": "wear"
       }
@@ -3652,7 +3653,7 @@
         "answer": "Veo el mar",
         "options": [
           "Veo el mar",
-          "Miro a ver el mar"
+          "Veo la playa"
         ],
         "say": "I can see the sea!"
       }

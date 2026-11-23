@@ -494,6 +494,9 @@ la completa para antes de publicar.
   (`aa` por *are*, `beeds` por *birds*) al quitar las vocales dobles de las fichas.
 - **Que no haya alfabeto fonético.** Ningún texto que ella lea puede llevar símbolos como
   `æ` o `ə`: la grafía se escribe con letras españolas y el sonido se explica con palabras.
+- **Que las opciones de los juegos estén emparejadas.** Ninguna puede empezar por «Sí,» o
+  «No,»: a «¿se oye la e de *name*?» un español contesta «no suena», no «No, calla». Y no
+  puede haber opciones repetidas dentro de un mismo juego.
 - **Que la voz solo diga inglés.** La app leía en alto la respuesta de los juegos de los
   trucos, y en las preguntas sueltas esa respuesta está en español («No, calla») o es una
   grafía («uóte» en lugar de *water*): la voz recitando la muleta visual en vez de la

@@ -244,6 +244,23 @@ def main():
                 errors.append('grammar.json (%s, juego %d): su «say» («%s») no es inglés del '
                               "banco: %s" % (g_.get("id"), i, q["say"], ", ".join(mal)))
 
+    # Una opción que empieza por «Sí,» o «No,» es la marca de una respuesta forzada:
+    # a «¿se oye la e?» un español contesta «sí suena» o «no suena», no «No, calla».
+    # Y las opciones de un mismo juego tienen que ir emparejadas, no repetidas.
+    SI_NO_COMA = re.compile(r"^(Sí|No)\s*,")
+    for g_ in grammar:
+        for i, q in enumerate(g_.get("play", [])):
+            ops = q.get("options", []) or []
+            for o in ops:
+                if SI_NO_COMA.match(str(o)):
+                    errors.append('grammar.json (%s, juego %d): la opción «%s» contesta con una '
+                                  "coma detrás del sí o del no. En español se contesta «sí suena» "
+                                  "o «no suena»." % (g_.get("id"), i, o))
+            vistas = [str(o).strip() for o in ops]
+            if len(set(vistas)) != len(vistas):
+                errors.append("grammar.json (%s, juego %d): tiene opciones repetidas: %s"
+                              % (g_.get("id"), i, ops))
+
     for g in grammar:
         if g.get("kind", "regla") not in ("regla", "truco"):
             errors.append(f'grammar.json ({g.get("id")}): kind debe ser "regla" o "truco"')
