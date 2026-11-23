@@ -13,6 +13,10 @@ import { header } from '../ui/layout.js';
 import { bubble } from '../ui/feedback.js';
 import { cleanName } from './welcome.js';
 
+// Parejas que la app escribe igual SIN serlo: la grafía no marca si la vocal es larga.
+// (Las que sí son homófonas de verdad —I/eye, see/sea, to/too/two— no van aquí.)
+const PAREJAS = [['a', 'are', 'a'], ['am', 'arm', 'am'], ['it', 'eat', 'it']];
+
 const INSTALL = 'Android: Ajustes → Sistema → Idiomas → Síntesis de voz → Instalar datos de voz. Windows: Configuración → Hora e idioma → Voz → Agregar voces.';
 
 // Qué voz se está usando y con qué acento. Las grafías están escritas para un acento concreto,
@@ -72,6 +76,22 @@ export default function settings(el) {
           </select></label>
         <button class="btn ghost" id="test">▶️ Probar la voz</button>
         <div id="voice-info"></div>
+      </div>
+
+      <div class="panel">
+        <h2>🔍 Escuchar cualquier palabra</h2>
+        <p class="note">Para comprobar cómo suena una palabra sin esperar a que la alumna la
+          desbloquee. Esto no toca su progreso: ni la descubre, ni la cuenta, ni la mete en
+          los repasos.</p>
+        <h3 class="sub">Parejas que la app escribe IGUAL</h3>
+        <p class="note">La grafía no marca si una vocal es larga o corta, así que estas parejas
+          salen escritas igual aunque sean dos sonidos distintos. Toca una y las dirá seguidas,
+          con una pausa en medio, para compararlas.</p>
+        <div class="pairs">${PAREJAS.map(([a, b, g]) =>
+          `<button class="btn ghost pair" data-a="${esc(a)}" data-b="${esc(b)}">
+             🔊 ${esc(a)} / ${esc(b)} <small>las dos: «${esc(g)}»</small></button>`).join('')}</div>
+        <label class="field">Buscar <input id="wsearch" type="search" placeholder="palabra en inglés o en español" autocomplete="off"></label>
+        <div id="wlist" class="wlist"></div>
       </div>
 
       <div class="panel">
@@ -170,6 +190,42 @@ export default function settings(el) {
   };
   showVoice();
   window.addEventListener('voices-ready', showVoice);
+  const pinta = texto => {
+    const q = texto.trim().toLowerCase();
+    const peso = w => {
+      const en = w.en.toLowerCase();
+      return en === q ? 0 : en.startsWith(q) ? 1 : en.includes(q) ? 2 : 3;
+    };
+    const hay = !q ? [] : content.words
+      .filter(w => w.en.toLowerCase().includes(q) || String(w.es).toLowerCase().includes(q))
+      .sort((a, b) => peso(a) - peso(b) || a.block - b.block);
+    $('#wlist', el).innerHTML = !q
+      ? '<p class="note">Escribe algo para buscar entre las ' + content.words.length + ' palabras.</p>'
+      : hay.length
+        ? hay.slice(0, 40).map(w => `
+          <div class="wrow">
+            <button class="btn ghost say" data-w="${esc(w.en)}">🔊</button>
+            <b>${esc(w.en)}</b> <span class="gr">«${esc(w.pron)}»</span>
+            <small>${esc(w.es)} · bloque ${w.block}${w.say ? ' · a la voz se le pasa «' + esc(w.say) + '»' : ''}</small>
+          </div>`).join('') + (hay.length > 40 ? `<p class="note">y ${hay.length - 40} más</p>` : '')
+        : '<p class="note">Ninguna palabra del banco coincide.</p>';
+  };
+  pinta('');
+  $('#wsearch', el).oninput = e => pinta(e.target.value);
+  $('#wlist', el).onclick = e => {
+    const b = e.target.closest('.say');
+    if (b) speak(b.dataset.w, { force: true });
+  };
+  // La pareja se dice seguida, con una pausa en medio: es la única forma de comparar.
+  for (const b of el.querySelectorAll('.pair')) {
+    b.onclick = async () => {
+      b.disabled = true;
+      await speak(b.dataset.a, { force: true });
+      await new Promise(r => setTimeout(r, 700));
+      await speak(b.dataset.b, { force: true });
+      b.disabled = false;
+    };
+  }
   $('#mic', el).onchange = e => { s.mic = e.target.checked; save(); };
   $('#dark', el).onchange = e => { s.dark = e.target.checked; save(); applyTheme(); };
   $('#export', el).onclick = () => { exportProgress(); bubble('Copia guardada en Descargas 💾'); };

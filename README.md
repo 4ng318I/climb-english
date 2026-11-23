@@ -62,6 +62,19 @@ pronunciación que ella va a tener**. Compruébala antes de entregar la tablet:
 Si el aparato no tiene ninguna voz inglesa, la app **se queda callada** y avisa en el panel,
 antes que enseñar una pronunciación equivocada.
 
+### Escuchar cualquier palabra (para ti, no para ella)
+
+En **Mayores** hay un buscador de las 330 palabras del banco con su altavoz, estén
+desbloqueadas o no. Sirve para comprobar cómo suena algo sin esperar a que ella llegue a esa
+palabra jugando. No toca su progreso: ni descubre la palabra, ni la cuenta, ni la mete en
+los repasos.
+
+Arriba están además las tres parejas que **la app escribe igual sin serlo**, porque la
+grafía no marca si una vocal es larga o corta: `a`/`are`, `am`/`arm` e `it`/`eat`. Al
+tocarlas las dice seguidas, con una pausa en medio, para poder compararlas. Si en tu
+dispositivo suenan idénticas, la voz no está distinguiendo la longitud y eso es un problema
+de la voz, no de la grafía.
+
 ### El micrófono (opcional, apagado por defecto)
 
 El reconocimiento de voz de Chrome **envía el audio a Google** y necesita internet. Por eso

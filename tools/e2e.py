@@ -549,6 +549,42 @@ def prueba_voz(navegador, url):
     }""", dichos)
     check(not sucios, "y todo lo que ha dicho es ingles. No ingles: %s" % (sucios or "nada"))
     check(not errores, "sin errores ni quejas de la voz en consola: %s" % errores[:2])
+
+    # El buscador de Mayores: oir CUALQUIER palabra del banco sin desbloquearla.
+    antes = page.evaluate("() => JSON.parse(localStorage.getItem('climbenglish:progress'))")
+    page.goto(url + "#settings")
+    page.wait_for_selector("#wsearch", timeout=25000)
+    parejas = page.locator(".pairs .pair").count()
+    check(parejas == 3, "estan las 3 parejas que la grafia escribe igual (%d)" % parejas)
+
+    page.evaluate("() => { window.__dicho.length = 0; }")
+    page.click(".pairs .pair")                     # a / are
+    page.wait_for_timeout(1600)
+    pareja = page.evaluate("() => window.__dicho")
+    check(pareja == ["a", "are"], "la pareja suena seguida y en orden: %s" % pareja)
+
+    page.fill("#wsearch", "arm")
+    page.wait_for_timeout(200)
+    filas = page.locator(".wlist .wrow").count()
+    check(filas >= 1, "el buscador encuentra la palabra (%d filas)" % filas)
+    bloqueada = page.evaluate("""() => {
+      const p = JSON.parse(localStorage.getItem('climbenglish:progress'));
+      return !p.words['w-arm'];
+    }""")
+    check(bloqueada, "y «arm» NO esta desbloqueada: se puede oir igual")
+    page.evaluate("() => { window.__dicho.length = 0; }")
+    page.click(".wlist .wrow .say")
+    page.wait_for_timeout(600)
+    check(page.evaluate("() => window.__dicho") == ["arm"], "la dice al tocar el altavoz")
+
+    page.fill("#wsearch", "mano")
+    page.wait_for_timeout(200)
+    check(page.locator(".wlist .wrow").count() >= 1, "tambien busca por el significado en español")
+
+    despues = page.evaluate("() => JSON.parse(localStorage.getItem('climbenglish:progress'))")
+    check(despues["words"] == antes["words"] and despues["stats"] == antes["stats"],
+          "y escuchar desde Mayores NO toca el progreso de la alumna")
+    check(not errores, "sin errores de JavaScript en Mayores: %s" % errores[:2])
     ctx.close()
     print("")
 
