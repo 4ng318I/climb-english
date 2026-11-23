@@ -1,6 +1,6 @@
 // Carga todo el contenido de la carpeta data/. Nada de contenido en el código.
 import { state } from './store.js';
-import { setSpoken } from './speech.js';
+import { setSpoken, setSpeakable } from './speech.js';
 export const content = {
   stages: [], blocks: [], words: [], sentences: [],
   wordById: new Map(), sentenceById: new Map(), wordByEn: new Map(),
@@ -46,6 +46,7 @@ export async function loadContent() {
     getJSON('data/ui-strings.json'),
     getJSON('data/medals.json', []),
   ]);
+  const extra = await getJSON('data/speakable-extra.json', { words: [] });
 
   content.blocks.forEach((b, i) => {
     for (const raw of files[i].words || []) {
@@ -76,6 +77,18 @@ export async function loadContent() {
   content.songs = (songs.songs || []).filter(s => s.title && Array.isArray(s.words));
   content.ui = ui;
   content.medals = medals;
+
+  // El vocabulario que la voz tiene PERMITIDO decir. Ver speech.js: es una lista cerrada,
+  // no un detector de idioma, y tools/validate.py aplica la misma sobre el contenido.
+  // Va al final a propósito: necesita content.songs ya montado.
+  const decibles = new Set();
+  const mete = t => String(t || '').toLowerCase().match(/[a-z']+/g)?.forEach(x => decibles.add(x));
+  for (const w of content.words) { mete(w.en); mete(w.say); }
+  for (const s_ of content.sentences) mete(s_.en);
+  for (const c of content.songs) for (const w of c.words || []) mete(w.en);
+  for (const w of extra.words || []) mete(w.en);
+  setSpeakable(decibles);
+
   return content;
 }
 

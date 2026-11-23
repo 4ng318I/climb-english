@@ -481,6 +481,30 @@ la completa para antes de publicar.
   (`aa` por *are*, `beeds` por *birds*) al quitar las vocales dobles de las fichas.
 - **Que no haya alfabeto fonético.** Ningún texto que ella lea puede llevar símbolos como
   `æ` o `ə`: la grafía se escribe con letras españolas y el sonido se explica con palabras.
+- **Que la voz solo diga inglés.** La app leía en alto la respuesta de los juegos de los
+  trucos, y en las preguntas sueltas esa respuesta está en español («No, calla») o es una
+  grafía («uóte» en lugar de *water*): la voz recitando la muleta visual en vez de la
+  palabra. Ahora la respuesta no se lee nunca; cada juego declara en `say` qué inglés debe
+  decir la voz, y el validador comprueba que ese `say` —y los ejemplos de las fichas, y el
+  `say` de las palabras— estén dentro del vocabulario que la app puede pronunciar.
+
+
+### El vocabulario que la voz puede decir
+
+La defensa contra leer español en alto no es adivinar el idioma, es una **lista cerrada**.
+La app solo pronuncia palabras que estén en el banco, en los textos de las frases, en las
+canciones o en `data/speakable-extra.json`. Lo demás no se dice y queda un error en la
+consola. La misma regla vive en dos sitios, `js/core/speech.js` (`isEnglish`) y
+`tools/validate.py`: **si tocas una, toca la otra**.
+
+**`data/speakable-extra.json` es el punto frágil de todo esto.** Son palabras inglesas
+legítimas que un truco necesita demostrar y que no son vocabulario del camino: hoy solo
+`climber` y `reader`, que los trucos del `-er` construyen a partir de *climb* y *read*.
+
+> La lista de extras **nunca** se usa para hacer callar al validador. Si algo no suena y la
+> tentación es añadirlo ahí, casi siempre es que había que decir otra cosa: la palabra
+> inglesa de la que trata la pregunta, no su explicación en español ni su grafía. Una
+> entrada nueva tiene que ser inglés de verdad y venir con su razón escrita al lado.
 
 Las órdenes de `e2e.py` y `screenshots.py` necesitan Playwright:
 

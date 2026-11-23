@@ -450,6 +450,109 @@ def prueba_lagartija(navegador, url):
     print("")
 
 
+def prueba_voz(navegador, url):
+    """La voz solo dice ingles: ni español ni grafias, pase lo que pase."""
+    print("La voz solo dice ingles")
+    ctx = navegador.new_context()
+    ctx.add_init_script(SEMBRAR_PALABRAS)
+    ctx.add_init_script("""(() => {
+      window.__dicho = [];
+      const voz = { name: 'Prueba GB', lang: 'en-GB', default: true, localService: true, voiceURI: 'p' };
+      Object.defineProperty(window, 'speechSynthesis', { configurable: true, value: {
+        getVoices: () => [voz],
+        speak(u) { window.__dicho.push(u.text); setTimeout(() => u.onend && u.onend(), 5); },
+        cancel() {}, pause() {}, resume() {},
+        speaking: false, pending: false, paused: false,
+        onvoiceschanged: null, addEventListener() {}, removeEventListener() {},
+      } });
+      Object.defineProperty(window, 'SpeechSynthesisUtterance', { configurable: true,
+        value: function (t) { this.text = t; } });
+    })();""")
+    page = ctx.new_page()
+    errores, dichos = [], []
+    page.on("pageerror", lambda e: errores.append(str(e)))
+    page.on("console", lambda m: errores.append(m.text) if m.type == "error" else None)
+
+    page.goto(url + "#grammar")
+    page.wait_for_selector(".rule-list .rule-card", timeout=25000)
+
+    # El filtro, probado directamente con los casos reales que se colaban.
+    veredicto = page.evaluate("""async () => {
+      const m = await import('./js/core/speech.js');
+      const casos = {
+        'water': true, 'Good night!': true, 'I am not tired.': true, "don't": true,
+        'climber': true, 'dogs': true, 'T-shirt': true,
+        'No, calla': false, 'uóte': false, 'cláim': false, 'síses': false,
+        'Dos: la g y la h': false, 'romper el ayuno': false, 'Al principio: MÁUN-tin': false,
+      };
+      const mal = [];
+      for (const [t, esperado] of Object.entries(casos))
+        if (m.isEnglish(t) !== esperado) mal.push(t + ' -> ' + m.isEnglish(t));
+      return mal;
+    }""")
+    check(not veredicto, "el filtro acierta en los 14 casos reales: %s" % (veredicto or "todos"))
+
+    # Y ahora de verdad: jugar trucos enteros y mirar QUE sale por el altavoz.
+    barrido = page.evaluate("""async () => {
+      const m = await import('./js/core/speech.js');
+      const { content } = await import('./js/core/content.js');
+      const mal = [];
+      for (const g of content.grammar) {
+        for (const sc of g.scenes || [])
+          if (!m.isEnglish(sc.en)) mal.push(g.id + ' escena: ' + sc.en);
+        for (const q of g.play || []) {
+          const t = q.en ? q.en.replace('___', q.answer) : q.say;
+          if (!t) mal.push(g.id + ' juego sin say');
+          else if (!m.isEnglish(t)) mal.push(g.id + ' juego: ' + t);
+        }
+      }
+      for (const w of content.words)
+        if (w.say && !m.isEnglish(w.say)) mal.push('palabra ' + w.id + ': ' + w.say);
+      return { mal, fichas: content.grammar.length };
+    }""")
+    check(not barrido["mal"], "las %d fichas enteras solo mandan ingles a la voz: %s"
+          % (barrido["fichas"], barrido["mal"][:3] or "ninguna se sale"))
+
+    abiertas = page.locator(".rule-list .rule-card:not(.locked)")
+    check(abiertas.count() > 0, "hay fichas abiertas para jugar (%d)" % abiertas.count())
+
+    # Y ahora de verdad: jugar una ficha entera y mirar QUE sale por el altavoz. Una sola y
+    # sin navegar en medio: recargar entre fichas vaciaba el registro y hacia la prueba
+    # inestable, y para comprobar que lo que suena es ingles basta con una.
+    abiertas.first.click(timeout=5000)
+    page.wait_for_selector(".stage .idea", timeout=15000)
+    for _ in range(80):
+        if page.locator(".finish").count():
+            break
+        sig = page.locator(".stage .btn.next")
+        opts = page.locator(".options .opt:not([disabled]):not(.done)")
+        if sig.count():
+            try:
+                sig.first.click(timeout=1500, force=True)
+            except Exception:
+                pass
+        elif opts.count():
+            try:
+                opts.first.click(timeout=1500, force=True)
+            except Exception:
+                pass
+        else:
+            break
+        page.wait_for_timeout(150)
+    dichos = page.evaluate("() => window.__dicho || []")
+
+
+    check(len(dichos) > 0, "la voz ha hablado durante las fichas (%d veces)" % len(dichos))
+    sucios = page.evaluate("""async (textos) => {
+      const m = await import('./js/core/speech.js');
+      return textos.filter(t => !m.isEnglish(t));
+    }""", dichos)
+    check(not sucios, "y todo lo que ha dicho es ingles. No ingles: %s" % (sucios or "nada"))
+    check(not errores, "sin errores ni quejas de la voz en consola: %s" % errores[:2])
+    ctx.close()
+    print("")
+
+
 def prueba_migracion(navegador, url):
     """Actualiza una tablet con progreso del esquema 1 y comprueba que no se pierde nada."""
     print("Actualizacion de una tablet con progreso guardado (esquema 1 -> 2)")
@@ -524,7 +627,8 @@ def main():
                 solo = a.split('=', 1)[1]
         if solo:
             sueltas = {'tandas': prueba_tandas, 'gym': prueba_gym,
-                       'lagartija': prueba_lagartija, 'migracion': prueba_migracion}
+                       'lagartija': prueba_lagartija, 'migracion': prueba_migracion,
+                       'voz': prueba_voz}
             if solo not in sueltas:
                 print('--solo admite: %s' % ', '.join(sorted(sueltas)))
                 return 2
@@ -651,6 +755,7 @@ def main():
         prueba_tandas(navegador, url)
         prueba_gym(navegador, url)
         prueba_lagartija(navegador, url)
+        prueba_voz(navegador, url)
 
         print("Dias sin conexion y una semana sin abrir")
         Handler.publicaciones += 1      # se publica algo mientras la tablet esta apagada

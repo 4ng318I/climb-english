@@ -90,7 +90,8 @@
         "options": [
           "I am good!",
           "i am good!"
-        ]
+        ],
+        "say": "I am good!"
       },
       {
         "q": "Y esta, ¿cuál es la buena?",
@@ -98,7 +99,8 @@
         "options": [
           "Yes, i am.",
           "Yes, I am."
-        ]
+        ],
+        "say": "Yes, I am."
       }
     ]
   },
@@ -139,7 +141,8 @@
         "options": [
           "No, calla",
           "Sí, suena"
-        ]
+        ],
+        "say": "name"
       },
       {
         "q": "¿Y en «please»?",
@@ -147,7 +150,8 @@
         "options": [
           "Sí, suena",
           "No, calla"
-        ]
+        ],
+        "say": "please"
       }
     ]
   },
@@ -183,7 +187,8 @@
           "Ninguna",
           "Dos: la g y la h",
           "Todas"
-        ]
+        ],
+        "say": "night"
       }
     ]
   },
@@ -219,7 +224,8 @@
           "Uno",
           "Dos",
           "Tres"
-        ]
+        ],
+        "say": "friend"
       },
       {
         "q": "¿Y «please»?",
@@ -228,7 +234,8 @@
           "Tres",
           "Uno",
           "Dos"
-        ]
+        ],
+        "say": "please"
       }
     ]
   },
@@ -272,7 +279,8 @@
         "options": [
           "Night good!",
           "Good night!"
-        ]
+        ],
+        "say": "Good night!"
       }
     ]
   },
@@ -301,7 +309,8 @@
         "options": [
           "Un soplo suave",
           "Como la j de jamón"
-        ]
+        ],
+        "say": "hello"
       }
     ]
   },
@@ -337,7 +346,8 @@
           "tu",
           "tuo",
           "tugo"
-        ]
+        ],
+        "say": "two"
       },
       {
         "q": "¿Qué letra de «two» no se oye?",
@@ -346,7 +356,8 @@
           "La t",
           "La w",
           "La o"
-        ]
+        ],
+        "say": "two"
       }
     ]
   },
@@ -382,7 +393,8 @@
           "Entre los dientes",
           "Detrás, como en «trres»",
           "Arriba del todo"
-        ]
+        ],
+        "say": "three"
       }
     ]
   },
@@ -418,7 +430,8 @@
           "éigt",
           "éit",
           "éighte"
-        ]
+        ],
+        "say": "eight"
       }
     ]
   },
@@ -454,7 +467,8 @@
           "five",
           "seven",
           "ten"
-        ]
+        ],
+        "say": "seven"
       }
     ]
   },
@@ -484,7 +498,8 @@
           "número",
           "nombre",
           "nunca"
-        ]
+        ],
+        "say": "number"
       }
     ]
   },
@@ -583,7 +598,8 @@
           "colour",
           "color",
           "coluor"
-        ]
+        ],
+        "say": "colour"
       }
     ]
   },
@@ -625,7 +641,8 @@
           "uót",
           "juót",
           "guát"
-        ]
+        ],
+        "say": "what"
       },
       {
         "q": "¿Cuál es la rebelde, la que suena «ju»?",
@@ -634,7 +651,8 @@
           "what",
           "who",
           "when"
-        ]
+        ],
+        "say": "who"
       }
     ]
   },
@@ -669,7 +687,8 @@
         "options": [
           "black and white",
           "white and black"
-        ]
+        ],
+        "say": "black and white"
       }
     ]
   },
@@ -699,7 +718,8 @@
           "Solo el color",
           "Solo la fruta",
           "El color y la fruta"
-        ]
+        ],
+        "say": "orange"
       }
     ]
   },
@@ -804,7 +824,8 @@
           "piano",
           "drum",
           "violin"
-        ]
+        ],
+        "say": "drum"
       }
     ]
   },
@@ -856,7 +877,8 @@
           "La l",
           "La t",
           "La n"
-        ]
+        ],
+        "say": "listen"
       }
     ]
   },
@@ -891,7 +913,8 @@
         "options": [
           "Toco el piano",
           "Juego al piano"
-        ]
+        ],
+        "say": "I play the piano."
       }
     ]
   },
@@ -927,7 +950,8 @@
           "climber",
           "climbing",
           "climbs"
-        ]
+        ],
+        "say": "climber"
       }
     ]
   },
@@ -962,7 +986,8 @@
         "options": [
           "Dientes sobre el labio",
           "Los labios juntos, como la b"
-        ]
+        ],
+        "say": "violin"
       }
     ]
   },
@@ -1013,7 +1038,8 @@
         "options": [
           "You stop!",
           "Stop!"
-        ]
+        ],
+        "say": "Stop!"
       }
     ]
   },
@@ -1049,7 +1075,8 @@
           "clímb",
           "cláim",
           "clímbe"
-        ]
+        ],
+        "say": "climb"
       }
     ]
   },
@@ -1084,7 +1111,8 @@
         "options": [
           "estrong",
           "strong"
-        ]
+        ],
+        "say": "strong"
       },
       {
         "q": "¿Y este?",
@@ -1092,7 +1120,8 @@
         "options": [
           "stop",
           "estop"
-        ]
+        ],
+        "say": "stop"
       }
     ]
   },
@@ -1127,7 +1156,8 @@
         "options": [
           "Al principio: MÁUN-tin",
           "Al final: maun-TÁIN"
-        ]
+        ],
+        "say": "mountain"
       }
     ]
   },
@@ -1163,7 +1193,8 @@
           "roca",
           "rueda",
           "rojo"
-        ]
+        ],
+        "say": "rock"
       }
     ]
   },
@@ -1204,7 +1235,8 @@
         "options": [
           "Floja, sin vibrar",
           "Vibrando, como en «rosa»"
-        ]
+        ],
+        "say": "rope"
       },
       {
         "q": "¿Y la r del final de «car»?",
@@ -1212,7 +1244,8 @@
         "options": [
           "Se oye fuerte",
           "No se oye"
-        ]
+        ],
+        "say": "car"
       }
     ]
   },
@@ -1242,7 +1275,8 @@
           "skísors",
           "síses",
           "esíses"
-        ]
+        ],
+        "say": "scissors"
       }
     ]
   },
@@ -1277,7 +1311,8 @@
         "options": [
           "three",
           "with"
-        ]
+        ],
+        "say": "with"
       }
     ]
   },
@@ -1306,7 +1341,8 @@
         "options": [
           "un lápiz",
           "un pincel"
-        ]
+        ],
+        "say": "pencil"
       }
     ]
   },
@@ -1336,7 +1372,8 @@
           "papér",
           "péipe",
           "papel"
-        ]
+        ],
+        "say": "paper"
       }
     ]
   },
@@ -1434,7 +1471,8 @@
         "options": [
           "grand + ma",
           "gran + dma"
-        ]
+        ],
+        "say": "grandma"
       }
     ]
   },
@@ -1463,7 +1501,8 @@
         "options": [
           "Quiero a mi familia",
           "Me gusta mi casa"
-        ]
+        ],
+        "say": "I love my family."
       }
     ]
   },
@@ -1498,7 +1537,8 @@
         "options": [
           "Uno",
           "Dos"
-        ]
+        ],
+        "say": "mum"
       }
     ]
   },
@@ -1534,7 +1574,8 @@
           "zis",
           "dis",
           "tis"
-        ]
+        ],
+        "say": "this"
       }
     ]
   },
@@ -1570,7 +1611,8 @@
           "shi, como mandar callar",
           "chi, como «chico»",
           "si, como «sí»"
-        ]
+        ],
+        "say": "she"
       }
     ]
   },
@@ -1600,7 +1642,8 @@
           "kni",
           "ni",
           "ké-ne"
-        ]
+        ],
+        "say": "knee"
       }
     ]
   },
@@ -1636,7 +1679,8 @@
           "ojo o yo",
           "solo ojo",
           "solo yo"
-        ]
+        ],
+        "say": "eye"
       }
     ]
   },
@@ -1672,7 +1716,8 @@
           "two foots",
           "two feet",
           "two footes"
-        ]
+        ],
+        "say": "two feet"
       }
     ]
   },
@@ -1708,7 +1753,8 @@
           "hand",
           "finger",
           "nose"
-        ]
+        ],
+        "say": "finger"
       }
     ]
   },
@@ -1752,7 +1798,8 @@
         "options": [
           "No, solo se escribe",
           "Sí, se oye fuerte"
-        ]
+        ],
+        "say": "your"
       }
     ]
   },
@@ -1847,7 +1894,8 @@
         "options": [
           "Con la boca más abierta, entre a y e",
           "Igual que la a de «casa»"
-        ]
+        ],
+        "say": "cat"
       }
     ]
   },
@@ -1882,7 +1930,8 @@
         "options": [
           "cats",
           "dogs"
-        ]
+        ],
+        "say": "dogs"
       }
     ]
   },
@@ -1924,7 +1973,8 @@
           "lion",
           "mouse",
           "animal"
-        ]
+        ],
+        "say": "mouse"
       }
     ]
   },
@@ -2038,7 +2088,8 @@
         "options": [
           "I",
           "Me"
-        ]
+        ],
+        "say": "I like water."
       }
     ]
   },
@@ -2068,7 +2119,8 @@
           "uáter",
           "uóte",
           "guater"
-        ]
+        ],
+        "say": "water"
       }
     ]
   },
@@ -2103,7 +2155,8 @@
         "options": [
           "eat",
           "it"
-        ]
+        ],
+        "say": "eat"
       }
     ]
   },
@@ -2139,7 +2192,8 @@
           "pizza",
           "pítsa",
           "pídza"
-        ]
+        ],
+        "say": "pizza"
       }
     ]
   },
@@ -2234,7 +2288,8 @@
         "options": [
           "bed + room",
           "be + droom"
-        ]
+        ],
+        "say": "bedroom"
       }
     ]
   },
@@ -2269,7 +2324,8 @@
         "options": [
           "Hay dos ventanas",
           "Ahí están dos ventanas"
-        ]
+        ],
+        "say": "There are two windows."
       }
     ]
   },
@@ -2304,7 +2360,8 @@
         "options": [
           "Al principio: SÓU-fa",
           "Al final: so-FÁ"
-        ]
+        ],
+        "say": "sofa"
       }
     ]
   },
@@ -2334,7 +2391,8 @@
           "uráit",
           "ráit",
           "vráit"
-        ]
+        ],
+        "say": "write"
       }
     ]
   },
@@ -2363,7 +2421,8 @@
         "options": [
           "I learn English.",
           "I learn english."
-        ]
+        ],
+        "say": "I learn English."
       }
     ]
   },
@@ -2392,7 +2451,8 @@
         "options": [
           "note + book",
           "no + tebook"
-        ]
+        ],
+        "say": "notebook"
       }
     ]
   },
@@ -2422,7 +2482,8 @@
           "reader",
           "reading",
           "reads"
-        ]
+        ],
+        "say": "reader"
       }
     ]
   },
@@ -2451,7 +2512,60 @@
         "options": [
           "rubber",
           "eraser"
-        ]
+        ],
+        "say": "rubber"
+      }
+    ]
+  },
+  {
+    "id": "t-u-floja",
+    "block": 12,
+    "emoji": "📚",
+    "kind": "truco",
+    "title": {
+      "es": "La u de good es floja",
+      "en": "A relaxed u"
+    },
+    "idea": "La u de «good», «book», «look» y «foot» no es nuestra u. La española se dice con los labios muy cerrados y apretados; la inglesa es más corta y más floja, con la boca medio relajada, como si te diera pereza terminarla. En las pistas la escribo «u» porque no hay otra letra, pero no suena igual: esta es de las que hay que oír. Dale al altavoz y compara «book» con nuestra palabra «bu».",
+    "scenes": [
+      {
+        "emoji": "📗",
+        "en": "book",
+        "es": "libro",
+        "pron": "buk (u corta y floja)"
+      },
+      {
+        "emoji": "👍",
+        "en": "good",
+        "es": "bueno",
+        "pron": "gud (u corta y floja)"
+      },
+      {
+        "emoji": "🦶",
+        "en": "foot",
+        "es": "pie",
+        "pron": "fut (u corta y floja)"
+      }
+    ],
+    "play": [
+      {
+        "q": "La u de «good» es…",
+        "answer": "Corta y floja",
+        "options": [
+          "Corta y floja",
+          "Larga y apretada como la nuestra"
+        ],
+        "say": "good"
+      },
+      {
+        "q": "¿En cuál de estas suena esa u floja?",
+        "answer": "book",
+        "options": [
+          "book",
+          "climb",
+          "night"
+        ],
+        "say": "book"
       }
     ]
   },
@@ -2547,7 +2661,8 @@
         "options": [
           "My trousers are blue.",
           "My trouser is blue."
-        ]
+        ],
+        "say": "My trousers are blue."
       }
     ]
   },
@@ -2576,7 +2691,8 @@
         "options": [
           "jumper",
           "sweater"
-        ]
+        ],
+        "say": "jumper"
       }
     ]
   },
@@ -2605,7 +2721,8 @@
         "options": [
           "Porque tiene forma de T",
           "Porque es de tela"
-        ]
+        ],
+        "say": "T-shirt"
       }
     ]
   },
@@ -2710,7 +2827,8 @@
         "options": [
           "Detrás de am, is o are",
           "Delante del todo"
-        ]
+        ],
+        "say": "I am not tired."
       }
     ]
   },
@@ -2746,7 +2864,8 @@
           "funny",
           "jump",
           "table"
-        ]
+        ],
+        "say": "funny"
       }
     ]
   },
@@ -2781,7 +2900,8 @@
         "options": [
           "short",
           "long"
-        ]
+        ],
+        "say": "short"
       }
     ]
   },
@@ -2810,7 +2930,8 @@
         "options": [
           "lleno de",
           "sin nada de"
-        ]
+        ],
+        "say": "beautiful"
       }
     ]
   },
@@ -2943,7 +3064,8 @@
         "options": [
           "Fuerte, con la lengua pegada",
           "Flojita, como en «rey»"
-        ]
+        ],
+        "say": "jump"
       }
     ]
   },
@@ -2973,7 +3095,8 @@
           "uólk",
           "uók",
           "guók"
-        ]
+        ],
+        "say": "walk"
       }
     ]
   },
@@ -3009,7 +3132,8 @@
           "bike",
           "báik",
           "bíke"
-        ]
+        ],
+        "say": "bike"
       }
     ]
   },
@@ -3038,7 +3162,8 @@
         "options": [
           "Today is Friday.",
           "Today is friday."
-        ]
+        ],
+        "say": "Today is Friday."
       }
     ]
   },
@@ -3067,7 +3192,8 @@
         "options": [
           "uédnesdei",
           "uénsdei"
-        ]
+        ],
+        "say": "Wednesday"
       }
     ]
   },
@@ -3103,7 +3229,8 @@
           "día",
           "semana",
           "hoy"
-        ]
+        ],
+        "say": "day"
       }
     ]
   },
@@ -3132,7 +3259,8 @@
         "options": [
           "to + day",
           "tod + ay"
-        ]
+        ],
+        "say": "today"
       }
     ]
   },
@@ -3230,7 +3358,8 @@
         "options": [
           "llevar puesto o dónde",
           "solo dónde"
-        ]
+        ],
+        "say": "wear"
       }
     ]
   },
@@ -3265,7 +3394,8 @@
         "options": [
           "estreet",
           "street"
-        ]
+        ],
+        "say": "street"
       }
     ]
   },
@@ -3354,7 +3484,8 @@
         "options": [
           "romper el ayuno",
           "comer rápido"
-        ]
+        ],
+        "say": "breakfast"
       }
     ]
   },
@@ -3389,7 +3520,8 @@
         "options": [
           "levantarse",
           "coger arriba"
-        ]
+        ],
+        "say": "get up"
       }
     ]
   },
@@ -3424,7 +3556,8 @@
         "options": [
           "work, trabajar",
           "walk, andar"
-        ]
+        ],
+        "say": "walk"
       }
     ]
   },
@@ -3520,7 +3653,8 @@
         "options": [
           "Veo el mar",
           "Miro a ver el mar"
-        ]
+        ],
+        "say": "I can see the sea!"
       }
     ]
   },
@@ -3555,7 +3689,8 @@
         "options": [
           "do + not",
           "don + t"
-        ]
+        ],
+        "say": "don't"
       }
     ]
   },
@@ -3590,7 +3725,8 @@
         "options": [
           "En una e floja, sin r",
           "En una r fuerte"
-        ]
+        ],
+        "say": "flower"
       }
     ]
   },
@@ -3694,7 +3830,8 @@
         "options": [
           "A mí también me gusta",
           "Me gustan dos músicas"
-        ]
+        ],
+        "say": "I like music too."
       }
     ]
   },
@@ -3730,7 +3867,8 @@
           "knóu",
           "nóu",
           "kenóu"
-        ]
+        ],
+        "say": "know"
       }
     ]
   },
@@ -3765,7 +3903,8 @@
         "options": [
           "Escalar se disfruta",
           "Escalar da risa"
-        ]
+        ],
+        "say": "Climbing is fun!"
       }
     ]
   }

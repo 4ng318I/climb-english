@@ -6,7 +6,7 @@
 // el mismo almacén de cachés. Por eso el nombre lleva prefijo propio y en la activación
 // SOLO se borran las cachés propias: borrar las demás dejaría sin conexión a otra app.
 const PREFIX = 'climbenglish-';
-const VERSION = 18;
+const VERSION = 19;
 const CACHE = PREFIX + 'v' + VERSION;
 // Nombres usados antes de adoptar el prefijo; se limpian, pero solo estos.
 const LEGACY_CACHES = ['ingles-a1-v1', 'ingles-a1-v2', 'ingles-a1-v3'];
@@ -24,7 +24,7 @@ const ASSETS = [
   'js/games/match.js', 'js/games/intruder.js', 'js/games/scramble.js', 'js/games/taps.js',
   'js/games/memory.js', 'js/games/silly.js',
   'data/blocks.json', 'data/grammar.json', 'data/silly.json', 'data/songs.json',
-  'data/ui-strings.json', 'data/medals.json',
+  'data/ui-strings.json', 'data/medals.json', 'data/speakable-extra.json',
   'assets/nunito.woff2', 'assets/icon-192.png', 'assets/icon-512.png', 'assets/icon-maskable-512.png',
 ];
 

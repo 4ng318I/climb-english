@@ -13,6 +13,7 @@ export default {
   play(el, c) {
     return new Promise(resolve => {
       const items = distinct(c.words, 4);
+      const porId = new Map(items.map(w => [w.id, w]));
       const miss = new Set();
       let sel = null, left = items.length;
 
@@ -31,7 +32,7 @@ export default {
           $$('.word.sel', el).forEach(x => x.classList.remove('sel'));
           b.classList.add('sel');
           sel = b;
-          speak(b.textContent);
+          speak(porId.get(b.dataset.id)?.en || '');
           return;
         }
         if (!sel) { bubble(T('match_first')); return; }

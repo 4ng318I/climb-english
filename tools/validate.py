@@ -178,6 +178,72 @@ def main():
         if s.get("grammar") and s["grammar"] not in rule_ids:
             warnings.append(f'{b["file"]}: la frase "{s["en"]}" apunta a una regla que no existe: {s["grammar"]}')
 
+    # LA VOZ SOLO DICE INGLES. Misma regla que js/core/speech.js (isEnglish): una lista
+    # CERRADA de palabras decibles, no un detector de idioma. Si tocas una, toca la otra.
+    # Nacio porque la voz inglesa leia «No, calla» y, peor, «uote» en lugar de water:
+    # la autoridad recitando la muleta visual en vez de la palabra.
+    extra = load(DATA / "speakable-extra.json") or {"words": []}
+    decibles = set()
+
+    def mete(t):
+        decibles.update(re.findall(r"[a-z']+", str(t or "").lower()))
+
+    for w in words:
+        mete(w.get("en"))
+    for _b, s_ in sentences:
+        mete(s_.get("en"))
+    for c in (load(DATA / "songs.json") or {}).get("songs", []):
+        for w in c.get("words", []):
+            mete(w.get("en"))
+    for w in extra.get("words", []):
+        mete(w.get("en"))
+
+    def decible(t):
+        x = t.lower()
+        ing = re.sub(r"ing$", "", x)
+        return any(c in decibles for c in
+                   (x, re.sub(r"'s$", "", x), re.sub(r"s$", "", x), re.sub(r"es$", "", x),
+                    re.sub(r"ies$", "y", x), re.sub(r"n't$", "", x), x.replace("'", ""),
+                    ing, ing + "e", re.sub(r"(.)$", r"", ing)))
+
+    def fuera_del_ingles(texto):
+        limpio = re.sub(r"[☀-➿🀀-🫿️]", " ", str(texto or ""))
+        limpio = limpio.replace("{name}", " ")
+        return sorted({t for t in re.findall(r"[^\W\d_]+(?:'[^\W\d_]+)?", limpio, re.UNICODE)
+                       if not decible(t)})
+
+    for w in words:
+        if w.get("say"):
+            mal = fuera_del_ingles(w["say"])
+            if mal:
+                errors.append("palabra %s: su «say» («%s») no es inglés del banco: %s"
+                              % (w.get("id"), w["say"], ", ".join(mal)))
+    for g_ in grammar:
+        for sc in g_.get("scenes", []):
+            mal = fuera_del_ingles(sc.get("en"))
+            if mal:
+                errors.append('grammar.json (%s): el ejemplo "%s" se lee en alto y no es inglés '
+                              "del banco: %s" % (g_.get("id"), sc.get("en"), ", ".join(mal)))
+        for i, q in enumerate(g_.get("play", [])):
+            if q.get("en"):
+                # La frase con el hueco relleno tambien se lee en alto.
+                mal = fuera_del_ingles(q["en"].replace("___", str(q.get("answer", ""))))
+                if mal:
+                    errors.append('grammar.json (%s, juego %d): al rellenar el hueco se lee '
+                                  '"%s", que no es inglés del banco: %s'
+                                  % (g_.get("id"), i, q["en"].replace("___", str(q.get("answer", ""))),
+                                     ", ".join(mal)))
+                continue
+            if not q.get("say"):
+                errors.append("grammar.json (%s, juego %d): pregunta suelta sin «say». La "
+                              "respuesta NO se lee (suele ser español o una grafía): di en "
+                              "«say» qué inglés tiene que decir la voz." % (g_.get("id"), i))
+                continue
+            mal = fuera_del_ingles(q["say"])
+            if mal:
+                errors.append('grammar.json (%s, juego %d): su «say» («%s») no es inglés del '
+                              "banco: %s" % (g_.get("id"), i, q["say"], ", ".join(mal)))
+
     for g in grammar:
         if g.get("kind", "regla") not in ("regla", "truco"):
             errors.append(f'grammar.json ({g.get("id")}): kind debe ser "regla" o "truco"')

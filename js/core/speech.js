@@ -36,6 +36,39 @@ let spoken = new Map();
 export const setSpoken = map => { spoken = map; };
 const forVoice = text => spoken.get(String(text).trim().toLowerCase()) ?? text;
 
+// LA VOZ SOLO DICE INGLES. Nunca español, y nunca una grafía.
+//
+// El problema de fondo era que speak() recibía una cadena pelada y no sabía de qué idioma
+// era: así acabó leyendo «No, calla» con voz inglesa, y peor aún «uóte» en vez de water,
+// que es la voz recitando la muleta visual en lugar de la palabra.
+//
+// La defensa no es adivinar el idioma, es una LISTA CERRADA: la app tiene un vocabulario
+// finito (las palabras del banco, las palabras que salen en los textos de las frases, las
+// de las canciones y las pocas declaradas en data/speakable-extra.json). Nada de lo que la
+// app necesita decir en alto cae fuera de ahí. Lo que no esté, no se dice.
+//
+// tools/validate.py aplica ESTA MISMA REGLA sobre el contenido, para que no se separen:
+// si tocas una, toca la otra.
+let decibles = new Set();
+export const setSpeakable = set => { decibles = set; };
+
+// Se aceptan las mismas variantes que acepta el validador en el texto de las frases.
+const conocida = t => {
+  const x = t.toLowerCase();
+  const ing = x.replace(/ing$/, '');
+  return [x, x.replace(/'s$/, ''), x.replace(/s$/, ''), x.replace(/es$/, ''),
+    x.replace(/ies$/, 'y'), x.replace(/n't$/, ''), x.replace(/'/g, ''),
+    ing, ing + 'e', ing.replace(/(.)$/, '$1')].some(c => decibles.has(c));
+};
+
+export function isEnglish(text) {
+  if (!decibles.size) return true;            // aún no hay contenido cargado: no estorbar
+  const suyo = String(state.settings.name || '').toLowerCase();
+  const limpio = String(text).replace(/[\p{Extended_Pictographic}️]/gu, ' ');
+  const toks = limpio.match(/[\p{L}']+/gu) || [];
+  return toks.length > 0 && toks.every(t => t.toLowerCase() === suyo || conocida(t));
+};
+
 // El dispositivo ya ha dado su lista de voces y en ella no hay ninguna inglesa.
 // En ese caso el navegador leería el inglés con la voz española ("I" sonaría "i"):
 // es peor que el silencio, así que la app se calla y avisa a los mayores.
@@ -71,6 +104,11 @@ export function speak(text, { slow = false, force = false } = {}) {
   return new Promise(resolve => {
     if (!synth || !text) return resolve(false);
     if (voiceBlocked() && !force) return resolve(false);
+    if (!isEnglish(text)) {
+      // Que se vea en consola y en las pruebas: es un fallo de contenido, no un caso raro.
+      console.error('La voz solo lee inglés y esto no lo es, así que no se dice:', text);
+      return resolve(false);
+    }
     let done = false;
     const fin = ok => { if (!done) { done = true; resolve(ok); } };
     try {

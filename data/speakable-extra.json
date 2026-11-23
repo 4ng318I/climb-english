@@ -1,0 +1,7 @@
+{
+  "_ayuda": "Palabras INGLESAS que la voz puede decir aunque no estén en el banco de palabras ni en las canciones. La app solo lee en alto lo que esté en el banco o en esta lista; todo lo demás lo rechaza, para que nunca lea español ni una grafía. ESTA LISTA NO ES UN PORTILLO: es para palabras inglesas legítimas que un truco necesita demostrar y que no son vocabulario del camino (por ejemplo 'climber', que el truco del -er enseña a partir de 'climb'). Nunca se añade aquí una palabra para que el validador deje de quejarse: si algo no suena, casi siempre es que había que decir otra cosa.",
+  "words": [
+    { "en": "climber", "por que": "el truco t-er-quien la construye a partir de climb; no es palabra del camino" },
+    { "en": "reader", "por que": "el truco t-teacher-er la construye a partir de read; no es palabra del camino" }
+  ]
+}

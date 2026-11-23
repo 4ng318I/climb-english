@@ -104,9 +104,9 @@ async function show(el, rule) {
           const hueco = $('#gap', el);
           if (hueco) { hueco.textContent = q.answer; hueco.classList.add('filled'); pop(hueco); }
           chime();
-          const frase = (q.en ? q.en.replace('___', q.answer) : q.answer)
+          const frase = (q.en ? q.en.replace('___', q.answer) : (q.say || ''))
             .replace(/[\p{Extended_Pictographic}️]/gu, '');
-          speak(frase).then(() => setTimeout(next, 500));
+          (frase ? speak(frase) : Promise.resolve()).then(() => setTimeout(next, 500));
         } else {
           b.disabled = true;
           b.classList.add('faded');
